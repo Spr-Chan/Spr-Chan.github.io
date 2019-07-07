@@ -6,13 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别 | 吾乃下里巴人</title>
+  <title>三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别 | 一个下里巴人写字的地方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="第一范式（1NF）：  &amp;emsp;&amp;emsp;列1唯一确定列2、列3、列4......，即列不能再分成其它几列。  &amp;emsp;&amp;emsp;假设列1：订单名，列2：商品名，一个订单名里可以有多个商品名，所以这样就不符合第一范式。  第二范式（2NF）：  &amp;emsp;&amp;emsp;首先必须符合1NF，另外包含两部分内容，一是表必须有一个（及以上）主键；二是没有包含在主键中的列必须==全部依赖==于">
+<meta name="keywords" content="技术博客，IT，CS，Java，后端开发，程序人生，CSDN，转行计算机，技术分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别">
 <meta property="og:url" content="http://yoursite.com/2019/07/07/三张图搞透第一范式(1NF)、第二范式(2NF)和第三范式(3NF)的区别/index.html">
-<meta property="og:site_name" content="吾乃下里巴人">
+<meta property="og:site_name" content="一个下里巴人写字的地方">
 <meta property="og:description" content="第一范式（1NF）：  &amp;emsp;&amp;emsp;列1唯一确定列2、列3、列4......，即列不能再分成其它几列。  &amp;emsp;&amp;emsp;假设列1：订单名，列2：商品名，一个订单名里可以有多个商品名，所以这样就不符合第一范式。  第二范式（2NF）：  &amp;emsp;&amp;emsp;首先必须符合1NF，另外包含两部分内容，一是表必须有一个（及以上）主键；二是没有包含在主键中的列必须==全部依赖==于">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4rgx4lsvlj30ac01nq31.jpg">
@@ -24,7 +25,7 @@
 <meta name="twitter:description" content="第一范式（1NF）：  &amp;emsp;&amp;emsp;列1唯一确定列2、列3、列4......，即列不能再分成其它几列。  &amp;emsp;&amp;emsp;假设列1：订单名，列2：商品名，一个订单名里可以有多个商品名，所以这样就不符合第一范式。  第二范式（2NF）：  &amp;emsp;&amp;emsp;首先必须符合1NF，另外包含两部分内容，一是表必须有一个（及以上）主键；二是没有包含在主键中的列必须==全部依赖==于">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4rgx4lsvlj30ac01nq31.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="吾乃下里巴人" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="一个下里巴人写字的地方" type="application/atom+xml">
   
   
     <link rel="icon" href="/assets/head.png">
