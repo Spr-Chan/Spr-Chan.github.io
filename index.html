@@ -152,6 +152,174 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-三张图搞透第一范式(1NF)、第二范式(2NF)和第三范式(3NF)的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/三张图搞透第一范式(1NF)、第二范式(2NF)和第三范式(3NF)的区别/">三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/07/三张图搞透第一范式(1NF)、第二范式(2NF)和第三范式(3NF)的区别/" class="archive-article-date">
+  	<time datetime="2019-07-07T10:50:20.609Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>第一范式（1NF）</strong>：</p>
+<div align="center"><img width="30%" src="http://ww2.sinaimg.cn/large/006tNc79ly1g4rgx4lsvlj30ac01nq31.jpg"></div>
+&emsp;&emsp;列1唯一确定列2、列3、列4......，即列不能再分成其它几列。
+<br><br>
+&emsp;&emsp;假设列1：订单名，列2：商品名，一个订单名里可以有多个商品名，所以这样就不符合第一范式。
+
+<p><strong>第二范式（2NF）</strong>：</p>
+<div align="center"><img width="60%" src="http://ww2.sinaimg.cn/large/006tNc79ly1g4rgxd6tqdj30lr0i975k.jpg"></div>
+&emsp;&emsp;首先必须符合1NF，另外包含两部分内容，一是表必须有一个（及以上）主键；二是没有包含在主键中的列必须==全部依赖==于==全部主键==，而不能只依赖于主键的一部分而不依赖全部主键。
+
+<p>&emsp;&emsp;定义听起来有点绕，不慌，直接看图，只有全部的非主键列依赖于全部主键，才满足第二范式。</p>
+<p>&emsp;&emsp;假设主键1：订单名，主键2：商品名，列1：购买数量，列2：商品ID。可以看到“购买数量”完全依赖于“订单名和商品名”，但是“商品ID”只依赖于“商品名”，这样就不符合第二范式。</p>
+<p><strong>第三范式（3NF）</strong>：</p>
+<div align="center"><img width="45%" src="http://ww3.sinaimg.cn/large/006tNc79ly1g4rgxjewb5j30ef06nt9d.jpg"></div>
+&emsp;&emsp;首先符合2NF，另外非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列A依赖于非主键列B，非主键列B依赖于主键的情况。
+
+<p>&emsp;&emsp;定义听起来还是有点绕，不慌，直接看图，只要非主键内存在传递依赖，就不满足第三范式。</p>
+<p>&emsp;&emsp;假设主键1：课程编号，列1：教师名，列2：教师家庭地址。显然满足第一范式和第二范式，但是非主键列2“教师家庭地址”传递依赖于非主键列1“教师名”，所以不满足第三范式。</p>
+<p><strong>示例:</strong></p>
+<p>&emsp;&emsp;设有课程关系模式如下：R(C#, Cn, T, Ta)（其中C#为课程号，Cn为课程名，T为教师名，Ta为教师地址），并且假定不同的课程号可以有相同的课程名，每门课程只有一位任课教师，但每名教师可以有多门课程。关系R范式最高达到（）。</p>
+<p>A）1NF<br>B）2NF<br>C）3NF<br>D）BCNF</p>
+<p>【正确答案】B</p>
+<p>【解析】</p>
+<p>&emsp;&emsp;一个“课程号”确定一个“课程名”，确定一个“教师名”，确定一个“教师地址”，所以符合第一范式；</p>
+<p>&emsp;&emsp;“课程号”是<font color="red">无重复</font>的，所以“课程号”是<font color="red">主键</font>，“课程名”、“教师名”、“教师地址”均是<font color="red">可重复</font>的，所以它们都是<font color="red">非主键列</font>并完全依赖于主键“课程号”，所以符合第二范式；</p>
+<p>&emsp;&emsp;非主键列“教师地址”传递依赖于非主键列“教师名”，所以不符合第三范式，故选B。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/07/三张图搞透第一范式(1NF)、第二范式(2NF)和第三范式(3NF)的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-【C++】  常对象、常数据成员、常成员函数总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/【C++】  常对象、常数据成员、常成员函数总结/">【c++】常对象、常数据成员、常成员函数总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/07/【C++】  常对象、常数据成员、常成员函数总结/" class="archive-article-date">
+  	<time datetime="2019-07-07T10:39:52.987Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="常数据成员"><a href="#常数据成员" class="headerlink" title="常数据成员"></a>常数据成员</h5><p>&emsp;◆ 常数据成员必须进行初始化，并且不能被更新。</p>
+<p>&emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。</p>
+<p>&emsp;◆ PS：类的<font color="red">成员对象</font>若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。）</p>
+<h5 id="常对象"><a href="#常对象" class="headerlink" title="常对象"></a>常对象</h5><p>&emsp;◆ ⭐<font color="red">常对象可以调用常成员函数，不能调用非const成员函数</font>；非const对象，可以调用普通成员函数和常成员函数。</p>
+<p>&emsp;◆ 常对象的成员函数不一定都是常成员函数；同样的常对象的数据成员不一定都是常数据成员。</p>
+<p>&emsp;◆ 常对象一旦初始化，常对象的数据成员便不允许修改，而不是说常对象的数据成员都是常数据成员。</p>
+<p>&emsp;◆ PS：定义常对象有两种方法，1. Point const a; 2. const Point a;（同样的，定义变量或指针时，const放前放后意义一样，如：1. const double a; double const a; 2. const int *p; int const *p; 但是定义指针常量时，只能用 int * const p;）<br>  常成员函数</p>
+<h5 id="常成员函数"><a href="#常成员函数" class="headerlink" title="常成员函数"></a>常成员函数</h5><p>&emsp;◆ 常成员函数不更新对象的数据成员。</p>
+<p>&emsp;◆ 常成员函数的const关键字可以被用于参与对重载函数的区分。</p>
+<p>&emsp;◆ ⭐通常非const成员函数需要定义一个const版本的重载函数，以方便定义常对象后调用常成员函数。<br>&emsp;&emsp;◈ 如果常对象调用的常成员函数返回的是指向当前对象的指针（或返回的是当前对象），那么此常成员函数的声明的返回类型要加const，例如：</p>
+<p>&emsp;&emsp;&emsp;&emsp;◊ 成员函数返回指向当前对象的指针<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1();&emsp;&emsp;&emsp;&emsp;//非const成员函数的类内声明；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1() const;&emsp;//习惯上要再声明一个常成员函数作重载函数，注意到此函数声明有两个const；</p>
+<p>&emsp;&emsp;&emsp;&emsp;◊ 成员函数返回指向当前对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();&emsp;&emsp;&emsp;&emsp;//非const成员函数的类内声明；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1() const;&emsp;//习惯上要再声明一个常成员函数作重载函数，注意到此函数声明有两个const；</p>
+<p>&emsp;&emsp;&emsp;&emsp;◊ ⭐<font color="red">注意</font>，如果一个类中声明以下4个重载函数：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;① Point fun1();<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;② const Point fun1();<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;③ Point fun1() const;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;④ const Point fun1() const;<br>&emsp;&emsp;&emsp;&emsp;  【解析】①和②是冲突的，因为<font color="red">无法区分仅按返回类型区分的重载函数</font>；③和④是冲突的，也是因为无法区分仅按返回类型区分的重载函数。<br>&emsp;&emsp;&emsp;&emsp;&emsp;所以正确的重载函数搭配有3种：</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ①和③搭配：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回非const对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回非const对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是非const的Point类对象。</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ①和④搭配（这里把返回类型改为指针，因为<font color="red">常用</font>）：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point *fun1() {return this; };&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回指向本对象的指针<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point *fun1() const { return this; };//函数返回指向本常对象的指针，第一个const说明返回的是指向常对象的指针，第二个const说明此函数是常函数</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是常Point类对象（如return *this;）。</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ②和④搭配：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回常对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回常对象<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是常Point类对象。</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<font color="red">◊</font> ②和③搭配：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1() const;<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]虽然搭配合法，但是似乎不存在这种搭配。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/07/【C++】  常对象、常数据成员、常成员函数总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python爬虫实战：京东拍拍验机（帮你买到最完美的二手Iphone）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -242,81 +410,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/06/Python爬虫实战：京东拍拍验机（帮你买到最完美的二手Iphone）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-05T08:32:23.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/hello-world/">展开全文 >></a>
         </p>
       
 
