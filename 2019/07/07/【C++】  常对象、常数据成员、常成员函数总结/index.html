@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>【c++】常对象、常数据成员、常成员函数总结 | Morty写字的地方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象">
+  <meta name="description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。）">
 <meta name="keywords" content="C++,常对象,常成员函数,常数据成员">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【c++】常对象、常数据成员、常成员函数总结">
 <meta property="og:url" content="http://yoursite.com/2019/07/07/【C++】  常对象、常数据成员、常成员函数总结/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象">
+<meta property="og:description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-11T13:20:35.688Z">
+<meta property="og:updated_time" content="2019-07-11T13:30:16.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【c++】常对象、常数据成员、常成员函数总结">
-<meta name="twitter:description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象">
+<meta name="twitter:description" content="常数据成员&amp;emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&amp;emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&amp;emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。）">
   
     <link rel="alternative" href="/atom.xml" title="Morty写字的地方" type="application/atom+xml">
   
@@ -175,7 +175,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="常数据成员"><a href="#常数据成员" class="headerlink" title="常数据成员"></a>常数据成员</h5><p>&emsp;◆ 常数据成员必须进行初始化，并且不能被更新。<br>&emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。<br>&emsp;◆ PS：类的<font color="red">成员对象</font>若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象<a id="more"></a></p>
+        <h5 id="常数据成员"><a href="#常数据成员" class="headerlink" title="常数据成员"></a>常数据成员</h5><p>&emsp;◆ 常数据成员必须进行初始化，并且不能被更新。<br>&emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。<br>&emsp;◆ PS：类的<font color="red">成员对象</font>若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。）</p>
+<a id="more"></a>
+
 <h5 id="常对象"><a href="#常对象" class="headerlink" title="常对象"></a>常对象</h5><p>&emsp;◆ ⭐<font color="red">常对象可以调用常成员函数，不能调用非const成员函数</font>；非const对象，可以调用普通成员函数和常成员函数。<br>&emsp;◆ 常对象的成员函数不一定都是常成员函数；同样的常对象的数据成员不一定都是常数据成员。<br>&emsp;◆ 常对象一旦初始化，常对象的数据成员便不允许修改，而不是说常对象的数据成员都是常数据成员。<br>&emsp;◆ PS：定义常对象有两种方法，1. Point const a; 2. const Point a;（同样的，定义变量或指针时，const放前放后意义一样，如：1. const double a; double const a; 2. const int *p; int const *p; 但是定义指针常量时，只能用 int * const p;）</p>
 <h5 id="常成员函数"><a href="#常成员函数" class="headerlink" title="常成员函数"></a>常成员函数</h5><p>&emsp;◆ 常成员函数不更新对象的数据成员。<br>&emsp;◆ 常成员函数的const关键字可以被用于参与对重载函数的区分。<br>&emsp;◆ ⭐通常非const成员函数需要定义一个const版本的重载函数，以方便定义常对象后调用常成员函数。<br>&emsp;&emsp;◈ 如果常对象调用的常成员函数返回的是指向当前对象的指针（或返回的是当前对象），那么此常成员函数的声明的返回类型要加const，例如：</p>
 <p>&emsp;&emsp;&emsp;&emsp;◊ 成员函数返回指向当前对象的指针<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1();&emsp;&emsp;&emsp;&emsp;//非const成员函数的类内声明；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1() const;&emsp;//习惯上要再声明一个常成员函数作重载函数，注意到此函数声明有两个const；</p>
