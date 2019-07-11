@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="首先介绍指向数组的指针： &amp;emsp;&amp;emsp;char *p = new char; 定义指向动态分配的字符变量的指针；&amp;emsp;&amp;emsp;char *p = new char[3]; 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-11T13:54:24.205Z">
+<meta property="og:updated_time" content="2019-07-11T14:00:18.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】指向动态分配的指针数组的指针">
 <meta name="twitter:description" content="首先介绍指向数组的指针： &amp;emsp;&amp;emsp;char *p = new char; 定义指向动态分配的字符变量的指针；&amp;emsp;&amp;emsp;char *p = new char[3]; 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；">
@@ -176,9 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>首先介绍<strong>指向数组的指针</strong>：</p>
-<p>&emsp;&emsp;<code>char *p = new char;</code> 定义指向动态分配的字符变量的指针；<br>&emsp;&emsp;<code>char *p = new char[3];</code> 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；</p>
-<a id="more"></a>
-<p>&emsp;&emsp;<code>char (*p)[3] = new char[2][3];</code> 定义指向动态分配的二维字符数组（三行）的指针，p指向数组首行的地址，即(p+1)为数组第二行的地址；<br>&emsp;&emsp;<code>char (*p)[9][8] = new char[7][9][8];</code> 定义指向动态分配的三维字符数组的指针（7个9列8行的二维数组），p指向首个二维数组的地址，即(p+1)为第二个二维数组的地址；<br>&emsp;&emsp;同样的，char数据类型可换成其他数据类型，比如Point类类型，例：<br>&emsp;&emsp;<code>Point *p = new Point[2];</code> 定义指向动态分配的一维Point类对象数组的指针。</p>
+<p>&emsp;&emsp;<code>char *p = new char;</code> 定义指向动态分配的字符变量的指针；<br>&emsp;&emsp;<code>char *p = new char[3];</code> 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；<a id="more"></a><br>&emsp;&emsp;<code>char (*p)[3] = new char[2][3];</code> 定义指向动态分配的二维字符数组（三行）的指针，p指向数组首行的地址，即(p+1)为数组第二行的地址；<br>&emsp;&emsp;<code>char (*p)[9][8] = new char[7][9][8];</code> 定义指向动态分配的三维字符数组的指针（7个9列8行的二维数组），p指向首个二维数组的地址，即(p+1)为第二个二维数组的地址；<br>&emsp;&emsp;同样的，char数据类型可换成其他数据类型，比如Point类类型，例：<br>&emsp;&emsp;<code>Point *p = new Point[2];</code> 定义指向动态分配的一维Point类对象数组的指针。</p>
 <p>再介绍<strong>指针数组</strong>：<br>&emsp;&emsp;这里只举例一维指针数组：<code>Point *p[2];</code> 定义一个Point类对象的数组，数组里的两个元素都是指向Point类对象的指针（p[0], p[1]）。</p>
 <p>最后，<strong>指向动态指针数组的指针</strong>：</p>
 <p>&emsp;&emsp;<code>int *p = new int *[10];</code> //错误<br>&emsp;&emsp;<code>int **p = new int *[10];</code> //正确</p>
@@ -435,6 +433,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">常对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">常成员函数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">常数据成员</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">第一范式</a>
               </li>
              
@@ -452,18 +462,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">2NF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">常对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">常成员函数</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">常数据成员</a>
               </li>
              
               <li class="article-tag-list-item">
