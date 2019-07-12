@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 虚拟机 | Morty写字的地方</title>
+  <title>【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节 | Morty写字的地方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spr_Chan的个人技术博客，分享我在转行Java后端开发道路上的点滴历程">
-<meta name="keywords" content="技术博客，IT，CS，Java，后端开发，程序人生，CSDN，转行计算机，技术分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Morty写字的地方">
-<meta property="og:url" content="http://yoursite.com/tags/虚拟机/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：">
+<meta name="keywords" content="hexo,MacOS,个人博客,github,coding,博客主题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/【Hexo博客搭建 • 篇一】本地博客主题修改后，推到远端服务器的操作细节/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="Spr_Chan的个人技术博客，分享我在转行Java后端开发道路上的点滴历程">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-12T13:15:49.362Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Morty写字的地方">
-<meta name="twitter:description" content="Spr_Chan的个人技术博客，分享我在转行Java后端开发道路上的点滴历程">
+<meta name="twitter:title" content="【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：">
   
     <link rel="alternative" href="/atom.xml" title="Morty写字的地方" type="application/atom+xml">
   
@@ -154,76 +155,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-【Hexo博客搭建 • 篇一】本地博客主题修改后，推到远端服务器的操作细节" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/11/【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（macOS系统下）/" class="archive-article-date">
-  	<time datetime="2019-07-11T14:47:38.061Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/11/【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（macOS系统下）/">【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14的U盘启动盘</a>
+    <h1 class="article-title" itemprop="name">
+      【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/12/【Hexo博客搭建 • 篇一】本地博客主题修改后，推到远端服务器的操作细节/" class="archive-article-date">
+  	<time datetime="2019-07-12T13:08:58.612Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：<a id="more"></a><br>&emsp;&emsp;&emsp;&emsp;hexo clean&emsp;//清除缓存文件 (db.json) 和已生成的静态文件 (public)<br>&emsp;&emsp;&emsp;&emsp;hexo g&emsp;&emsp;&emsp;//生成缓存和静态文件<br>&emsp;&emsp;&emsp;&emsp;hexo d&emsp;&emsp;&emsp;//重新部署到服务器<br>hexo操作三连就行了，但是如果我们直接打开终端执行命令<code>hexo clean</code>是会报错的，正确做法是：<br>&emsp;&emsp;1. <code>cd /Users/你的用户文件夹名/你的blog文件夹名</code>//首先定位到博客文件夹<br>&emsp;&emsp;2. <code>sudo su</code>//开启root权限（超级管理员权限）<br>&emsp;&emsp;3. 依次执行命令<code>hexo cl</code> <code>hexo g</code> <code>hexo d</code>，将本地hexo文件推送到远端服务器。<br>回到我们的个人博客网站刷新即可。ps：刷新一次可能没反应，多刷新几次，或等待一会儿再刷新。</p>
+<p>&emsp;&emsp;很多时候，我们要对本地hexo文件进行多次修改调整，如果每次调整都需要执行<code>hexo cl</code> <code>hexo g</code> <code>hexo d</code>后再使用浏览器查看个人博客的修改效果，这样的效率是十分低下的，这时我们就可以使用<code>hexo s</code>命令，具体步骤如下：</p>
+<p>&emsp;&emsp;1. 修改完本地hexo文件后，执行<code>hexo cl</code> <code>hexo g</code>命令，接着执行<code>hexo s</code>，这时我们在浏览器地址栏输入<code>http://localhost:4000</code>，就可以访问我们最新修改后的博客网站（注意这时候本地文件并没有重新部署到服务器端，只是在本地生成的静态网页）。<br>&emsp;<br>&emsp;&emsp;2. 我们可以通过<code>hexo cl</code> <code>hexo g</code> <code>hexo s</code>的命令，在本地对博客进行多次修改配置，并通过网址<code>http://localhost:4000</code>查看博客效果。<br>&emsp;<br>&emsp;&emsp;3. 经过多次修改调整后，最后再执行命令<code>hexo d</code>将本地文件部署到远端服务器，这样的好处是只需要执行一次远端服务器部署，省去了每次修改都需要重新部署查看修改效果的麻烦。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">虚拟机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VMware</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MacOS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">黑苹果</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">个人博客</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">U盘启动盘</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">macOS Mojave</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">coding</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客主题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/12/【Hexo博客搭建 • 篇一】本地博客主题修改后，推到远端服务器的操作细节/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/07/12/【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -246,9 +360,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
