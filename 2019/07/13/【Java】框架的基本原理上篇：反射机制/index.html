@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4y8o4mo6pj309t07kjru.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4y8oga9kej30d50273yf.jpg">
-<meta property="og:updated_time" content="2019-07-13T07:28:15.650Z">
+<meta property="og:updated_time" content="2019-07-13T07:47:06.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】框架的基本原理上篇：反射机制">
 <meta name="twitter:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。">
@@ -194,7 +194,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.imcyc.day07.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">reflectTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//获取class目录下的配置文件的方式：</span></span><br><span class="line">        <span class="comment">//1. 获取类reflectTest的字节码文件对象（通过reflectTest.class方法）</span></span><br><span class="line">        <span class="comment">//2. 获取类reflectTest的字节码文件(对象)对应的类加载器（类加载器：将.class文件中的二进制流加载到内存中）</span></span><br><span class="line">        <span class="comment">//3. 类加载器寻找配置文件</span></span><br><span class="line">        <span class="comment">//      通过类加载器的getResourceAsStream方法，获取到配置文件的字节输入流</span></span><br><span class="line">        <span class="comment">//4. 通过Properties的方法load，读取配置文件的字节输入流，转换为一个Map集合。</span></span><br><span class="line">        InputStream is = reflectTest.class.getClassLoader().getResourceAsStream(<span class="string">"pro.properties"</span>);</span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        pro.load(is);<span class="comment">//配置文件转换为Map集合存储到pro中，例如键值对“key:methodName, value:eat”</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取配置文件中的数据</span></span><br><span class="line">        String className = pro.getProperty(<span class="string">"className"</span>);</span><br><span class="line">        String methodName = pro.getProperty(<span class="string">"methodName"</span>);</span><br><span class="line"></span><br><span class="line">        Class cls = Class.forName(className);<span class="comment">//获取className代表的类的字节码文件对象</span></span><br><span class="line">        Object obj = cls.newInstance();<span class="comment">//获取一个类对象</span></span><br><span class="line">        Method method = cls.getMethod(methodName);<span class="comment">//获取该类的方法eat</span></span><br><span class="line">        method.invoke(obj);<span class="comment">//执行此方法，参数传入要被执行的方法对应的类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;<font color="red">在不改动代码的前提下</font>，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法；这就是<font color="red">框架内部的基本原理</font>！<br>&emsp;&emsp;可以看到使用框架的优点其一：提高程序的可扩展性。</p>
-<p>&emsp;&emsp;<a href="https://blog.csdn.net/weixin_43971764/article/details/94412447" target="_blank" rel="noopener">中篇</a>及<a href="https://blog.csdn.net/weixin_43971764/article/details/94445610" target="_blank" rel="noopener">下篇</a>入口。</p>
+<p>&emsp;&emsp;<a href="http://imcyc.top/2019/07/13/%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%AD%E7%AF%87%EF%BC%9A%E6%B3%A8%E8%A7%A3%E4%BC%98%E5%8C%96/" target="_blank" rel="noopener">中篇</a>及<a href="http://imcyc.top/2019/07/13/%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8B%E7%AF%87%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%84%E6%A1%86%E6%9E%B6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E8%80%8C%E4%B8%8D%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%EF%BC%89/" target="_blank" rel="noopener">下篇</a>入口。</p>
 
       
 
@@ -568,26 +568,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">黑苹果</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">U盘启动盘</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">macOS Mojave</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">第一范式</a>
               </li>
              
@@ -605,6 +585,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">2NF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">黑苹果</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">U盘启动盘</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">macOS Mojave</a>
               </li>
              
               <li class="article-tag-list-item">
