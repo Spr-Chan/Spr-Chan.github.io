@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-12T13:15:49.362Z">
+<meta property="og:updated_time" content="2019-07-13T07:19:30.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：">
@@ -178,6 +178,7 @@
         <p>&emsp;&emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：<a id="more"></a><br>&emsp;&emsp;&emsp;&emsp;hexo clean&emsp;//清除缓存文件 (db.json) 和已生成的静态文件 (public)<br>&emsp;&emsp;&emsp;&emsp;hexo g&emsp;&emsp;&emsp;//生成缓存和静态文件<br>&emsp;&emsp;&emsp;&emsp;hexo d&emsp;&emsp;&emsp;//重新部署到服务器<br>hexo操作三连就行了，但是如果我们直接打开终端执行命令<code>hexo clean</code>是会报错的，正确做法是：<br>&emsp;&emsp;1. <code>cd /Users/你的用户文件夹名/你的blog文件夹名</code>//首先定位到博客文件夹<br>&emsp;&emsp;2. <code>sudo su</code>//开启root权限（超级管理员权限）<br>&emsp;&emsp;3. 依次执行命令<code>hexo cl</code> <code>hexo g</code> <code>hexo d</code>，将本地hexo文件推送到远端服务器。<br>回到我们的个人博客网站刷新即可。ps：刷新一次可能没反应，多刷新几次，或等待一会儿再刷新。</p>
 <p>&emsp;&emsp;很多时候，我们要对本地hexo文件进行多次修改调整，如果每次调整都需要执行<code>hexo cl</code> <code>hexo g</code> <code>hexo d</code>后再使用浏览器查看个人博客的修改效果，这样的效率是十分低下的，这时我们就可以使用<code>hexo s</code>命令，具体步骤如下：</p>
 <p>&emsp;&emsp;1. 修改完本地hexo文件后，执行<code>hexo cl</code> <code>hexo g</code>命令，接着执行<code>hexo s</code>，这时我们在浏览器地址栏输入<code>http://localhost:4000</code>，就可以访问我们最新修改后的博客网站（注意这时候本地文件并没有重新部署到服务器端，只是在本地生成的静态网页）。<br>&emsp;<br>&emsp;&emsp;2. 我们可以通过<code>hexo cl</code> <code>hexo g</code> <code>hexo s</code>的命令，在本地对博客进行多次修改配置，并通过网址<code>http://localhost:4000</code>查看博客效果。<br>&emsp;<br>&emsp;&emsp;3. 经过多次修改调整后，最后再执行命令<code>hexo d</code>将本地文件部署到远端服务器，这样的好处是只需要执行一次远端服务器部署，省去了每次修改都需要重新部署查看修改效果的麻烦。</p>
+<p><a href="http://imcyc.top/2019/07/12/%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%BA%8C%E3%80%91GitHub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/" target="_blank" rel="noopener">篇二</a>、<a href="http://imcyc.top/2019/07/12/%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%B8%89%E3%80%91%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E7%BB%91%E5%AE%9ACoding(%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE)%20+%20GitHub(%E5%9B%BD%E5%A4%96%E8%AE%BF%E9%97%AE)/" target="_blank" rel="noopener">篇三</a>入口。</p>
 
       
 
@@ -301,6 +302,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/13/【Java】框架的基本原理上篇：反射机制/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          【Java】框架的基本原理上篇：反射机制
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/12/【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)/" id="article-nav-older" class="article-nav-link-wrap">
@@ -515,6 +525,34 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">域名</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">框架基本原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">反射机制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">配置文件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
               </li>
              
               <li class="article-tag-list-item">
