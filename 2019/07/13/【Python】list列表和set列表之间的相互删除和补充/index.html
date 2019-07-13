@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>【Python】list列表和set列表之间的相互删除和补充 | Morty写字的地方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。">
+  <meta name="description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
 <meta name="keywords" content="Python,list,set">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Python】list列表和set列表之间的相互删除和补充">
 <meta property="og:url" content="http://yoursite.com/2019/07/13/【Python】list列表和set列表之间的相互删除和补充/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。">
+<meta property="og:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g4ya30yx6gj30c9048mx9.jpg">
-<meta property="og:updated_time" content="2019-07-13T08:16:38.754Z">
+<meta property="og:updated_time" content="2019-07-13T09:31:13.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Python】list列表和set列表之间的相互删除和补充">
-<meta name="twitter:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。">
+<meta name="twitter:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g4ya30yx6gj30c9048mx9.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Morty写字的地方" type="application/atom+xml">
@@ -177,8 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="First"><a href="#First" class="headerlink" title="First"></a>First</h4><p>&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。</p>
-<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>&emsp;&emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。<a id="more"></a></p>
+        <h4 id="First"><a href="#First" class="headerlink" title="First"></a>First</h4><p>&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。<a id="more"></a></p>
+<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>&emsp;&emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = set([<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Paul'</span>])</span><br><span class="line">L = [<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Bart'</span>, <span class="string">'Paul'</span>]</span><br><span class="line">x=-<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> m in L:</span><br><span class="line">    x+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> m in s:</span><br><span class="line">        L.pop(x)</span><br><span class="line">print L</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;尝试改进代码后，输出为[‘Lisa’, ‘Paul’]；</p>
@@ -512,10 +512,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -537,6 +533,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">博客主题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面向对象</a>
               </li>
              
               <li class="article-tag-list-item">
