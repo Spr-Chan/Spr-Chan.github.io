@@ -157,7 +157,7 @@ body {
   font-size: 14px;
   line-height: 2;
   color: #555;
-  background: #eee;
+  background: url("/images/background.png");
 }
 @media (max-width: 991px) {
   body {
@@ -1703,7 +1703,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6f1d;
+  background: #0eff53;
 }
 .feed-link,
 .chat {
