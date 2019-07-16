@@ -324,7 +324,7 @@ kbd {
   border: 1px solid #ccc;
   border-radius: 0.2em;
   box-shadow: 0.1em 0.1em 0.2em rgba(0,0,0,0.1);
-  background-color: #404040;
+  background-color: #f9f9f9;
   font-family: inherit;
   background-image: linear-gradient(top, #eee, #fff, #eee);
   padding: 0.1em 0.3em;
@@ -1703,7 +1703,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57f2f9;
+  background: #4bff2f;
 }
 .feed-link,
 .chat {
