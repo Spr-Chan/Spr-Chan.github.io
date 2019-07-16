@@ -29,7 +29,7 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2">
 
 
 
@@ -106,7 +106,7 @@
 <meta name="keywords" content="技术博客，IT，CS，Java，后端开发，程序人生，CSDN，转行计算机，技术分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Morty写字的地方">
-<meta property="og:url" content="http://yoursite.com/tags/GitHub/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/github/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它">
 <meta property="og:locale" content="zh-CN">
@@ -120,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/GitHub/">
+  <link rel="canonical" href="http://yoursite.com/tags/github/">
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>标签: GitHub | Morty写字的地方</title>
+  <title>标签: github | Morty写字的地方</title>
   
 
 
@@ -341,7 +341,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>GitHub<small>标签</small>
+        <h1>github<small>标签</small>
         </h1>
       </div>
 
@@ -353,42 +353,16 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/07/12/【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)/" itemprop="url">
+          <a class="post-title-link" href="/2019/07/12/【Hexo博客搭建 • 篇一】本地博客主题修改后，推到远端服务器的操作细节/" itemprop="url">
             
-              <span itemprop="name">【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-12T05:45:55-07:00" content="2019-07-12">
-          07-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/07/12/【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名/" itemprop="url">
-            
-              <span itemprop="name">【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名</span>
+              <span itemprop="name">【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节</span>
             
           </a>
         
       </h2>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-12T05:45:45-07:00" content="2019-07-12">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-07-12T06:08:58-07:00" content="2019-07-12">
           07-12
         </time>
       </div>
@@ -1311,6 +1285,60 @@
 
     $(function() {
       $.get('https://app-router.leancloud.cn/2/route?appId=' + 'jWkhbmugUPCnD6VY9AeQEwLd-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'jWkhbmugUPCnD6VY9AeQEwLd-gzGzoHsz',
+                'X-LC-Key': 'TqFQzOiCxOp6LReSMhNWresA',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            if ($('.post-title-link').length >= 1) {
+              showTime(Counter);
+            }
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
+UPCnD6VY9AeQEwLd-gzGzoHsz')
         .done(function({ api_server }) {
           var Counter = function(method, url, data) {
             return $.ajax({
