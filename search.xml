@@ -259,8 +259,8 @@
         <category>小技巧</category>
       </categories>
       <tags>
-        <tag>win10</tag>
         <tag>小技巧</tag>
+        <tag>win10</tag>
         <tag>Windows10</tag>
         <tag>开始菜单</tag>
         <tag>磁贴</tag>
@@ -342,8 +342,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>注解</tag>
         <tag>框架基本原理</tag>
+        <tag>注解</tag>
         <tag>反射</tag>
       </tags>
   </entry>
@@ -356,8 +356,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>注解</tag>
         <tag>框架基本原理</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -414,10 +414,10 @@
         <category>个人博客</category>
       </categories>
       <tags>
+        <tag>个人博客</tag>
         <tag>Hexo</tag>
         <tag>GitHub</tag>
         <tag>Coding</tag>
-        <tag>个人博客</tag>
         <tag>域名</tag>
       </tags>
   </entry>
@@ -498,8 +498,8 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>Visual Studio</tag>
         <tag>C++</tag>
+        <tag>Visual Studio</tag>
       </tags>
   </entry>
 </search>
