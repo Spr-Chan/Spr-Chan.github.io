@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。">
+  <meta name="description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。  &amp;emsp;&amp;emsp;通过使用动态绑定，我们能用同一段代码分别处理基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个虚函数时将发生动态绑">
 <meta name="keywords" content="C++,继承,动态绑定,虚函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/C++  为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。">
+<meta property="og:description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。  &amp;emsp;&amp;emsp;通过使用动态绑定，我们能用同一段代码分别处理基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个虚函数时将发生动态绑">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T07:24:10.925Z">
+<meta property="og:updated_time" content="2019-07-18T07:40:48.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？">
-<meta name="twitter:description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。">
+<meta name="twitter:description" content="继承和动态绑定对程序的编写有两方面的影响：&amp;emsp;&amp;emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&amp;emsp;&amp;emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。  &amp;emsp;&amp;emsp;通过使用动态绑定，我们能用同一段代码分别处理基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个虚函数时将发生动态绑">
 
 
 
@@ -404,6 +404,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:40:48" itemprop="dateModified" datetime="2019-07-18T00:40:48-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -477,7 +491,7 @@
       
 
       
-        <p><font color="red">继承和动态绑定</font>对程序的编写有两方面的影响：<br>&emsp;&emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；<br>&emsp;&emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。<a id="more"></a></p>
+        <p><font color="red">继承和动态绑定</font>对程序的编写有两方面的影响：<br>&emsp;&emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；<br>&emsp;&emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。</p>
 <hr>
 <p>&emsp;&emsp;通过使用动态绑定，我们能用<font color="red">同一段代码分别处理</font>基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个<font color="red">虚函数</font>时将发生动态绑定。动态绑定，又称<font color="red">运行时的绑定</font>，顾名思义，即在程序运行时选择调用哪个版本(对象)的虚函数。</p>
 <p>&emsp;&emsp;有虚函数，程序就可以在运行阶段做决定到底选择哪个版本的虚函数；没有虚函数，程序就会在编译阶段静态绑定(不做选择)。那个为什么要大费周章地使用动态绑定、使用虚函数呢？这样是为了能使用同一段代码（一个函数，函数的形参有基类的引用或指针），用来处理很多的类(基类和其派生类们)的对象。</p>

@@ -102,19 +102,19 @@
 
 
 
-  <meta name="description" content="有如下类定义：">
+  <meta name="description" content="有如下类定义：class MyClass{public：&amp;emsp;&amp;emsp;MyClass(int d=0): val(d) { }&amp;emsp;&amp;emsp;____    //运算符函数+的声明private：&amp;emsp;&amp;emsp;int val；}；若要使语句序列MyClass x(2), y(4), z；z=7+y；y=x+3；能够正常运行，横线处的声明语句应为（）。A)  friend">
 <meta name="keywords" content="C++,引用,临时无名对象,重载运算符函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++】引用可以指向临时无名对象吗？">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/【C++】引用可以指向临时无名对象吗？/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="有如下类定义：">
+<meta property="og:description" content="有如下类定义：class MyClass{public：&amp;emsp;&amp;emsp;MyClass(int d=0): val(d) { }&amp;emsp;&amp;emsp;____    //运算符函数+的声明private：&amp;emsp;&amp;emsp;int val；}；若要使语句序列MyClass x(2), y(4), z；z=7+y；y=x+3；能够正常运行，横线处的声明语句应为（）。A)  friend">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4yimv3kbcj30ce03xdg3.jpg">
-<meta property="og:updated_time" content="2019-07-17T07:19:27.787Z">
+<meta property="og:updated_time" content="2019-07-18T07:43:24.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】引用可以指向临时无名对象吗？">
-<meta name="twitter:description" content="有如下类定义：">
+<meta name="twitter:description" content="有如下类定义：class MyClass{public：&amp;emsp;&amp;emsp;MyClass(int d=0): val(d) { }&amp;emsp;&amp;emsp;____    //运算符函数+的声明private：&amp;emsp;&amp;emsp;int val；}；若要使语句序列MyClass x(2), y(4), z；z=7+y；y=x+3；能够正常运行，横线处的声明语句应为（）。A)  friend">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4yimv3kbcj30ce03xdg3.jpg">
 
 
@@ -406,6 +406,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:43:24" itemprop="dateModified" datetime="2019-07-18T00:43:24-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -479,7 +493,7 @@
       
 
       
-        <p>有如下类定义：<a id="more"></a><br>class MyClass{<br>public：<br>&emsp;&emsp;MyClass(int d=0): val(d) { }<br>&emsp;&emsp;<strong><strong>____</strong></strong>    //运算符函数+的声明<br>private：<br>&emsp;&emsp;int val；<br>}；<br>若要使语句序列<br>MyClass x(2), y(4), z；<br>z=7+y；<br>y=x+3；<br>能够正常运行，横线处的声明语句应为（）。<br>A)  friend MyClass operator+(MyClass, MyClass);<br>B)  friend MyClass operator+(MyClass&amp;, MyClass&amp;);<br>C)  friend MyClass operator+(MyClass, MyClass&amp;);<br>D)  friend MyClass operator+(MyClass&amp;, MyClass);</p>
+        <p>有如下类定义：<br>class MyClass{<br>public：<br>&emsp;&emsp;MyClass(int d=0): val(d) { }<br>&emsp;&emsp;<strong><strong>____</strong></strong>    //运算符函数+的声明<br>private：<br>&emsp;&emsp;int val；<br>}；<br>若要使语句序列<br>MyClass x(2), y(4), z；<br>z=7+y；<br>y=x+3；<br>能够正常运行，横线处的声明语句应为（）。<br>A)  friend MyClass operator+(MyClass, MyClass);<br>B)  friend MyClass operator+(MyClass&amp;, MyClass&amp;);<br>C)  friend MyClass operator+(MyClass, MyClass&amp;);<br>D)  friend MyClass operator+(MyClass&amp;, MyClass);</p>
 <p>【解析】程序中MyClass类给出一个默认构造函数，形参d提整数类型，默认值为0，在成员初始化列表中使用形参d初始化val成员；语句序列中两个表达式：7+y和x+3说明加法运算符函数的两个操作数可以是整型，也可以是MyClass类型，如果是整型的话，需要使用默认构造函数<font color="red">将整数类型隐式转换成临时的MyClass类对象</font>，此时赋给运算符函数时，就<font color="red">不可以使用引用类型</font>了，所以选项B、C、D都是错误的，选项A是正确的。</p>
 <p>【个人解析】<br>&emsp;&emsp;为什么将整型隐式转换成临时的类对象之后，就不能将临时对象的引用传入 “friend MyClass operator+(MyClass&amp;, MyClass&amp;)”？</p>
 <p>&emsp;&emsp;因为引用的定义是：定义一个引用时，必须同时进行初始化，使它指向一个<font color="red">已经存在</font>的对象。简单地说，引用必须指向一个“有名”的对象。</p>

@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="先来看一道C++二级真题+未来教育解析：">
+  <meta name="description" content="先来看一道C++二级真题+未来教育解析： &amp;emsp;&amp;emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略">
 <meta name="keywords" content="C++,省略模板实参,模板函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++】模板实参中的参数可以省略的情况分析">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/C++  模板实参中的参数可以省略的情况分析/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="先来看一道C++二级真题+未来教育解析：">
+<meta property="og:description" content="先来看一道C++二级真题+未来教育解析： &amp;emsp;&amp;emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T07:24:03.686Z">
+<meta property="og:updated_time" content="2019-07-18T07:40:45.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】模板实参中的参数可以省略的情况分析">
-<meta name="twitter:description" content="先来看一道C++二级真题+未来教育解析：">
+<meta name="twitter:description" content="先来看一道C++二级真题+未来教育解析： &amp;emsp;&amp;emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略">
 
 
 
@@ -404,6 +404,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:40:45" itemprop="dateModified" datetime="2019-07-18T00:40:45-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -477,7 +491,7 @@
       
 
       
-        <p>先来看一道C++二级真题+未来教育解析：<a id="more"></a></p>
+        <p>先来看一道C++二级真题+未来教育解析：</p>
 <p>&emsp;&emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。<br>&emsp;&emsp;&emsp;&emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略<br>&emsp;&emsp;&emsp;&emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略<br>&emsp;&emsp;&emsp;&emsp;C）对于虚拟类型参数所对应的模板实参，若能够省略则必须省略<br>&emsp;&emsp;&emsp;&emsp;D）对于常规参数所对应的模板实参，任何情况下都不能省略</p>
 <p>【未来教育解析】<br>&emsp;&emsp;在调用一个模板函数时，编译系统需要足够的信息来判别每个虚拟类型参数所对应的实际类型，可以从两个不同的渠道获得这样的信息：从模板实参表（用“&lt;&gt;”括起来的参数表）或<del>从模板函数实参表（用“()”括起来的参数表）</del>（这句话表述不准确，应该表述为：<font color="red">从模板函数的形参表（用“()”括起来的参数表）中的形参所对应的实参</font>） 。如果从后者获得的信息已经能够判定其中部分或全部虚拟类型参教所对应的实际参数，而且它们又正好是参数表中最后的若干参数，则模板实参表中的那几个参数可以省略。如果模板实参表中的实参都被省略了，则空表“&lt;&gt;”也可以不要，因此选项D错误。反之，对于某个模板实参，如果从模板函数的实参表中无法获得同样的信息，就不能省略；或者虽然能够获得同样的信息，但在它后面还有其他不能省略的实参，则其自身还是不能省略。本题答案为A选项。</p>
 <p>【个人解析】<br>&emsp;&emsp;代码举例：</p>

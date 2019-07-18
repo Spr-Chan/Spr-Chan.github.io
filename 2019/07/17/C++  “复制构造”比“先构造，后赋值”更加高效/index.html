@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是：">
+  <meta name="description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是： 12345678//程序 aint main() &amp;#123;	Student t1;	Student t2(t1);   //1	Student t3 = t1;  //2		return 0;&amp;#125;  123456789//程序 bint main() &amp;#123;	Stud">
 <meta name="keywords" content="Visual Studio,C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++】“复制构造”比“先构造，后赋值”更加高效">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/C++  “复制构造”比“先构造，后赋值”更加高效/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是：">
+<meta property="og:description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是： 12345678//程序 aint main() &amp;#123;	Student t1;	Student t2(t1);   //1	Student t3 = t1;  //2		return 0;&amp;#125;  123456789//程序 bint main() &amp;#123;	Stud">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T07:13:09.000Z">
+<meta property="og:updated_time" content="2019-07-18T07:43:40.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】“复制构造”比“先构造，后赋值”更加高效">
-<meta name="twitter:description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是：">
+<meta name="twitter:description" content="题目&amp;emsp;&amp;emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是： 12345678//程序 aint main() &amp;#123;	Student t1;	Student t2(t1);   //1	Student t3 = t1;  //2		return 0;&amp;#125;  123456789//程序 bint main() &amp;#123;	Stud">
 
 
 
@@ -404,6 +404,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:43:40" itemprop="dateModified" datetime="2019-07-18T00:43:40-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -477,7 +491,7 @@
       
 
       
-        <p><strong>题目</strong><br>&emsp;&emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是：<a id="more"></a></p>
+        <p><strong>题目</strong><br>&emsp;&emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序 a</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Student t1;</span><br><span class="line">	<span class="function">Student <span class="title">t2</span><span class="params">(t1)</span></span>;   <span class="comment">//1</span></span><br><span class="line">	Student t3 = t1;  <span class="comment">//2</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//程序 b</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Student t1;</span><br><span class="line">	<span class="function">Student <span class="title">t2</span><span class="params">(t1)</span></span>;   <span class="comment">//1</span></span><br><span class="line">	Student t3;</span><br><span class="line">	t3 = t1;		  <span class="comment">//2</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

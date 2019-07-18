@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;">
+  <meta name="description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
 <meta name="keywords" content="C++,常变量,常指针">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 【常&#x2F;非常变量地址赋给常&#x2F;非常指针】暨【常&#x2F;非常变量值赋给常&#x2F;非常变量】8种情况对错分析">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/C++ 【常_非常变量地址赋给常_非常指针】暨【常_非常变量值赋给常_非常变量】8种情况对错分析/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;">
+<meta property="og:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T07:24:52.013Z">
+<meta property="og:updated_time" content="2019-07-18T07:40:00.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ 【常&#x2F;非常变量地址赋给常&#x2F;非常指针】暨【常&#x2F;非常变量值赋给常&#x2F;非常变量】8种情况对错分析">
-<meta name="twitter:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;">
+<meta name="twitter:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
 
 
 
@@ -404,6 +404,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:40:00" itemprop="dateModified" datetime="2019-07-18T00:40:00-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -479,7 +493,6 @@
       
         <h4 id="常-非常变量地址赋给常-非常指针"><a href="#常-非常变量地址赋给常-非常指针" class="headerlink" title="常/非常变量地址赋给常/非常指针"></a>常/非常变量地址赋给常/非常指针</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">正确：</span><br><span class="line">	A. <span class="keyword">int</span> a, *p = &amp;a;</span><br><span class="line">	B. <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a;</span><br><span class="line">	C. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a;</span><br><span class="line">错误：</span><br><span class="line">	D. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">int</span> *p = &amp;a;</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
 <p>总结：<br>&emsp;&emsp;对于把<font color="red">变量地址赋值给指针</font>的情况，普通变量地址可以赋给普通指针/常指针，常变量地址可以赋给常指针、不能赋给普通指针。</p>
 <h4 id="常-非常变量值赋给常-非常变量"><a href="#常-非常变量值赋给常-非常变量" class="headerlink" title="常/非常变量值赋给常/非常变量"></a>常/非常变量值赋给常/非常变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">正确：</span><br><span class="line">	A. <span class="keyword">int</span> a, b; b = a;</span><br><span class="line">	B. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">int</span> b; b = a;</span><br><span class="line">错误：</span><br><span class="line">	C. <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> b; b = a;</span><br><span class="line">	D. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> b; b = a;</span><br></pre></td></tr></table></figure>
 

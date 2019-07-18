@@ -102,19 +102,19 @@
 
 
 
-  <meta name="description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
+  <meta name="description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。 12345678s = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]x=-1for m in L:    x">
 <meta name="keywords" content="Python,list,set">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Python】list列表和set列表之间的相互删除和补充">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/【Python】list列表和set列表之间的相互删除和补充/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
+<meta property="og:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。 12345678s = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]x=-1for m in L:    x">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g4ya30yx6gj30c9048mx9.jpg">
-<meta property="og:updated_time" content="2019-07-17T07:21:45.708Z">
+<meta property="og:updated_time" content="2019-07-18T07:42:09.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Python】list列表和set列表之间的相互删除和补充">
-<meta name="twitter:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。">
+<meta name="twitter:description" content="First&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&amp;emsp;&amp;emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。 12345678s = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]x=-1for m in L:    x">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79ly1g4ya30yx6gj30c9048mx9.jpg">
 
 
@@ -406,6 +406,20 @@
           
 
           
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:42:09" itemprop="dateModified" datetime="2019-07-18T00:42:09-07:00">2019-07-18</time>
+              </span>
+            
+          
 
           
             <span class="post-meta-item">
@@ -479,7 +493,7 @@
       
 
       
-        <h4 id="First"><a href="#First" class="headerlink" title="First"></a>First</h4><p>&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。<a id="more"></a></p>
+        <h4 id="First"><a href="#First" class="headerlink" title="First"></a>First</h4><p>&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。</p>
 <h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>&emsp;&emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = set([<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Paul'</span>])</span><br><span class="line">L = [<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Bart'</span>, <span class="string">'Paul'</span>]</span><br><span class="line">x=-<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> m in L:</span><br><span class="line">    x+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> m in s:</span><br><span class="line">        L.pop(x)</span><br><span class="line">print L</span><br></pre></td></tr></table></figure>
 

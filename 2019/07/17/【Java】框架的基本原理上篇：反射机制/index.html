@@ -102,20 +102,20 @@
 
 
 
-  <meta name="description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。">
+  <meta name="description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;好处：&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;1. 可以在程序运行过程中，操作这些对象；&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2.">
 <meta name="keywords" content="Java,框架基本原理,反射机制,框架,配置文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】框架的基本原理上篇：反射机制">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/【Java】框架的基本原理上篇：反射机制/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。">
+<meta property="og:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;好处：&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;1. 可以在程序运行过程中，操作这些对象；&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4y8o4mo6pj309t07kjru.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4y8oga9kej30d50273yf.jpg">
-<meta property="og:updated_time" content="2019-07-18T05:24:25.750Z">
+<meta property="og:updated_time" content="2019-07-18T07:38:07.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】框架的基本原理上篇：反射机制">
-<meta name="twitter:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。">
+<meta name="twitter:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;好处：&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;1. 可以在程序运行过程中，操作这些对象；&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2.">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4y8o4mo6pj309t07kjru.jpg">
 
 
@@ -402,13 +402,23 @@
                 
               
 
-              <time title="创建时间：2019-07-17 00:20:34 / 修改时间：22:24:25" itemprop="dateCreated datePublished" datetime="2019-07-17T00:20:34-07:00">2019-07-17</time>
+              <time title="创建时间：2019-07-17 00:20:34" itemprop="dateCreated datePublished" datetime="2019-07-17T00:20:34-07:00">2019-07-17</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-18 00:38:07" itemprop="dateModified" datetime="2019-07-18T00:38:07-07:00">2019-07-18</time>
+              </span>
             
           
 
@@ -484,7 +494,7 @@
       
 
       
-        <p>框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；<br>&emsp;&emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。<a id="more"></a><br>&emsp;&emsp;&emsp;&emsp;好处：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1. 可以在程序运行过程中，操作这些对象；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2. 可以解耦，提高程序的可扩展性。</p>
+        <p>框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；<br>&emsp;&emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。<br>&emsp;&emsp;&emsp;&emsp;好处：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1. 可以在程序运行过程中，操作这些对象；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2. 可以解耦，提高程序的可扩展性。</p>
 <p>&emsp;&emsp;这里使用一个简单的案例，介绍一下框架的基本原理。准备工作：新建一个Person类、新建一个pro.properties的配置文件、新建一个测试类。</p>
 <div align="center">
 <img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4y8o4mo6pj309t07kjru.jpg">
