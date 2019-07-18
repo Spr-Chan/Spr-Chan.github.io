@@ -182,84 +182,84 @@ h6 {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 h1 {
-  font-size: 16px;
+  font-size: 22px;
 }
 h1 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 12px;
+    font-size: 18px;
   }
   h1 code {
     font-size: 1em;
   }
 }
 h2 {
-  font-size: 14px;
+  font-size: 20px;
 }
 h2 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h2 {
-    font-size: 10px;
+    font-size: 16px;
   }
   h2 code {
     font-size: 1em;
   }
 }
 h3 {
-  font-size: 12px;
+  font-size: 18px;
 }
 h3 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 8px;
+    font-size: 14px;
   }
   h3 code {
     font-size: 1em;
   }
 }
 h4 {
-  font-size: 10px;
+  font-size: 16px;
 }
 h4 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h4 {
-    font-size: 6px;
+    font-size: 12px;
   }
   h4 code {
     font-size: 1em;
   }
 }
 h5 {
-  font-size: 8px;
+  font-size: 14px;
 }
 h5 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h5 {
-    font-size: 4px;
+    font-size: 10px;
   }
   h5 code {
     font-size: 1em;
   }
 }
 h6 {
-  font-size: 6px;
+  font-size: 12px;
 }
 h6 code {
   font-size: 1em;
 }
 @media (max-width: 767px) {
   h6 {
-    font-size: 2px;
+    font-size: 8px;
   }
   h6 code {
     font-size: 1em;
@@ -1746,7 +1746,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f758a2;
+  background: #f7818a;
 }
 .feed-link,
 .chat {
