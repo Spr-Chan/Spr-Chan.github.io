@@ -106,19 +106,19 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;若已知 a[3][7];```，则用指针表示数组a中的元素时，下列表示中错误的是（）。12&amp;amp;emsp;&amp;amp;emsp;A）```* (a+1)[5] &amp;emsp;&amp;emsp;B）(* a+3)```1&amp;amp;emsp;&amp;amp;emsp;C）```* (* (a+1)) &amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;em">
+  <meta name="description" content="&amp;emsp;&amp;emsp;若已知 int a[3][7];，则用指针表示数组a中的元素时，下列表示中错误的是（）。 &amp;emsp;&amp;emsp;A）* (a+1)[5]&amp;emsp;&amp;emsp;B）* (* a+3)&amp;emsp;&amp;emsp;C）* (* (a+1))&amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;emsp;&amp;emsp;(a+1)相当于指向a[1]的指针">
 <meta name="keywords" content="C++,二级,数组,指针">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++二级难题图解】对二维数组数组名作指针的考察">
 <meta property="og:url" content="https://www.imcyc.ml/2019/07/17/【C++二级难题图解】对二维数组数组名作指针的考察/index.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;若已知 a[3][7];```，则用指针表示数组a中的元素时，下列表示中错误的是（）。12&amp;amp;emsp;&amp;amp;emsp;A）```* (a+1)[5] &amp;emsp;&amp;emsp;B）(* a+3)```1&amp;amp;emsp;&amp;amp;emsp;C）```* (* (a+1)) &amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;em">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;若已知 int a[3][7];，则用指针表示数组a中的元素时，下列表示中错误的是（）。 &amp;emsp;&amp;emsp;A）* (a+1)[5]&amp;emsp;&amp;emsp;B）* (* a+3)&amp;emsp;&amp;emsp;C）* (* (a+1))&amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;emsp;&amp;emsp;(a+1)相当于指向a[1]的指针">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4yhtxndr6j30ke07tdgo.jpg">
-<meta property="og:updated_time" content="2019-07-18T07:43:12.420Z">
+<meta property="og:updated_time" content="2019-07-19T09:41:08.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++二级难题图解】对二维数组数组名作指针的考察">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;若已知 a[3][7];```，则用指针表示数组a中的元素时，下列表示中错误的是（）。12&amp;amp;emsp;&amp;amp;emsp;A）```* (a+1)[5] &amp;emsp;&amp;emsp;B）(* a+3)```1&amp;amp;emsp;&amp;amp;emsp;C）```* (* (a+1)) &amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;em">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;若已知 int a[3][7];，则用指针表示数组a中的元素时，下列表示中错误的是（）。 &amp;emsp;&amp;emsp;A）* (a+1)[5]&amp;emsp;&amp;emsp;B）* (* a+3)&amp;emsp;&amp;emsp;C）* (* (a+1))&amp;emsp;&amp;emsp;D）* (&amp;amp;a[0][0]+2) 【解析】     &amp;emsp;&amp;emsp;(a+1)相当于指向a[1]的指针">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4yhtxndr6j30ke07tdgo.jpg">
 
 
@@ -420,7 +420,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-18 00:43:12" itemprop="dateModified" datetime="2019-07-18T00:43:12-07:00">2019-07-18</time>
+                <time title="修改时间：2019-07-19 02:41:08" itemprop="dateModified" datetime="2019-07-19T02:41:08-07:00">2019-07-19</time>
               </span>
             
           
@@ -497,9 +497,8 @@
       
 
       
-        <p>&emsp;&emsp;若已知 <figure class="highlight plain"><figcaption><span>a[3][7];```，则用指针表示数组a中的元素时，下列表示中错误的是（）。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&amp;emsp;&amp;emsp;A）```* (a+1)[5]</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;B）<figure class="highlight plain"><figcaption><span>(* a+3)```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;emsp;&amp;emsp;C）```* (* (a+1))</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;D）<code>* (&amp;a[0][0]+2)</code></p>
+        <p>&emsp;&emsp;若已知 <code>int a[3][7];</code>，则用指针表示数组a中的元素时，下列表示中错误的是（）。</p>
+<p>&emsp;&emsp;A）* (a+1)[5]<br>&emsp;&emsp;B）* (* a+3)<br>&emsp;&emsp;C）* (* (a+1))<br>&emsp;&emsp;D）* (&amp;a[0][0]+2)</p>
 <p>【解析】</p>
 <div align="center">
 <img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4yhtxndr6j30ke07tdgo.jpg"><br><br>
@@ -1012,15 +1011,6 @@
                   
                     
                   
-                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="noopener" target="_blank"><i class="fa fa-fw fa-copyright"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
                   <a href="https://music.163.com/#/user/home?id=90593811" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=90593811" rel="noopener" target="_blank"><i class="fa fa-fw fa-headphones"></i></a>
                 </span>
               
@@ -1030,7 +1020,16 @@
                   
                     
                   
-                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="noopener" target="_blank"><i class="fa fa-fw fa-bimobject"></i></a>
+                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="noopener" target="_blank"><i class="fa fa-fw fa-contao"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="noopener" target="_blank"><i class="fa fa-fw fa-bold"></i></a>
                 </span>
               
             </div>
@@ -1048,11 +1047,15 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://bigleek.ml/" title="https://bigleek.ml/" rel="noopener" target="_blank">bigleek</a>
+                    <a href="https://bigleek.ml" title="https://bigleek.ml" rel="noopener" target="_blank">leek</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="noopener" target="_blank">菜菜</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://water1127.github.io" title="https://water1127.github.io" rel="noopener" target="_blank">Water</a>
                   </li>
                 
               </ul>
