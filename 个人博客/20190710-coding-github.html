@@ -120,7 +120,7 @@
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5viihtaj30zp06ymxs.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5v8b44aj316t09h755.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g4y5urqyacj316109i3z9.jpg">
-<meta property="og:updated_time" content="2019-07-20T11:28:36.727Z">
+<meta property="og:updated_time" content="2019-07-20T13:08:44.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)">
 <meta name="twitter:description" content="篇一、篇二入口。 前言&amp;emsp;&amp;emsp;在【Hexo博客搭建 • 篇二】中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，但是由于Github服务器的原因，导致访问个人博客不够稳定。本篇将介绍使用一个自定义域名同时绑定Coding + GitHub 的方法，点击imcyc.top，国内用户访问到的是Coding仓库，而国外用户访问到的则是GitHub仓库，堪称完美的解决方案。 hexo">
@@ -425,7 +425,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-20 19:28:36" itemprop="dateModified" datetime="2019-07-20T19:28:36+08:00">2019-07-20</time>
+                <time title="修改时间：2019-07-20 21:08:44" itemprop="dateModified" datetime="2019-07-20T21:08:44+08:00">2019-07-20</time>
               </span>
             
           
@@ -505,16 +505,8 @@
         <p><a href="https://www.imcyc.ml/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190707-hexo-cl-g-d.html">篇一</a>、<a href="https://www.imcyc.ml/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190708-github-domain.html">篇二</a>入口。</p>
 <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&emsp;&emsp;在<a href="http://imcyc.top/2019/07/12/%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%BA%8C%E3%80%91GitHub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D/" target="_blank" rel="noopener">【Hexo博客搭建 • 篇二】</a>中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，但是由于Github服务器的原因，导致访问个人博客不够稳定。本篇将介绍使用一个自定义域名同时绑定Coding + GitHub 的方法，点击<a href="https://imcyc.top/" target="_blank" rel="noopener">imcyc.top</a>，国内用户访问到的是Coding仓库，而国外用户访问到的则是GitHub仓库，堪称完美的解决方案。</p>
 <h4 id="hexo托管到coding服务器"><a href="#hexo托管到coding服务器" class="headerlink" title="hexo托管到coding服务器"></a>hexo托管到coding服务器</h4><p>&emsp;&emsp;将hexo托管到coding服务器上，过程与将hexo托管到github服务器上大同小异。</p>
-<p>&emsp;&emsp;1. 在<a href="https://dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发者平台</a>上注册账号，接着新建一个项目，注意项目地址必须填：你的用户名.coding.me。</p>
-<div align="center">
-<img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4y5vscf1nj316c0mcwfn.jpg">
-</div>
-
-<p>&emsp;&emsp;2. 创建完项目后，点击进入项目代码-&gt;Pages服务-&gt;勾选同意-&gt;开启Coding Pages。</p>
-<div align="center">
-<img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5vpizp6j31810mb75s.jpg">
-</div>
-
+<p>&emsp;&emsp;1. 在<a href="https://dev.tencent.com/" target="_blank" rel="noopener">腾讯云开发者平台</a>上注册账号，接着新建一个项目，注意项目地址必须填：你的用户名.coding.me。<br><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4y5vscf1nj316c0mcwfn.jpg" alt></p>
+<p>&emsp;&emsp;2. 创建完项目后，点击进入项目代码-&gt;Pages服务-&gt;勾选同意-&gt;开启Coding Pages。<br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5vpizp6j31810mb75s.jpg" alt></p>
 <p>&emsp;&emsp;3. 绑定SSH公钥，腾讯云开发者平台的<a href="https://dev.tencent.com/help/doc/faq/bbe781aee786/ssh" target="_blank" rel="noopener">帮助文档</a>就很详细，按这个来就行了。</p>
 <p>&emsp;&emsp;4. 回到MacOS，修改自己的blog文件夹下的_config.yml，将其中的一段代码改为如下所示：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: https:<span class="comment">//github.com/Spr-Chan/Spr-Chan.github.io.git</span></span><br><span class="line">    coding: https:<span class="comment">//dev.tencent.com/u/spr_chan/p/spr_chan.coding.me.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
@@ -522,26 +514,10 @@
 <p>注意github和coding的url是因人而异的。</p>
 <p>&emsp;&emsp;5. 终端定位到/Users/spr_chan/blog并输入sudo su开启超级管理员模式，使用hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 就能将hexo同时推送到github和coding两个仓库，岂不美哉~</p>
 <h4 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h4><p>&emsp;&emsp;在<a href="https://blog.csdn.net/weixin_43971764/article/details/94976207" target="_blank" rel="noopener">【Hexo博客搭建 • 篇二】</a>中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，而Coding仓库绑定自定义域名的方法与前者大同小异。</p>
-<p>&emsp;&emsp;1. 进入项目详情页面，找到Pages服务，点击进入设置。</p>
-<div align="center">
-<img src="http://ww4.sinaimg.cn/large/006tNc79ly1g4y5vm0ly9j31g40i5t9p.jpg">
-</div>
-
-<p>&emsp;&emsp;2. 输入以购买的自定义域名，点击绑定，这时会出现警告信息。</p>
-<div align="center">
-<img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5viihtaj30zp06ymxs.jpg">
-</div>
-
-<p>&emsp;&emsp;3. 按照警告信息的要求，我们在域名解析界面添加相应的解析，如下图所示。</p>
-<div align="center">
-<img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5v8b44aj316t09h755.jpg">
-</div>
-
-<p>&emsp;&emsp;4. 此外再增加四条解析，注意GitHub解析路径选择国外，用以国外用户访问；Coding解析路径选择默认，用以国内用户访问。</p>
-<div align="center">
-<img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4y5urqyacj316109i3z9.jpg">
-</div>
-
+<p>&emsp;&emsp;1. 进入项目详情页面，找到Pages服务，点击进入设置。<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g4y5vm0ly9j31g40i5t9p.jpg" alt></p>
+<p>&emsp;&emsp;2. 输入以购买的自定义域名，点击绑定，这时会出现警告信息。<br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5viihtaj30zp06ymxs.jpg" alt></p>
+<p>&emsp;&emsp;3. 按照警告信息的要求，我们在域名解析界面添加相应的解析，如下图所示。<br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y5v8b44aj316t09h755.jpg" alt></p>
+<p>&emsp;&emsp;4. 此外再增加四条解析，注意GitHub解析路径选择国外，用以国外用户访问；Coding解析路径选择默认，用以国内用户访问。<br><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4y5urqyacj316109i3z9.jpg" alt></p>
 <p>&emsp;&emsp;5. 回到Coding，发现域名已经绑定成功，稍等片刻（等待阿里云解析完成），即可使用<a href="https://imcyc.top/" target="_blank" rel="noopener">自定义域名</a>访问个人博客，完结撒花~~</p>
 
       
@@ -1172,7 +1148,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">68k</span>
   
 
   
