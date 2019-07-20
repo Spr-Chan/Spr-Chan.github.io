@@ -69,9 +69,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>个人博客</tag>
         <tag>GitHub</tag>
         <tag>Coding</tag>
+        <tag>个人博客</tag>
         <tag>域名</tag>
       </tags>
   </entry>
@@ -83,9 +83,9 @@
         <category>个人博客</category>
       </categories>
       <tags>
+        <tag>个人博客</tag>
         <tag>hexo</tag>
         <tag>MacOS</tag>
-        <tag>个人博客</tag>
         <tag>github</tag>
         <tag>coding</tag>
         <tag>博客主题</tag>
@@ -377,7 +377,7 @@
   <entry>
     <title><![CDATA[PS小技巧 证件照蓝底/红底换白底（非抠图，抠图头发边缘处理效果差）]]></title>
     <url>%2F%E5%B0%8F%E6%8A%80%E5%B7%A7%2F20190311-identification-photo.html</url>
-    <content type="text"><![CDATA[打开PhotoShop&emsp; 打开图片&emsp; 在页面顶端选择“图像”-&gt;“调整”-&gt;“替换颜色”&emsp; 将鼠标移动到证件照背景蓝色任意位置单击一下，红框中的“颜色”就会变成鼠标刚刚选中的颜色，再将“颜色容差”调整到最大值200。&emsp; 点击“结果”，在弹出的“拾色器”中将R、G、B均改为255，再确定、确定。&emsp; 将“明度”调整到100。&emsp; 最后的成品，边缘效果（尤其是头发边缘）比抠人像换背景颜色好得多。&emsp; 如果把“明度”调为100后，人脸颜色有变化，就参考知乎链接修改。不过最新版本的PS软件更加智能化，基本上不会出现人脸颜色变化的情况。 红底的操作方法与蓝底是雷同的，如果有其它颜色的背景色，按照文中方法同样是可以操作的。]]></content>
+    <content type="text"><![CDATA[打开PhotoShop 打开图片 在页面顶端选择“图像”-&gt;“调整”-&gt;“替换颜色” 将鼠标移动到证件照背景蓝色任意位置单击一下，红框中的“颜色”就会变成鼠标刚刚选中的颜色，再将“颜色容差”调整到最大值200。 点击“结果”，在弹出的“拾色器”中将R、G、B均改为255，再确定、确定。 将“明度”调整到100。 最后的成品，边缘效果（尤其是头发边缘）比抠人像换背景颜色好得多。 如果把“明度”调为100后，人脸颜色有变化，就参考知乎链接修改。不过最新版本的PS软件更加智能化，基本上不会出现人脸颜色变化的情况。 红底的操作方法与蓝底是雷同的，如果有其它颜色的背景色，按照文中方法同样是可以操作的。]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
