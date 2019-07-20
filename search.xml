@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别]]></title>
-    <url>%2F2019%2F07%2F20%2F%E4%B8%89%E5%BC%A0%E5%9B%BE%E6%90%9E%E9%80%8F%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F(1NF)%E3%80%81%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F(2NF)%E5%92%8C%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F(3NF)%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[第一范式（1NF） &emsp;&emsp;列1唯一确定列2, 列3, 列4, ...，即列2, 列3, 列4, ...不能再分裂出其它列。 &emsp;&emsp;假设有关系模式列1: 订单名; 列2: 商品。一个订单下可以有多个商品，即列2: 商品可以分裂成商品A, 商品B, 商品C, ...，所以列1: 订单名; 列2: 商品这样的关系模式不符合第一范式。 第二范式（2NF） &emsp;&emsp;满足2NF的前提是必须满足1NF。此外，关系模式需要包含两部分内容，一是必须有一个（及以上）主键；二是没有包含在主键中的列必须全部依赖于全部主键，而不能只依赖于主键的一部分而不依赖全部主键。 &emsp;&emsp;定义听起来有点绕，不慌，直接看图，只有全部的非主键列依赖于全部主键，才满足第二范式。 &emsp;&emsp;假设一顾客在超市买了三瓶肥宅快乐水，那么存在关系模式主键1: 商品名称; 列1: 购买数量; 列2: 商品ID; 列3: 购买日期。购买数量和商品ID只依赖于商品名称，购买日期不依赖于商品名称，所以该关系模式不满足第二范式。 第三范式（3NF） &emsp;&emsp;满足3NF的前提是必须满足2NF。另外关系模式的非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列m既依赖于全部主键，又依赖于非主键列n的情况。 &emsp;&emsp;定义听起来还是有点绕，不慌，直接看图，只要非主键内部存在传递依赖，就不满足第三范式。 &emsp;&emsp;假设存在关系模式主键1: 课程编号; 列1: 教师名; 列2: 教师家庭地址。显然满足第一范式和第二范式，但是教师家庭地址传递依赖于教师名，所以不满足第三范式。 示例&emsp;&emsp;设有课程关系模式如下：R(C#, Cn, T, Ta)（其中C#为课程号，Cn为课程名，T为教师名，Ta为教师地址），并且假定不同的课程号可以有相同的课程名，每门课程只有一位任课教师，但每名教师可以有多门课程。关系R范式最高达到（）。 A）1NFB）2NFC）3NFD）BCNF 【正确答案】B 【解析】 &emsp;&emsp;一个“课程号”确定一个“课程名”，确定一个“教师名”，确定一个“教师地址”，所以符合第一范式； &emsp;&emsp;“课程号”是无重复的，所以“课程号”是主键，“课程名”、“教师名”、“教师地址”均是可重复的，所以它们都是非主键列并完全依赖于主键“课程号”，所以符合第二范式； &emsp;&emsp;非主键列“教师地址”传递依赖于非主键列“教师名”，所以不符合第三范式，故选B。]]></content>
+    <title><![CDATA[【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)]]></title>
+    <url>%2F2019%2F07%2F09%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%B8%89%E3%80%91%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E7%BB%91%E5%AE%9ACoding(%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE)%20%2B%20GitHub(%E5%9B%BD%E5%A4%96%E8%AE%BF%E9%97%AE)%2F</url>
+    <content type="text"><![CDATA[篇一、篇二入口。 前言&emsp;&emsp;在【Hexo博客搭建 • 篇二】中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，但是由于Github服务器的原因，导致访问个人博客不够稳定。本篇将介绍使用一个自定义域名同时绑定Coding + GitHub 的方法，点击imcyc.top，国内用户访问到的是Coding仓库，而国外用户访问到的则是GitHub仓库，堪称完美的解决方案。 hexo托管到coding服务器&emsp;&emsp;将hexo托管到coding服务器上，过程与将hexo托管到github服务器上大同小异。 &emsp;&emsp;1. 在腾讯云开发者平台上注册账号，接着新建一个项目，注意项目地址必须填：你的用户名.coding.me。 &emsp;&emsp;2. 创建完项目后，点击进入项目代码-&gt;Pages服务-&gt;勾选同意-&gt;开启Coding Pages。 &emsp;&emsp;3. 绑定SSH公钥，腾讯云开发者平台的帮助文档就很详细，按这个来就行了。 &emsp;&emsp;4. 回到MacOS，修改自己的blog文件夹下的_config.yml，将其中的一段代码改为如下所示： 12345678# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: https://github.com/Spr-Chan/Spr-Chan.github.io.git coding: https://dev.tencent.com/u/spr_chan/p/spr_chan.coding.me.git branch: master 注意github和coding的url是因人而异的。 &emsp;&emsp;5. 终端定位到/Users/spr_chan/blog并输入sudo su开启超级管理员模式，使用hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 就能将hexo同时推送到github和coding两个仓库，岂不美哉~ 域名绑定&emsp;&emsp;在【Hexo博客搭建 • 篇二】中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，而Coding仓库绑定自定义域名的方法与前者大同小异。 &emsp;&emsp;1. 进入项目详情页面，找到Pages服务，点击进入设置。 &emsp;&emsp;2. 输入以购买的自定义域名，点击绑定，这时会出现警告信息。 &emsp;&emsp;3. 按照警告信息的要求，我们在域名解析界面添加相应的解析，如下图所示。 &emsp;&emsp;4. 此外再增加四条解析，注意GitHub解析路径选择国外，用以国外用户访问；Coding解析路径选择默认，用以国内用户访问。 &emsp;&emsp;5. 回到Coding，发现域名已经绑定成功，稍等片刻（等待阿里云解析完成），即可使用自定义域名访问个人博客，完结撒花~~]]></content>
       <categories>
-        <category>经验总结</category>
+        <category>个人博客</category>
       </categories>
       <tags>
-        <tag>第一范式</tag>
-        <tag>第二范式</tag>
-        <tag>第三范式</tag>
-        <tag>3NF</tag>
-        <tag>2NF</tag>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>Coding</tag>
+        <tag>域名绑定</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Python爬虫实战：汽车导购网站评论爬取（大数据帮你买好车）]]></title>
-    <url>%2F2019%2F07%2F20%2FPython%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%EF%BC%9A%E6%B1%BD%E8%BD%A6%E5%AF%BC%E8%B4%AD%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%88%AC%E5%8F%96%EF%BC%88%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B8%AE%E4%BD%A0%E4%B9%B0%E5%A5%BD%E8%BD%A6%EF%BC%89%2F</url>
+    <url>%2F2019%2F07%2F08%2FPython%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%EF%BC%9A%E6%B1%BD%E8%BD%A6%E5%AF%BC%E8%B4%AD%E7%BD%91%E7%AB%99%E8%AF%84%E8%AE%BA%E7%88%AC%E5%8F%96%EF%BC%88%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B8%AE%E4%BD%A0%E4%B9%B0%E5%A5%BD%E8%BD%A6%EF%BC%89%2F</url>
     <content type="text"><![CDATA[前言&emsp;&emsp;四天入门Python（慕课网地址），三天入门简单爬虫（慕课网地址），八天撸完180行的代码，一路磕磕绊绊，一路的bugbugbug……，索性还是以比较快的速度解决了女票的要求（爬来的数据给女票写小论文用）。直接先码代码贴上，以后有空再对代码进行详解吧…… 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180#爬取爱卡汽车网站所有“纯电动”汽车的“车名”、“价格”、“级别”、“续航”、“电量”,并输出为html#-*- coding: utf-8 -*-from bs4 import BeautifulSoupimport refrom urllib import request#8个电动汽车的总页面的urlfirst_urls = []for i in range(1, 9): first_urls.append('http://newcar.xcar.com.cn/car/0-0-0-0-0-0-0-0-0-0-0-'+str(i)+'-1-0/')#8个总页面下的所有款车的urlnodes_num = []for url in first_urls: response = request.urlopen(url) html_cont = response.read() soup = BeautifulSoup(html_cont.decode('gb2312'),'html.parser') link_nodes = soup.find_all('a', class_="car_search_ps_list_a")#link_nodes是一个list列表 for i in link_nodes: nodes_num.append('http://newcar.xcar.com.cn'+str(i['href']))#构造datas-------------------------------------------------------------datas = []nodes_rev = []#收集有用的url，加工成口碑url存到此列表中count = 0for url_num in nodes_num: count+=1 response_num = request.urlopen(url_num) html_cont_num = response_num.read() soup_num = BeautifulSoup(html_cont_num.decode('gbk'),'html.parser') url_rev = url_num+'review.htm' response_rev = request.urlopen(url_rev) html_cont_rev = response_rev.read() soup_rev = BeautifulSoup(html_cont_rev.decode('gbk'),'html.parser') res_data = &#123;&#125;#dict列表，每轮res_data列表包含13个key（车名、价格......） try: link_node01 = soup_num.find("span", class_="lt_f1").get_text() link_node02 = soup_num.find('div', class_="tt_h1").find("h1").get_text() res_data['车名'] = link_node01+link_node02 link_node03 = soup_num.find('a', class_="com_price_menu").get_text() #print "价格：", link_node03,"万" res_data['价格'] = link_node03 link_node04 = soup_num.find_all('li', class_="w163") res_data['级别'] = link_node04[0].get_text()[4:-1] res_data['续航(km)'] = re.findall("\d+",link_node04[1].get_text())[-1] '''link_node05 = soup_num.find('a', onclick="clicklog(124783);").get_text() #print "电量：", re.findall("\d+",link_node05)[0]+"kWh" res_data['电量'] = re.findall("\d+",link_node05)[0]''' link_node06 = soup_rev.find('div', class_="synthesis").get_text() res_data['综合评分'] = re.findall(r'\d+.\d+', link_node06)[0] link_node07 = soup_rev.find_all('div', class_="bg") res_data['外观'] = re.findall(r'\d+.\d+', link_node07[0].get_text())[0] res_data['内饰'] = re.findall(r'\d+.\d+', link_node07[1].get_text())[0] res_data['空间'] = re.findall(r'\d+.\d+', link_node07[2].get_text())[0] res_data['舒适'] = re.findall(r'\d+.\d+', link_node07[3].get_text())[0] res_data['续航'] = re.findall(r'\d+.\d+', link_node07[4].get_text())[0] res_data['动力'] = re.findall(r'\d+.\d+', link_node07[5].get_text())[0] res_data['操控'] = re.findall(r'\d+.\d+', link_node07[6].get_text())[0] res_data['性价比'] = re.findall(r'\d+.\d+', link_node07[7].get_text())[0] datas.append(res_data) nodes_rev.append(url_rev) print(count) except: print (count, "craw failed")#构造datas_dis----------------------------------------------------------------------------datas_dis = []number = 0for url in nodes_rev:#nodes_rev里存的是有用口碑url url_page = [] try: response_ = request.urlopen(url) html_cont_ = response_.read() soup_ = BeautifulSoup(html_cont_.decode('gbk'),'html.parser') link_nodes = soup_.find_all('a', href="javascript:void(0);", rel="nofollow", class_="page")#取最后一页的页数 last_page = re.findall(r'\d+', link_nodes[-1]['onclick'])[0]#最后一页的页数，是字符型数据，如'4' for i in range(1, int(last_page)+1): url_page.append('http://newcar.xcar.com.cn/auto/index.php?r=reputation/reputation/GetAjaxKbList3&amp;page='+str(i)+'&amp;pserid='+re.findall(r'\d+', url)[0]+'&amp;jh=0&amp;wd=0') except: url_page.append(url) number+=1 datas_02 = [] cout = 0#‘发表时间’、‘购车地点’和‘爱车评价’的插入点索引随url_的变化而变化 try: for url_ in url_page: response = request.urlopen(url_) html_cont = response.read() soup = BeautifulSoup(html_cont.decode('gbk'),'html.parser') link_node_01 = soup.find_all('div', class_="name_lf") for i in link_node_01: res_data = &#123;&#125; res_data['评论人'] = re.findall(r'\A(.+)',i.get_text()[4:])[0]#(.+)和.+都可以，‘\A’ 匹配字符串开头，r'\A(.+)'表示匹配字符串开头的任意字符（空格或换行符前） datas_02.append(res_data) link_node_02 = soup.find_all('div', class_="publish") cout_ = cout for i in link_node_02: datas_02[cout_]['发表时间'] = re.findall(r'\d+-\d+-\d+', i.get_text())[0] cout_+=1 link_node_03 = soup.find_all('div', class_="list_infor") cout_ = cout for i in link_node_03: datas_02[cout_]['购车地点'] = re.findall(r'[[](.*?)[]]', i.get_text().replace('\n','').replace('\n','').replace(' ',''))[0]#先去掉所有空格和换行，再提取[xx市]中的xx市 cout_+=1 cout_ = cout link_node_04 = soup.find_all('div', class_="review_post") for i in link_node_04: datas_02[cout_]['爱车评价'] = re.sub('[\n]+', '\n', i.get_text().strip())#strip()去掉头尾的空格和空行,re.sub('[\n]+', '\n', 'xxx')去掉字符串xxx中多余的空行 cout_+=1 cout+=len(link_node_01) print(number, "craw sucessful") except: print (number, "craw failed") datas_dis.append(datas_02)#datas列表和datas_dis列表相结合--------------------------------------------------------------tot = []#形式为：“tot = [[ , ], [ , ], [ , ],......, [ , ]]”每一个元素都是list列表，每个元素包含一个datas元素和datas_dis元素for i in datas: tot_ = [] tot_.append(i) tot.append(tot_)num_tot = 0for j in datas_dis: tot[num_tot].append(j) num_tot += 1#建立一个文件的输出对象fout，文件名为12121.html, 输出各项数据-----------------------------------#Python默认的编码是：ascii，要输出为utf-8的话，要加encoding = 'utf-8'fout = open('12121.html', 'w', encoding = 'utf-8')fout.write("&lt;html&gt;")fout.write("&lt;body&gt;")fout.write("&lt;table&gt;")for i in tot: for j in i[1]: fout.write("&lt;tr&gt;") fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['车名']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['价格']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['级别']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['续航(km)']) #fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['电量']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['综合评分']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['外观']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['内饰']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['空间']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['舒适']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['续航']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['动力']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['操控']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % i[0]['性价比']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % j['评论人']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % j['发表时间']) fout.write("&lt;td&gt;%s&lt;/td&gt;" % j.get('购车地点')) fout.write("&lt;td&gt;%s&lt;/td&gt;" % j.get('爱车评价')) fout.write("&lt;/tr&gt;")fout.write("&lt;/table&gt;")fout.write("&lt;/body&gt;")fout.write("&lt;/html&gt;")fout.close() 最后输出的是html文件，爬到了800条左右的评论（其中不乏几撮水军），用excel编辑完就是如下效果： &emsp;&emsp;后期的话，如果将网站所有车型的评论都爬取下来，估计得有几十万条评论，分析这些评论数据也会对自己将来购车有所帮助。]]></content>
       <categories>
         <category>Python</category>
@@ -31,365 +31,23 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python爬虫实战：京东拍拍验机（帮你买到最完美的二手Iphone）]]></title>
-    <url>%2F2019%2F07%2F20%2FPython%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BA%AC%E4%B8%9C%E6%8B%8D%E6%8B%8D%E9%AA%8C%E6%9C%BA%EF%BC%88%E5%B8%AE%E4%BD%A0%E4%B9%B0%E5%88%B0%E6%9C%80%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BA%8C%E6%89%8BIphone%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[网站介绍&amp;使用痛点&emsp;&emsp;如图1所示，京东拍拍二手于近期上线了一个新平台：拍拍验机，顾客可以通过手机京东客户端，在拍拍验机上挑选购买心仪的二手电子产品（目前均为固定品牌的手机，如二手小米8、二手iPhone 7 Plus）。 图1 拍拍验机主页示意图 &emsp;&emsp;在首页，我们可以对手机进行筛选，比如笔者目前倾向于购买二手iPhone 7 Plus 128G 国行，那么就选择“苹果”-&gt;“苹果7P”-&gt;筛选“国行”和“128G”，如图2所示。确定后下拉页面，就都是符合筛选条件的手机了。 图2 拍拍验机筛选示意图 &emsp;&emsp;但是，在下拉查看比较手机的过程当中，笔者发现符合筛选条件的手机太多太多了（实测大概400部左右），如果每一个手机都点进去查看对比的话，要把所有手机看一遍，将会消耗大量的时间，而且往往之前看中的手机再回过头来看，已经显示卖出，从而错失良“机”。此外由于手机app端服务器不稳定的原因，在下拉页面浏览的过程中，往往返回上一页面会显示“加载失败”，从而要从头开始重新筛选一遍，再下拉到刚刚浏览的地方，效率十分低下。 &emsp;&emsp;当在浏览过程中，看到心仪的手机，点击进去查看手机的详细介绍，会发现有很多的关键参数，比如电池电量、是否过保以及手机各项详细检测情况，如图3所示。如果我们能针对这些参数进行自主筛选，那么就可以迅速排除掉400多部手机中的绝大多数，“取其精华，去其糟粕”，只留下少量的“精品”进行挑选，这样效率将大大提高。 图3 手机详细介绍示意图 &emsp;&emsp;但是网站提供的筛选条件少得可怜，只有“价格”、“渠道”、“内存”三个筛选条件，既然如此，我们就要自己动手丰衣足食了。 网站分析&emsp;&emsp;在浏览拍拍验机的主页后，我们发现它一次只会加载20部手机信息，并且加载的方式不是翻页，而是将页面滑动到底部，那么爬取静态网页数据的那一套方法就不能用在现在这种动态网页上（静态网页用Chrome浏览器右键“查看网页源代码”就能看到所有的网页数据，但是动态网页用这种办法是看不到的），这对获取新增的手机数据带来了困难。这里使用Chrome浏览器的“检查”功能解析AJAX动态加载地址，进而找到加载的数据。 &emsp;&emsp;使用Chrome浏览器打开拍拍验机的主页，页面任意处右键，单机“检查”-&gt; Network-&gt; Ctrl + R刷新，每当滑动网页页面到底部时，Network下方会出现新加载的内容，单击 JS，单击左侧的一个_JPx（最好是选最底部的），单击 Headers，可以看到Request URL，如图4所示，后面要用到。注意链接里必须包含order=2_1，因为在实践中发现有些链接包含的是order=4_2，包含order=4_2的链接不是我们所需要的。 图4 寻找Request URL示意图 &emsp;&emsp;可以发现，每当网页下拉加载新的手机数据的时候，JS里的_JPx就会增加一项，每次下拉刷新得到的新数据就是请求了123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;div align=center&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/006tNc79gy1g4rd893q7pj31h30p0ag1.jpg&quot; &gt;&lt;br/&gt;图5 json数据的结构&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;其中，我们可以看到新加载的每一个手机的唯一的&quot;commodityId&quot;，后面要用到。将网页一直向下拉，JS中的_JPx就会一直增加，直到网页拉到底。如图6所示，可以看到_JPx增加到_JP22，_JP7到_JP22中就包含了所有的手机的&quot;commodityId&quot;。之后就需要通过Python爬虫将所有的&quot;commodityId&quot;收集起来。&lt;div align=center&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1g4rd8je40bj31460oz0yg.jpg&quot; &gt;&lt;br/&gt;图6 所有JS示意图&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;接着点击进入任意一个手机的详细介绍页面，同样的方法，我们找到商品详情介绍页面的Request URL，详情介绍页面的数据就是请求了```https://bizgw.jd.com/commodityInspected/view?callback=jQuery34005582774663554724_1558160057557&amp;commodityId=5583330&amp;optSource=3&amp;_=1558160057558```这个网页的json数据，如图7所示。&lt;div align=center&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gy1g4rd8rdcsqj31gm0o0dkl.jpg&quot; &gt;&lt;br/&gt;图7 寻找Request URL示意图&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;在Preview中可以看到json数据的结构，包括保修期、电池电量、验机报告等详细检测数据，甚至能看到网页中看不到的信息，比如“验机中心”，如图8所示。&lt;div align=center&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1g4rd8yx7qbj31h40ouq7q.jpg&quot; &gt;&lt;br/&gt;图8 单个商品json数据的结构&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;通过Python爬虫，根据单个商品json数据的结构中的各种详细参数进行筛选，就能迅速排除掉大量干扰项，达到“取其精华，去其糟粕”的目的了。## 项目实施### 1. 爬取commodityId#### 1.1 失败的爬取思路&amp;emsp;&amp;emsp;通过分析，我们得到_JP7到_JP22包含了所有的手机的&quot;commodityId&quot;。那么就采用常用的requests.get()的方法，通过for循环，将每一个_JPx里的所有&quot;commodityId&quot;爬取出来保存到一个列表中，具体实现代码如下：```java#-*- coding: utf-8 -*-import requestsimport re#定义函数scrapydef scrapy(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36&apos;, &apos;Referer&apos;:&apos;https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=&apos; &#125; r = requests.get(link, headers=headers) return(r.text)#将_jp7到_JP22的所有Request URL保存到一个列表中Req_URL = []for i in range(7, 23): Req_URL.append(&apos;https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;pageNo=1&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g&amp;callback=__jp&apos;+str(i))#将_jp7到_JP22中的的所有commodityId保存到一个列表中all_Id = []for i in Req_URL: m_findall = [] html = &quot;&quot; html = scrapy(i) m_findall = re.findall(r&apos;&quot;commodityId&quot;:.&#123;7&#125;&apos;, html)#目前网站上机器码暂为7位数 for id in m_findall: all_Id.append(id[-7:]) 通过上述代码，就可以将所有的商品ID储存到列表all_Id当中，但是上述代码有两个问题：&emsp;&emsp;1. 运行代码后，发现每一个_JPx中的商品Id都是相同的，原因尚不清楚；&emsp;&emsp;2. 拍拍验机平台的手机数量是实时刷新的，现在我们看到的是所有商品Id保存在_JP7到_JP22，也许一小时后就变成_JP8到_JP30。 1.2 改进后的巧妙的爬取思路&emsp;&emsp;上述两个问题，第二个问题还好解决，但是第一个问题百思不得其解，涉及比较深入，对于笔者这种学习Python爬虫不足一月的人来说很难解，于是乎转而在Request URL上动心思。原版的Request URL为 https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;pageNo=1&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g&amp;callback=__jp7 ，笔者将此链接进行一定的删改，发现并不影响request.get()的结果，于是乎将多余的删掉，得到 https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g ，此时能爬取出20个商品ID。这时发现是不是pageSize=20限制了爬出的ID数量？遂改成pageSize=10000，神奇的事情发生了，400多个商品ID被一次全部爬出！实现代码如下： 123456789101112131415161718192021#-*- coding: utf-8 -*-import reimport requests#定义函数scrapydef scrapy(link): headers = &#123; 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=' &#125; r = requests.get(link, headers=headers) return(r.text)url = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g'html = scrapy(url)m_findall = re.findall(r'"commodityId":.&#123;7&#125;', html)#目前网站上机器码暂为7位数#将所有commodityId保存到一个列表中all_Id = []for i in m_findall: all_Id.append(i[-7:]) &emsp;&emsp;此方法巧妙地跳过了翻页的限制，只需一个修改后的Request URL就可爬出所有商品ID。 2. 增加筛选项&emsp;&emsp;拍拍验机平台的筛选项只有“价格”、“渠道”、“内存”三个筛选条件，但我们可以根据手机的详细介绍页面里的各种参数，利用爬虫任意增加筛选条件，这里我想增加的筛选条件为：电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无；背光异常:无；验机中心非：西安、郑州、河北。这里以一个商品ID为5583330的手机举例，实现代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#-*- coding: utf-8 -*-import reimport requests#定义函数scrapydef scrapy(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId=5583330&amp;refresh=no&amp;scrollY=0' &#125; r = requests.get(link, headers=headers) return(r.text)link = 'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId=5583330&amp;refresh=no&amp;scrollY=0'html = scrapy(link)m01_findall = re.findall(r'[\u4e00-\u9fa5]+', html)#筛出所有汉字m02_findall = re.findall(r'电池效率","value":"\d&#123;2&#125;', html)#筛出电池电量try: if '立即购买' in m01_findall: ''' 筛选条件： 电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无； 背光异常:无；验机中心不是：西安、郑州、河北 ''' check_bat = (int(m02_findall[0][-2:]) &gt;= 80) check01 = ('全网通' in m01_findall) &amp; (m01_findall[m01_findall.index('背光异常')+1] == '无') check02 = (m01_findall[m01_findall.index('外壳')+2] == '无') &amp; (m01_findall[m01_findall.index('维修痕迹')+1] == '无') check03 = (m01_findall[m01_findall.index('屏幕碎裂')+1] == '无') &amp; (m01_findall[m01_findall.index('黑点')+1] == '无') check04 = (m01_findall[m01_findall.index('红屏')+1] == '无') &amp; (m01_findall[m01_findall.index('老化发黄')+1] == '无') check05 = (m01_findall[m01_findall.index('亮斑')+1] == '无') &amp; (m01_findall[m01_findall.index('色斑')+1] == '无') check06 = (m01_findall[-2][:2] != '西安') &amp; (m01_findall[-2][:2] != '河北') &amp; (m01_findall[-2][:2] != '郑州') if check_bat &amp; check01 &amp; check02 &amp; check03 &amp; check04 &amp; check05 &amp; check06: print("完美") else: print("不完美") else: print("页面异常or已卖出")except: print("不可预知的异常") 3. 筛选所有商品&emsp;&emsp;将“爬取commodityId”的代码和“增加筛选项”的代码结合，通过循环依次筛选每一个商品，将符合筛选条件的商品的链接放到一个列表中，最后依次打印输出，并且自动调用默认浏览器打开通过筛选的商品介绍页面。实现代码如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#-*- coding: utf-8 -*-import reimport requestsimport webbrowser#定义函数scrapy01def scrapy01(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=' &#125; r = requests.get(link, headers=headers) return(r.text)#定义函数scrapy02def scrapy02(link): headers = &#123; 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+link[-7:]+'&amp;refresh=no&amp;scrollY=0' &#125; r = requests.get(link, headers=headers) return(r.text)phone_urls = []#保存每个手机相关的Request URL'''在拍拍验机主页筛选好机型后，右键检查-&gt;Network-&gt;JS-&gt;Ctrl+R刷新-&gt;网页下拉-&gt;选择最靠下的_JPxx-&gt;Headers-&gt;General-&gt;Request URL，将获得的Request URL进行删减和修改pageSize=10000，得到urlNo1'''#iPhone7 Plus 128G 国行urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g'#iPhone8 Plus 64G 国行#urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone%208%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=64g'#iPhone8 64G 国行#urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone%208&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=64g'htmlNo1 = scrapy01(urlNo1)'''在代码a中存在多处“data-commodityid="5614566"”，要筛选出其中的数字，使用正则表达式r'"commodityId":.&#123;7&#125;'。其中，r''的形式是防止字符串内的\转义；"commodityId":表示找到字符串中每一处commodityid；.&#123;7&#125;表示匹配"commodityId":后的7位任意字符（举例：&#123;7&#125;表示只匹配7个字符，&#123;4,7&#125;表示匹配第2位到第4位字符）'''m_findall = re.findall(r'"commodityId":.&#123;7&#125;', htmlNo1)#目前网站上机器码暂为7位数，有待以后更新for i in m_findall: phone_urls.append('https://bizgw.jd.com/commodityInspected/view?commodityId='+i[-7:])#这里没有加“&amp;refresh=no&amp;scrollY=0”，不影响结果fir_urls = []#存放验机中心end_urls = []#存放通过筛选的URLa_ = 1for i in phone_urls: html_01 = "" m01_findall = [] m02_findall = [] html_01 = scrapy02(i) m01_findall = re.findall(r'[\u4e00-\u9fa5]+', html_01)#筛出所有汉字 m02_findall = re.findall(r'电池效率","value":"\d&#123;2&#125;', html_01)#筛出电池电量 #输出通过筛选的url try: if '立即购买' in m01_findall: ''' 筛选条件： 电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无； 背光异常:无；验机中心不是：西安、郑州、河北 ''' check_bat = (int(m02_findall[0][-2:]) &gt;= 80) check01 = ('全网通' in m01_findall) &amp; (m01_findall[m01_findall.index('背光异常')+1] == '无') check02 = (m01_findall[m01_findall.index('外壳')+2] == '无') &amp; (m01_findall[m01_findall.index('维修痕迹')+1] == '无') check03 = (m01_findall[m01_findall.index('屏幕碎裂')+1] == '无') &amp; (m01_findall[m01_findall.index('黑点')+1] == '无') check04 = (m01_findall[m01_findall.index('红屏')+1] == '无') &amp; (m01_findall[m01_findall.index('老化发黄')+1] == '无') check05 = (m01_findall[m01_findall.index('亮斑')+1] == '无') &amp; (m01_findall[m01_findall.index('色斑')+1] == '无') check06 = (m01_findall[-2][:2] != '西安') &amp; (m01_findall[-2][:2] != '河北') &amp; (m01_findall[-2][:2] != '郑州') if check_bat &amp; check01 &amp; check02 &amp; check03 &amp; check04 &amp; check05 &amp; check06: print('No.'+str(a_)+' '+i[-7:]+' '+"完美") fir_urls.append('https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+i[-7:]+'&amp;refresh=no&amp;scrollY=0'+' '+m01_findall[-2]) end_urls.append('https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+i[-7:]+'&amp;refresh=no&amp;scrollY=0') else: print('No.'+str(a_)+' '+i[-7:]+' '+"不完美") else: print('No.'+str(a_)+' '+i[-7:]+' '+"页面异常or已卖出") except: print('No.'+str(a_)+' '+i[-7:]+' '+"不可预知的异常") a_ += 1a_02 = 1for i in fir_urls: print('No.'+str(a_02)+' '+i) a_02 += 1#调用默认浏览器自动打开网址for i in end_urls: webbrowser.open(i) &emsp;&emsp;拍拍验机平台上符合“iPhone 7 Plus”、“国行”、“128G”筛选条件的手机有近400部，通过Python爬虫定向筛选，最后输出十多部，耗时1分钟左右，效率提升显著。并且今后可以根据个人喜好不同，自由搭配、增删筛选条件，提升购机效率和精准度。]]></content>
+    <title><![CDATA[【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名]]></title>
+    <url>%2F2019%2F07%2F07%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%BA%8C%E3%80%91GitHub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[篇一入口。 前言&emsp;&emsp;使用Hexo+Github完成个人博客的搭建后，我的博客链接就是“https://spr-chan.github.io”，本文将介绍GitHub仓库绑定自定义域名的方法。 准备域名&emsp;&emsp;1. 购买域名，我已经在阿里云购买到域名“imcyc.top”。 &emsp;&emsp;2. 解析域名，解析操作如下图所示。 注意要添加两条解析，记录值是 username.github.io。 配置CNAME方法一（不推荐）&emsp;&emsp;在自己的Github仓库新建CNAME，编辑并写入“www.imcyc.top”。 接着进入Settings，往下翻到GitHub Pages，发现Custom domain里已经有了“www.imcyc.top”，说明这一步操作成功。注意Enforce HTTPS要勾选，这是2018年5月之后Github重磅推出的新功能，让你的个人域名从此不再显示“不安全”。 &emsp;&emsp;方法一不足之处：由于是在仓库根目录下新建的CNAME文件，当我们在MacOS终端使用命令hexo clean&amp;&amp;hexo g&amp;&amp;hexo d后，CNAME文件就会被冲掉，这是又要再次新建CNAME文件，非常麻烦。 方法二（推荐）&emsp;&emsp;相比较于方法一，方法二在本地blog文件夹里新建CNAME文件再推到Github仓库，这样就避免hexo clean冲掉CNAME文件情况的发生。 &emsp;&emsp;MacOS系统下， 进入Users/spr-chan/blog文件夹下，在其中的source文件夹内新建文件CNAME，内容为：www.imcyc.top现已改成imcyc.top。再在终端用命令hexo clean&amp;&amp;hexo g&amp;&amp;hexo d将博客文件推送到Github仓库，在浏览器地址栏输入imcyc.top或www.imcyc.top，即可访问个人博客，并且不提示连接不安全，完结撒花！ &emsp;&emsp;注：谷歌浏览器输入并前往“imcyc.top”，可能会提示不安全。 PS：增加CSDN博客&emsp;&emsp;跟方法二雷同，在本地Users/spr-chan/blog/source文件夹下新建文件csdn.html，内容为： 12345678&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;&lt;script&gt;function browserRedirect() &#123; window.location.href="http://blog.csdn.net/weixin_43971764";&#125;browserRedirect();&lt;/script&gt;&lt;/html&gt; 推送到Github后，在浏览器地址栏输入imcyc.top/csdn即可跳转至CSDN博客，这样就相当于你的CSDN博客也有了一个专属的个人定制地址。&emsp;&emsp;PS:增加简书或其他博客跳转同理。 篇三入口。 参考文献&emsp;&emsp;[1] https://blog.csdn.net/kong_gu_you_lan/article/details/53788378]]></content>
       <categories>
-        <category>Python</category>
+        <category>个人博客</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>网络爬虫</tag>
-        <tag>动态网页</tag>
-        <tag>京东拍拍验机</tag>
-        <tag>二手iPhone</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[PS小技巧 证件照蓝底/红底换白底（非抠图，抠图头发边缘处理效果差）]]></title>
-    <url>%2F2019%2F07%2F20%2FPS%E5%B0%8F%E6%8A%80%E5%B7%A7%20%E8%AF%81%E4%BB%B6%E7%85%A7%E8%93%9D%E5%BA%95_%E7%BA%A2%E5%BA%95%E6%8D%A2%E7%99%BD%E5%BA%95%EF%BC%88%E9%9D%9E%E6%8A%A0%E5%9B%BE%EF%BC%8C%E6%8A%A0%E5%9B%BE%E5%A4%B4%E5%8F%91%E8%BE%B9%E7%BC%98%E5%A4%84%E7%90%86%E6%95%88%E6%9E%9C%E5%B7%AE%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[打开PhotoShop&emsp; 打开图片&emsp; 在页面顶端选择“图像”-&gt;“调整”-&gt;“替换颜色”&emsp; 将鼠标移动到证件照背景蓝色任意位置单击一下，红框中的“颜色”就会变成鼠标刚刚选中的颜色，再将“颜色容差”调整到最大值200。&emsp; 点击“结果”，在弹出的“拾色器”中将R、G、B均改为255，再确定、确定。&emsp; 将“明度”调整到100。&emsp; 最后的成品，边缘效果（尤其是头发边缘）比抠人像换背景颜色好得多。&emsp; 如果把“明度”调为100后，人脸颜色有变化，就参考知乎链接修改。不过最新版本的PS软件更加智能化，基本上不会出现人脸颜色变化的情况。 红底的操作方法与蓝底是雷同的，如果有其它颜色的背景色，按照文中方法同样是可以操作的。]]></content>
-      <categories>
-        <category>小技巧</category>
-      </categories>
-      <tags>
-        <tag>证件照</tag>
-        <tag>PS</tag>
-        <tag>背景</tag>
-        <tag>白底</tag>
-        <tag>蓝底</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%E5%9C%A8%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E5%8F%82%E6%95%B0%E5%8F%AA%E8%83%BD%E6%98%AF%E4%B8%80%E5%85%83%E8%B0%93%E8%AF%8D%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%BA%8C%E5%85%83%E8%B0%93%E8%AF%8D%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;C++STL库中的find_if的第三个参数只能是一元谓词（即只能传给一元谓词一个参数），但是在设计算法的过程中，需要第三个参数是二元谓词（即需要传给谓词函数两个参数），那么这时候就可以使用bind1st/bind2nd函数适配器，将二元谓词的某一个参数绑定为一个常数，这样二元谓词就变成了一元谓词，find_if只需要传给二元谓词一个参数就也能正常使用。 &emsp;&emsp;例如： 1234567891011121314151617181920212223//找到数组中第一个大于40的元素#include &lt;functional&gt;#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;int main() &#123; int intArr[] = &#123; 30, 90, 10, 40, 70, 50, 20, 80 &#125;; const int N = sizeof(intArr) / sizeof(int); vector&lt;int&gt; a(intArr, intArr + N); vector&lt;int&gt;::iterator p = find_if(a.begin(), a.end(), bind2nd(greater&lt;int&gt;(), 40)); /*greater是二元谓词（函数对象有两个参数，只返回真或假），但是find_if的第三个参数只能是一元谓词， 为了将greater变为一元谓词，就需要使用find2nd函数适配器将greater的第二个参数绑定为常数40， 当find_if函数在遍历vector元素的迭代器时，就只需要传给greater一个参数就行了（即将迭代器所指向的 元素的值传给greater的第一个参数与第二个已绑定的参数40作比较，返回比较大小的结果为真或假）。*/ //注，greater有两个参数x、y，返回的是x&gt;y为真或假 if (p == a.end()) cout &lt;&lt; "no element greater than 40" &lt;&lt; endl; else cout &lt;&lt; "first element greater than 40 is: " &lt;&lt; *p &lt;&lt; endl; return 0;&#125; &emsp;&emsp;将二元谓词greater的第二个参数绑定为40，这样find_if只需要给greater传一个参数与40作比较就可以了（传入greater的参数就是遍历vector元素的迭代器所指向的元素的值）。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>函数适配器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】动态数组类模板中，为什么重载了指针转换运算符T *之后，还要重载下标运算符[ ]？]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%AD%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%BD%BD%E4%BA%86%E6%8C%87%E9%92%88%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6T%20_%E4%B9%8B%E5%90%8E%EF%BC%8C%E8%BF%98%E8%A6%81%E9%87%8D%E8%BD%BD%E4%B8%8B%E6%A0%87%E8%BF%90%E7%AE%97%E7%AC%A6%5B%20%5D%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;重置指针转换运算符函数的声明，（注意函数没有指定返回值的类型，这是语法的要求，跟其他重载函数不一样的地方，要注意）： 123operator T *();operator const T *() const;/*后置const是为了让常对象能调用这个成员函数(常对象只能调用常成员函数，不能调用普通成员函数)； “const T*”表示，通过对象名创建动态数组后，通过对象名不能改变数组*/ &emsp;&emsp;假设动态数组类模板Array，假设类外函数read，形参int *p表示定义指向动态数组的指针p： 1234void read(int *p, int n)&#123; for(int i = 0; i &lt; n; i++) cin&gt;&gt;p[i];&#125; &emsp;&emsp;调用read函数并传入Array类型指针时，因为read函数只接受int类型指针，所以会自动搜索从Array型指针到int型指针的转换方式，如果能搜索到，就执行转换，把转换后的指针交给read函数，搜索不到，编译器就会报错。 &emsp;&emsp;光重载指针转换运算符还不够，要想对象名能像数组名一样使用下标，还要重载下标运算符： 12T &amp; operator [] (int i);const T &amp; operator [] (int i) const; 为什么重载了指针转换运算符之后，还要重载下标运算符？可以这样理解： &emsp;&emsp;虽然重载了指针转换运算符，但是其作用只是为了能把对象名a当类内动态数组名list一样，传入类外函数的参数表作形实结合（实参是对象名，形参是T型指针）； &emsp;&emsp;如果接着在main函数写a[i]，编译器是不会把这里的a当作数组名list的，所以仅仅是写a[i]是无法调用数组元素的(编译器不认这种代码)，只有重载了下标运算符“[ ]”，编译器才会把a[i]当成list[i]； 简单的说， &emsp;&emsp;重载指针运算符，作用仅限于把“a”转换成“list”；重载下标运算符，作用仅限于把“a[i]”转换成“list[i]”； &emsp;&emsp;也就是说，不要以为把对象名a转换成了指向动态数组的指针之后，就能像使用“数组名+下标”一样使用“对象名+下标”来调用数组元素，这样的操作是错误的，编译器是不认的。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>动态数组</tag>
-        <tag>类模板</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】for循环语句使用前置++和后置++有何区别？]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E4%BD%BF%E7%94%A8%E5%89%8D%E7%BD%AE%2B%2B%E5%92%8C%E5%90%8E%E7%BD%AE%2B%2B%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vector,string等，++iterator应该和iterator++是没有区别的，因为通常迭代器简单实现为普通指针 但是，如list,map,set等容器，iterator就没有这么简单了，++iterator效率高于iterator++,因为省了一个临时对象 参考文献&emsp;&emsp;[1] https://bbs.csdn.net/topics/30253911]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>for循环</tag>
-        <tag>前置++</tag>
-        <tag>后置++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%E3%80%90%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80%E8%B5%8B%E7%BB%99%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E6%8C%87%E9%92%88%E3%80%91%E6%9A%A8%E3%80%90%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E5%80%BC%E8%B5%8B%E7%BB%99%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E3%80%918%E7%A7%8D%E6%83%85%E5%86%B5%E5%AF%B9%E9%94%99%E5%88%86%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[常/非常变量地址赋给常/非常指针123456正确： A. int a, *p = &amp;a; B. int a; const int *p = &amp;a; C. const int a; const int *p = &amp;a;错误： D. const int a; int *p = &amp;a; 总结：&emsp;&emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普通指针/常指针，常变量地址可以赋给常指针、不能赋给普通指针。 常/非常变量值赋给常/非常变量123456正确： A. int a, b; b = a; B. const int a; int b; b = a;错误： C. int a; const int b; b = a; D. const int a; const int b; b = a; 总结：&emsp;&emsp;对于把变量值赋给变量的情况，普通变量值可以赋给普通变量，不能赋给常变量；常变量值可以赋给普通变量，不能赋给常变量。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>常变量</tag>
-        <tag>常指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】指向动态分配的指针数组的指针]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E6%8C%87%E5%90%91%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E7%9A%84%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88%2F</url>
-    <content type="text"><![CDATA[首先介绍指向数组的指针： &emsp;&emsp;char *p = new char; 定义指向动态分配的字符变量的指针；&emsp;&emsp;char *p = new char[3]; 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；&emsp;&emsp;char (*p)[3] = new char[2][3]; 定义指向动态分配的二维字符数组（三行）的指针，p指向数组首行的地址，即(p+1)为数组第二行的地址；&emsp;&emsp;char (*p)[9][8] = new char[7][9][8]; 定义指向动态分配的三维字符数组的指针（7个9列8行的二维数组），p指向首个二维数组的地址，即(p+1)为第二个二维数组的地址；&emsp;&emsp;同样的，char数据类型可换成其他数据类型，比如Point类类型，例：&emsp;&emsp;Point *p = new Point[2]; 定义指向动态分配的一维Point类对象数组的指针。 再介绍指针数组：&emsp;&emsp;这里只举例一维指针数组：Point *p[2]; 定义一个Point类对象的数组，数组里的两个元素都是指向Point类对象的指针（p[0], p[1]）。 最后，指向动态指针数组的指针： &emsp;&emsp;int *p = new int *[10]; //错误&emsp;&emsp;int **p = new int *[10]; //正确 &emsp;&emsp;new int *[10]表示动态生成一个包含10个int型指针的数组，要定义指向指针数组的指针p，那么p也就是指向指针数组首元素，而指针数组首元素是一个int型指针，所以p就是指向int型指针的指针，即指向指针的指针。要定义指向指针的指针，就要使用T **p的格式。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>指针数组</tag>
-        <tag>数组指针</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E4%B8%80%E5%9B%BE%E6%90%9E%E6%87%82%E2%80%9C%E4%BB%8E%E6%A0%88%E5%BA%95%E5%BE%80%E6%A0%88%E9%A1%B6%E5%8E%8B%E3%80%81%E4%BB%8E%E6%A0%88%E9%A1%B6%E5%BE%80%E6%A0%88%E5%BA%95%E5%8E%8B%E2%80%9D%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。 &emsp;&emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&lt;=m），栈内有n个元素。 &emsp;&emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&lt;=m+1），栈内有(m-top+1)个元素。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>栈</tag>
-        <tag>栈顶</tag>
-        <tag>栈底</tag>
-        <tag>压栈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E8%99%9A%E5%87%BD%E6%95%B0%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[继承和动态绑定对程序的编写有两方面的影响：&emsp;&emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&emsp;&emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。 &emsp;&emsp;通过使用动态绑定，我们能用同一段代码分别处理基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个虚函数时将发生动态绑定。动态绑定，又称运行时的绑定，顾名思义，即在程序运行时选择调用哪个版本(对象)的虚函数。 &emsp;&emsp;有虚函数，程序就可以在运行阶段做决定到底选择哪个版本的虚函数；没有虚函数，程序就会在编译阶段静态绑定(不做选择)。那个为什么要大费周章地使用动态绑定、使用虚函数呢？这样是为了能使用同一段代码（一个函数，函数的形参有基类的引用或指针），用来处理很多的类(基类和其派生类们)的对象。 &emsp;&emsp;设想一下，如果没有虚函数，每个基类的派生类都定义自己独立的net_price(返回书籍的实际销售价格的成员函数)，那么就不可能设计同一段代码(同一个函数)来调用所有的类的对象的net_price(类外函数的形参是设成基类的引用(或指针)呢？还是哪个派生类的引用(或指针)呢？) &emsp;&emsp;所以通过继承和动态绑定(使用虚函数)这两大法宝，可以实现以统一的方式，自如地调用各种类的对象，使我们能够编写具有特定类型行为但又独立于类型的程序。这种统一的美学，是必须要追求的。 &emsp;&emsp;注：在C++中，动态绑定只作用于虚函数，并且需要通过指针或引用调用。 我们能将基类的指针或引用绑定到派生类对象中的基类部分上。 &emsp;&emsp;Quote item; &emsp;&emsp;&emsp;&emsp;&nbsp;//基类对象&emsp;&emsp;Bulk_Quote bulk;&emsp;&emsp;//派生类对象&emsp;&emsp;Quote *p = &item;&emsp;//p指向基类对象&emsp;&emsp;p = &bulk; &emsp;&emsp;&emsp;&emsp;&nbsp;//p指向派生类中的基类部分（派生类的对象的地址，可以赋值给指向基类的指针）&emsp;&emsp;Quote &amp;r = bulk;&emsp;&nbsp;//定义一个基类对象的引用r，绑定到派生类中的基类部分（用派生类的对象，可以初始化基类的引用） 这种转换通常称为派生类到基类的类型转换。换种说法，我们可以把派生类的对象当基类的对象来使用。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>继承</tag>
-        <tag>动态绑定</tag>
-        <tag>虚函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】模板实参中的参数可以省略的情况分析]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E6%A8%A1%E6%9D%BF%E5%AE%9E%E5%8F%82%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%9C%81%E7%95%A5%E7%9A%84%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[先来看一道C++二级真题+未来教育解析： &emsp;&emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。&emsp;&emsp;&emsp;&emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略&emsp;&emsp;&emsp;&emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略&emsp;&emsp;&emsp;&emsp;C）对于虚拟类型参数所对应的模板实参，若能够省略则必须省略&emsp;&emsp;&emsp;&emsp;D）对于常规参数所对应的模板实参，任何情况下都不能省略 【未来教育解析】&emsp;&emsp;在调用一个模板函数时，编译系统需要足够的信息来判别每个虚拟类型参数所对应的实际类型，可以从两个不同的渠道获得这样的信息：从模板实参表（用“&lt;&gt;”括起来的参数表）或从模板函数实参表（用“()”括起来的参数表）（这句话表述不准确，应该表述为：从模板函数的形参表（用“()”括起来的参数表）中的形参所对应的实参） 。如果从后者获得的信息已经能够判定其中部分或全部虚拟类型参教所对应的实际参数，而且它们又正好是参数表中最后的若干参数，则模板实参表中的那几个参数可以省略。如果模板实参表中的实参都被省略了，则空表“&lt;&gt;”也可以不要，因此选项D错误。反之，对于某个模板实参，如果从模板函数的实参表中无法获得同样的信息，就不能省略；或者虽然能够获得同样的信息，但在它后面还有其他不能省略的实参，则其自身还是不能省略。本题答案为A选项。 【个人解析】&emsp;&emsp;代码举例： 12345678910111213141516171819#include &lt;iostream&gt;using namespace std;template&lt;typename T1, typename T2&gt; //&lt;&gt;里的是虚拟类型参数T1 f(T2 n)&#123; return n*5.6; &#125;int main()&#123; int a = 3; cout &lt;&lt; f&lt;double&gt;(a) &lt;&lt; endl; //1，&lt;&gt;括起来的是模板实参表，()括起来的是模板函数形参表，这里模板实参表省略了int cout &lt;&lt; f&lt;double, int&gt;(a) &lt;&lt; endl; //2 cout &lt;&lt; f&lt;int&gt;(a) &lt;&lt; endl; //3，这里模板实参表省略了int cout &lt;&lt; f&lt;&gt;(a) &lt;&lt; endl; //4，报错 double b = 2.3; cout &lt;&lt; f&lt;double&gt;(b) &lt;&lt; endl; //5，这里模板实参表省略了double cout &lt;&lt; f&lt;int&gt;(b) &lt;&lt; endl; //6，这里模板实参表省略了double cout &lt;&lt; f&lt;&gt;(b) &lt;&lt; endl; //7，报错 return 0;&#125; &emsp;&emsp;a、b分别是模板函数的实参，从实参中获得的信息已经能够判定模板函数的模板实参表中部分或全部虚拟类型参教所对应的实际参数，而且它们又正好是模板实参表中最后的若干参数，则模板实参表中的那几个参数可以省略。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>省略模板实参</tag>
-        <tag>模板函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[C++ 编译器是否隐含生成默认构造函数和默认复制构造函数的4种情况讨论]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%AF%E5%90%A6%E9%9A%90%E5%90%AB%E7%94%9F%E6%88%90%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E9%BB%98%E8%AE%A4%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%844%E7%A7%8D%E6%83%85%E5%86%B5%E8%AE%A8%E8%AE%BA%2F</url>
-    <content type="text"><![CDATA[① 类内有自定义构造函数和自定义复制构造函数&emsp;&emsp;根据C++标准定义，如果程序已定义构造函数，默认情况下编译器就不再隐含生成默认构造函数。注意，这里的“构造函数”包括复制构造函数（因为复制构造函数也是构造函数的一种）。 &emsp;&emsp;此时该类一共有2个构造函数：自定义构造函数和自定义复制构造函数。 ② 类内有自定义构造函数，无任何复制构造函数&emsp;&emsp;根据C++标准定义，有自定义构造函数，则无默认构造函数；无自定义复制构造函数，则隐含生成默认复制构造函数。下面使用代码检验： 123456789101112131415161718#include &lt;iostream&gt;using namespace std;class A&#123;public: int x; A(int x_=0): x(x_)&#123;&#125;&#125;;int main()&#123; A a; cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; 代码能正确执行； &emsp;&emsp;类A中没用声明任何复制构造函数，但是可以执行A b(a);说明编译器隐含生成了默认复制构造函数（使用单步跟踪检验，确实如此）。 &emsp;&emsp;此时该类一共有2个构造函数：自定义构造函数和默认复制构造函数。 ③ 类内无任何构造函数，无任何复制构造函数&emsp;&emsp;根据C++标准定义，编译器应该隐含生成默认构造函数和默认复制构造函数。下面用代码检验： 12345678910111213141516171819#include &lt;iostream&gt;using namespace std;class A&#123;public: int x=0;/*注：可能在早期的C++版本中，类的数据成员不能在声明时进行初始化， 但是在C++11新标准下，类的数据成员可以在声明时进行初始化，但不建议， 因为这样做破坏了类的抽象性)*/&#125;;int main()&#123; A a; //这里调用了默认构造函数 cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; 代码能正确执行； &emsp;&emsp;注意到，类的数据成员x在声明时同时定义了初始值。可能在早期的C++版本中，类的数据成员不能在声明时进行初始化，但是在C++11新标准下，类的数据成员可以在声明时进行初始化，但不建议，因为这样做破坏了类的抽象性。 &emsp;&emsp;此时该类一共有2个构造函数：默认构造函数和默认复制构造函数。 ⭐④ 类内无任何构造函数，有自定义复制构造函数&emsp;&emsp;（情况④较为特殊，应重点注意）&emsp;&emsp;按照C++标准，编译器应该隐含生成默认构造函数，事实是否如此？下面用代码来检验： 123456789101112131415161718#include &lt;iostream&gt;using namespace std;class A&#123;public: int x=0; A(A &amp;a)&#123; &#125;&#125;;int main()&#123; A a; //编译器提示错误，错误信息：类A不存在默认构造函数 cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; &emsp;&emsp;代码执行错误，编译器并没有隐含生成默认构造函数。 &emsp;&emsp;此时该类一共有1个构造函数：自定义复制构造函数。 PS&emsp;&emsp;C++11新标准中，默认构造函数和默认复制构造函数的一些新特性]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>默认构造函数</tag>
-        <tag>默认复制构造函数</tag>
-        <tag>构造函数个数</tag>
-        <tag>C++11新标准</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】顺序队列、循环队列、带链队列”队空队满时，队头队尾指针的情况分析]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E2%80%9C%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%E3%80%81%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E3%80%81%E5%B8%A6%E9%93%BE%E9%98%9F%E5%88%97%E2%80%9D%E9%98%9F%E7%A9%BA%E9%98%9F%E6%BB%A1%E6%97%B6%EF%BC%8C%E9%98%9F%E5%A4%B4%E9%98%9F%E5%B0%BE%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[顺序队列的三种状态 队空&emsp;12345678&amp;emsp;如图1所示，当顺序队列队空时，队头指针front和队尾指针rear相同；注意front和rear&lt;font color=red&gt;不是真正的指针&lt;/font&gt;，而是int型变量，代表元素下标。注：随着出队入队的操作，当出现队空状态时，队头队尾指针不一定指向第一个元素。&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww3.sinaimg.cn/large/006tNc79ly1g4ygtgvfshj30ta07fjs7.jpg&quot; &gt;&lt;br/&gt;图1 顺序队列的队空状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;2. 队满&amp;emsp;```qu.front == 0；qu.rear == max+1 图2 顺序队列的队满状态 一般状态&emsp;1234567&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww4.sinaimg.cn/large/006tNc79ly1g4ygt2ob6bj30t107mdgq.jpg&quot; &gt;&lt;br/&gt;图3 顺序队列的一般状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;#### 循环队列的三种状态1. 队空&amp;emsp;```qu.front == qu.rear &emsp;如图所示，当循环队列队空时，队头指针front和队尾指针rear相同。 图4 循环队列的队空状态 队满&emsp;1234567&amp;emsp;如图所示，当循环队列队满时，队头指针front和队尾指针rear相同。&lt;div align=center&gt; &lt;img width=&quot;45%&quot; src=&quot;http://ww2.sinaimg.cn/large/006tNc79ly1g4ygswpvjnj30ce07c3z0.jpg&quot; &gt;&lt;br/&gt;图5 循环队列的队满状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;3. 一般状态&amp;emsp;```qu.front == 0；qu.rear == n; //队内元素总数为n-1 图6 循环队列的一般状态 带链队列的三种状态 一般状态&emsp;在带链队列中，front和rear是真正的指针，指向节点的指针。 图7 带链队列的一般状态 队空&emsp;123456&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww2.sinaimg.cn/large/006tNc79ly1g4ygsjzmj5j30rd066dg1.jpg&quot; &gt;&lt;br/&gt;图8 带链队列的队空状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;3. 队内只有一个元素&amp;emsp;```lqu-&gt;front == lqu-&gt;rear &emsp;与队空的情况相似，当带链队列只有一个元素时，队头指针front和队尾指针rear相同。 图9 只有一个节点 队满&emsp;带链队列不存在队满的情况。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>队列</tag>
-        <tag>循环队列</tag>
-        <tag>带链队列</tag>
-        <tag>队满队空</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】“复制构造”比“先构造，后赋值”更加高效]]></title>
-    <url>%2F2019%2F07%2F20%2FC%2B%2B%20%20%E2%80%9C%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E2%80%9D%E6%AF%94%E2%80%9C%E5%85%88%E6%9E%84%E9%80%A0%EF%BC%8C%E5%90%8E%E8%B5%8B%E5%80%BC%E2%80%9D%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%2F</url>
-    <content type="text"><![CDATA[题目&emsp;&emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是： 12345678//程序 aint main() &#123; Student t1; Student t2(t1); //1 Student t3 = t1; //2 return 0;&#125; 123456789//程序 bint main() &#123; Student t1; Student t2(t1); //1 Student t3; t3 = t1; //2 return 0;&#125; 解答&emsp;&emsp;程序a中的1和2都带调用了复制构造函数；而程序b中只有1调用了复制构造函数，2没有调用。&emsp;&emsp;Student t3 = t1的意思可以表达为：利用对象t1“初始化”对象t3；&emsp;&emsp;t3 = t1的意思可以表达为：将对象t1“赋值”给对象t3。 利用单步跟踪的方法，可以发现：&emsp;&emsp;对象t1“初始化”对象t3时，编译器调用了复制构造函数，但没有调用构造函数；&emsp;&emsp;先定义t3,再把对象t1“赋值”给对象t3时，编译器调用了构造函数，但没有调用复制构造函数； 结论&emsp;&emsp;由此可见，复制构造函数可以一步解决：“初始化”一个新对象并给其“赋值”的功能，比先构造，后赋值更加高效一点（针对使用已有对象初始化新对象的情况）。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>Visual Studio</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【C++】一图搞懂：指针常量、指向常量的指针、常变量定义时是否需要初始化]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90%E4%B8%80%E5%9B%BE%E6%90%9E%E6%87%82%E3%80%91C%2B%2B%20%20%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E3%80%81%E6%8C%87%E5%90%91%E5%B8%B8%E9%87%8F%E7%9A%84%E6%8C%87%E9%92%88%E3%80%81%E5%B8%B8%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%E6%97%B6%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[纵向对比：]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>常变量</tag>
-        <tag>指向常量的指针</tag>
-        <tag>指针常量</tag>
-        <tag>初始化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【数据结构】稍复杂的级数题]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%A8%8D%E5%A4%8D%E6%9D%82%E7%9A%84%E7%BA%A7%E6%95%B0%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[题目&emsp;&emsp;该题求级数的复杂度，简单解析如下图。 &emsp;&emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？ 问题详解 &emsp;&emsp;可得S与等比数列求和的复杂度同阶，所以S可以当几何级数处理；而几何级数的复杂度与末项同阶且相等，所以S的复杂度为：&emsp;&emsp;O((logn-1) * 2^logn+1) = O(logn * 2^logn)。]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>级数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【数据结构】归并排序之一种基于二路归并的归并排序]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B9%8B%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E4%BA%8C%E8%B7%AF%E5%BD%92%E5%B9%B6%E7%9A%84%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;归并排序适用于向量和列表通用；使用的是分而治之的策略；&emsp;&emsp;归：递归。首先将列表一分为二，并不断递归一分为二；&emsp;&emsp;并：合并，将当前的两个子序列（已有序）合并的算法； 下面是通用的归并排序的模板代码： &emsp;&emsp;&emsp;&emsp;template &lt; typename T &gt;&emsp;&emsp;&emsp;&emsp;void Vector :: mergeSort(Rank lo, Rank hi) {&emsp;&emsp;&emsp;&emsp;if（hi - lo&lt;2）return；//一直递归到子序列是单元素，单元素区间自然有序，否则…&emsp;&emsp;&emsp;&emsp;int mi =（lo + hi）&gt;&gt;1；//以中点mi为界&emsp;&emsp;&emsp;&emsp;mergeSort(lo, mi)；//对前子序列递归调用本函数mergeSort，对前半段排序&emsp;&emsp;&emsp;&emsp;mergeSort(mi, hi)；//对后子序列递归调用本函数mergeSort，对后半段排序&emsp;&emsp;&emsp;&emsp;merge(lo, mi, hi)；//归并，将当前的两个子序列（已有序）合并的算法 &emsp;&emsp;由上述代码可知，二路归并排序的计算成本T(n) = 2*T(n/2) + O(n)；其中O(n)为函数merge的计算成本； merge(lo, mi, hi)的基本实现： merge( )的运行时间主要消耗于for循环，共有两个控制变量j和k &emsp;&emsp;初始：j=0，k=0&emsp;&emsp;最终：j=lb，k=lc&emsp;&emsp;亦即：j+k = lb+lc = hi-lo = n &emsp;&emsp;所以for循环共迭代n次，即merge( )总体迭代不过O(n)次，故二路归并排序的计算成本T(n) = 2 * T(n/2) + O(n)成立。通过计算，二路归并算法复杂度为O(n * logn)。计算思路：T(n)到T(1)共有logn层，每层包含一个复杂度为n的算法（merge( )），所以总的时间复杂度为O(n*logn)。 &emsp;&emsp;对于规模为n的向量，归并排序的最优、最坏时间复杂度均为Θ(nlog2n) 。 &emsp;&emsp;注意，若两个待归并子序列不等长甚至相差很悬殊，merge( )的复杂度仍为O(n)。]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>二路归并</tag>
-        <tag>归并排序</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【win10小技巧】解决windows 10睡眠后再唤醒，就会自动关机并重启的问题]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90win10%E5%B0%8F%E6%8A%80%E5%B7%A7%E3%80%91%E8%A7%A3%E5%86%B3windows%2010%E7%9D%A1%E7%9C%A0%E5%90%8E%E5%86%8D%E5%94%A4%E9%86%92%EF%BC%8C%E5%B0%B1%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E5%B9%B6%E9%87%8D%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;不管是左下角的睡眠选项，还是直接合上笔记本的盖子，计算机都应该是进入了睡眠状态。之后再按键盘上的任意键，计算机都应该会直接唤醒，唤醒后的计算机状态跟睡眠前的计算机状态是一毛一样的。 &emsp;&emsp;但是我的笔记本就是这么的不听话（一开始我以为，是因为我自己重装的win10系统的问题），在睡眠之后，如果我再唤醒电脑，很明显感觉到，笔记本键盘灯亮了、硬盘开始转了，似乎像是马上就要唤醒了！ &emsp;&emsp;但是！下一刹那！键盘灯全熄，硬盘也停转，接着就是正常的不紧不慢的重启。。。。。。 &emsp;&emsp;在网上查了各种帖子，看了无数的经验，试了几乎所有的方法，无非是设备管理器禁止节约电源啦、电池管理关闭快速启动啦等等等等，但是全部都毫无卵用。 &emsp;&emsp;就在我尝试了无数的方法之后，就快完全丧失信心的时候，我突然想，是不是我一开始的思路就是错误的？然后我仔细地把我的电脑的情况审视了一遍，发现原来我被网上的思路给带歪了！ &emsp;&emsp;网上的解决方法，都是从win10系统的角度去解决问题的，但是从计算机系统（非windows这种操作系统）的角度来讲，睡眠再唤醒这件事，其实跟win10系统是无关的。因为当你的电脑睡眠之后，掌控你电脑“主权”的并不是win10系统，而是计算机嵌入在主板上的最底层的操作系统（俗称BIOS），所以想要解决这个问题，就算把windows10改成花儿也无济于事。我们要修改的，应该是BIOS的状态。 &emsp;&emsp;有了这个思路，我只尝试了一次，就成功了。。。。。。 &emsp;&emsp;解决的方法简单到令人发指，就八个字——重置BIOS设置。 &emsp;&emsp;以我的笔记本戴尔Dell 燃7000 Pro（Dell Inspiron 7580）为例， 第二次更新：&emsp;&emsp;上面提到的方法虽然管用，但是后来发现，重置BIOS设置一段时间后（大概几天），问题依然还是会出现，这时又得重置BIOS设置，然后反反复复出现同样的问题，治标不治本！&emsp;&emsp;最近我发现一个一劳永逸的方法，能彻底解决“睡眠后再唤醒，就会自动关机并重启”的问题，不过最近我在准备秋招，诸事繁杂，等有空我会再来更新的~~]]></content>
-      <categories>
-        <category>小技巧</category>
-      </categories>
-      <tags>
-        <tag>win10</tag>
-        <tag>睡眠唤醒</tag>
-        <tag>睡眠重启</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【win10实用小技巧】谷歌浏览器书签固定到开始菜单屏幕（磁贴）当中]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90win10%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7%E3%80%91%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B9%A6%E7%AD%BE%E5%9B%BA%E5%AE%9A%E5%88%B0%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B1%8F%E5%B9%95%EF%BC%88%E7%A3%81%E8%B4%B4%EF%BC%89%E5%BD%93%E4%B8%AD%2F</url>
-    <content type="text"><![CDATA[将目标书签拖动到桌面，在桌面上形成该书签的快捷方式。 将桌面的书签快捷方式复制到C盘如下目标文件夹下（C:\ProgramData\Microsoft\Windows\Start Menu\Programs） 打开开始菜单，就能看到书签了，右键固定到开始屏幕。 结果完美。 参考文献&emsp;&emsp;[1] https://blog.csdn.net/luofl1992/article/details/52263669]]></content>
-      <categories>
-        <category>小技巧</category>
-      </categories>
-      <tags>
-        <tag>小技巧</tag>
-        <tag>win10</tag>
-        <tag>Windows10</tag>
-        <tag>开始菜单</tag>
-        <tag>磁贴</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14的U盘启动盘]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90VMware%E8%A3%85%E9%BB%91%E8%8B%B9%E6%9E%9C%E3%80%91DiskMakerX%E5%88%B6%E4%BD%9CmacOS%20Mojave%2010.14.x%E7%9A%84U%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88macOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;在色魔张大妈上看到一篇灰常灰常详细的VMware虚拟机装macOS Mojave10.14.x的教程，但是实操中我也遇到了和帖子下面众多网友所遇到的一样的问题，就是在win10平台下使用TransMac制作的 macOS U盘启动盘，VMware无法识别，从而使整个教程进行不下去。 &emsp;&emsp;后来经过一番折腾，发现只有在苹果系统下（无论黑苹果还是白苹果）制作的 macOS U盘启动盘，VMware虚拟机才能识别，WTF？我要是事先就有苹果系统的话，我还折腾什么黑苹果？！ &emsp;&emsp;于是乎就放弃了这位博主的装机思路，转而在网上寻找其它可行的虚拟机装黑苹果的方法。后来我按CSDN博主的帖子，成功安装MAC OS X 10.14 ！甚喜！甚喜！（防止原博主分享的安装包失效，贴一下我的百度云下载地址：防吞去了前缀1n0CtZsOdBbJ94At6zvkOQQ，提取码：mym4）。这个教程的好处是不需要制作U盘启动盘就能虚拟机安装黑苹果，遗憾的地方是装不了macOS Mojave 10.14.x。 &emsp;&emsp;这时突然反应过来，我已经装了个黑苹果，不就满足了“在苹果系统下制作 macOS U盘启动盘”的条件么？于是乎，成功在MAC OS X 10.14黑苹果系统下利用DiskMakerX制作出macOS Mojave10.14.x的U盘启动盘，然后再回到当初的起点：按照什么值得买原创博主的教程，成功在虚拟机上安装macOS Mojave10.14.3的黑苹果系统。 &emsp;&emsp;完结，撒。。。。。。花是不可能滴，接下来就介绍一下本文的主题：如何在macOS系统下使用DiskMakerX制作macOS Mojave10.14.x的U盘启动盘。 工具 macOS 10.14.3 Mojave 官方安装镜像 下载地址：https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88 DiskMakerX 下载地址：防吞去了前缀1Brv6U42MlNQE_KPpeJUW2w，提取码：svfk Unlocker（这个教程要用到） 下载地址：防吞去了前缀1JnrDszfBd4MZY5brniFwSA ，提取码：yjmi 准备一个容量&gt;=8G的U盘。 教程步骤&emsp;&emsp;1. 将macOS 10.14.3 Mojave.dmg和DiskMaker_X_803.dmg两个文件下载到电脑上，再用鼠标直接把文件拖动到虚拟机黑苹果的桌面上。 &emsp;&emsp;2. 首先双击DiskMaker_X_803.dmg安装之。 &emsp;&emsp;3. 然后双击macOS 10.14.3 Mojave.dmg，会出现一个包含“安装macOS Mojave”的新对话框，将“安装macOS Mojave”直接拖动到桌面。 &emsp;&emsp;4. 拖动到桌面后，将“安装macOS Mojave”这个文件的中文名改成英文名（这样做的目的是让diskmaker能自动发现）。 &emsp;&emsp;5. 将U盘格式化，具体格式化步骤可参见参见这篇教程。 &emsp;&emsp;6. 接下来打开安装好的DiskMakerX软件，软件打开后会自动检测到安装程序，如图一路点击蓝色继续。 &emsp;&emsp;7. 到选择U盘的这一步一定要谨慎，U盘的名字是格式化U盘时起的名字（这里的Mojave是我的U盘的名字，每个人在操作时将有所不同，不可生搬硬套）。 &emsp;&emsp;8. 接下来一路点击下一步继续，然而这个软件有点坑爹的就是，最后一步点完后，它的对话框就消失了，也看不到正在制作U盘启动盘的进度条，害的我还以为系统死机了。实际情况是软件在后台制作U盘启动盘，耐心等待一段时间，会弹出制作完成的对话框。 &emsp;&emsp;9. 最后，拿着你制作好的U盘启动盘，按照文章开头提到的教程，就可以装好macOS Mojave10.14.3的虚拟机了。 &emsp;&emsp;PS：macOS Mojave比macOS X要流畅顺滑一些（仅针对我在虚拟机上的使用体验），贴几张图。]]></content>
-      <categories>
-        <category>小技巧</category>
-      </categories>
-      <tags>
-        <tag>虚拟机</tag>
-        <tag>VMware</tag>
-        <tag>黑苹果</tag>
-        <tag>U盘启动盘</tag>
-        <tag>macOS Mojave</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Python】列表中元素和其索引的绑定和迭代]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Python%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3%E3%80%91%E5%88%97%E8%A1%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E5%92%8C%E5%85%B6%E7%B4%A2%E5%BC%95%E7%9A%84%E7%BB%91%E5%AE%9A%E5%92%8C%E8%BF%AD%E4%BB%A3%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;在迭代 [‘Adam’, ‘Lisa’, ‘Bart’, ‘Paul’] 时，如果我们想打印出名次 - 名字（名次从1开始)，请考虑如何在迭代中打印出来。 提示：考虑使用zip()函数和range()函数 使用range()函数 123L=zip([1,2,3,4], ['Adam', 'Lisa', 'Bart', 'Paul'] )for i in range(0,4): print L[i][0],'-',L[i][1] 不使用range()函数 123L=zip([1,2,3,4], ['Adam', 'Lisa', 'Bart', 'Paul'] )for i,j in L: print i,'-',j zip()函数的另一种使用方法 123L=['Adam', 'Lisa', 'Bart', 'Paul']for i,j in zip(range(1,len(L)+1),L): print i,'-',j 使用enumerate()函数 123L=['Adam', 'Lisa', 'Bart', 'Paul']for i,j in enumerate(L): print i+1,'-',j 提示：enumerate（）函数 &emsp;&emsp;使用 enumerate() 函数，我们可以在for循环中同时绑定元素的索引和元素的名字。但是，这不是 enumerate() 的特殊语法。实际上，enumerate() 函数把： 1[&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;] 变成了类似： 1[(0, &apos;Adam&apos;), (1, &apos;Lisa&apos;), (2, &apos;Bart&apos;), (3, &apos;Paul&apos;)] &emsp;&emsp;实际上，通过enumerate()函数，列表中的每一个元素都变成了一个含有两个元素的tuple列表。]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>索引迭代</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Python】list列表和set列表之间的相互删除和补充]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Python%E3%80%91list%E5%88%97%E8%A1%A8%E5%92%8Cset%E5%88%97%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E5%88%A0%E9%99%A4%E5%92%8C%E8%A1%A5%E5%85%85%2F</url>
-    <content type="text"><![CDATA[First&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&emsp;&emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。 12345678s = set(['Adam', 'Lisa', 'Paul'])L = ['Adam', 'Lisa', 'Bart', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x)print L &emsp;&emsp;尝试改进代码后，输出为[‘Lisa’, ‘Paul’]； 123456789s = set(['Adam', 'Lisa', 'Paul'])L = ['Adam', 'Lisa', 'Bart', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x) x-=1print L &emsp;&emsp;很奇怪’Adam’删掉了，’Lisa’并没有被删掉，于是增加set和list的元素之后再做尝试，输出结果为[‘Lisa’, ‘cyc’, ‘Paul’]。 123456789s = set(['Adam', 'Lisa', 'Paul' ,'cyc'])L = ['Adam', 'Lisa', 'Bart', 'cyc', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x) x-=1print L &emsp;&emsp;于是发现规律：当list列表中的一个元素被删掉，那么紧接着这个被删掉的元素的后面的元素(‘Lisa’和’cyc’)就不会被删掉，不管’Lisa’和’cyc’有没有跟set里的元素重复。所以看上去就好像’Lisa’和’cyc’被跳过了。 &emsp;&emsp;于是我们可以这样理解：当编译器执行完L.pop(0)时，原来的L[0]被删除了，后面的元素全部左移一位('Lisa'变为L[0]，'Bart'变为L[1])，然后编译器回到m in L:```，这时的m指的是L[1]，那么L[0]的'Lisa'就被跳过了，同理'cyc'也是。1234567891011121314&amp;emsp;&amp;emsp;所以最好创建一个L的副本LL，只改动LL的内容，L不变，如下：```javas = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]LL = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]x=-1for m in L: x+=1 if m in s: LL.pop(x) x-=1L=LLprint L &emsp;&emsp;结果输出12345678910111213#### Second&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，则把set列表中的相应元素删掉;list中的有而set中没有的元素，则添加到set中。##### 解决方法```javascripts = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]for n in L: if n in s: s.remove(n) else: s.add(n)print s &emsp;&emsp;输出结果为set([&#39;Bart&#39;])。]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>list</tag>
-        <tag>set</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Java1.8】实现类、匿名类、内部类、匿名内部类、Lambda表达式以及优化Lambda表达式比较]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Java1.8%E3%80%91%E5%AE%9E%E7%8E%B0%E7%B1%BB%E3%80%81%E5%8C%BF%E5%90%8D%E7%B1%BB%E3%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%AF%94%E8%BE%83%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;梳理一下实现类、匿名类、内部类、匿名内部类、Lambda表达式以及优化Lambda表达式的关系，仅针对初学者。&emsp;&emsp;自定义一个接口MyFunctionInterface，其中有且仅有一个抽象方法（接口中可以有其他非抽象方法内容），代码实现为: 123456789/* 函数式接口：有且只有一个抽象方法的接口，称之为函数式接口； 当然接口中可以包含其他的方法（默认，静态，私有）。 */public interface MyFunctionInterface &#123; public abstract void method(); &#125; 实现类（创建实现类对象）&emsp;&emsp;实现接口MyFunctionInterface，重写其中的抽象方法；新建一个Java文件，实现类代码为：12345678public class MyFunctionInterfaceImpl implements MyFunctionInterface &#123; @Override public void method() &#123; System.out.println("测试成功"); &#125; &#125; &emsp;&emsp;新建一个测试类，代码为： 12345678public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = new MyFunctionInterfaceImpl();//多态 mi.method(); &#125;&#125; 匿名类（创建匿名实现类对象） 1234567public class Demo &#123; public static void main(String[] args) &#123; new MyFunctionInterfaceImpl().method(); &#125;&#125; 内部类（不需要创建实现类对象） 12345678910111213public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("内部类测试成功"); &#125; &#125;; mi.method(); &#125;&#125; 匿名内部类（不需要创建实现类对象） 123456789101112public class Demo &#123; public static void main(String[] args) &#123; new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("匿名内部类测试成功"); &#125; &#125;.method(); &#125;&#125; Lambda表达式&emsp;&emsp;因为接口MyFunctionInterface中有且仅有一个抽象方法，所以是函数式接口，可以使用Lambda表达式，代码实现： 12345678910public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = () -&gt; &#123; System.out.println("Lambda表达式测试成功"); &#125;; mi.method(); &#125;&#125; 优化Lambda表达式 12345678public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = () -&gt; System.out.println("优化Lambda表达式测试成功"); mi.method(); &#125;&#125; &emsp;&emsp;实际上，Lambda表达式常用作方法的参数或方法的返回值。当Lambda表达式作为方法的形参： 12345678910111213141516171819202122232425public class Demo &#123; public static void show(MyFunctionInterface myInter) &#123; myInter.method(); &#125; public static void main(String[] args) &#123; /* //先使用匿名内部类热热身 show(new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("匿名内部类测试成功"); &#125; &#125;);//show方法执行myInter.method()之前，method方法已经重写，所以执行成功 */ //Lambda表达式 show(() -&gt; &#123; System.out.println("Lambda表达式测试成功"); &#125;); //优化的Lambda表达式 show(()-&gt;System.out.println("优化的Lambda表达式测试成功")); &#125;&#125; 当Lambda表达式作为方法的返回值（这里使用接口Comparator&lt; String &gt;举例）： 12345678910111213141516171819202122public class Demo &#123; //定义一个方法，方法的返回值类型使用函数式接口Comparator public static Comparator&lt;String&gt; getComparator() &#123;//接口Comparator&lt;&gt;只有一个抽象方法，所以可以使用Lambda表达式 /* //先用匿名内部类热热身 return new Comparator&lt;String&gt;() &#123; @Override public int compare(String o1, String o2) &#123; return o2.length()-o1.length();//按字符串降序排序 &#125; &#125;; */ //方法的返回值类型是一个函数式接口，所有我们可以返回一个Lambda表达式(优化后的) return (o1, o2) -&gt; o2.length() - o1.length(); &#125; public static void main(String[] args) &#123; String[] arr = &#123;"cc","bbb","aaaa"&#125;;//首先按字符个数、再按字母进行降序 Arrays.sort(arr,getComparator());//sort(T[] a, Comparator&lt;? super T&gt; c) 根据指定的比较器引发的顺序对指定的对象数组进行排序。 System.out.println(Arrays.toString(arr));//打印结果：[aaaa, bbb, cc] &#125;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>实现类</tag>
-        <tag>匿名内部类</tag>
-        <tag>Lambda表达式</tag>
-        <tag>内部类</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Java】使用文件字节输入/输出流复制文件、使用字节缓冲输入/输出流复制文件的区别]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Java%E3%80%91%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;首先我们来对比一下文件字节输入流和字节缓冲输入流的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。 &emsp;&emsp;再来对比文件字节输出流和字节缓冲输出流的write方法，可以看到有所不同：&emsp;&emsp;文件字节输出流的write(bytes[ ] b)是将字节数组中的数据直接写入到此文件输出流，不经过缓冲区；字节缓冲输出流会给文件字节输出流增加一个缓冲区，提高文件字节输出流的写入效率，然后通过flush方法，将缓冲区中的数据刷新到文件中。 &emsp;&emsp;综上所述，使用文件字节输入/输出流复制文件、使用字节缓冲输入/输出流复制文件的区别就在于：&emsp;&emsp;两者在输入上都经过缓冲区（缓冲数组）；但是在输出上，文件字节输出流不经过缓冲区，字节缓冲输出流经过缓冲区。所以理论上，使用字节缓冲输入/输出流进行文件复制的效率要高于使用文件字节输入/输出流。 代码示例&emsp;&emsp;使用文件字节输入/输出流复制一张图片，耗时60毫秒左右。 123456789101112131415public static void main(String[] args) throws IOException &#123; long s = System.currentTimeMillis(); FileInputStream fis = new FileInputStream("C:\\1.jpg"); FileOutputStream fos = new FileOutputStream("D:\\1.jpg"); //一次读取多个字节，写入多个字节的方式（使用数组缓冲） byte[] bytes = new byte[1024];//对于较大的文件，适当调整为1024的整数倍能大幅提高复制效率 int len = 0; while ((len = fis.read(bytes)) != -1) &#123; fos.write(bytes, 0, len);//len保证写入的是字节数组中的有效字节（当前循环中） &#125; fos.close(); fis.close(); long e = System.currentTimeMillis(); System.out.println(e-s); &#125; &emsp;&emsp;使用字节缓冲输入/输出流复制同一张图片，耗时20毫秒左右。 1234567891011121314public static void main(String[] args) throws IOException &#123; long s = System.currentTimeMillis(); BufferedInputStream bis = new BufferedInputStream(new FileInputStream("C:\\1.jpg")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\1.jpg")); byte[] bytes = new byte[1024]; int len = 0; while ((len = bis.read(bytes)) != -1) &#123; bos.write(bytes); &#125; bos.close(); bis.close(); long e = System.currentTimeMillis(); System.out.println(e-s); &#125;]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>I0流</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Java】框架的基本原理中篇：注解优化]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%AD%E7%AF%87%EF%BC%9A%E6%B3%A8%E8%A7%A3%E4%BC%98%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;在框架的基本原理上篇中，笔者介绍了框架的灵魂：反射机制。使用反射机制，在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法，这就是框架内部的基本原理。本篇将介绍如何使用注解，将上篇中的配置文件省略并简化代码，达到相同的功能。 &emsp;&emsp;首先，我们新建一个Person类，内容与上篇中相同；新建一个注解接口；新建一个测试类。 &emsp;&emsp;Person类中的代码为： 12345678910111213141516171819202122232425262728293031323334353637383940414243package top.imcyc.day07.annotation;public class Person &#123; private String name; private int age; @Override public String toString() &#123; return "Person&#123;" + "name='" + name + '\'' + ", age=" + age + '&#125;'; &#125; public Person() &#123; &#125; public Person(String name, int age) &#123; this.name = name; this.age = age; &#125; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public int getAge() &#123; return age; &#125; public void setAge(int age) &#123; this.age = age; &#125; public void eat() &#123; System.out.println("eat......"); &#125;&#125; &emsp;&emsp;注解接口中的代码为： 12345678910111213package top.imcyc.day07.annotation;import java.lang.annotation.ElementType;import java.lang.annotation.Retention;import java.lang.annotation.RetentionPolicy;import java.lang.annotation.Target;@Target(ElementType.TYPE)@Retention(RetentionPolicy.RUNTIME)public @interface Pro &#123; String className(); String methodName();&#125; &emsp;&emsp;测试类中的代码为： 1234567891011121314151617181920212223package top.imcyc.day07.annotation;import java.lang.reflect.Method;@Pro(className = "top.imcyc.day07.annotation.Person", methodName = "eat")public class reflectTest &#123; public static void main(String[] args) throws Exception &#123; //解析注解(获取注解的属性值) // 1. 获取该类的字节码文件对象 Class&lt;reflectTest&gt; reflectTestClass = reflectTest.class; // 2. 获取顶部的注解的对象 // 其实就是在内存中生成了一个该注解接囗的子类实现对象，子类重写了className和methodName方法，返回的就是"...Person"和"eat"字符串 Pro an = reflectTestClass.getAnnotation(Pro.class); //最终目的是拿到顶部注解里定义的属性值 String s = an.className(); String s1 = an.methodName(); Class cls = Class.forName(s);//获取s代表的类的字节码文件对象 Object obj = cls.newInstance();//获取一个类对象 Method method = cls.getMethod(s1);//获取该类的方法 method.invoke(obj);//执行此方法，参数传入要被执行的方法对应的类对象 &#125;&#125; &emsp;&emsp;可以看到，测试类顶部注解里的属性值就代替了原来配置文件里的内容，省去了设置配置文件，简化了测试代码，同时保持了程序的扩展性。满足在不改动代码的前提下，只需要改动顶部注解的属性值，就可以创建任意类的对象，可以执行任意方法。 &emsp;&emsp;下篇入口。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>注解</tag>
-        <tag>反射</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Java】框架的基本原理下篇：简单的框架测试（使用注解而不是自定义注解）]]></title>
-    <url>%2F2019%2F07%2F20%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8B%E7%AF%87%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%84%E6%A1%86%E6%9E%B6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E8%80%8C%E4%B8%8D%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%EF%BC%89%2F</url>
-    <content type="text"><![CDATA[上篇及中篇入口。 案例：简单的框架测试&emsp;&emsp;准备一个Calculator类，一个注解，一个测试类。 &emsp;&emsp;Check注解的代码为： 1234567891011package top.imcyc.day07.annotation.demo;import java.lang.annotation.ElementType;import java.lang.annotation.Retention;import java.lang.annotation.RetentionPolicy;import java.lang.annotation.Target;@Retention(RetentionPolicy.RUNTIME)@Target(ElementType.METHOD)//限用于方法之上public @interface Check &#123;&#125; &emsp;&emsp;Calculator类中写一些正常的方法，写一些会抛出异常的方法，以便测试类测试。类代码为： 1234567891011121314151617181920212223242526272829package top.imcyc.day07.annotation.demo;public class Calculator &#123; @Check public void add() &#123; System.out.println("1+0 =" + (1 + 0)); &#125; @Check public void sub() &#123; String str = null; str.toString();//会出现空指针异常 System.out.println("1-0 =" + (1 - 0)); &#125; @Check public void mul() &#123; System.out.println("1*0 =" + (1 * 0)); &#125; @Check public void div() &#123; System.out.println("1/0 =" + (1 / 0));//会出现数学异常 &#125; public void show() &#123; System.out.println("HelloWorld"); &#125;&#125; &emsp;&emsp;测试类代码为： 123456789101112131415161718192021222324252627282930313233343536373839404142package top.imcyc.day07.annotation.demo;import java.io.*;import java.lang.reflect.Method;public class TestCheck &#123; public static void main(String[] args) throws IOException &#123; //1.创建计算器对象 Calculator cal = new Calculator(); //2.获取字节码文件对象 Class cls = cal.getClass(); //3.获取所有方法 Method[] methods = cls.getMethods(); int num = 0;//出现异常的次数 BufferedWriter bw = new BufferedWriter(new FileWriter("bug.txt")); for (Method method : methods) &#123; if (method.isAnnotationPresent(Check.class)) &#123;//判断方法上有没有指定的注解 try &#123; method.invoke(cal); &#125; catch (Exception e) &#123; //捕获异常，并记录到文件中 num++; bw.write(method.getName() + "方法出现异常"); bw.newLine(); //bw.write("异常的名称："+e.getCause());//java.lang.ArithmeticException: / by zero //bw.write("异常的名称："+e.getCause().getClass().getName());//java.lang.ArithmeticException bw.write("异常的名称：" + e.getCause().getClass().getSimpleName());//ArithmeticException bw.newLine(); bw.write("异常的原因：" + e.getCause().getMessage()); bw.newLine(); bw.write("------------------------------------"); bw.newLine(); &#125; &#125; &#125; bw.write("本次测试一共出现" + num + "次异常"); bw.flush(); bw.close(); &#125;&#125; &emsp;&emsp;程序执行结束后，会生成bug.txt文件，文件内容为： 当测试类执行后，会自动自行被检测的所有方法（加了Check注解的方法），判断方法是否有异常，记录到文件中。可以看到每一个异常都会被详细记录下来。 总结： 为什么要加注解？在类中的成员方法上加注解，主方法执行的时候才能分辨出哪些方法是需要检查的。加注解其实相当于贴“标签”，让主程序来分辨。 大多数时候，我们会使用注解，而不是自定义注解。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>注解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[【Java】框架的基本原理上篇：反射机制]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8A%E7%AF%87%EF%BC%9A%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&emsp;&emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&emsp;&emsp;&emsp;&emsp;好处：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1. 可以在程序运行过程中，操作这些对象；&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2. 可以解耦，提高程序的可扩展性。 &emsp;&emsp;这里使用一个简单的案例，介绍一下框架的基本原理。准备工作：新建一个Person类、新建一个pro.properties的配置文件、新建一个测试类。 &emsp;&emsp;Person类中写一个测试方法eat： 1234567891011121314151617181920212223242526272829303132333435363738394041424344package top.imcyc.day07.demo02;import java.io.Serializable;public class Person implements Serializable &#123; private String name; private int age; @Override public String toString() &#123; return "Person&#123;" + "name='" + name + '\'' + ", age=" + age + '&#125;'; &#125; public Person() &#123; &#125; public Person(String name, int age) &#123; this.name = name; this.age = age; &#125; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public int getAge() &#123; return age; &#125; public void setAge(int age) &#123; this.age = age; &#125; public void eat() &#123; System.out.println("eat......"); &#125;&#125; &emsp;&emsp;配置文件中加入Person类名和要执行的方法名： &emsp;&emsp;测试类reflectTest的代码为： 12345678910111213141516171819202122232425262728package top.imcyc.day07.reflect;import java.io.InputStream;import java.lang.reflect.Method;import java.util.Properties;public class reflectTest &#123; public static void main(String[] args) throws Exception &#123; //获取class目录下的配置文件的方式： //1. 获取类reflectTest的字节码文件对象（通过reflectTest.class方法） //2. 获取类reflectTest的字节码文件(对象)对应的类加载器（类加载器：将.class文件中的二进制流加载到内存中） //3. 类加载器寻找配置文件 // 通过类加载器的getResourceAsStream方法，获取到配置文件的字节输入流 //4. 通过Properties的方法load，读取配置文件的字节输入流，转换为一个Map集合。 InputStream is = reflectTest.class.getClassLoader().getResourceAsStream("pro.properties"); Properties pro = new Properties(); pro.load(is);//配置文件转换为Map集合存储到pro中，例如键值对“key:methodName, value:eat” //获取配置文件中的数据 String className = pro.getProperty("className"); String methodName = pro.getProperty("methodName"); Class cls = Class.forName(className);//获取className代表的类的字节码文件对象 Object obj = cls.newInstance();//获取一个类对象 Method method = cls.getMethod(methodName);//获取该类的方法eat method.invoke(obj);//执行此方法，参数传入要被执行的方法对应的类对象 &#125;&#125; &emsp;&emsp;在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法；这就是框架内部的基本原理！&emsp;&emsp;可以看到使用框架的优点其一：提高程序的可扩展性。 &emsp;&emsp;中篇及下篇入口。]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>反射机制</tag>
-        <tag>框架</tag>
-        <tag>配置文件</tag>
+        <tag>个人博客</tag>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>Coding</tag>
+        <tag>域名</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【Hexo博客搭建·篇一】本地博客主题修改后，推到远端服务器的操作细节]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%B8%80%E3%80%91%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%90%8E%EF%BC%8C%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E7%BB%86%E8%8A%82%2F</url>
+    <url>%2F2019%2F07%2F06%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%B8%80%E3%80%91%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E5%90%8E%EF%BC%8C%E6%8E%A8%E5%88%B0%E8%BF%9C%E7%AB%AF%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E7%BB%86%E8%8A%82%2F</url>
     <content type="text"><![CDATA[&emsp;&emsp;以MacOS系统为例，在个人博客配置文件夹修改好主题文件后，如何推到远端服务器（github仓库、coding仓库）？网上搜到的答案一般是：&emsp;&emsp;&emsp;&emsp;hexo clean&emsp;//清除缓存文件 (db.json) 和已生成的静态文件 (public)&emsp;&emsp;&emsp;&emsp;hexo g&emsp;&emsp;&emsp;//生成缓存和静态文件&emsp;&emsp;&emsp;&emsp;hexo d&emsp;&emsp;&emsp;//重新部署到服务器hexo操作三连就行了，但是如果我们直接打开终端执行命令hexo clean是会报错的，正确做法是：&emsp;&emsp;1. cd /Users/你的用户文件夹名/你的blog文件夹名//首先定位到博客文件夹&emsp;&emsp;2. sudo su//开启root权限（超级管理员权限）&emsp;&emsp;3. 依次执行命令hexo cl hexo g hexo d，将本地hexo文件推送到远端服务器。回到我们的个人博客网站刷新即可。ps：刷新一次可能没反应，多刷新几次，或等待一会儿再刷新。 &emsp;&emsp;很多时候，我们要对本地hexo文件进行多次修改调整，如果每次调整都需要执行hexo cl hexo g hexo d后再使用浏览器查看个人博客的修改效果，这样的效率是十分低下的，这时我们就可以使用hexo s命令，具体步骤如下： &emsp;&emsp;1. 修改完本地hexo文件后，执行hexo cl hexo g命令，接着执行hexo s，这时我们在浏览器地址栏输入http://localhost:4000，就可以访问我们最新修改后的博客网站（注意这时候本地文件并没有重新部署到服务器端，只是在本地生成的静态网页）。&emsp;&emsp;&emsp;2. 我们可以通过hexo cl hexo g hexo s的命令，在本地对博客进行多次修改配置，并通过网址http://localhost:4000查看博客效果。&emsp;&emsp;&emsp;3. 经过多次修改调整后，最后再执行命令hexo d将本地文件部署到远端服务器，这样的好处是只需要执行一次远端服务器部署，省去了每次修改都需要重新部署查看修改效果的麻烦。 篇二、篇三入口。]]></content>
       <categories>
         <category>个人博客</category>
@@ -404,64 +62,175 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【Hexo博客搭建 • 篇三】一个自定义域名同时绑定Coding(国内访问) + GitHub(国外访问)]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%B8%89%E3%80%91%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%90%8C%E6%97%B6%E7%BB%91%E5%AE%9ACoding(%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE)%20%2B%20GitHub(%E5%9B%BD%E5%A4%96%E8%AE%BF%E9%97%AE)%2F</url>
-    <content type="text"><![CDATA[篇一、篇二入口。 前言&emsp;&emsp;在【Hexo博客搭建 • 篇二】中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，但是由于Github服务器的原因，导致访问个人博客不够稳定。本篇将介绍使用一个自定义域名同时绑定Coding + GitHub 的方法，点击imcyc.top，国内用户访问到的是Coding仓库，而国外用户访问到的则是GitHub仓库，堪称完美的解决方案。 hexo托管到coding服务器&emsp;&emsp;将hexo托管到coding服务器上，过程与将hexo托管到github服务器上大同小异。 &emsp;&emsp;1. 在腾讯云开发者平台上注册账号，接着新建一个项目，注意项目地址必须填：你的用户名.coding.me。 &emsp;&emsp;2. 创建完项目后，点击进入项目代码-&gt;Pages服务-&gt;勾选同意-&gt;开启Coding Pages。 &emsp;&emsp;3. 绑定SSH公钥，腾讯云开发者平台的帮助文档就很详细，按这个来就行了。 &emsp;&emsp;4. 回到MacOS，修改自己的blog文件夹下的_config.yml，将其中的一段代码改为如下所示： 12345678# Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy: type: git repo: github: https://github.com/Spr-Chan/Spr-Chan.github.io.git coding: https://dev.tencent.com/u/spr_chan/p/spr_chan.coding.me.git branch: master 注意github和coding的url是因人而异的。 &emsp;&emsp;5. 终端定位到/Users/spr_chan/blog并输入sudo su开启超级管理员模式，使用hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 就能将hexo同时推送到github和coding两个仓库，岂不美哉~ 域名绑定&emsp;&emsp;在【Hexo博客搭建 • 篇二】中，笔者详细介绍了GitHub仓库绑定自定义域名的方法，而Coding仓库绑定自定义域名的方法与前者大同小异。 &emsp;&emsp;1. 进入项目详情页面，找到Pages服务，点击进入设置。 &emsp;&emsp;2. 输入以购买的自定义域名，点击绑定，这时会出现警告信息。 &emsp;&emsp;3. 按照警告信息的要求，我们在域名解析界面添加相应的解析，如下图所示。 &emsp;&emsp;4. 此外再增加四条解析，注意GitHub解析路径选择国外，用以国外用户访问；Coding解析路径选择默认，用以国内用户访问。 &emsp;&emsp;5. 回到Coding，发现域名已经绑定成功，稍等片刻（等待阿里云解析完成），即可使用自定义域名访问个人博客，完结撒花~~]]></content>
+    <title><![CDATA[【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14的U盘启动盘]]></title>
+    <url>%2F2019%2F07%2F04%2F%E3%80%90VMware%E8%A3%85%E9%BB%91%E8%8B%B9%E6%9E%9C%E3%80%91DiskMakerX%E5%88%B6%E4%BD%9CmacOS%20Mojave%2010.14.x%E7%9A%84U%E7%9B%98%E5%90%AF%E5%8A%A8%E7%9B%98%EF%BC%88macOS%E7%B3%BB%E7%BB%9F%E4%B8%8B%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[前言&emsp;&emsp;在色魔张大妈上看到一篇灰常灰常详细的VMware虚拟机装macOS Mojave10.14.x的教程，但是实操中我也遇到了和帖子下面众多网友所遇到的一样的问题，就是在win10平台下使用TransMac制作的 macOS U盘启动盘，VMware无法识别，从而使整个教程进行不下去。 &emsp;&emsp;后来经过一番折腾，发现只有在苹果系统下（无论黑苹果还是白苹果）制作的 macOS U盘启动盘，VMware虚拟机才能识别，WTF？我要是事先就有苹果系统的话，我还折腾什么黑苹果？！ &emsp;&emsp;于是乎就放弃了这位博主的装机思路，转而在网上寻找其它可行的虚拟机装黑苹果的方法。后来我按CSDN博主的帖子，成功安装MAC OS X 10.14 ！甚喜！甚喜！（防止原博主分享的安装包失效，贴一下我的百度云下载地址：防吞去了前缀1n0CtZsOdBbJ94At6zvkOQQ，提取码：mym4）。这个教程的好处是不需要制作U盘启动盘就能虚拟机安装黑苹果，遗憾的地方是装不了macOS Mojave 10.14.x。 &emsp;&emsp;这时突然反应过来，我已经装了个黑苹果，不就满足了“在苹果系统下制作 macOS U盘启动盘”的条件么？于是乎，成功在MAC OS X 10.14黑苹果系统下利用DiskMakerX制作出macOS Mojave10.14.x的U盘启动盘，然后再回到当初的起点：按照什么值得买原创博主的教程，成功在虚拟机上安装macOS Mojave10.14.3的黑苹果系统。 &emsp;&emsp;完结，撒。。。。。。花是不可能滴，接下来就介绍一下本文的主题：如何在macOS系统下使用DiskMakerX制作macOS Mojave10.14.x的U盘启动盘。 工具 macOS 10.14.3 Mojave 官方安装镜像 下载地址：https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88 DiskMakerX 下载地址：防吞去了前缀1Brv6U42MlNQE_KPpeJUW2w，提取码：svfk Unlocker（这个教程要用到） 下载地址：防吞去了前缀1JnrDszfBd4MZY5brniFwSA ，提取码：yjmi 准备一个容量&gt;=8G的U盘。 教程步骤&emsp;&emsp;1. 将macOS 10.14.3 Mojave.dmg和DiskMaker_X_803.dmg两个文件下载到电脑上，再用鼠标直接把文件拖动到虚拟机黑苹果的桌面上。 &emsp;&emsp;2. 首先双击DiskMaker_X_803.dmg安装之。 &emsp;&emsp;3. 然后双击macOS 10.14.3 Mojave.dmg，会出现一个包含“安装macOS Mojave”的新对话框，将“安装macOS Mojave”直接拖动到桌面。 &emsp;&emsp;4. 拖动到桌面后，将“安装macOS Mojave”这个文件的中文名改成英文名（这样做的目的是让diskmaker能自动发现）。 &emsp;&emsp;5. 将U盘格式化，具体格式化步骤可参见参见这篇教程。 &emsp;&emsp;6. 接下来打开安装好的DiskMakerX软件，软件打开后会自动检测到安装程序，如图一路点击蓝色继续。 &emsp;&emsp;7. 到选择U盘的这一步一定要谨慎，U盘的名字是格式化U盘时起的名字（这里的Mojave是我的U盘的名字，每个人在操作时将有所不同，不可生搬硬套）。 &emsp;&emsp;8. 接下来一路点击下一步继续，然而这个软件有点坑爹的就是，最后一步点完后，它的对话框就消失了，也看不到正在制作U盘启动盘的进度条，害的我还以为系统死机了。实际情况是软件在后台制作U盘启动盘，耐心等待一段时间，会弹出制作完成的对话框。 &emsp;&emsp;9. 最后，拿着你制作好的U盘启动盘，按照文章开头提到的教程，就可以装好macOS Mojave10.14.3的虚拟机了。 &emsp;&emsp;PS：macOS Mojave比macOS X要流畅顺滑一些（仅针对我在虚拟机上的使用体验），贴几张图。]]></content>
       <categories>
-        <category>个人博客</category>
+        <category>小技巧</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-        <tag>Coding</tag>
-        <tag>域名绑定</tag>
-        <tag>Mac</tag>
+        <tag>虚拟机</tag>
+        <tag>VMware</tag>
+        <tag>黑苹果</tag>
+        <tag>U盘启动盘</tag>
+        <tag>macOS Mojave</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【Hexo博客搭建 • 篇二】GitHub仓库绑定自定义域名]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%20%E2%80%A2%20%E7%AF%87%E4%BA%8C%E3%80%91GitHub%E4%BB%93%E5%BA%93%E7%BB%91%E5%AE%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%2F</url>
-    <content type="text"><![CDATA[篇一入口。 前言&emsp;&emsp;使用Hexo+Github完成个人博客的搭建后，我的博客链接就是“https://spr-chan.github.io”，本文将介绍GitHub仓库绑定自定义域名的方法。 准备域名&emsp;&emsp;1. 购买域名，我已经在阿里云购买到域名“imcyc.top”。 &emsp;&emsp;2. 解析域名，解析操作如下图所示。 注意要添加两条解析，记录值是 username.github.io。 配置CNAME方法一（不推荐）&emsp;&emsp;在自己的Github仓库新建CNAME，编辑并写入“www.imcyc.top”。 接着进入Settings，往下翻到GitHub Pages，发现Custom domain里已经有了“www.imcyc.top”，说明这一步操作成功。注意Enforce HTTPS要勾选，这是2018年5月之后Github重磅推出的新功能，让你的个人域名从此不再显示“不安全”。 &emsp;&emsp;方法一不足之处：由于是在仓库根目录下新建的CNAME文件，当我们在MacOS终端使用命令hexo clean&amp;&amp;hexo g&amp;&amp;hexo d后，CNAME文件就会被冲掉，这是又要再次新建CNAME文件，非常麻烦。 方法二（推荐）&emsp;&emsp;相比较于方法一，方法二在本地blog文件夹里新建CNAME文件再推到Github仓库，这样就避免hexo clean冲掉CNAME文件情况的发生。 &emsp;&emsp;MacOS系统下， 进入Users/spr-chan/blog文件夹下，在其中的source文件夹内新建文件CNAME，内容为：www.imcyc.top现已改成imcyc.top。再在终端用命令hexo clean&amp;&amp;hexo g&amp;&amp;hexo d将博客文件推送到Github仓库，在浏览器地址栏输入imcyc.top或www.imcyc.top，即可访问个人博客，并且不提示连接不安全，完结撒花！ &emsp;&emsp;注：谷歌浏览器输入并前往“imcyc.top”，可能会提示不安全。 PS：增加CSDN博客&emsp;&emsp;跟方法二雷同，在本地Users/spr-chan/blog/source文件夹下新建文件csdn.html，内容为： 12345678&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;&lt;script&gt;function browserRedirect() &#123; window.location.href="http://blog.csdn.net/weixin_43971764";&#125;browserRedirect();&lt;/script&gt;&lt;/html&gt; 推送到Github后，在浏览器地址栏输入imcyc.top/csdn即可跳转至CSDN博客，这样就相当于你的CSDN博客也有了一个专属的个人定制地址。&emsp;&emsp;PS:增加简书或其他博客跳转同理。 篇三入口。 参考文献&emsp;&emsp;[1] https://blog.csdn.net/kong_gu_you_lan/article/details/53788378]]></content>
+    <title><![CDATA[【Java】框架的基本原理下篇：简单的框架测试（使用注解而不是自定义注解）]]></title>
+    <url>%2F2019%2F07%2F02%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8B%E7%AF%87%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%84%E6%A1%86%E6%9E%B6%E6%B5%8B%E8%AF%95%EF%BC%88%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E8%80%8C%E4%B8%8D%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[上篇及中篇入口。 案例：简单的框架测试&emsp;&emsp;准备一个Calculator类，一个注解，一个测试类。 &emsp;&emsp;Check注解的代码为： 1234567891011package top.imcyc.day07.annotation.demo;import java.lang.annotation.ElementType;import java.lang.annotation.Retention;import java.lang.annotation.RetentionPolicy;import java.lang.annotation.Target;@Retention(RetentionPolicy.RUNTIME)@Target(ElementType.METHOD)//限用于方法之上public @interface Check &#123;&#125; &emsp;&emsp;Calculator类中写一些正常的方法，写一些会抛出异常的方法，以便测试类测试。类代码为： 1234567891011121314151617181920212223242526272829package top.imcyc.day07.annotation.demo;public class Calculator &#123; @Check public void add() &#123; System.out.println("1+0 =" + (1 + 0)); &#125; @Check public void sub() &#123; String str = null; str.toString();//会出现空指针异常 System.out.println("1-0 =" + (1 - 0)); &#125; @Check public void mul() &#123; System.out.println("1*0 =" + (1 * 0)); &#125; @Check public void div() &#123; System.out.println("1/0 =" + (1 / 0));//会出现数学异常 &#125; public void show() &#123; System.out.println("HelloWorld"); &#125;&#125; &emsp;&emsp;测试类代码为： 123456789101112131415161718192021222324252627282930313233343536373839404142package top.imcyc.day07.annotation.demo;import java.io.*;import java.lang.reflect.Method;public class TestCheck &#123; public static void main(String[] args) throws IOException &#123; //1.创建计算器对象 Calculator cal = new Calculator(); //2.获取字节码文件对象 Class cls = cal.getClass(); //3.获取所有方法 Method[] methods = cls.getMethods(); int num = 0;//出现异常的次数 BufferedWriter bw = new BufferedWriter(new FileWriter("bug.txt")); for (Method method : methods) &#123; if (method.isAnnotationPresent(Check.class)) &#123;//判断方法上有没有指定的注解 try &#123; method.invoke(cal); &#125; catch (Exception e) &#123; //捕获异常，并记录到文件中 num++; bw.write(method.getName() + "方法出现异常"); bw.newLine(); //bw.write("异常的名称："+e.getCause());//java.lang.ArithmeticException: / by zero //bw.write("异常的名称："+e.getCause().getClass().getName());//java.lang.ArithmeticException bw.write("异常的名称：" + e.getCause().getClass().getSimpleName());//ArithmeticException bw.newLine(); bw.write("异常的原因：" + e.getCause().getMessage()); bw.newLine(); bw.write("------------------------------------"); bw.newLine(); &#125; &#125; &#125; bw.write("本次测试一共出现" + num + "次异常"); bw.flush(); bw.close(); &#125;&#125; &emsp;&emsp;程序执行结束后，会生成bug.txt文件，文件内容为： 当测试类执行后，会自动自行被检测的所有方法（加了Check注解的方法），判断方法是否有异常，记录到文件中。可以看到每一个异常都会被详细记录下来。 总结： 为什么要加注解？在类中的成员方法上加注解，主方法执行的时候才能分辨出哪些方法是需要检查的。加注解其实相当于贴“标签”，让主程序来分辨。 大多数时候，我们会使用注解，而不是自定义注解。]]></content>
       <categories>
-        <category>个人博客</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>个人博客</tag>
-        <tag>域名</tag>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-        <tag>Coding</tag>
+        <tag>Java</tag>
+        <tag>框架基本原理</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【C++面向对象】类的静态数据成员（static修饰）和常数据成员（const修饰）的初始化]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%91%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%88static%E4%BF%AE%E9%A5%B0%EF%BC%89%E5%92%8C%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%88const%E4%BF%AE%E9%A5%B0%EF%BC%89%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;类的常数据成员（由const修饰）必须在构造函数的初始化列表里被初始化，不能在构造函数的函数体中被赋值； &emsp;&emsp;又因为构造函数可以在类内或类外实现，所以表面上看，常数据成员可在类内初始化，也可在类外初始化。如： 常数据成员在类外初始化 12345678class A&#123; public: A(int i);//构造函数 private: const int a; &#125;A::A(int i):a(i)&#123; &#125; 常数据成员在类内初始化 123456class A&#123; public: A(int i):a(i)&#123; &#125;;//构造函数 private: const int a; &#125; 而静态数据成员（由static修饰）只能在类内声明，类外初始化，如： 12345类内：private: static int b;类外：int "类名"::b = "初始值"； &emsp;&emsp;那么有些童鞋就有疑问了，如果一个类的数据成员既是常数据成员，又是静态数据成员，那么该怎么定义和初始化呢？静态常数据成员（由static const修饰）的初始化方法如下： 12345类内：private: static const int b;类外：const int "类名"::b = "初始值"； &emsp;&emsp;可以看到，初始化的方法和静态数据成员是一样的，所以我觉得static比const高一等级。在static面前，const降到跟int一级，从类外初始化的前缀“const int”也能窥探一二。]]></content>
+    <title><![CDATA[【Java】框架的基本原理中篇：注解优化]]></title>
+    <url>%2F2019%2F07%2F01%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%AD%E7%AF%87%EF%BC%9A%E6%B3%A8%E8%A7%A3%E4%BC%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;在框架的基本原理上篇中，笔者介绍了框架的灵魂：反射机制。使用反射机制，在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法，这就是框架内部的基本原理。本篇将介绍如何使用注解，将上篇中的配置文件省略并简化代码，达到相同的功能。 &emsp;&emsp;首先，我们新建一个Person类，内容与上篇中相同；新建一个注解接口；新建一个测试类。 &emsp;&emsp;Person类中的代码为： 12345678910111213141516171819202122232425262728293031323334353637383940414243package top.imcyc.day07.annotation;public class Person &#123; private String name; private int age; @Override public String toString() &#123; return "Person&#123;" + "name='" + name + '\'' + ", age=" + age + '&#125;'; &#125; public Person() &#123; &#125; public Person(String name, int age) &#123; this.name = name; this.age = age; &#125; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public int getAge() &#123; return age; &#125; public void setAge(int age) &#123; this.age = age; &#125; public void eat() &#123; System.out.println("eat......"); &#125;&#125; &emsp;&emsp;注解接口中的代码为： 12345678910111213package top.imcyc.day07.annotation;import java.lang.annotation.ElementType;import java.lang.annotation.Retention;import java.lang.annotation.RetentionPolicy;import java.lang.annotation.Target;@Target(ElementType.TYPE)@Retention(RetentionPolicy.RUNTIME)public @interface Pro &#123; String className(); String methodName();&#125; &emsp;&emsp;测试类中的代码为： 1234567891011121314151617181920212223package top.imcyc.day07.annotation;import java.lang.reflect.Method;@Pro(className = "top.imcyc.day07.annotation.Person", methodName = "eat")public class reflectTest &#123; public static void main(String[] args) throws Exception &#123; //解析注解(获取注解的属性值) // 1. 获取该类的字节码文件对象 Class&lt;reflectTest&gt; reflectTestClass = reflectTest.class; // 2. 获取顶部的注解的对象 // 其实就是在内存中生成了一个该注解接囗的子类实现对象，子类重写了className和methodName方法，返回的就是"...Person"和"eat"字符串 Pro an = reflectTestClass.getAnnotation(Pro.class); //最终目的是拿到顶部注解里定义的属性值 String s = an.className(); String s1 = an.methodName(); Class cls = Class.forName(s);//获取s代表的类的字节码文件对象 Object obj = cls.newInstance();//获取一个类对象 Method method = cls.getMethod(s1);//获取该类的方法 method.invoke(obj);//执行此方法，参数传入要被执行的方法对应的类对象 &#125;&#125; &emsp;&emsp;可以看到，测试类顶部注解里的属性值就代替了原来配置文件里的内容，省去了设置配置文件，简化了测试代码，同时保持了程序的扩展性。满足在不改动代码的前提下，只需要改动顶部注解的属性值，就可以创建任意类的对象，可以执行任意方法。 &emsp;&emsp;下篇入口。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>框架基本原理</tag>
+        <tag>注解</tag>
+        <tag>反射</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Java】框架的基本原理上篇：反射机制]]></title>
+    <url>%2F2019%2F07%2F01%2F%E3%80%90Java%E3%80%91%E6%A1%86%E6%9E%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8A%E7%AF%87%EF%BC%9A%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&emsp;&emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&emsp;&emsp;&emsp;&emsp;好处：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1. 可以在程序运行过程中，操作这些对象；&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2. 可以解耦，提高程序的可扩展性。 &emsp;&emsp;这里使用一个简单的案例，介绍一下框架的基本原理。准备工作：新建一个Person类、新建一个pro.properties的配置文件、新建一个测试类。 &emsp;&emsp;Person类中写一个测试方法eat： 1234567891011121314151617181920212223242526272829303132333435363738394041424344package top.imcyc.day07.demo02;import java.io.Serializable;public class Person implements Serializable &#123; private String name; private int age; @Override public String toString() &#123; return "Person&#123;" + "name='" + name + '\'' + ", age=" + age + '&#125;'; &#125; public Person() &#123; &#125; public Person(String name, int age) &#123; this.name = name; this.age = age; &#125; public String getName() &#123; return name; &#125; public void setName(String name) &#123; this.name = name; &#125; public int getAge() &#123; return age; &#125; public void setAge(int age) &#123; this.age = age; &#125; public void eat() &#123; System.out.println("eat......"); &#125;&#125; &emsp;&emsp;配置文件中加入Person类名和要执行的方法名： &emsp;&emsp;测试类reflectTest的代码为： 12345678910111213141516171819202122232425262728package top.imcyc.day07.reflect;import java.io.InputStream;import java.lang.reflect.Method;import java.util.Properties;public class reflectTest &#123; public static void main(String[] args) throws Exception &#123; //获取class目录下的配置文件的方式： //1. 获取类reflectTest的字节码文件对象（通过reflectTest.class方法） //2. 获取类reflectTest的字节码文件(对象)对应的类加载器（类加载器：将.class文件中的二进制流加载到内存中） //3. 类加载器寻找配置文件 // 通过类加载器的getResourceAsStream方法，获取到配置文件的字节输入流 //4. 通过Properties的方法load，读取配置文件的字节输入流，转换为一个Map集合。 InputStream is = reflectTest.class.getClassLoader().getResourceAsStream("pro.properties"); Properties pro = new Properties(); pro.load(is);//配置文件转换为Map集合存储到pro中，例如键值对“key:methodName, value:eat” //获取配置文件中的数据 String className = pro.getProperty("className"); String methodName = pro.getProperty("methodName"); Class cls = Class.forName(className);//获取className代表的类的字节码文件对象 Object obj = cls.newInstance();//获取一个类对象 Method method = cls.getMethod(methodName);//获取该类的方法eat method.invoke(obj);//执行此方法，参数传入要被执行的方法对应的类对象 &#125;&#125; &emsp;&emsp;在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法；这就是框架内部的基本原理！&emsp;&emsp;可以看到使用框架的优点其一：提高程序的可扩展性。 &emsp;&emsp;中篇及下篇入口。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>框架基本原理</tag>
+        <tag>反射机制</tag>
+        <tag>框架</tag>
+        <tag>配置文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Java1.8】实现类、匿名类、内部类、匿名内部类、Lambda表达式以及优化Lambda表达式比较]]></title>
+    <url>%2F2019%2F06%2F23%2F%E3%80%90Java1.8%E3%80%91%E5%AE%9E%E7%8E%B0%E7%B1%BB%E3%80%81%E5%8C%BF%E5%90%8D%E7%B1%BB%E3%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB%E3%80%81Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%AF%94%E8%BE%83%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;梳理一下实现类、匿名类、内部类、匿名内部类、Lambda表达式以及优化Lambda表达式的关系，仅针对初学者。&emsp;&emsp;自定义一个接口MyFunctionInterface，其中有且仅有一个抽象方法（接口中可以有其他非抽象方法内容），代码实现为: 123456789/* 函数式接口：有且只有一个抽象方法的接口，称之为函数式接口； 当然接口中可以包含其他的方法（默认，静态，私有）。 */public interface MyFunctionInterface &#123; public abstract void method(); &#125; 实现类（创建实现类对象）&emsp;&emsp;实现接口MyFunctionInterface，重写其中的抽象方法；新建一个Java文件，实现类代码为：12345678public class MyFunctionInterfaceImpl implements MyFunctionInterface &#123; @Override public void method() &#123; System.out.println("测试成功"); &#125; &#125; &emsp;&emsp;新建一个测试类，代码为： 12345678public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = new MyFunctionInterfaceImpl();//多态 mi.method(); &#125;&#125; 匿名类（创建匿名实现类对象） 1234567public class Demo &#123; public static void main(String[] args) &#123; new MyFunctionInterfaceImpl().method(); &#125;&#125; 内部类（不需要创建实现类对象） 12345678910111213public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("内部类测试成功"); &#125; &#125;; mi.method(); &#125;&#125; 匿名内部类（不需要创建实现类对象） 123456789101112public class Demo &#123; public static void main(String[] args) &#123; new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("匿名内部类测试成功"); &#125; &#125;.method(); &#125;&#125; Lambda表达式&emsp;&emsp;因为接口MyFunctionInterface中有且仅有一个抽象方法，所以是函数式接口，可以使用Lambda表达式，代码实现： 12345678910public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = () -&gt; &#123; System.out.println("Lambda表达式测试成功"); &#125;; mi.method(); &#125;&#125; 优化Lambda表达式 12345678public class Demo &#123; public static void main(String[] args) &#123; MyFunctionInterface mi = () -&gt; System.out.println("优化Lambda表达式测试成功"); mi.method(); &#125;&#125; &emsp;&emsp;实际上，Lambda表达式常用作方法的参数或方法的返回值。当Lambda表达式作为方法的形参： 12345678910111213141516171819202122232425public class Demo &#123; public static void show(MyFunctionInterface myInter) &#123; myInter.method(); &#125; public static void main(String[] args) &#123; /* //先使用匿名内部类热热身 show(new MyFunctionInterface() &#123; @Override public void method() &#123; System.out.println("匿名内部类测试成功"); &#125; &#125;);//show方法执行myInter.method()之前，method方法已经重写，所以执行成功 */ //Lambda表达式 show(() -&gt; &#123; System.out.println("Lambda表达式测试成功"); &#125;); //优化的Lambda表达式 show(()-&gt;System.out.println("优化的Lambda表达式测试成功")); &#125;&#125; 当Lambda表达式作为方法的返回值（这里使用接口Comparator&lt; String &gt;举例）： 12345678910111213141516171819202122public class Demo &#123; //定义一个方法，方法的返回值类型使用函数式接口Comparator public static Comparator&lt;String&gt; getComparator() &#123;//接口Comparator&lt;&gt;只有一个抽象方法，所以可以使用Lambda表达式 /* //先用匿名内部类热热身 return new Comparator&lt;String&gt;() &#123; @Override public int compare(String o1, String o2) &#123; return o2.length()-o1.length();//按字符串降序排序 &#125; &#125;; */ //方法的返回值类型是一个函数式接口，所有我们可以返回一个Lambda表达式(优化后的) return (o1, o2) -&gt; o2.length() - o1.length(); &#125; public static void main(String[] args) &#123; String[] arr = &#123;"cc","bbb","aaaa"&#125;;//首先按字符个数、再按字母进行降序 Arrays.sort(arr,getComparator());//sort(T[] a, Comparator&lt;? super T&gt; c) 根据指定的比较器引发的顺序对指定的对象数组进行排序。 System.out.println(Arrays.toString(arr));//打印结果：[aaaa, bbb, cc] &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>实现类</tag>
+        <tag>匿名内部类</tag>
+        <tag>Lambda表达式</tag>
+        <tag>内部类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Java】使用文件字节输入/输出流复制文件、使用字节缓冲输入/输出流复制文件的区别]]></title>
+    <url>%2F2019%2F06%2F18%2F%E3%80%90Java%E3%80%91%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E3%80%81%E4%BD%BF%E7%94%A8%E5%AD%97%E8%8A%82%E7%BC%93%E5%86%B2%E8%BE%93%E5%85%A5_%E8%BE%93%E5%87%BA%E6%B5%81%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;首先我们来对比一下文件字节输入流和字节缓冲输入流的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。 &emsp;&emsp;再来对比文件字节输出流和字节缓冲输出流的write方法，可以看到有所不同：&emsp;&emsp;文件字节输出流的write(bytes[ ] b)是将字节数组中的数据直接写入到此文件输出流，不经过缓冲区；字节缓冲输出流会给文件字节输出流增加一个缓冲区，提高文件字节输出流的写入效率，然后通过flush方法，将缓冲区中的数据刷新到文件中。 &emsp;&emsp;综上所述，使用文件字节输入/输出流复制文件、使用字节缓冲输入/输出流复制文件的区别就在于：&emsp;&emsp;两者在输入上都经过缓冲区（缓冲数组）；但是在输出上，文件字节输出流不经过缓冲区，字节缓冲输出流经过缓冲区。所以理论上，使用字节缓冲输入/输出流进行文件复制的效率要高于使用文件字节输入/输出流。 代码示例&emsp;&emsp;使用文件字节输入/输出流复制一张图片，耗时60毫秒左右。 123456789101112131415public static void main(String[] args) throws IOException &#123; long s = System.currentTimeMillis(); FileInputStream fis = new FileInputStream("C:\\1.jpg"); FileOutputStream fos = new FileOutputStream("D:\\1.jpg"); //一次读取多个字节，写入多个字节的方式（使用数组缓冲） byte[] bytes = new byte[1024];//对于较大的文件，适当调整为1024的整数倍能大幅提高复制效率 int len = 0; while ((len = fis.read(bytes)) != -1) &#123; fos.write(bytes, 0, len);//len保证写入的是字节数组中的有效字节（当前循环中） &#125; fos.close(); fis.close(); long e = System.currentTimeMillis(); System.out.println(e-s); &#125; &emsp;&emsp;使用字节缓冲输入/输出流复制同一张图片，耗时20毫秒左右。 1234567891011121314public static void main(String[] args) throws IOException &#123; long s = System.currentTimeMillis(); BufferedInputStream bis = new BufferedInputStream(new FileInputStream("C:\\1.jpg")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D:\\1.jpg")); byte[] bytes = new byte[1024]; int len = 0; while ((len = bis.read(bytes)) != -1) &#123; bos.write(bytes); &#125; bos.close(); bis.close(); long e = System.currentTimeMillis(); System.out.println(e-s); &#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>I0流</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python爬虫实战：京东拍拍验机（帮你买到最完美的二手Iphone）]]></title>
+    <url>%2F2019%2F05%2F18%2FPython%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%EF%BC%9A%E4%BA%AC%E4%B8%9C%E6%8B%8D%E6%8B%8D%E9%AA%8C%E6%9C%BA%EF%BC%88%E5%B8%AE%E4%BD%A0%E4%B9%B0%E5%88%B0%E6%9C%80%E5%AE%8C%E7%BE%8E%E7%9A%84%E4%BA%8C%E6%89%8BIphone%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[网站介绍&amp;使用痛点&emsp;&emsp;如图1所示，京东拍拍二手于近期上线了一个新平台：拍拍验机，顾客可以通过手机京东客户端，在拍拍验机上挑选购买心仪的二手电子产品（目前均为固定品牌的手机，如二手小米8、二手iPhone 7 Plus）。 图1 拍拍验机主页示意图 &emsp;&emsp;在首页，我们可以对手机进行筛选，比如笔者目前倾向于购买二手iPhone 7 Plus 128G 国行，那么就选择“苹果”-&gt;“苹果7P”-&gt;筛选“国行”和“128G”，如图2所示。确定后下拉页面，就都是符合筛选条件的手机了。 图2 拍拍验机筛选示意图 &emsp;&emsp;但是，在下拉查看比较手机的过程当中，笔者发现符合筛选条件的手机太多太多了（实测大概400部左右），如果每一个手机都点进去查看对比的话，要把所有手机看一遍，将会消耗大量的时间，而且往往之前看中的手机再回过头来看，已经显示卖出，从而错失良“机”。此外由于手机app端服务器不稳定的原因，在下拉页面浏览的过程中，往往返回上一页面会显示“加载失败”，从而要从头开始重新筛选一遍，再下拉到刚刚浏览的地方，效率十分低下。 &emsp;&emsp;当在浏览过程中，看到心仪的手机，点击进去查看手机的详细介绍，会发现有很多的关键参数，比如电池电量、是否过保以及手机各项详细检测情况，如图3所示。如果我们能针对这些参数进行自主筛选，那么就可以迅速排除掉400多部手机中的绝大多数，“取其精华，去其糟粕”，只留下少量的“精品”进行挑选，这样效率将大大提高。 图3 手机详细介绍示意图 &emsp;&emsp;但是网站提供的筛选条件少得可怜，只有“价格”、“渠道”、“内存”三个筛选条件，既然如此，我们就要自己动手丰衣足食了。 网站分析&emsp;&emsp;在浏览拍拍验机的主页后，我们发现它一次只会加载20部手机信息，并且加载的方式不是翻页，而是将页面滑动到底部，那么爬取静态网页数据的那一套方法就不能用在现在这种动态网页上（静态网页用Chrome浏览器右键“查看网页源代码”就能看到所有的网页数据，但是动态网页用这种办法是看不到的），这对获取新增的手机数据带来了困难。这里使用Chrome浏览器的“检查”功能解析AJAX动态加载地址，进而找到加载的数据。 &emsp;&emsp;使用Chrome浏览器打开拍拍验机的主页，页面任意处右键，单机“检查”-&gt; Network-&gt; Ctrl + R刷新，每当滑动网页页面到底部时，Network下方会出现新加载的内容，单击 JS，单击左侧的一个_JPx（最好是选最底部的），单击 Headers，可以看到Request URL，如图4所示，后面要用到。注意链接里必须包含order=2_1，因为在实践中发现有些链接包含的是order=4_2，包含order=4_2的链接不是我们所需要的。 图4 寻找Request URL示意图 &emsp;&emsp;可以发现，每当网页下拉加载新的手机数据的时候，JS里的_JPx就会增加一项，每次下拉刷新得到的新数据就是请求了123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&lt;div align=center&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/006tNc79gy1g4rd893q7pj31h30p0ag1.jpg&quot; &gt;&lt;br/&gt;图5 json数据的结构&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;其中，我们可以看到新加载的每一个手机的唯一的&quot;commodityId&quot;，后面要用到。将网页一直向下拉，JS中的_JPx就会一直增加，直到网页拉到底。如图6所示，可以看到_JPx增加到_JP22，_JP7到_JP22中就包含了所有的手机的&quot;commodityId&quot;。之后就需要通过Python爬虫将所有的&quot;commodityId&quot;收集起来。&lt;div align=center&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1g4rd8je40bj31460oz0yg.jpg&quot; &gt;&lt;br/&gt;图6 所有JS示意图&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;接着点击进入任意一个手机的详细介绍页面，同样的方法，我们找到商品详情介绍页面的Request URL，详情介绍页面的数据就是请求了```https://bizgw.jd.com/commodityInspected/view?callback=jQuery34005582774663554724_1558160057557&amp;commodityId=5583330&amp;optSource=3&amp;_=1558160057558```这个网页的json数据，如图7所示。&lt;div align=center&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/006tNc79gy1g4rd8rdcsqj31gm0o0dkl.jpg&quot; &gt;&lt;br/&gt;图7 寻找Request URL示意图&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;在Preview中可以看到json数据的结构，包括保修期、电池电量、验机报告等详细检测数据，甚至能看到网页中看不到的信息，比如“验机中心”，如图8所示。&lt;div align=center&gt;&lt;img src=&quot;http://ww2.sinaimg.cn/large/006tNc79gy1g4rd8yx7qbj31h40ouq7q.jpg&quot; &gt;&lt;br/&gt;图8 单个商品json数据的结构&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;&amp;emsp;&amp;emsp;通过Python爬虫，根据单个商品json数据的结构中的各种详细参数进行筛选，就能迅速排除掉大量干扰项，达到“取其精华，去其糟粕”的目的了。## 项目实施### 1. 爬取commodityId#### 1.1 失败的爬取思路&amp;emsp;&amp;emsp;通过分析，我们得到_JP7到_JP22包含了所有的手机的&quot;commodityId&quot;。那么就采用常用的requests.get()的方法，通过for循环，将每一个_JPx里的所有&quot;commodityId&quot;爬取出来保存到一个列表中，具体实现代码如下：```java#-*- coding: utf-8 -*-import requestsimport re#定义函数scrapydef scrapy(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers &apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36&apos;, &apos;Referer&apos;:&apos;https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=&apos; &#125; r = requests.get(link, headers=headers) return(r.text)#将_jp7到_JP22的所有Request URL保存到一个列表中Req_URL = []for i in range(7, 23): Req_URL.append(&apos;https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;pageNo=1&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g&amp;callback=__jp&apos;+str(i))#将_jp7到_JP22中的的所有commodityId保存到一个列表中all_Id = []for i in Req_URL: m_findall = [] html = &quot;&quot; html = scrapy(i) m_findall = re.findall(r&apos;&quot;commodityId&quot;:.&#123;7&#125;&apos;, html)#目前网站上机器码暂为7位数 for id in m_findall: all_Id.append(id[-7:]) 通过上述代码，就可以将所有的商品ID储存到列表all_Id当中，但是上述代码有两个问题：&emsp;&emsp;1. 运行代码后，发现每一个_JPx中的商品Id都是相同的，原因尚不清楚；&emsp;&emsp;2. 拍拍验机平台的手机数量是实时刷新的，现在我们看到的是所有商品Id保存在_JP7到_JP22，也许一小时后就变成_JP8到_JP30。 1.2 改进后的巧妙的爬取思路&emsp;&emsp;上述两个问题，第二个问题还好解决，但是第一个问题百思不得其解，涉及比较深入，对于笔者这种学习Python爬虫不足一月的人来说很难解，于是乎转而在Request URL上动心思。原版的Request URL为 https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;pageNo=1&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g&amp;callback=__jp7 ，笔者将此链接进行一定的删改，发现并不影响request.get()的结果，于是乎将多余的删掉，得到 https://bizgw.jd.com/app/inspected/v1/list?pageSize=20&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g ，此时能爬取出20个商品ID。这时发现是不是pageSize=20限制了爬出的ID数量？遂改成pageSize=10000，神奇的事情发生了，400多个商品ID被一次全部爬出！实现代码如下： 123456789101112131415161718192021#-*- coding: utf-8 -*-import reimport requests#定义函数scrapydef scrapy(link): headers = &#123; 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=' &#125; r = requests.get(link, headers=headers) return(r.text)url = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g'html = scrapy(url)m_findall = re.findall(r'"commodityId":.&#123;7&#125;', html)#目前网站上机器码暂为7位数#将所有commodityId保存到一个列表中all_Id = []for i in m_findall: all_Id.append(i[-7:]) &emsp;&emsp;此方法巧妙地跳过了翻页的限制，只需一个修改后的Request URL就可爬出所有商品ID。 2. 增加筛选项&emsp;&emsp;拍拍验机平台的筛选项只有“价格”、“渠道”、“内存”三个筛选条件，但我们可以根据手机的详细介绍页面里的各种参数，利用爬虫任意增加筛选条件，这里我想增加的筛选条件为：电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无；背光异常:无；验机中心非：西安、郑州、河北。这里以一个商品ID为5583330的手机举例，实现代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041#-*- coding: utf-8 -*-import reimport requests#定义函数scrapydef scrapy(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId=5583330&amp;refresh=no&amp;scrollY=0' &#125; r = requests.get(link, headers=headers) return(r.text)link = 'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId=5583330&amp;refresh=no&amp;scrollY=0'html = scrapy(link)m01_findall = re.findall(r'[\u4e00-\u9fa5]+', html)#筛出所有汉字m02_findall = re.findall(r'电池效率","value":"\d&#123;2&#125;', html)#筛出电池电量try: if '立即购买' in m01_findall: ''' 筛选条件： 电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无； 背光异常:无；验机中心不是：西安、郑州、河北 ''' check_bat = (int(m02_findall[0][-2:]) &gt;= 80) check01 = ('全网通' in m01_findall) &amp; (m01_findall[m01_findall.index('背光异常')+1] == '无') check02 = (m01_findall[m01_findall.index('外壳')+2] == '无') &amp; (m01_findall[m01_findall.index('维修痕迹')+1] == '无') check03 = (m01_findall[m01_findall.index('屏幕碎裂')+1] == '无') &amp; (m01_findall[m01_findall.index('黑点')+1] == '无') check04 = (m01_findall[m01_findall.index('红屏')+1] == '无') &amp; (m01_findall[m01_findall.index('老化发黄')+1] == '无') check05 = (m01_findall[m01_findall.index('亮斑')+1] == '无') &amp; (m01_findall[m01_findall.index('色斑')+1] == '无') check06 = (m01_findall[-2][:2] != '西安') &amp; (m01_findall[-2][:2] != '河北') &amp; (m01_findall[-2][:2] != '郑州') if check_bat &amp; check01 &amp; check02 &amp; check03 &amp; check04 &amp; check05 &amp; check06: print("完美") else: print("不完美") else: print("页面异常or已卖出")except: print("不可预知的异常") 3. 筛选所有商品&emsp;&emsp;将“爬取commodityId”的代码和“增加筛选项”的代码结合，通过循环依次筛选每一个商品，将符合筛选条件的商品的链接放到一个列表中，最后依次打印输出，并且自动调用默认浏览器打开通过筛选的商品介绍页面。实现代码如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091#-*- coding: utf-8 -*-import reimport requestsimport webbrowser#定义函数scrapy01def scrapy01(link): headers = &#123; #User-Agent和Referer的信息在Network-&gt;Headers-&gt;Request Headers 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/direct/?lng=119.954575&amp;lat=31.686691&amp;un_area=12_978_4459_53900&amp;sid=b4d89db2c431e6c9631e9859ecdc099w&amp;_ts=1557926133167&amp;utm_source=iosapp&amp;utm_medium=appshare&amp;utm_campaign=t_335139774&amp;utm_term=CopyURL&amp;ad_od=share&amp;ShareTm=kL%2BfusKf1qywVd%2BwTkAVtGYRXA2gzBQqFj4A0YuGC1teMZhlGn5CDqBdFZvEgw8/2zhgK18/FX3A93HO04B6bPi7qv8sqdX5i/bUuilkbnOp3GDR%2BoHeKPmG1hagOq5B0WaZTCW%2B7KvJdTxfEYpNNpGoA%2BsAMlUKlUnkVPBzD2g=' &#125; r = requests.get(link, headers=headers) return(r.text)#定义函数scrapy02def scrapy02(link): headers = &#123; 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36', 'Referer':'https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+link[-7:]+'&amp;refresh=no&amp;scrollY=0' &#125; r = requests.get(link, headers=headers) return(r.text)phone_urls = []#保存每个手机相关的Request URL'''在拍拍验机主页筛选好机型后，右键检查-&gt;Network-&gt;JS-&gt;Ctrl+R刷新-&gt;网页下拉-&gt;选择最靠下的_JPxx-&gt;Headers-&gt;General-&gt;Request URL，将获得的Request URL进行删减和修改pageSize=10000，得到urlNo1'''#iPhone7 Plus 128G 国行urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone7%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=128g'#iPhone8 Plus 64G 国行#urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone%208%20plus&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=64g'#iPhone8 64G 国行#urlNo1 = 'https://bizgw.jd.com/app/inspected/v1/list?pageSize=10000&amp;brand=Apple&amp;model=iphone%208&amp;order=2_1&amp;buychannel=%E5%9B%BD%E8%A1%8C&amp;capacity=64g'htmlNo1 = scrapy01(urlNo1)'''在代码a中存在多处“data-commodityid="5614566"”，要筛选出其中的数字，使用正则表达式r'"commodityId":.&#123;7&#125;'。其中，r''的形式是防止字符串内的\转义；"commodityId":表示找到字符串中每一处commodityid；.&#123;7&#125;表示匹配"commodityId":后的7位任意字符（举例：&#123;7&#125;表示只匹配7个字符，&#123;4,7&#125;表示匹配第2位到第4位字符）'''m_findall = re.findall(r'"commodityId":.&#123;7&#125;', htmlNo1)#目前网站上机器码暂为7位数，有待以后更新for i in m_findall: phone_urls.append('https://bizgw.jd.com/commodityInspected/view?commodityId='+i[-7:])#这里没有加“&amp;refresh=no&amp;scrollY=0”，不影响结果fir_urls = []#存放验机中心end_urls = []#存放通过筛选的URLa_ = 1for i in phone_urls: html_01 = "" m01_findall = [] m02_findall = [] html_01 = scrapy02(i) m01_findall = re.findall(r'[\u4e00-\u9fa5]+', html_01)#筛出所有汉字 m02_findall = re.findall(r'电池效率","value":"\d&#123;2&#125;', html_01)#筛出电池电量 #输出通过筛选的url try: if '立即购买' in m01_findall: ''' 筛选条件： 电量&gt;=80；全网通；背光异常:无；划痕:无；维修痕迹:无；屏幕碎裂:无；黑点:无；红屏:无；老化发黄:无；亮斑:无；色斑:无； 背光异常:无；验机中心不是：西安、郑州、河北 ''' check_bat = (int(m02_findall[0][-2:]) &gt;= 80) check01 = ('全网通' in m01_findall) &amp; (m01_findall[m01_findall.index('背光异常')+1] == '无') check02 = (m01_findall[m01_findall.index('外壳')+2] == '无') &amp; (m01_findall[m01_findall.index('维修痕迹')+1] == '无') check03 = (m01_findall[m01_findall.index('屏幕碎裂')+1] == '无') &amp; (m01_findall[m01_findall.index('黑点')+1] == '无') check04 = (m01_findall[m01_findall.index('红屏')+1] == '无') &amp; (m01_findall[m01_findall.index('老化发黄')+1] == '无') check05 = (m01_findall[m01_findall.index('亮斑')+1] == '无') &amp; (m01_findall[m01_findall.index('色斑')+1] == '无') check06 = (m01_findall[-2][:2] != '西安') &amp; (m01_findall[-2][:2] != '河北') &amp; (m01_findall[-2][:2] != '郑州') if check_bat &amp; check01 &amp; check02 &amp; check03 &amp; check04 &amp; check05 &amp; check06: print('No.'+str(a_)+' '+i[-7:]+' '+"完美") fir_urls.append('https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+i[-7:]+'&amp;refresh=no&amp;scrollY=0'+' '+m01_findall[-2]) end_urls.append('https://paipai.m.jd.com/c2c/m/popGoodsDetail?commodityId='+i[-7:]+'&amp;refresh=no&amp;scrollY=0') else: print('No.'+str(a_)+' '+i[-7:]+' '+"不完美") else: print('No.'+str(a_)+' '+i[-7:]+' '+"页面异常or已卖出") except: print('No.'+str(a_)+' '+i[-7:]+' '+"不可预知的异常") a_ += 1a_02 = 1for i in fir_urls: print('No.'+str(a_02)+' '+i) a_02 += 1#调用默认浏览器自动打开网址for i in end_urls: webbrowser.open(i) &emsp;&emsp;拍拍验机平台上符合“iPhone 7 Plus”、“国行”、“128G”筛选条件的手机有近400部，通过Python爬虫定向筛选，最后输出十多部，耗时1分钟左右，效率提升显著。并且今后可以根据个人喜好不同，自由搭配、增删筛选条件，提升购机效率和精准度。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>网络爬虫</tag>
+        <tag>动态网页</tag>
+        <tag>京东拍拍验机</tag>
+        <tag>二手iPhone</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【数据结构】归并排序之一种基于二路归并的归并排序]]></title>
+    <url>%2F2019%2F04%2F21%2F%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E4%B9%8B%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8E%E4%BA%8C%E8%B7%AF%E5%BD%92%E5%B9%B6%E7%9A%84%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[前言&emsp;&emsp;归并排序适用于向量和列表通用；使用的是分而治之的策略；&emsp;&emsp;归：递归。首先将列表一分为二，并不断递归一分为二；&emsp;&emsp;并：合并，将当前的两个子序列（已有序）合并的算法； 下面是通用的归并排序的模板代码： &emsp;&emsp;&emsp;&emsp;template &lt; typename T &gt;&emsp;&emsp;&emsp;&emsp;void Vector :: mergeSort(Rank lo, Rank hi) {&emsp;&emsp;&emsp;&emsp;if（hi - lo&lt;2）return；//一直递归到子序列是单元素，单元素区间自然有序，否则…&emsp;&emsp;&emsp;&emsp;int mi =（lo + hi）&gt;&gt;1；//以中点mi为界&emsp;&emsp;&emsp;&emsp;mergeSort(lo, mi)；//对前子序列递归调用本函数mergeSort，对前半段排序&emsp;&emsp;&emsp;&emsp;mergeSort(mi, hi)；//对后子序列递归调用本函数mergeSort，对后半段排序&emsp;&emsp;&emsp;&emsp;merge(lo, mi, hi)；//归并，将当前的两个子序列（已有序）合并的算法 &emsp;&emsp;由上述代码可知，二路归并排序的计算成本T(n) = 2*T(n/2) + O(n)；其中O(n)为函数merge的计算成本； merge(lo, mi, hi)的基本实现： merge( )的运行时间主要消耗于for循环，共有两个控制变量j和k &emsp;&emsp;初始：j=0，k=0&emsp;&emsp;最终：j=lb，k=lc&emsp;&emsp;亦即：j+k = lb+lc = hi-lo = n &emsp;&emsp;所以for循环共迭代n次，即merge( )总体迭代不过O(n)次，故二路归并排序的计算成本T(n) = 2 * T(n/2) + O(n)成立。通过计算，二路归并算法复杂度为O(n * logn)。计算思路：T(n)到T(1)共有logn层，每层包含一个复杂度为n的算法（merge( )），所以总的时间复杂度为O(n*logn)。 &emsp;&emsp;对于规模为n的向量，归并排序的最优、最坏时间复杂度均为Θ(nlog2n) 。 &emsp;&emsp;注意，若两个待归并子序列不等长甚至相差很悬殊，merge( )的复杂度仍为O(n)。]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>二路归并</tag>
+        <tag>归并排序</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【数据结构】稍复杂的级数题]]></title>
+    <url>%2F2019%2F04%2F08%2F%E3%80%90%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%91%E7%A8%8D%E5%A4%8D%E6%9D%82%E7%9A%84%E7%BA%A7%E6%95%B0%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[题目&emsp;&emsp;该题求级数的复杂度，简单解析如下图。 &emsp;&emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？ 问题详解 &emsp;&emsp;可得S与等比数列求和的复杂度同阶，所以S可以当几何级数处理；而几何级数的复杂度与末项同阶且相等，所以S的复杂度为：&emsp;&emsp;O((logn-1) * 2^logn+1) = O(logn * 2^logn)。]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】模板实参中的参数可以省略的情况分析]]></title>
+    <url>%2F2019%2F03%2F29%2FC%2B%2B%20%20%E6%A8%A1%E6%9D%BF%E5%AE%9E%E5%8F%82%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E5%8F%AF%E4%BB%A5%E7%9C%81%E7%95%A5%E7%9A%84%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[先来看一道C++二级真题+未来教育解析： &emsp;&emsp;关于在调用模板函数时模板实参的使用，下列表述中正确的是（）。&emsp;&emsp;&emsp;&emsp;A）对于虚拟类型参数所对应的模板实参，如果能从模板函数的实参中获得相同的信息，则都可以省略&emsp;&emsp;&emsp;&emsp;B）对于虚拟类型参数所对应的模板实参，如果它们是参数表中的最后的若干个参数，则都可以省略&emsp;&emsp;&emsp;&emsp;C）对于虚拟类型参数所对应的模板实参，若能够省略则必须省略&emsp;&emsp;&emsp;&emsp;D）对于常规参数所对应的模板实参，任何情况下都不能省略 【未来教育解析】&emsp;&emsp;在调用一个模板函数时，编译系统需要足够的信息来判别每个虚拟类型参数所对应的实际类型，可以从两个不同的渠道获得这样的信息：从模板实参表（用“&lt;&gt;”括起来的参数表）或从模板函数实参表（用“()”括起来的参数表）（这句话表述不准确，应该表述为：从模板函数的形参表（用“()”括起来的参数表）中的形参所对应的实参） 。如果从后者获得的信息已经能够判定其中部分或全部虚拟类型参教所对应的实际参数，而且它们又正好是参数表中最后的若干参数，则模板实参表中的那几个参数可以省略。如果模板实参表中的实参都被省略了，则空表“&lt;&gt;”也可以不要，因此选项D错误。反之，对于某个模板实参，如果从模板函数的实参表中无法获得同样的信息，就不能省略；或者虽然能够获得同样的信息，但在它后面还有其他不能省略的实参，则其自身还是不能省略。本题答案为A选项。 【个人解析】&emsp;&emsp;代码举例： 12345678910111213141516171819#include &lt;iostream&gt;using namespace std;template&lt;typename T1, typename T2&gt; //&lt;&gt;里的是虚拟类型参数T1 f(T2 n)&#123; return n*5.6; &#125;int main()&#123; int a = 3; cout &lt;&lt; f&lt;double&gt;(a) &lt;&lt; endl; //1，&lt;&gt;括起来的是模板实参表，()括起来的是模板函数形参表，这里模板实参表省略了int cout &lt;&lt; f&lt;double, int&gt;(a) &lt;&lt; endl; //2 cout &lt;&lt; f&lt;int&gt;(a) &lt;&lt; endl; //3，这里模板实参表省略了int cout &lt;&lt; f&lt;&gt;(a) &lt;&lt; endl; //4，报错 double b = 2.3; cout &lt;&lt; f&lt;double&gt;(b) &lt;&lt; endl; //5，这里模板实参表省略了double cout &lt;&lt; f&lt;int&gt;(b) &lt;&lt; endl; //6，这里模板实参表省略了double cout &lt;&lt; f&lt;&gt;(b) &lt;&lt; endl; //7，报错 return 0;&#125; &emsp;&emsp;a、b分别是模板函数的实参，从实参中获得的信息已经能够判定模板函数的模板实参表中部分或全部虚拟类型参教所对应的实际参数，而且它们又正好是模板实参表中最后的若干参数，则模板实参表中的那几个参数可以省略。]]></content>
       <categories>
         <category>C++</category>
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>面向对象</tag>
+        <tag>省略模板实参</tag>
+        <tag>模板函数</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【C++二级难题图解】对二维数组数组名作指针的考察]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90C%2B%2B%E4%BA%8C%E7%BA%A7%E9%9A%BE%E9%A2%98%E5%9B%BE%E8%A7%A3%E3%80%91%E5%AF%B9%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%95%B0%E7%BB%84%E5%90%8D%E4%BD%9C%E6%8C%87%E9%92%88%E7%9A%84%E8%80%83%E5%AF%9F%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;若已知 int a[3][7];，则用指针表示数组a中的元素时，下列表示中错误的是（）。 &emsp;&emsp;A）* (a+1)[5]&emsp;&emsp;B）* (* a+3)&emsp;&emsp;C）* (* (a+1))&emsp;&emsp;D）* (&amp;a[0][0]+2) 【解析】 &emsp;&emsp;(a+1)相当于指向a[1]的指针；&emsp;&emsp;(a+1)[5]相当于(a+6)相当于指向a[6]的指针；&emsp;&emsp;* (a+1)[5]相当于* ((a+1)[5])相当于a[6]。 &emsp;&emsp;A选项等价于a[6]（a[6]是指向a[6][0]的指针），但a[6]不存在，故A选项错误。 注意到： [ ]运算符的优先级大于*运算符； (a+1)[5]等价于(a+6)等价于&amp;a[6]。]]></content>
+    <title><![CDATA[【C++】引用可以指向临时无名对象吗？]]></title>
+    <url>%2F2019%2F03%2F28%2F%E3%80%90C%2B%2B%E3%80%91%E5%BC%95%E7%94%A8%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%90%91%E4%B8%B4%E6%97%B6%E6%97%A0%E5%90%8D%E5%AF%B9%E8%B1%A1%E5%90%97%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[有如下类定义：class MyClass{public：&emsp;&emsp;MyClass(int d=0): val(d) { }&emsp;&emsp;____ //运算符函数+的声明private：&emsp;&emsp;int val；}；若要使语句序列MyClass x(2), y(4), z；z=7+y；y=x+3；能够正常运行，横线处的声明语句应为（）。A) friend MyClass operator+(MyClass, MyClass);B) friend MyClass operator+(MyClass&amp;, MyClass&amp;);C) friend MyClass operator+(MyClass, MyClass&amp;);D) friend MyClass operator+(MyClass&amp;, MyClass); 【解析】程序中MyClass类给出一个默认构造函数，形参d提整数类型，默认值为0，在成员初始化列表中使用形参d初始化val成员；语句序列中两个表达式：7+y和x+3说明加法运算符函数的两个操作数可以是整型，也可以是MyClass类型，如果是整型的话，需要使用默认构造函数将整数类型隐式转换成临时的MyClass类对象，此时赋给运算符函数时，就不可以使用引用类型了，所以选项B、C、D都是错误的，选项A是正确的。 【个人解析】&emsp;&emsp;为什么将整型隐式转换成临时的类对象之后，就不能将临时对象的引用传入 “friend MyClass operator+(MyClass&amp;, MyClass&amp;)”？ &emsp;&emsp;因为引用的定义是：定义一个引用时，必须同时进行初始化，使它指向一个已经存在的对象。简单地说，引用必须指向一个“有名”的对象。 &emsp;&emsp;而将整型隐式转换成临时的类对象，这个对象是一个临时“无名”对象，没有名字，当然就使用不了引用了。 &emsp;&emsp;由此可以得出结论：C++中无法定义一个引用指向临时无名对象。 &emsp;&emsp;相似的可以联想到，可以使用指针来动态分配内存空间；但是不能使用引用来动态分配内存空间，如：&emsp;&emsp;MyClass *p=new MyClass; //正确&emsp;&emsp;MyClass ＆p=new MyClass; //错误&emsp;&emsp;究其原因，还是因为C++中，不能定义引用指向“无名”对象。 &emsp;&emsp;下面将题目中的代码补充完整，将错误选项D代入执行看看，编译器是否真的会报错： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;class MyClass&#123;public: MyClass(int d = 0) : val(d)&#123;&#125; friend MyClass operator + (MyClass&amp;, MyClass); int Getvalue()&#123; return val; &#125; void Changevalue(int a)&#123; val = a; &#125;private: int val;&#125;;MyClass operator + (MyClass &amp;class1, MyClass class2)&#123; MyClass a; a.Changevalue(class1.Getvalue() + class2.Getvalue()); return a;&#125;int main()&#123; MyClass x(2), y(4), z; z = 7 + y; cout &lt;&lt; z.Getvalue() &lt;&lt; endl; y = x + 3; return 0;&#125; 编译器报错：]]></content>
       <categories>
         <category>C++</category>
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>二级</tag>
-        <tag>数组</tag>
-        <tag>指针</tag>
+        <tag>引用</tag>
+        <tag>临时无名对象</tag>
+        <tag>重载运算符函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++ 编译器是否隐含生成默认构造函数和默认复制构造函数的4种情况讨论]]></title>
+    <url>%2F2019%2F03%2F28%2FC%2B%2B%20%20%E7%BC%96%E8%AF%91%E5%99%A8%E6%98%AF%E5%90%A6%E9%9A%90%E5%90%AB%E7%94%9F%E6%88%90%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E9%BB%98%E8%AE%A4%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%844%E7%A7%8D%E6%83%85%E5%86%B5%E8%AE%A8%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[① 类内有自定义构造函数和自定义复制构造函数&emsp;&emsp;根据C++标准定义，如果程序已定义构造函数，默认情况下编译器就不再隐含生成默认构造函数。注意，这里的“构造函数”包括复制构造函数（因为复制构造函数也是构造函数的一种）。 &emsp;&emsp;此时该类一共有2个构造函数：自定义构造函数和自定义复制构造函数。 ② 类内有自定义构造函数，无任何复制构造函数&emsp;&emsp;根据C++标准定义，有自定义构造函数，则无默认构造函数；无自定义复制构造函数，则隐含生成默认复制构造函数。下面使用代码检验： 123456789101112131415161718#include &lt;iostream&gt;using namespace std;class A&#123;public: int x; A(int x_=0): x(x_)&#123;&#125;&#125;;int main()&#123; A a; cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; 代码能正确执行； &emsp;&emsp;类A中没用声明任何复制构造函数，但是可以执行A b(a);说明编译器隐含生成了默认复制构造函数（使用单步跟踪检验，确实如此）。 &emsp;&emsp;此时该类一共有2个构造函数：自定义构造函数和默认复制构造函数。 ③ 类内无任何构造函数，无任何复制构造函数&emsp;&emsp;根据C++标准定义，编译器应该隐含生成默认构造函数和默认复制构造函数。下面用代码检验： 12345678910111213141516171819#include &lt;iostream&gt;using namespace std;class A&#123;public: int x=0;/*注：可能在早期的C++版本中，类的数据成员不能在声明时进行初始化， 但是在C++11新标准下，类的数据成员可以在声明时进行初始化，但不建议， 因为这样做破坏了类的抽象性)*/&#125;;int main()&#123; A a; //这里调用了默认构造函数 cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; 代码能正确执行； &emsp;&emsp;注意到，类的数据成员x在声明时同时定义了初始值。可能在早期的C++版本中，类的数据成员不能在声明时进行初始化，但是在C++11新标准下，类的数据成员可以在声明时进行初始化，但不建议，因为这样做破坏了类的抽象性。 &emsp;&emsp;此时该类一共有2个构造函数：默认构造函数和默认复制构造函数。 ⭐④ 类内无任何构造函数，有自定义复制构造函数&emsp;&emsp;（情况④较为特殊，应重点注意）&emsp;&emsp;按照C++标准，编译器应该隐含生成默认构造函数，事实是否如此？下面用代码来检验： 123456789101112131415161718#include &lt;iostream&gt;using namespace std;class A&#123;public: int x=0; A(A &amp;a)&#123; &#125;&#125;;int main()&#123; A a; //编译器提示错误，错误信息：类A不存在默认构造函数 cout &lt;&lt; a.x &lt;&lt; endl; A b(a); //这里调用了默认复制构造函数 cout &lt;&lt; b.x &lt;&lt; endl; return 0;&#125; &emsp;&emsp;代码执行错误，编译器并没有隐含生成默认构造函数。 &emsp;&emsp;此时该类一共有1个构造函数：自定义复制构造函数。 PS&emsp;&emsp;C++11新标准中，默认构造函数和默认复制构造函数的一些新特性]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>默认构造函数</tag>
+        <tag>默认复制构造函数</tag>
+        <tag>构造函数个数</tag>
+        <tag>C++11新标准</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【C++11新标准】 类的构造函数的个数到底包含不包含默认构造函数？]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86%E3%80%91%20%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0%E5%88%B0%E5%BA%95%E5%8C%85%E5%90%AB%E4%B8%8D%E5%8C%85%E5%90%AB%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%9F%2F</url>
+    <url>%2F2019%2F03%2F27%2F%E3%80%90C%2B%2B11%E6%96%B0%E6%A0%87%E5%87%86%E3%80%91%20%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0%E5%88%B0%E5%BA%95%E5%8C%85%E5%90%AB%E4%B8%8D%E5%8C%85%E5%90%AB%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%9F%2F</url>
     <content type="text"><![CDATA[前言&emsp;&emsp;最近在用淘宝上买的《未来教育》模拟考试软件刷C++二级的真题，遇到有一条颇有争议的题目，根据C++标准，题目的解析是有问题的，下面来分析一下。 原题：&emsp;&emsp;有如下类定义：&emsp;&emsp;&emsp;&emsp;class MyClass{&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int value;&emsp;&emsp;&emsp;&emsp;public：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;MyClass(int n)：value(n) { }&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int getValue() const { return value；}&emsp;&emsp;&emsp;&emsp;};&emsp;&emsp;则类MyClass的构造函数的个数是（）。&emsp;&emsp;A.1个&emsp;&emsp;B.2个&emsp;&emsp;C.3个&emsp;&emsp;D.4个&emsp;&emsp;【未来教育解析】本题考查类的默认构造函数和自定义的构造函数。本题中MyClass(int n)：value(n){ }为自定义的构造函数，加上默认构造函数，一共有2个构造函数。故本题答案为B选项。 &emsp;&emsp;【个人解析】根据C++的标准，如果程序已定义构造函数，默认情况下编译器就不再隐含生成默认构造函数。如果此时依然希望编译器隐含生成默认构造函数，可以使用“=default”。如：&emsp;&emsp;class MyClass{&emsp;&emsp;&emsp;&emsp;int value;&emsp;&emsp;public：&emsp;&emsp;&emsp;&emsp;MyClass() = default;&emsp;&emsp;&emsp;&emsp;MyClass(int n)：value(n) { }&emsp;&emsp;};&emsp;&emsp;此时类MyClass一共有三个构造函数：自定义的构造函数和编译器隐含生成的默认构造函数和默认复制构造函数。 &emsp;&emsp;未来教育给的答案虽然是正确的，但是解析是错误的。原题的正确解析应该是：有两个构造函数，自定义构造函数和默认复制构造函数。]]></content>
       <categories>
         <category>C++</category>
@@ -475,22 +244,23 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[【C++】引用可以指向临时无名对象吗？]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90C%2B%2B%E3%80%91%E5%BC%95%E7%94%A8%E5%8F%AF%E4%BB%A5%E6%8C%87%E5%90%91%E4%B8%B4%E6%97%B6%E6%97%A0%E5%90%8D%E5%AF%B9%E8%B1%A1%E5%90%97%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[有如下类定义：class MyClass{public：&emsp;&emsp;MyClass(int d=0): val(d) { }&emsp;&emsp;____ //运算符函数+的声明private：&emsp;&emsp;int val；}；若要使语句序列MyClass x(2), y(4), z；z=7+y；y=x+3；能够正常运行，横线处的声明语句应为（）。A) friend MyClass operator+(MyClass, MyClass);B) friend MyClass operator+(MyClass&amp;, MyClass&amp;);C) friend MyClass operator+(MyClass, MyClass&amp;);D) friend MyClass operator+(MyClass&amp;, MyClass); 【解析】程序中MyClass类给出一个默认构造函数，形参d提整数类型，默认值为0，在成员初始化列表中使用形参d初始化val成员；语句序列中两个表达式：7+y和x+3说明加法运算符函数的两个操作数可以是整型，也可以是MyClass类型，如果是整型的话，需要使用默认构造函数将整数类型隐式转换成临时的MyClass类对象，此时赋给运算符函数时，就不可以使用引用类型了，所以选项B、C、D都是错误的，选项A是正确的。 【个人解析】&emsp;&emsp;为什么将整型隐式转换成临时的类对象之后，就不能将临时对象的引用传入 “friend MyClass operator+(MyClass&amp;, MyClass&amp;)”？ &emsp;&emsp;因为引用的定义是：定义一个引用时，必须同时进行初始化，使它指向一个已经存在的对象。简单地说，引用必须指向一个“有名”的对象。 &emsp;&emsp;而将整型隐式转换成临时的类对象，这个对象是一个临时“无名”对象，没有名字，当然就使用不了引用了。 &emsp;&emsp;由此可以得出结论：C++中无法定义一个引用指向临时无名对象。 &emsp;&emsp;相似的可以联想到，可以使用指针来动态分配内存空间；但是不能使用引用来动态分配内存空间，如：&emsp;&emsp;MyClass *p=new MyClass; //正确&emsp;&emsp;MyClass ＆p=new MyClass; //错误&emsp;&emsp;究其原因，还是因为C++中，不能定义引用指向“无名”对象。 &emsp;&emsp;下面将题目中的代码补充完整，将错误选项D代入执行看看，编译器是否真的会报错： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;using namespace std;class MyClass&#123;public: MyClass(int d = 0) : val(d)&#123;&#125; friend MyClass operator + (MyClass&amp;, MyClass); int Getvalue()&#123; return val; &#125; void Changevalue(int a)&#123; val = a; &#125;private: int val;&#125;;MyClass operator + (MyClass &amp;class1, MyClass class2)&#123; MyClass a; a.Changevalue(class1.Getvalue() + class2.Getvalue()); return a;&#125;int main()&#123; MyClass x(2), y(4), z; z = 7 + y; cout &lt;&lt; z.Getvalue() &lt;&lt; endl; y = x + 3; return 0;&#125; 编译器报错：]]></content>
+    <title><![CDATA[【C++】顺序队列、循环队列、带链队列”队空队满时，队头队尾指针的情况分析]]></title>
+    <url>%2F2019%2F03%2F26%2FC%2B%2B%20%20%E2%80%9C%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%E3%80%81%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E3%80%81%E5%B8%A6%E9%93%BE%E9%98%9F%E5%88%97%E2%80%9D%E9%98%9F%E7%A9%BA%E9%98%9F%E6%BB%A1%E6%97%B6%EF%BC%8C%E9%98%9F%E5%A4%B4%E9%98%9F%E5%B0%BE%E6%8C%87%E9%92%88%E7%9A%84%E6%83%85%E5%86%B5%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[顺序队列的三种状态 队空&emsp;12345678&amp;emsp;如图1所示，当顺序队列队空时，队头指针front和队尾指针rear相同；注意front和rear&lt;font color=red&gt;不是真正的指针&lt;/font&gt;，而是int型变量，代表元素下标。注：随着出队入队的操作，当出现队空状态时，队头队尾指针不一定指向第一个元素。&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww3.sinaimg.cn/large/006tNc79ly1g4ygtgvfshj30ta07fjs7.jpg&quot; &gt;&lt;br/&gt;图1 顺序队列的队空状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;2. 队满&amp;emsp;```qu.front == 0；qu.rear == max+1 图2 顺序队列的队满状态 一般状态&emsp;1234567&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww4.sinaimg.cn/large/006tNc79ly1g4ygt2ob6bj30t107mdgq.jpg&quot; &gt;&lt;br/&gt;图3 顺序队列的一般状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;#### 循环队列的三种状态1. 队空&amp;emsp;```qu.front == qu.rear &emsp;如图所示，当循环队列队空时，队头指针front和队尾指针rear相同。 图4 循环队列的队空状态 队满&emsp;1234567&amp;emsp;如图所示，当循环队列队满时，队头指针front和队尾指针rear相同。&lt;div align=center&gt; &lt;img width=&quot;45%&quot; src=&quot;http://ww2.sinaimg.cn/large/006tNc79ly1g4ygswpvjnj30ce07c3z0.jpg&quot; &gt;&lt;br/&gt;图5 循环队列的队满状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;3. 一般状态&amp;emsp;```qu.front == 0；qu.rear == n; //队内元素总数为n-1 图6 循环队列的一般状态 带链队列的三种状态 一般状态&emsp;在带链队列中，front和rear是真正的指针，指向节点的指针。 图7 带链队列的一般状态 队空&emsp;123456&lt;div align=center&gt; &lt;img width=&quot;60%&quot; src=&quot;http://ww2.sinaimg.cn/large/006tNc79ly1g4ygsjzmj5j30rd066dg1.jpg&quot; &gt;&lt;br/&gt;图8 带链队列的队空状态&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;3. 队内只有一个元素&amp;emsp;```lqu-&gt;front == lqu-&gt;rear &emsp;与队空的情况相似，当带链队列只有一个元素时，队头指针front和队尾指针rear相同。 图9 只有一个节点 队满&emsp;带链队列不存在队满的情况。]]></content>
       <categories>
         <category>C++</category>
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>引用</tag>
-        <tag>临时无名对象</tag>
-        <tag>重载运算符函数</tag>
+        <tag>队列</tag>
+        <tag>循环队列</tag>
+        <tag>带链队列</tag>
+        <tag>队满队空</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[【c++】常对象、常数据成员、常成员函数总结]]></title>
-    <url>%2F2019%2F07%2F19%2F%E3%80%90C%2B%2B%E3%80%91%20%20%E5%B8%B8%E5%AF%B9%E8%B1%A1%E3%80%81%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E3%80%81%E5%B8%B8%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%2F</url>
+    <url>%2F2019%2F03%2F24%2F%E3%80%90C%2B%2B%E3%80%91%20%20%E5%B8%B8%E5%AF%B9%E8%B1%A1%E3%80%81%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%E3%80%81%E5%B8%B8%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[常数据成员&emsp;◆ 常数据成员必须进行初始化，并且不能被更新。&emsp;◆ 常数据成员不能在声明时赋初始值（普通数据成员也是），常数据成员必须在构造函数初始化列表进行初始化；普通数据成员在初始化列表和函数体中初始化均可。&emsp;◆ PS：类的成员对象若要传入参数初始化，则必须在构造函数初始化列表进行；（成员对象：当一个类的成员是另一个类的对象时，这个对象就叫成员对象。） 常对象&emsp;◆ ⭐常对象可以调用常成员函数，不能调用非const成员函数；非const对象，可以调用普通成员函数和常成员函数。&emsp;◆ 常对象的成员函数不一定都是常成员函数；同样的常对象的数据成员不一定都是常数据成员。&emsp;◆ 常对象一旦初始化，常对象的数据成员便不允许修改，而不是说常对象的数据成员都是常数据成员。&emsp;◆ PS：定义常对象有两种方法，1. Point const a; 2. const Point a;（同样的，定义变量或指针时，const放前放后意义一样，如：1. const double a; double const a; 2. const int *p; int const *p; 但是定义指针常量时，只能用 int * const p;） 常成员函数&emsp;◆ 常成员函数不更新对象的数据成员。&emsp;◆ 常成员函数的const关键字可以被用于参与对重载函数的区分。&emsp;◆ ⭐通常非const成员函数需要定义一个const版本的重载函数，以方便定义常对象后调用常成员函数。&emsp;&emsp;◈ 如果常对象调用的常成员函数返回的是指向当前对象的指针（或返回的是当前对象），那么此常成员函数的声明的返回类型要加const，例如： &emsp;&emsp;&emsp;&emsp;◊ 成员函数返回指向当前对象的指针&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1();&emsp;&emsp;&emsp;&emsp;//非const成员函数的类内声明；&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const *Point fun1() const;&emsp;//习惯上要再声明一个常成员函数作重载函数，注意到此函数声明有两个const； &emsp;&emsp;&emsp;&emsp;◊ 成员函数返回指向当前对象&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();&emsp;&emsp;&emsp;&emsp;//非const成员函数的类内声明；&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1() const;&emsp;//习惯上要再声明一个常成员函数作重载函数，注意到此函数声明有两个const； &emsp;&emsp;&emsp;&emsp;◊ ⭐注意，如果一个类中声明以下4个重载函数：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;① Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;② const Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;③ Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;④ const Point fun1() const;&emsp;&emsp;&emsp;&emsp; 【解析】①和②是冲突的，因为无法区分仅按返回类型区分的重载函数；③和④是冲突的，也是因为无法区分仅按返回类型区分的重载函数。&emsp;&emsp;&emsp;&emsp;&emsp;所以正确的重载函数搭配有3种： &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ①和③搭配：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回非const对象&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回非const对象&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是非const的Point类对象。 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ①和④搭配（这里把返回类型改为指针，因为常用）：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point *fun1() {return this; };&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回指向本对象的指针&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point *fun1() const { return this; };//函数返回指向本常对象的指针，第一个const说明返回的是指向常对象的指针，第二个const说明此函数是常函数 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是常Point类对象（如return *this;）。 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ②和④搭配：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回常对象&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;//函数返回常对象&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]适用于定义常对象后调用常成员函数，常成员函数返回类型是常Point类对象。 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;◊ ②和③搭配：&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;const Point fun1();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Point fun1() const;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;[解析]虽然搭配合法，但是似乎不存在这种搭配。]]></content>
       <categories>
         <category>C++</category>
@@ -500,6 +270,236 @@
         <tag>常对象</tag>
         <tag>常成员函数</tag>
         <tag>常数据成员</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++二级难题图解】对二维数组数组名作指针的考察]]></title>
+    <url>%2F2019%2F03%2F23%2F%E3%80%90C%2B%2B%E4%BA%8C%E7%BA%A7%E9%9A%BE%E9%A2%98%E5%9B%BE%E8%A7%A3%E3%80%91%E5%AF%B9%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E6%95%B0%E7%BB%84%E5%90%8D%E4%BD%9C%E6%8C%87%E9%92%88%E7%9A%84%E8%80%83%E5%AF%9F%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;若已知 int a[3][7];，则用指针表示数组a中的元素时，下列表示中错误的是（）。 &emsp;&emsp;A）* (a+1)[5]&emsp;&emsp;B）* (* a+3)&emsp;&emsp;C）* (* (a+1))&emsp;&emsp;D）* (&amp;a[0][0]+2) 【解析】 &emsp;&emsp;(a+1)相当于指向a[1]的指针；&emsp;&emsp;(a+1)[5]相当于(a+6)相当于指向a[6]的指针；&emsp;&emsp;* (a+1)[5]相当于* ((a+1)[5])相当于a[6]。 &emsp;&emsp;A选项等价于a[6]（a[6]是指向a[6][0]的指针），但a[6]不存在，故A选项错误。 注意到： [ ]运算符的优先级大于*运算符； (a+1)[5]等价于(a+6)等价于&amp;a[6]。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>二级</tag>
+        <tag>数组</tag>
+        <tag>指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】一图搞懂：指针常量、指向常量的指针、常变量定义时是否需要初始化]]></title>
+    <url>%2F2019%2F03%2F22%2F%E3%80%90%E4%B8%80%E5%9B%BE%E6%90%9E%E6%87%82%E3%80%91C%2B%2B%20%20%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E3%80%81%E6%8C%87%E5%90%91%E5%B8%B8%E9%87%8F%E7%9A%84%E6%8C%87%E9%92%88%E3%80%81%E5%B8%B8%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%E6%97%B6%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[纵向对比：]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>常变量</tag>
+        <tag>指向常量的指针</tag>
+        <tag>指针常量</tag>
+        <tag>初始化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[三张图搞透第一范式（1NF）、第二范式（2NF）和第三范式（3NF）的区别]]></title>
+    <url>%2F2019%2F03%2F20%2F%E4%B8%89%E5%BC%A0%E5%9B%BE%E6%90%9E%E9%80%8F%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F(1NF)%E3%80%81%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F(2NF)%E5%92%8C%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F(3NF)%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[第一范式（1NF） &emsp;&emsp;列1唯一确定列2, 列3, 列4, ...，即列2, 列3, 列4, ...不能再分裂出其它列。 &emsp;&emsp;假设有关系模式列1: 订单名; 列2: 商品。一个订单下可以有多个商品，即列2: 商品可以分裂成商品A, 商品B, 商品C, ...，所以列1: 订单名; 列2: 商品这样的关系模式不符合第一范式。 第二范式（2NF） &emsp;&emsp;满足2NF的前提是必须满足1NF。此外，关系模式需要包含两部分内容，一是必须有一个（及以上）主键；二是没有包含在主键中的列必须全部依赖于全部主键，而不能只依赖于主键的一部分而不依赖全部主键。 &emsp;&emsp;定义听起来有点绕，不慌，直接看图，只有全部的非主键列依赖于全部主键，才满足第二范式。 &emsp;&emsp;假设一顾客在超市买了三瓶肥宅快乐水，那么存在关系模式主键1: 商品名称; 列1: 购买数量; 列2: 商品ID; 列3: 购买日期。购买数量和商品ID只依赖于商品名称，购买日期不依赖于商品名称，所以该关系模式不满足第二范式。 第三范式（3NF） &emsp;&emsp;满足3NF的前提是必须满足2NF。另外关系模式的非主键列必须直接依赖于主键，不能存在传递依赖。即不能存在：非主键列m既依赖于全部主键，又依赖于非主键列n的情况。 &emsp;&emsp;定义听起来还是有点绕，不慌，直接看图，只要非主键内部存在传递依赖，就不满足第三范式。 &emsp;&emsp;假设存在关系模式主键1: 课程编号; 列1: 教师名; 列2: 教师家庭地址。显然满足第一范式和第二范式，但是教师家庭地址传递依赖于教师名，所以不满足第三范式。 示例&emsp;&emsp;设有课程关系模式如下：R(C#, Cn, T, Ta)（其中C#为课程号，Cn为课程名，T为教师名，Ta为教师地址），并且假定不同的课程号可以有相同的课程名，每门课程只有一位任课教师，但每名教师可以有多门课程。关系R范式最高达到（）。 A）1NFB）2NFC）3NFD）BCNF 【正确答案】B 【解析】 &emsp;&emsp;一个“课程号”确定一个“课程名”，确定一个“教师名”，确定一个“教师地址”，所以符合第一范式； &emsp;&emsp;“课程号”是无重复的，所以“课程号”是主键，“课程名”、“教师名”、“教师地址”均是可重复的，所以它们都是非主键列并完全依赖于主键“课程号”，所以符合第二范式； &emsp;&emsp;非主键列“教师地址”传递依赖于非主键列“教师名”，所以不符合第三范式，故选B。]]></content>
+      <categories>
+        <category>经验总结</category>
+      </categories>
+      <tags>
+        <tag>第一范式</tag>
+        <tag>第二范式</tag>
+        <tag>第三范式</tag>
+        <tag>3NF</tag>
+        <tag>2NF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】指向动态分配的指针数组的指针]]></title>
+    <url>%2F2019%2F03%2F16%2FC%2B%2B%20%20%E6%8C%87%E5%90%91%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E7%9A%84%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E7%9A%84%E6%8C%87%E9%92%88%2F</url>
+    <content type="text"><![CDATA[首先介绍指向数组的指针： &emsp;&emsp;char *p = new char; 定义指向动态分配的字符变量的指针；&emsp;&emsp;char *p = new char[3]; 定义指向动态分配的一维字符数组的指针，p指向数组首个元素的地址，即(p+1)为数组第二个元素的地址；&emsp;&emsp;char (*p)[3] = new char[2][3]; 定义指向动态分配的二维字符数组（三行）的指针，p指向数组首行的地址，即(p+1)为数组第二行的地址；&emsp;&emsp;char (*p)[9][8] = new char[7][9][8]; 定义指向动态分配的三维字符数组的指针（7个9列8行的二维数组），p指向首个二维数组的地址，即(p+1)为第二个二维数组的地址；&emsp;&emsp;同样的，char数据类型可换成其他数据类型，比如Point类类型，例：&emsp;&emsp;Point *p = new Point[2]; 定义指向动态分配的一维Point类对象数组的指针。 再介绍指针数组：&emsp;&emsp;这里只举例一维指针数组：Point *p[2]; 定义一个Point类对象的数组，数组里的两个元素都是指向Point类对象的指针（p[0], p[1]）。 最后，指向动态指针数组的指针： &emsp;&emsp;int *p = new int *[10]; //错误&emsp;&emsp;int **p = new int *[10]; //正确 &emsp;&emsp;new int *[10]表示动态生成一个包含10个int型指针的数组，要定义指向指针数组的指针p，那么p也就是指向指针数组首元素，而指针数组首元素是一个int型指针，所以p就是指向int型指针的指针，即指向指针的指针。要定义指向指针的指针，就要使用T **p的格式。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>指针数组</tag>
+        <tag>数组指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况]]></title>
+    <url>%2F2019%2F03%2F16%2FC%2B%2B%20%20%E4%B8%80%E5%9B%BE%E6%90%9E%E6%87%82%E2%80%9C%E4%BB%8E%E6%A0%88%E5%BA%95%E5%BE%80%E6%A0%88%E9%A1%B6%E5%8E%8B%E3%80%81%E4%BB%8E%E6%A0%88%E9%A1%B6%E5%BE%80%E6%A0%88%E5%BA%95%E5%8E%8B%E2%80%9D%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。 &emsp;&emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&lt;=m），栈内有n个元素。 &emsp;&emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&lt;=m+1），栈内有(m-top+1)个元素。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>栈</tag>
+        <tag>栈顶</tag>
+        <tag>栈底</tag>
+        <tag>压栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PS小技巧 证件照蓝底/红底换白底（非抠图，抠图头发边缘处理效果差）]]></title>
+    <url>%2F2019%2F03%2F10%2FPS%E5%B0%8F%E6%8A%80%E5%B7%A7%20%E8%AF%81%E4%BB%B6%E7%85%A7%E8%93%9D%E5%BA%95_%E7%BA%A2%E5%BA%95%E6%8D%A2%E7%99%BD%E5%BA%95%EF%BC%88%E9%9D%9E%E6%8A%A0%E5%9B%BE%EF%BC%8C%E6%8A%A0%E5%9B%BE%E5%A4%B4%E5%8F%91%E8%BE%B9%E7%BC%98%E5%A4%84%E7%90%86%E6%95%88%E6%9E%9C%E5%B7%AE%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[打开PhotoShop&emsp; 打开图片&emsp; 在页面顶端选择“图像”-&gt;“调整”-&gt;“替换颜色”&emsp; 将鼠标移动到证件照背景蓝色任意位置单击一下，红框中的“颜色”就会变成鼠标刚刚选中的颜色，再将“颜色容差”调整到最大值200。&emsp; 点击“结果”，在弹出的“拾色器”中将R、G、B均改为255，再确定、确定。&emsp; 将“明度”调整到100。&emsp; 最后的成品，边缘效果（尤其是头发边缘）比抠人像换背景颜色好得多。&emsp; 如果把“明度”调为100后，人脸颜色有变化，就参考知乎链接修改。不过最新版本的PS软件更加智能化，基本上不会出现人脸颜色变化的情况。 红底的操作方法与蓝底是雷同的，如果有其它颜色的背景色，按照文中方法同样是可以操作的。]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>证件照</tag>
+        <tag>PS</tag>
+        <tag>背景</tag>
+        <tag>白底</tag>
+        <tag>蓝底</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词]]></title>
+    <url>%2F2019%2F03%2F09%2FC%2B%2B%20%E5%9C%A8%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E5%8F%82%E6%95%B0%E5%8F%AA%E8%83%BD%E6%98%AF%E4%B8%80%E5%85%83%E8%B0%93%E8%AF%8D%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%BA%8C%E5%85%83%E8%B0%93%E8%AF%8D%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;C++STL库中的find_if的第三个参数只能是一元谓词（即只能传给一元谓词一个参数），但是在设计算法的过程中，需要第三个参数是二元谓词（即需要传给谓词函数两个参数），那么这时候就可以使用bind1st/bind2nd函数适配器，将二元谓词的某一个参数绑定为一个常数，这样二元谓词就变成了一元谓词，find_if只需要传给二元谓词一个参数就也能正常使用。 &emsp;&emsp;例如： 1234567891011121314151617181920212223//找到数组中第一个大于40的元素#include &lt;functional&gt;#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;int main() &#123; int intArr[] = &#123; 30, 90, 10, 40, 70, 50, 20, 80 &#125;; const int N = sizeof(intArr) / sizeof(int); vector&lt;int&gt; a(intArr, intArr + N); vector&lt;int&gt;::iterator p = find_if(a.begin(), a.end(), bind2nd(greater&lt;int&gt;(), 40)); /*greater是二元谓词（函数对象有两个参数，只返回真或假），但是find_if的第三个参数只能是一元谓词， 为了将greater变为一元谓词，就需要使用find2nd函数适配器将greater的第二个参数绑定为常数40， 当find_if函数在遍历vector元素的迭代器时，就只需要传给greater一个参数就行了（即将迭代器所指向的 元素的值传给greater的第一个参数与第二个已绑定的参数40作比较，返回比较大小的结果为真或假）。*/ //注，greater有两个参数x、y，返回的是x&gt;y为真或假 if (p == a.end()) cout &lt;&lt; "no element greater than 40" &lt;&lt; endl; else cout &lt;&lt; "first element greater than 40 is: " &lt;&lt; *p &lt;&lt; endl; return 0;&#125; &emsp;&emsp;将二元谓词greater的第二个参数绑定为40，这样find_if只需要给greater传一个参数与40作比较就可以了（传入greater的参数就是遍历vector元素的迭代器所指向的元素的值）。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>函数适配器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】for循环语句使用前置++和后置++有何区别？]]></title>
+    <url>%2F2019%2F03%2F07%2FC%2B%2B%20for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E4%BD%BF%E7%94%A8%E5%89%8D%E7%BD%AE%2B%2B%E5%92%8C%E5%90%8E%E7%BD%AE%2B%2B%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vector,string等，++iterator应该和iterator++是没有区别的，因为通常迭代器简单实现为普通指针 但是，如list,map,set等容器，iterator就没有这么简单了，++iterator效率高于iterator++,因为省了一个临时对象 参考文献&emsp;&emsp;[1] https://bbs.csdn.net/topics/30253911]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>for循环</tag>
+        <tag>前置++</tag>
+        <tag>后置++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】动态数组类模板中，为什么重载了指针转换运算符T *之后，还要重载下标运算符[ ]？]]></title>
+    <url>%2F2019%2F03%2F04%2FC%2B%2B%20%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84%E7%B1%BB%E6%A8%A1%E6%9D%BF%E4%B8%AD%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%BD%BD%E4%BA%86%E6%8C%87%E9%92%88%E8%BD%AC%E6%8D%A2%E8%BF%90%E7%AE%97%E7%AC%A6T%20_%E4%B9%8B%E5%90%8E%EF%BC%8C%E8%BF%98%E8%A6%81%E9%87%8D%E8%BD%BD%E4%B8%8B%E6%A0%87%E8%BF%90%E7%AE%97%E7%AC%A6%5B%20%5D%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;重置指针转换运算符函数的声明，（注意函数没有指定返回值的类型，这是语法的要求，跟其他重载函数不一样的地方，要注意）： 123operator T *();operator const T *() const;/*后置const是为了让常对象能调用这个成员函数(常对象只能调用常成员函数，不能调用普通成员函数)； “const T*”表示，通过对象名创建动态数组后，通过对象名不能改变数组*/ &emsp;&emsp;假设动态数组类模板Array，假设类外函数read，形参int *p表示定义指向动态数组的指针p： 1234void read(int *p, int n)&#123; for(int i = 0; i &lt; n; i++) cin&gt;&gt;p[i];&#125; &emsp;&emsp;调用read函数并传入Array类型指针时，因为read函数只接受int类型指针，所以会自动搜索从Array型指针到int型指针的转换方式，如果能搜索到，就执行转换，把转换后的指针交给read函数，搜索不到，编译器就会报错。 &emsp;&emsp;光重载指针转换运算符还不够，要想对象名能像数组名一样使用下标，还要重载下标运算符： 12T &amp; operator [] (int i);const T &amp; operator [] (int i) const; 为什么重载了指针转换运算符之后，还要重载下标运算符？可以这样理解： &emsp;&emsp;虽然重载了指针转换运算符，但是其作用只是为了能把对象名a当类内动态数组名list一样，传入类外函数的参数表作形实结合（实参是对象名，形参是T型指针）； &emsp;&emsp;如果接着在main函数写a[i]，编译器是不会把这里的a当作数组名list的，所以仅仅是写a[i]是无法调用数组元素的(编译器不认这种代码)，只有重载了下标运算符“[ ]”，编译器才会把a[i]当成list[i]； 简单的说， &emsp;&emsp;重载指针运算符，作用仅限于把“a”转换成“list”；重载下标运算符，作用仅限于把“a[i]”转换成“list[i]”； &emsp;&emsp;也就是说，不要以为把对象名a转换成了指向动态数组的指针之后，就能像使用“数组名+下标”一样使用“对象名+下标”来调用数组元素，这样的操作是错误的，编译器是不认的。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>动态数组</tag>
+        <tag>类模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【win10小技巧】解决windows 10睡眠后再唤醒，就会自动关机并重启的问题]]></title>
+    <url>%2F2019%2F03%2F03%2F%E3%80%90win10%E5%B0%8F%E6%8A%80%E5%B7%A7%E3%80%91%E8%A7%A3%E5%86%B3windows%2010%E7%9D%A1%E7%9C%A0%E5%90%8E%E5%86%8D%E5%94%A4%E9%86%92%EF%BC%8C%E5%B0%B1%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E5%B9%B6%E9%87%8D%E5%90%AF%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;不管是左下角的睡眠选项，还是直接合上笔记本的盖子，计算机都应该是进入了睡眠状态。之后再按键盘上的任意键，计算机都应该会直接唤醒，唤醒后的计算机状态跟睡眠前的计算机状态是一毛一样的。 &emsp;&emsp;但是我的笔记本就是这么的不听话（一开始我以为，是因为我自己重装的win10系统的问题），在睡眠之后，如果我再唤醒电脑，很明显感觉到，笔记本键盘灯亮了、硬盘开始转了，似乎像是马上就要唤醒了！ &emsp;&emsp;但是！下一刹那！键盘灯全熄，硬盘也停转，接着就是正常的不紧不慢的重启。。。。。。 &emsp;&emsp;在网上查了各种帖子，看了无数的经验，试了几乎所有的方法，无非是设备管理器禁止节约电源啦、电池管理关闭快速启动啦等等等等，但是全部都毫无卵用。 &emsp;&emsp;就在我尝试了无数的方法之后，就快完全丧失信心的时候，我突然想，是不是我一开始的思路就是错误的？然后我仔细地把我的电脑的情况审视了一遍，发现原来我被网上的思路给带歪了！ &emsp;&emsp;网上的解决方法，都是从win10系统的角度去解决问题的，但是从计算机系统（非windows这种操作系统）的角度来讲，睡眠再唤醒这件事，其实跟win10系统是无关的。因为当你的电脑睡眠之后，掌控你电脑“主权”的并不是win10系统，而是计算机嵌入在主板上的最底层的操作系统（俗称BIOS），所以想要解决这个问题，就算把windows10改成花儿也无济于事。我们要修改的，应该是BIOS的状态。 &emsp;&emsp;有了这个思路，我只尝试了一次，就成功了。。。。。。 &emsp;&emsp;解决的方法简单到令人发指，就八个字——重置BIOS设置。 &emsp;&emsp;以我的笔记本戴尔Dell 燃7000 Pro（Dell Inspiron 7580）为例， 第二次更新：&emsp;&emsp;上面提到的方法虽然管用，但是后来发现，重置BIOS设置一段时间后（大概几天），问题依然还是会出现，这时又得重置BIOS设置，然后反反复复出现同样的问题，治标不治本！&emsp;&emsp;最近我发现一个一劳永逸的方法，能彻底解决“睡眠后再唤醒，就会自动关机并重启”的问题，不过最近我在准备秋招，诸事繁杂，等有空我会再来更新的~~]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>win10</tag>
+        <tag>睡眠唤醒</tag>
+        <tag>睡眠重启</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？]]></title>
+    <url>%2F2019%2F03%2F02%2FC%2B%2B%20%20%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E7%BB%A7%E6%89%BF%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E7%BB%91%E5%AE%9A%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E8%99%9A%E5%87%BD%E6%95%B0%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[继承和动态绑定对程序的编写有两方面的影响：&emsp;&emsp;使用继承，我们可以更容易地定义与其他类相似但不完全相同的新类；&emsp;&emsp;使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。 &emsp;&emsp;通过使用动态绑定，我们能用同一段代码分别处理基类和派生类们的对象。在C++语言中，当我们使用基类的引用(或指针)调用一个虚函数时将发生动态绑定。动态绑定，又称运行时的绑定，顾名思义，即在程序运行时选择调用哪个版本(对象)的虚函数。 &emsp;&emsp;有虚函数，程序就可以在运行阶段做决定到底选择哪个版本的虚函数；没有虚函数，程序就会在编译阶段静态绑定(不做选择)。那个为什么要大费周章地使用动态绑定、使用虚函数呢？这样是为了能使用同一段代码（一个函数，函数的形参有基类的引用或指针），用来处理很多的类(基类和其派生类们)的对象。 &emsp;&emsp;设想一下，如果没有虚函数，每个基类的派生类都定义自己独立的net_price(返回书籍的实际销售价格的成员函数)，那么就不可能设计同一段代码(同一个函数)来调用所有的类的对象的net_price(类外函数的形参是设成基类的引用(或指针)呢？还是哪个派生类的引用(或指针)呢？) &emsp;&emsp;所以通过继承和动态绑定(使用虚函数)这两大法宝，可以实现以统一的方式，自如地调用各种类的对象，使我们能够编写具有特定类型行为但又独立于类型的程序。这种统一的美学，是必须要追求的。 &emsp;&emsp;注：在C++中，动态绑定只作用于虚函数，并且需要通过指针或引用调用。 我们能将基类的指针或引用绑定到派生类对象中的基类部分上。 &emsp;&emsp;Quote item; &emsp;&emsp;&emsp;&emsp;&nbsp;//基类对象&emsp;&emsp;Bulk_Quote bulk;&emsp;&emsp;//派生类对象&emsp;&emsp;Quote *p = &item;&emsp;//p指向基类对象&emsp;&emsp;p = &bulk; &emsp;&emsp;&emsp;&emsp;&nbsp;//p指向派生类中的基类部分（派生类的对象的地址，可以赋值给指向基类的指针）&emsp;&emsp;Quote &amp;r = bulk;&emsp;&nbsp;//定义一个基类对象的引用r，绑定到派生类中的基类部分（用派生类的对象，可以初始化基类的引用） 这种转换通常称为派生类到基类的类型转换。换种说法，我们可以把派生类的对象当基类的对象来使用。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>继承</tag>
+        <tag>动态绑定</tag>
+        <tag>虚函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析]]></title>
+    <url>%2F2019%2F02%2F23%2FC%2B%2B%20%E3%80%90%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E5%9C%B0%E5%9D%80%E8%B5%8B%E7%BB%99%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E6%8C%87%E9%92%88%E3%80%91%E6%9A%A8%E3%80%90%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E5%80%BC%E8%B5%8B%E7%BB%99%E5%B8%B8_%E9%9D%9E%E5%B8%B8%E5%8F%98%E9%87%8F%E3%80%918%E7%A7%8D%E6%83%85%E5%86%B5%E5%AF%B9%E9%94%99%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[常/非常变量地址赋给常/非常指针123456正确： A. int a, *p = &amp;a; B. int a; const int *p = &amp;a; C. const int a; const int *p = &amp;a;错误： D. const int a; int *p = &amp;a; 总结：&emsp;&emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普通指针/常指针，常变量地址可以赋给常指针、不能赋给普通指针。 常/非常变量值赋给常/非常变量123456正确： A. int a, b; b = a; B. const int a; int b; b = a;错误： C. int a; const int b; b = a; D. const int a; const int b; b = a; 总结：&emsp;&emsp;对于把变量值赋给变量的情况，普通变量值可以赋给普通变量，不能赋给常变量；常变量值可以赋给普通变量，不能赋给常变量。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>常变量</tag>
+        <tag>常指针</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【win10实用小技巧】谷歌浏览器书签固定到开始菜单屏幕（磁贴）当中]]></title>
+    <url>%2F2019%2F02%2F20%2F%E3%80%90win10%E5%AE%9E%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7%E3%80%91%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B9%A6%E7%AD%BE%E5%9B%BA%E5%AE%9A%E5%88%B0%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E5%B1%8F%E5%B9%95%EF%BC%88%E7%A3%81%E8%B4%B4%EF%BC%89%E5%BD%93%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[将目标书签拖动到桌面，在桌面上形成该书签的快捷方式。 将桌面的书签快捷方式复制到C盘如下目标文件夹下（C:\ProgramData\Microsoft\Windows\Start Menu\Programs） 打开开始菜单，就能看到书签了，右键固定到开始屏幕。 结果完美。 参考文献&emsp;&emsp;[1] https://blog.csdn.net/luofl1992/article/details/52263669]]></content>
+      <categories>
+        <category>小技巧</category>
+      </categories>
+      <tags>
+        <tag>小技巧</tag>
+        <tag>win10</tag>
+        <tag>Windows10</tag>
+        <tag>开始菜单</tag>
+        <tag>磁贴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++】“复制构造”比“先构造，后赋值”更加高效]]></title>
+    <url>%2F2019%2F02%2F17%2FC%2B%2B%20%20%E2%80%9C%E5%A4%8D%E5%88%B6%E6%9E%84%E9%80%A0%E2%80%9D%E6%AF%94%E2%80%9C%E5%85%88%E6%9E%84%E9%80%A0%EF%BC%8C%E5%90%8E%E8%B5%8B%E5%80%BC%E2%80%9D%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%2F</url>
+    <content type="text"><![CDATA[题目&emsp;&emsp;Student为表示学生的类且未重载赋值操作符，则下述程序中有调用复制构造函数的是： 12345678//程序 aint main() &#123; Student t1; Student t2(t1); //1 Student t3 = t1; //2 return 0;&#125; 123456789//程序 bint main() &#123; Student t1; Student t2(t1); //1 Student t3; t3 = t1; //2 return 0;&#125; 解答&emsp;&emsp;程序a中的1和2都带调用了复制构造函数；而程序b中只有1调用了复制构造函数，2没有调用。&emsp;&emsp;Student t3 = t1的意思可以表达为：利用对象t1“初始化”对象t3；&emsp;&emsp;t3 = t1的意思可以表达为：将对象t1“赋值”给对象t3。 利用单步跟踪的方法，可以发现：&emsp;&emsp;对象t1“初始化”对象t3时，编译器调用了复制构造函数，但没有调用构造函数；&emsp;&emsp;先定义t3,再把对象t1“赋值”给对象t3时，编译器调用了构造函数，但没有调用复制构造函数； 结论&emsp;&emsp;由此可见，复制构造函数可以一步解决：“初始化”一个新对象并给其“赋值”的功能，比先构造，后赋值更加高效一点（针对使用已有对象初始化新对象的情况）。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Visual Studio</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Python】列表中元素和其索引的绑定和迭代]]></title>
+    <url>%2F2019%2F01%2F18%2F%E3%80%90Python%E7%B4%A2%E5%BC%95%E8%BF%AD%E4%BB%A3%E3%80%91%E5%88%97%E8%A1%A8%E4%B8%AD%E5%85%83%E7%B4%A0%E5%92%8C%E5%85%B6%E7%B4%A2%E5%BC%95%E7%9A%84%E7%BB%91%E5%AE%9A%E5%92%8C%E8%BF%AD%E4%BB%A3%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;在迭代 [‘Adam’, ‘Lisa’, ‘Bart’, ‘Paul’] 时，如果我们想打印出名次 - 名字（名次从1开始)，请考虑如何在迭代中打印出来。 提示：考虑使用zip()函数和range()函数 使用range()函数 123L=zip([1,2,3,4], ['Adam', 'Lisa', 'Bart', 'Paul'] )for i in range(0,4): print L[i][0],'-',L[i][1] 不使用range()函数 123L=zip([1,2,3,4], ['Adam', 'Lisa', 'Bart', 'Paul'] )for i,j in L: print i,'-',j zip()函数的另一种使用方法 123L=['Adam', 'Lisa', 'Bart', 'Paul']for i,j in zip(range(1,len(L)+1),L): print i,'-',j 使用enumerate()函数 123L=['Adam', 'Lisa', 'Bart', 'Paul']for i,j in enumerate(L): print i+1,'-',j 提示：enumerate（）函数 &emsp;&emsp;使用 enumerate() 函数，我们可以在for循环中同时绑定元素的索引和元素的名字。但是，这不是 enumerate() 的特殊语法。实际上，enumerate() 函数把： 1[&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;] 变成了类似： 1[(0, &apos;Adam&apos;), (1, &apos;Lisa&apos;), (2, &apos;Bart&apos;), (3, &apos;Paul&apos;)] &emsp;&emsp;实际上，通过enumerate()函数，列表中的每一个元素都变成了一个含有两个元素的tuple列表。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>索引迭代</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Python】list列表和set列表之间的相互删除和补充]]></title>
+    <url>%2F2019%2F01%2F17%2F%E3%80%90Python%E3%80%91list%E5%88%97%E8%A1%A8%E5%92%8Cset%E5%88%97%E8%A1%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E5%88%A0%E9%99%A4%E5%92%8C%E8%A1%A5%E5%85%85%2F</url>
+    <content type="text"><![CDATA[First&emsp;&emsp;list列表中的元素跟set列表中有相同的，把list列表中的相应元素删掉。 解决方法&emsp;&emsp;首先，采用如下代码，输出为[‘Lisa’, ‘Bart’]。 12345678s = set(['Adam', 'Lisa', 'Paul'])L = ['Adam', 'Lisa', 'Bart', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x)print L &emsp;&emsp;尝试改进代码后，输出为[‘Lisa’, ‘Paul’]； 123456789s = set(['Adam', 'Lisa', 'Paul'])L = ['Adam', 'Lisa', 'Bart', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x) x-=1print L &emsp;&emsp;很奇怪’Adam’删掉了，’Lisa’并没有被删掉，于是增加set和list的元素之后再做尝试，输出结果为[‘Lisa’, ‘cyc’, ‘Paul’]。 123456789s = set(['Adam', 'Lisa', 'Paul' ,'cyc'])L = ['Adam', 'Lisa', 'Bart', 'cyc', 'Paul']x=-1for m in L: x+=1 if m in s: L.pop(x) x-=1print L &emsp;&emsp;于是发现规律：当list列表中的一个元素被删掉，那么紧接着这个被删掉的元素的后面的元素(‘Lisa’和’cyc’)就不会被删掉，不管’Lisa’和’cyc’有没有跟set里的元素重复。所以看上去就好像’Lisa’和’cyc’被跳过了。 &emsp;&emsp;于是我们可以这样理解：当编译器执行完L.pop(0)时，原来的L[0]被删除了，后面的元素全部左移一位('Lisa'变为L[0]，'Bart'变为L[1])，然后编译器回到m in L:```，这时的m指的是L[1]，那么L[0]的'Lisa'就被跳过了，同理'cyc'也是。1234567891011121314&amp;emsp;&amp;emsp;所以最好创建一个L的副本LL，只改动LL的内容，L不变，如下：```javas = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]LL = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]x=-1for m in L: x+=1 if m in s: LL.pop(x) x-=1L=LLprint L &emsp;&emsp;结果输出12345678910111213#### Second&amp;emsp;&amp;emsp;list列表中的元素跟set列表中有相同的，则把set列表中的相应元素删掉;list中的有而set中没有的元素，则添加到set中。##### 解决方法```javascripts = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Paul&apos;])L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]for n in L: if n in s: s.remove(n) else: s.add(n)print s &emsp;&emsp;输出结果为set([&#39;Bart&#39;])。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>list</tag>
+        <tag>set</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【C++面向对象】类的静态数据成员（static修饰）和常数据成员（const修饰）的初始化]]></title>
+    <url>%2F2019%2F01%2F11%2F%E3%80%90C%2B%2B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E3%80%91%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%88static%E4%BF%AE%E9%A5%B0%EF%BC%89%E5%92%8C%E5%B8%B8%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%88const%E4%BF%AE%E9%A5%B0%EF%BC%89%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[&emsp;&emsp;类的常数据成员（由const修饰）必须在构造函数的初始化列表里被初始化，不能在构造函数的函数体中被赋值； &emsp;&emsp;又因为构造函数可以在类内或类外实现，所以表面上看，常数据成员可在类内初始化，也可在类外初始化。如： 常数据成员在类外初始化 12345678class A&#123; public: A(int i);//构造函数 private: const int a; &#125;A::A(int i):a(i)&#123; &#125; 常数据成员在类内初始化 123456class A&#123; public: A(int i):a(i)&#123; &#125;;//构造函数 private: const int a; &#125; 而静态数据成员（由static修饰）只能在类内声明，类外初始化，如： 12345类内：private: static int b;类外：int "类名"::b = "初始值"； &emsp;&emsp;那么有些童鞋就有疑问了，如果一个类的数据成员既是常数据成员，又是静态数据成员，那么该怎么定义和初始化呢？静态常数据成员（由static const修饰）的初始化方法如下： 12345类内：private: static const int b;类外：const int "类名"::b = "初始值"； &emsp;&emsp;可以看到，初始化的方法和静态数据成员是一样的，所以我觉得static比const高一等级。在static面前，const降到跟int一级，从类外初始化的前缀“const int”也能窥探一二。]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>面向对象</tag>
       </tags>
   </entry>
 </search>
