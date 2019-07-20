@@ -115,8 +115,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>框架基本原理</tag>
         <tag>注解</tag>
+        <tag>框架基本原理</tag>
       </tags>
   </entry>
   <entry>
@@ -128,8 +128,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>框架基本原理</tag>
         <tag>注解</tag>
+        <tag>框架基本原理</tag>
         <tag>反射</tag>
       </tags>
   </entry>
@@ -276,7 +276,7 @@
   <entry>
     <title><![CDATA[【C++】顺序队列、循环队列、带链队列”队空队满时，队头队尾指针的情况分析]]></title>
     <url>%2FC%2F20190327-queue.html</url>
-    <content type="text"><![CDATA[顺序队列的三种状态 队空&emsp;123456&amp;emsp;如图1所示，当顺序队列队空时，队头指针front和队尾指针rear相同；注意front和rear&lt;font color=red&gt;不是真正的指针&lt;/font&gt;，而是int型变量，代表元素下标。注：随着出队入队的操作，当出现队空状态时，队头队尾指针不一定指向第一个元素。![图1 顺序队列的队空状态](http://ww3.sinaimg.cn/large/006tNc79ly1g4ygtgvfshj30ta07fjs7.jpg)2. 队满&amp;emsp;```qu.front == 0；qu.rear == max+1 一般状态&emsp;12345![图3 顺序队列的一般状态](http://ww4.sinaimg.cn/large/006tNc79ly1g4ygt2ob6bj30t107mdgq.jpg)#### 循环队列的三种状态1. 队空&amp;emsp;```qu.front == qu.rear &emsp;如图所示，当循环队列队空时，队头指针front和队尾指针rear相同。 队满&emsp;12345&amp;emsp;如图所示，当循环队列队满时，队头指针front和队尾指针rear相同。![图5 循环队列的队满状态](http://ww2.sinaimg.cn/large/006tNc79ly1g4ygswpvjnj30ce07c3z0.jpg)3. 一般状态&amp;emsp;```qu.front == 0；qu.rear == n; //队内元素总数为n-1 带链队列的三种状态 一般状态&emsp;在带链队列中，front和rear是真正的指针，指向节点的指针。 队空&emsp;1234![图8 带链队列的队空状态](http://ww2.sinaimg.cn/large/006tNc79ly1g4ygsjzmj5j30rd066dg1.jpg)3. 队内只有一个元素&amp;emsp;```lqu-&gt;front == lqu-&gt;rear &emsp;与队空的情况相似，当带链队列只有一个元素时，队头指针front和队尾指针rear相同。 队满&emsp;带链队列不存在队满的情况。]]></content>
+    <content type="text"><![CDATA[顺序队列的三种状态 队空&emsp;qu.front == qu.rear&emsp;如图1所示，当顺序队列队空时，队头指针front和队尾指针rear相同；注意front和rear不是真正的指针，而是int型变量，代表元素下标。注：随着出队入队的操作，当出现队空状态时，队头队尾指针不一定指向第一个元素。 队满&emsp;qu.front == 0；qu.rear == max+1 一般状态&emsp;qu.front == 0；qu.rear == n；//此时队内元素总数为n-1 循环队列的三种状态 队空&emsp;qu.front == qu.rear&emsp;如图所示，当循环队列队空时，队头指针front和队尾指针rear相同。 队满&emsp;qu.front == qu.rear&emsp;如图所示，当循环队列队满时，队头指针front和队尾指针rear相同。 一般状态&emsp;qu.front == 0；qu.rear == n; //队内元素总数为n-1 带链队列的三种状态 一般状态&emsp;在带链队列中，front和rear是真正的指针，指向节点的指针。 队空&emsp;lqu-&gt;front == NULL 或 lqu-&gt;rear == NULL 即当带链队列为空时，队头指针front和队尾指针rear相同（都为空）。 队内只有一个元素&emsp;lqu-&gt;front == lqu-&gt;rear&emsp;与队空的情况相似，当带链队列只有一个元素时，队头指针front和队尾指针rear相同。 队满&emsp;带链队列不存在队满的情况。]]></content>
       <categories>
         <category>C++</category>
       </categories>
