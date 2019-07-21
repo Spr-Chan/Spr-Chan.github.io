@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79gy1g57o1owv3hj30nb0ayaah.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g57oafrvevj31c20hl0ut.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g57ouu5md2j31bd0ixace.jpg">
-<meta property="og:updated_time" content="2019-07-21T11:36:36.091Z">
+<meta property="og:updated_time" content="2019-07-21T11:52:49.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo+Next优化之坑】百度收录暨谷歌验证">
 <meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;之前陆陆续续写了一些搭建个人博客道路上遇到的坑，现在终于快把博客优化完了，只剩下CDN和SEO两块，今天就讲讲我在SEO中遇到的坑，文章分成两块——百度收录和谷歌收录。 百度收录&amp;emsp;&amp;emsp;按照网上的教程（参考文献[4],[5]），成功部署百度SEO，但是过去了半天，我的sitemap收录依旧是等待状态……，网上有说等几秒就开始收录的，有说等了俩月都没收录的">
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-07-21 17:22:00 / 修改时间：19:36:36" itemprop="dateCreated datePublished" datetime="2019-07-21T17:22:00+08:00">2019-07-21</time>
+              <time title="创建时间：2019-07-21 17:22:00 / 修改时间：19:52:49" itemprop="dateCreated datePublished" datetime="2019-07-21T17:22:00+08:00">2019-07-21</time>
             </span>
           
 
@@ -504,9 +504,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Google Webmaster tools verification.</span><br><span class="line"># See: https://www.google.com/webmasters</span><br><span class="line">    google_site_verification:</span><br></pre></td></tr></table></figure>
 
 <p>将刚刚复制的代码粘贴到google_site_verification后面（注意冒号之后空一格），保存后hexo cl &amp;&amp; hexo g &amp;&amp; hexo d，再回到Google Search Console点击验证，即可验证成功。<br><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g57o1owv3hj30nb0ayaah.jpg" alt></p>
-<h5 id="收录sitemap"><a href="#收录sitemap" class="headerlink" title="收录sitemap"></a>收录sitemap</h5><p>&emsp;&emsp;谷歌收录操作异常简单，进入站点地图，添加sitemap.xml，提交即可，据说快的话不到一天即可收录成功。（sitemap.xml相关教程可参考参考文献[4],[5]）<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g57oafrvevj31c20hl0ut.jpg" alt></p>
-<p>&emsp;&emsp;如果显示“无法获取”，那就将跟你域名相关的所有网址收录进来（包括你的Github仓库地址），每一个地址都添加sitemap。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g57ouu5md2j31bd0ixace.jpg" alt></p>
-<h4 id="限制爬虫"><a href="#限制爬虫" class="headerlink" title="限制爬虫"></a>限制爬虫</h4><h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>[1] <a href="http://theme-next.iissnan.com/third-party-services.html#analytics-system" target="_blank" rel="noopener">http://theme-next.iissnan.com/third-party-services.html#analytics-system</a><br>[2] <a href="https://www.jianshu.com/p/ea6776938bd6" target="_blank" rel="noopener">https://www.jianshu.com/p/ea6776938bd6</a><br>[3] <a href="https://zhidao.baidu.com/question/518471805846206605.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/518471805846206605.html</a><br>[4] <a href="http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html" target="_blank" rel="noopener">http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html</a><br>[5] <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg</a></p>
+<h5 id="收录sitemap"><a href="#收录sitemap" class="headerlink" title="收录sitemap"></a>收录sitemap</h5><p>&emsp;&emsp;谷歌收录操作异常简单，进入站点地图，添加sitemap.xml，提交即可，据说快的话不到一天即可收录成功。（sitemap.xml相关教程参考参考文献[4],[5]）<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g57oafrvevj31c20hl0ut.jpg" alt></p>
+<p>&emsp;&emsp;如果显示“无法获取”，<del>那就将跟你域名相关的所有网址收录进来（包括你的Github仓库地址），每一个地址都添加sitemap。</del>，建议以<code>你的用户名.github.io</code>网址为准，只收录它的sitemap就行了。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g57ouu5md2j31bd0ixace.jpg" alt></p>
+<h4 id="添加蜘蛛协议和限制爬虫"><a href="#添加蜘蛛协议和限制爬虫" class="headerlink" title="添加蜘蛛协议和限制爬虫"></a>添加蜘蛛协议和限制爬虫</h4><p>&emsp;&emsp;这一段可参考参考文献[4]。</p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>[1] <a href="http://theme-next.iissnan.com/third-party-services.html#analytics-system" target="_blank" rel="noopener">http://theme-next.iissnan.com/third-party-services.html#analytics-system</a><br>[2] <a href="https://www.jianshu.com/p/ea6776938bd6" target="_blank" rel="noopener">https://www.jianshu.com/p/ea6776938bd6</a><br>[3] <a href="https://zhidao.baidu.com/question/518471805846206605.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/518471805846206605.html</a><br>[4] <a href="http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html" target="_blank" rel="noopener">http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html</a><br>[5] <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg</a></p>
 
       
     </div>
@@ -1100,7 +1101,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#百度收录"><span class="nav-text">百度收录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谷歌收录"><span class="nav-text">谷歌收录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#验证个人网站所有权"><span class="nav-text">验证个人网站所有权</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#收录sitemap"><span class="nav-text">收录sitemap</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#限制爬虫"><span class="nav-text">限制爬虫</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文献"><span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#百度收录"><span class="nav-text">百度收录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谷歌收录"><span class="nav-text">谷歌收录</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#验证个人网站所有权"><span class="nav-text">验证个人网站所有权</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#收录sitemap"><span class="nav-text">收录sitemap</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加蜘蛛协议和限制爬虫"><span class="nav-text">添加蜘蛛协议和限制爬虫</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文献"><span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
