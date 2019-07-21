@@ -110,11 +110,11 @@
 <meta name="keywords" content="C++,函数适配器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">
-<meta property="og:url" content="https://www.imcyc.ml/C/20190310-unitary-predicates&binary-predicate.html">
+<meta property="og:url" content="https://www.imcyc.ml/C/20190310-unitary-binary-predicate.html">
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;C++STL库中的find_if的第三个参数只能是一元谓词（即只能传给一元谓词一个参数），但是在设计算法的过程中，需要第三个参数是二元谓词（即需要传给谓词函数两个参数），那么这时候就可以使用bind1st/bind2nd函数适配器，将二元谓词的某一个参数绑定为一个常数，这样二元谓词就变成了一元谓词，find_if只需要传给二元谓词一个参数就也能正常使用。 &amp;emsp;&amp;em">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-20T10:36:41.044Z">
+<meta property="og:updated_time" content="2019-07-21T07:06:26.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;C++STL库中的find_if的第三个参数只能是一元谓词（即只能传给一元谓词一个参数），但是在设计算法的过程中，需要第三个参数是二元谓词（即需要传给谓词函数两个参数），那么这时候就可以使用bind1st/bind2nd函数适配器，将二元谓词的某一个参数绑定为一个常数，这样二元谓词就变成了一元谓词，find_if只需要传给二元谓词一个参数就也能正常使用。 &amp;emsp;&amp;em">
@@ -125,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.ml/C/20190310-unitary-predicates&binary-predicate">
+  <link rel="canonical" href="https://www.imcyc.ml/C/20190310-unitary-binary-predicate">
 
 
 
@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.ml/C/20190310-unitary-predicates&binary-predicate.html">
+    <link itemprop="mainEntityOfPage" href="https://www.imcyc.ml/C/20190310-unitary-binary-predicate.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-20 18:36:41" itemprop="dateModified" datetime="2019-07-20T18:36:41+08:00">2019-07-20</time>
+                <time title="修改时间：2019-07-21 15:06:26" itemprop="dateModified" datetime="2019-07-21T15:06:26+08:00">2019-07-21</time>
               </span>
             
           
@@ -450,8 +450,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/C/20190310-unitary-predicates&binary-predicate.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/C/20190310-unitary-predicates&binary-predicate.html" itemprop="commentCount"></span>
+                <a href="/C/20190310-unitary-binary-predicate.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/C/20190310-unitary-binary-predicate.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,7 +459,7 @@
 
           
           
-            <span id="/C/20190310-unitary-predicates&binary-predicate.html" class="post-meta-item leancloud_visitors" data-flag-title="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">
+            <span id="/C/20190310-unitary-binary-predicate.html" class="post-meta-item leancloud_visitors" data-flag-title="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">
               <span class="post-meta-item-icon">
                 <i class="fa fa-heart"></i>
               </span>
@@ -586,7 +586,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.ml/C/20190310-unitary-predicates&binary-predicate.html" title="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">https://www.imcyc.ml/C/20190310-unitary-predicates&binary-predicate.html</a>
+    <a href="https://www.imcyc.ml/C/20190310-unitary-binary-predicate.html" title="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">https://www.imcyc.ml/C/20190310-unitary-binary-predicate.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -617,7 +617,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/C/20190308-preposition++&postposition++.html" rel="next" title="【C++】for循环语句使用前置++和后置++有何区别？">
+              <a href="/C/20190308-preposition++postposition++.html" rel="next" title="【C++】for循环语句使用前置++和后置++有何区别？">
                 <i class="fa fa-chevron-left"></i> 【C++】for循环语句使用前置++和后置++有何区别？
               </a>
             

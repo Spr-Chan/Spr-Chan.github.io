@@ -361,7 +361,7 @@
   </entry>
   <entry>
     <title><![CDATA[【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况]]></title>
-    <url>%2FC%2F20190317-stack-top%26bottom.html</url>
+    <url>%2FC%2F20190317-stack-top-bottom.html</url>
     <content type="text"><![CDATA[&emsp;&emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。 &emsp;&emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&lt;=m），栈内有n个元素。 &emsp;&emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&lt;=m+1），栈内有(m-top+1)个元素。]]></content>
       <categories>
         <category>C++</category>
@@ -391,7 +391,7 @@
   </entry>
   <entry>
     <title><![CDATA[【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词]]></title>
-    <url>%2FC%2F20190310-unitary-predicates%26binary-predicate.html</url>
+    <url>%2FC%2F20190310-unitary-binary-predicate.html</url>
     <content type="text"><![CDATA[&emsp;&emsp;C++STL库中的find_if的第三个参数只能是一元谓词（即只能传给一元谓词一个参数），但是在设计算法的过程中，需要第三个参数是二元谓词（即需要传给谓词函数两个参数），那么这时候就可以使用bind1st/bind2nd函数适配器，将二元谓词的某一个参数绑定为一个常数，这样二元谓词就变成了一元谓词，find_if只需要传给二元谓词一个参数就也能正常使用。 &emsp;&emsp;例如： 1234567891011121314151617181920212223//找到数组中第一个大于40的元素#include &lt;functional&gt;#include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;using namespace std;int main() &#123; int intArr[] = &#123; 30, 90, 10, 40, 70, 50, 20, 80 &#125;; const int N = sizeof(intArr) / sizeof(int); vector&lt;int&gt; a(intArr, intArr + N); vector&lt;int&gt;::iterator p = find_if(a.begin(), a.end(), bind2nd(greater&lt;int&gt;(), 40)); /*greater是二元谓词（函数对象有两个参数，只返回真或假），但是find_if的第三个参数只能是一元谓词， 为了将greater变为一元谓词，就需要使用find2nd函数适配器将greater的第二个参数绑定为常数40， 当find_if函数在遍历vector元素的迭代器时，就只需要传给greater一个参数就行了（即将迭代器所指向的 元素的值传给greater的第一个参数与第二个已绑定的参数40作比较，返回比较大小的结果为真或假）。*/ //注，greater有两个参数x、y，返回的是x&gt;y为真或假 if (p == a.end()) cout &lt;&lt; "no element greater than 40" &lt;&lt; endl; else cout &lt;&lt; "first element greater than 40 is: " &lt;&lt; *p &lt;&lt; endl; return 0;&#125; &emsp;&emsp;将二元谓词greater的第二个参数绑定为40，这样find_if只需要给greater传一个参数与40作比较就可以了（传入greater的参数就是遍历vector元素的迭代器所指向的元素的值）。]]></content>
       <categories>
         <category>C++</category>
@@ -403,7 +403,7 @@
   </entry>
   <entry>
     <title><![CDATA[【C++】for循环语句使用前置++和后置++有何区别？]]></title>
-    <url>%2FC%2F20190308-preposition%2B%2B%26postposition%2B%2B.html</url>
+    <url>%2FC%2F20190308-preposition%2B%2Bpostposition%2B%2B.html</url>
     <content type="text"><![CDATA[在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vector,string等，++iterator应该和iterator++是没有区别的，因为通常迭代器简单实现为普通指针 但是，如list,map,set等容器，iterator就没有这么简单了，++iterator效率高于iterator++,因为省了一个临时对象 参考文献&emsp;&emsp;[1] https://bbs.csdn.net/topics/30253911]]></content>
       <categories>
         <category>C++</category>
@@ -457,7 +457,7 @@
   </entry>
   <entry>
     <title><![CDATA[C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析]]></title>
-    <url>%2FC%2F20190224-constant-variable%26pointer.html</url>
+    <url>%2FC%2F20190224-constant-variable-pointer.html</url>
     <content type="text"><![CDATA[常/非常变量地址赋给常/非常指针123456正确： A. int a, *p = &amp;a; B. int a; const int *p = &amp;a; C. const int a; const int *p = &amp;a;错误： D. const int a; int *p = &amp;a; 总结：&emsp;&emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普通指针/常指针，常变量地址可以赋给常指针、不能赋给普通指针。 常/非常变量值赋给常/非常变量123456正确： A. int a, b; b = a; B. const int a; int b; b = a;错误： C. int a; const int b; b = a; D. const int a; const int b; b = a; 总结：&emsp;&emsp;对于把变量值赋给变量的情况，普通变量值可以赋给普通变量，不能赋给常变量；常变量值可以赋给普通变量，不能赋给常变量。]]></content>
       <categories>
         <category>C++</category>

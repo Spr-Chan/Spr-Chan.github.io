@@ -106,18 +106,18 @@
 
 
 
-  <meta name="description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
-<meta name="keywords" content="C++,常变量,常指针">
+  <meta name="description" content="在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vecto">
+<meta name="keywords" content="C++,for循环,前置++,后置++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ 【常&#x2F;非常变量地址赋给常&#x2F;非常指针】暨【常&#x2F;非常变量值赋给常&#x2F;非常变量】8种情况对错分析">
-<meta property="og:url" content="https://www.imcyc.ml/C/20190224-constant-variable&pointer.html">
+<meta property="og:title" content="【C++】for循环语句使用前置++和后置++有何区别？">
+<meta property="og:url" content="https://www.imcyc.ml/C/20190308-preposition++postposition++.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
+<meta property="og:description" content="在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vecto">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-20T10:40:39.437Z">
+<meta property="og:updated_time" content="2019-07-21T07:07:03.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ 【常&#x2F;非常变量地址赋给常&#x2F;非常指针】暨【常&#x2F;非常变量值赋给常&#x2F;非常变量】8种情况对错分析">
-<meta name="twitter:description" content="常/非常变量地址赋给常/非常指针123456正确：	A. int a, *p = &amp;amp;a;	B. int a; const int *p = &amp;amp;a;	C. const int a; const int *p = &amp;amp;a;错误：	D. const int a; int *p = &amp;amp;a;  总结：&amp;emsp;&amp;emsp;对于把变量地址赋值给指针的情况，普通变量地址可以赋给普">
+<meta name="twitter:title" content="【C++】for循环语句使用前置++和后置++有何区别？">
+<meta name="twitter:description" content="在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC) 首先执行partA 然后每次循环之前执行partB 每次循环之后执行partC 唯一的区别就是在某些情况下效率不同 对于基本数据类型，前置/后置++执行效率应该一样 对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些 当然也不是绝对的 如果你用的是支持随机存储的容器如vecto">
 
 
 
@@ -125,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.ml/C/20190224-constant-variable&pointer">
+  <link rel="canonical" href="https://www.imcyc.ml/C/20190308-preposition++postposition++">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析 | Morty写字的地方</title>
+  <title>【C++】for循环语句使用前置++和后置++有何区别？ | Morty写字的地方</title>
   
 
 
@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.ml/C/20190224-constant-variable&pointer.html">
+    <link itemprop="mainEntityOfPage" href="https://www.imcyc.ml/C/20190308-preposition++postposition++.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -377,7 +377,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析
+          <h1 class="post-title" itemprop="name headline">【C++】for循环语句使用前置++和后置++有何区别？
 
               
             
@@ -403,7 +403,7 @@
                 
               
 
-              <time title="创建时间：2019-02-24 07:06:00" itemprop="dateCreated datePublished" datetime="2019-02-24T07:06:00+08:00">2019-02-24</time>
+              <time title="创建时间：2019-03-08 06:55:00" itemprop="dateCreated datePublished" datetime="2019-03-08T06:55:00+08:00">2019-03-08</time>
             </span>
           
 
@@ -418,7 +418,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-20 18:40:39" itemprop="dateModified" datetime="2019-07-20T18:40:39+08:00">2019-07-20</time>
+                <time title="修改时间：2019-07-21 15:07:03" itemprop="dateModified" datetime="2019-07-21T15:07:03+08:00">2019-07-21</time>
               </span>
             
           
@@ -450,8 +450,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/C/20190224-constant-variable&pointer.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/C/20190224-constant-variable&pointer.html" itemprop="commentCount"></span>
+                <a href="/C/20190308-preposition++postposition++.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/C/20190308-preposition++postposition++.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -459,7 +459,7 @@
 
           
           
-            <span id="/C/20190224-constant-variable&pointer.html" class="post-meta-item leancloud_visitors" data-flag-title="C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析">
+            <span id="/C/20190308-preposition++postposition++.html" class="post-meta-item leancloud_visitors" data-flag-title="【C++】for循环语句使用前置++和后置++有何区别？">
               <span class="post-meta-item-icon">
                 <i class="fa fa-heart"></i>
               </span>
@@ -495,12 +495,17 @@
       
 
       
-        <h4 id="常-非常变量地址赋给常-非常指针"><a href="#常-非常变量地址赋给常-非常指针" class="headerlink" title="常/非常变量地址赋给常/非常指针"></a>常/非常变量地址赋给常/非常指针</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">正确：</span><br><span class="line">	A. <span class="keyword">int</span> a, *p = &amp;a;</span><br><span class="line">	B. <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a;</span><br><span class="line">	C. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a;</span><br><span class="line">错误：</span><br><span class="line">	D. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">int</span> *p = &amp;a;</span><br></pre></td></tr></table></figure>
-
-<p>总结：<br>&emsp;&emsp;对于把<font color="red">变量地址赋值给指针</font>的情况，普通变量地址可以赋给普通指针/常指针，常变量地址可以赋给常指针、不能赋给普通指针。</p>
-<h4 id="常-非常变量值赋给常-非常变量"><a href="#常-非常变量值赋给常-非常变量" class="headerlink" title="常/非常变量值赋给常/非常变量"></a>常/非常变量值赋给常/非常变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">正确：</span><br><span class="line">	A. <span class="keyword">int</span> a, b; b = a;</span><br><span class="line">	B. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">int</span> b; b = a;</span><br><span class="line">错误：</span><br><span class="line">	C. <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> b; b = a;</span><br><span class="line">	D. <span class="keyword">const</span> <span class="keyword">int</span> a; <span class="keyword">const</span> <span class="keyword">int</span> b; b = a;</span><br></pre></td></tr></table></figure>
-
-<p>总结：<br>&emsp;&emsp;对于把<font color="red">变量值赋给变量</font>的情况，普通变量值可以赋给普通变量，不能赋给常变量；常变量值可以赋给普通变量，不能赋给常变量。</p>
+        <p>在for循环中几乎没有区别，因为它的执行顺序for(partA; partB; partC)</p>
+<p>首先执行partA</p>
+<p>然后每次循环<font color="red">之前</font>执行partB</p>
+<p>每次循环<font color="red">之后</font>执行partC</p>
+<p>唯一的区别就是在某些情况下<font color="red">效率不同</font></p>
+<p>对于基本数据类型，前置/后置++执行效率应该一样</p>
+<p>对于对于用户自定义类型重载的++如最常见的iterator则++i效率要高一些</p>
+<p>当然也不是绝对的</p>
+<p>如果你用的是支持<font color="red">随机存储的容器</font>如vector,string等，++iterator应该和iterator++是没有区别的，因为通常迭代器简单实现为普通指针</p>
+<p>但是，如list,map,set等容器，iterator就没有这么简单了，++iterator效率高于iterator++,因为省了一个临时对象</p>
+<h5 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h5><p>&emsp;&emsp;[1] <a href="https://bbs.csdn.net/topics/30253911" target="_blank" rel="noopener">https://bbs.csdn.net/topics/30253911</a></p>
 
       
     </div>
@@ -587,7 +592,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.ml/C/20190224-constant-variable&pointer.html" title="C++ 【常/非常变量地址赋给常/非常指针】暨【常/非常变量值赋给常/非常变量】8种情况对错分析">https://www.imcyc.ml/C/20190224-constant-variable&pointer.html</a>
+    <a href="https://www.imcyc.ml/C/20190308-preposition++postposition++.html" title="【C++】for循环语句使用前置++和后置++有何区别？">https://www.imcyc.ml/C/20190308-preposition++postposition++.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -605,9 +610,11 @@
           
             <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
           
-            <a href="/tags/常变量/" rel="tag"><i class="fa fa-tag"></i> 常变量</a>
+            <a href="/tags/for循环/" rel="tag"><i class="fa fa-tag"></i> for循环</a>
           
-            <a href="/tags/常指针/" rel="tag"><i class="fa fa-tag"></i> 常指针</a>
+            <a href="/tags/前置/" rel="tag"><i class="fa fa-tag"></i> 前置++</a>
+          
+            <a href="/tags/后置/" rel="tag"><i class="fa fa-tag"></i> 后置++</a>
           
         </div>
       
@@ -620,8 +627,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/小技巧/20190221-chrome-start-menu.html" rel="next" title="【win10实用小技巧】谷歌浏览器书签固定到开始菜单屏幕（磁贴）当中">
-                <i class="fa fa-chevron-left"></i> 【win10实用小技巧】谷歌浏览器书签固定到开始菜单屏幕（磁贴）当中
+              <a href="/C/20190305-DynamicArray-Override.html" rel="next" title="【C++】动态数组类模板中，为什么重载了指针转换运算符T *之后，还要重载下标运算符[ ]？">
+                <i class="fa fa-chevron-left"></i> 【C++】动态数组类模板中，为什么重载了指针转换运算符T *之后，还要重载下标运算符[ ]？
               </a>
             
           </div>
@@ -630,8 +637,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/C/20190303-extends-implements.html" rel="prev" title="【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？">
-                【C++】为什么要使用继承？为什么要使用动态绑定？为什么要使用虚函数？ <i class="fa fa-chevron-right"></i>
+              <a href="/C/20190310-unitary-binary-predicate.html" rel="prev" title="【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词">
+                【C++】在函数对象参数只能是一元谓词的情况下，如何使用二元谓词 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1084,7 +1091,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常-非常变量地址赋给常-非常指针"><span class="nav-text">常/非常变量地址赋给常/非常指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常-非常变量值赋给常-非常变量"><span class="nav-text">常/非常变量值赋给常/非常变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文献"><span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
