@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Hexo+Next优化之坑】百度收录暨谷歌验证]]></title>
+    <url>%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F20190721-baidu%2Bgoogle%2Bseo.html</url>
+    <content type="text"><![CDATA[前言&emsp;&emsp;之前陆陆续续写了一些搭建个人博客道路上遇到的坑，现在终于快把博客优化完了，只剩下CDN和SEO两块，今天就讲讲我在SEO中遇到的坑，文章分成两块——百度收录和谷歌收录。 百度收录&emsp;&emsp;按照网上的教程（参考文献[4],[5]），成功部署百度SEO，但是过去了半天，我的sitemap收录依旧是等待状态……，网上有说等几秒就开始收录的，有说等了俩月都没收录的，哎，先放在这里吧，过段时间再来看看。 谷歌收录验证个人网站所有权&emsp;&emsp;首先登陆Google Search Console，在“网址前缀”栏输入你的博客网址，例如我输入的就是https://www.imcyc.ml。 &emsp;&emsp;接着要验证该网址为你所有，有五种验证方式，如下图所示。 &emsp;&emsp;坑点一来了虽然第一种方式谷歌写着“推荐的验证方法”，但是实测效果并不好，至少我用第一种方法没成功，于是我采用第5种方法，虽然在DNSPOD里添加了相关的解析，但是等了许久依旧是显示验证失败，官方说最迟等72小时DNS解析才生效……我想还是算了吧，于是再试试第二种方法，如下图所示，将双引号中的代码复制下来，待会要用。 Hexo已经为我们准备好了 google_site_verification 的环境，在主题配置文件_config.yml中找到 123# Google Webmaster tools verification.# See: https://www.google.com/webmasters google_site_verification: 将刚刚复制的代码粘贴到google_site_verification后面（注意冒号之后空一格），保存后hexo cl &amp;&amp; hexo g &amp;&amp; hexo d，再回到Google Search Console点击验证，即可验证成功。 收录sitemap&emsp;&emsp;谷歌收录操作异常简单，进入站点地图，添加sitemap.xml，提交即可，据说快的话不到一天即可收录成功。（sitemap.xml相关教程可参考参考文献[4],[5]） &emsp;&emsp;如果显示“无法获取”，那就将跟你域名相关的所有网址收录进来（包括你的Github仓库地址），每一个地址都添加sitemap。 限制爬虫参考文献[1] http://theme-next.iissnan.com/third-party-services.html#analytics-system[2] https://www.jianshu.com/p/ea6776938bd6[3] https://zhidao.baidu.com/question/518471805846206605.html[4] http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html[5] https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg]]></content>
+      <categories>
+        <category>个人博客</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>SEO</tag>
+        <tag>百度</tag>
+        <tag>谷歌</tag>
+        <tag>验证所有权</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Hexo+Next主题】左侧栏友链一行多个显示]]></title>
     <url>%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F20190720-friend-links.html</url>
     <content type="text"><![CDATA[前言&emsp;&emsp;Next主题的友链默认排版是一行一个，如图1所示。 一旦友链数量过多，那么一行一个的页面排版就不怎么美观了，下面笔者教大家如何一行多个地显示友链。 教程步骤&emsp;&emsp;打开你的博客文件夹下的themes/next/layout/_macro/sidebar.swig，sidebar即侧边栏，顾名思义在sidebar.swig文件中我们可以对侧边栏的页面排版进行设置。打开sidebar.swig，搜索关键字1234567891011121314151617```Java&#123;# Blogroll #&#125;&#123;% if theme.links %&#125; &lt;div class=&quot;links-of-blogroll motion-element &#123;&#123; &quot;links-of-blogroll-&quot; + theme.links_layout | default(&apos;inline&apos;) &#125;&#125;&quot;&gt; &lt;div class=&quot;links-of-blogroll-title&quot;&gt; &lt;i class=&quot;fa fa-fw fa-&#123;&#123; theme.links_icon | default(&apos;globe&apos;) | lower &#125;&#125;&quot;&gt;&lt;/i&gt; &#123;&#123; theme.links_title &#125;&#125; &lt;/div&gt; &lt;ul class=&quot;links-of-blogroll-list&quot;&gt; &#123;% for blogrollText, blogrollURL in theme.links %&#125; &lt;li class=&quot;links-of-blogroll-item&quot;&gt; &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125; &lt;/li&gt; &#123;% endfor %&#125; &lt;/ul&gt; &lt;/div&gt;&#123;% endif %&#125; 这段代码就是对侧边栏友链的排版定义，其中的： 1234&lt;div class="links-of-blogroll-title"&gt; &lt;i class="fa fa-fw fa-&#123;&#123; theme.links_icon | default('globe') | lower &#125;&#125;"&gt;&lt;/i&gt; &#123;&#123; theme.links_title &#125;&#125;&lt;/div&gt; 定义的是友链标题和图标，不能缺少；接下来对代码块： 1234567&lt;ul class="links-of-blogroll-list"&gt; &#123;% for blogrollText, blogrollURL in theme.links %&#125; &lt;li class="links-of-blogroll-item"&gt; &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125; &lt;/li&gt; &#123;% endfor %&#125;&lt;/ul&gt; 进行修改，去掉ul和li，加入span，修改后代码为： 12345&#123;% for blogrollText, blogrollURL in theme.links %&#125; &lt;span class="links-of-blogroll-item"&gt; &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125; &lt;/span&gt;&#123;% endfor %&#125; &emsp;&emsp;最终修改完成的123456789101112131415```Java&#123;# Blogroll #&#125;&#123;% if theme.links %&#125; &lt;div class=&quot;links-of-blogroll motion-element &#123;&#123; &quot;links-of-blogroll-&quot; + theme.links_layout | default(&apos;inline&apos;) &#125;&#125;&quot;&gt; &lt;div class=&quot;links-of-blogroll-title&quot;&gt; &lt;i class=&quot;fa fa-fw fa-&#123;&#123; theme.links_icon | default(&apos;globe&apos;) | lower &#125;&#125;&quot;&gt;&lt;/i&gt; &#123;&#123; theme.links_title &#125;&#125; &lt;/div&gt; &#123;% for blogrollText, blogrollURL in theme.links %&#125; &lt;span class=&quot;links-of-blogroll-item&quot;&gt; &#123;&#123; next_url(blogrollURL, blogrollText, &#123;title: blogrollURL&#125;) &#125;&#125; &lt;/span&gt; &#123;% endfor %&#125; &lt;/div&gt;&#123;% endif %&#125; 将以上代码替换到themes/next/layout/_macro/sidebar.swig的相应位置，然后hexo cl &amp;&amp; hexo g &amp;&amp; hexo d更新博客，你将惊奇地发现多个友链排在一行当中，如图2所示。 &emsp;&emsp;完结撒花~]]></content>
@@ -199,9 +215,9 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>数据结构</tag>
         <tag>二路归并</tag>
         <tag>归并排序</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
