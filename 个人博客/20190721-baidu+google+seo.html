@@ -500,7 +500,7 @@
       
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&emsp;&emsp;之前陆陆续续写了一些搭建个人博客道路上遇到的坑，现在终于快把博客优化完了，只剩下CDN和SEO两块，今天就讲讲我在SEO中遇到的坑，文章分成两块——百度收录和谷歌收录。</p>
 <h4 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h4><p>&emsp;&emsp;按照网上的教程（参考文献[4],[5]），成功部署百度SEO，但是过去了半天，我的sitemap收录依旧是等待状态……，网上有说等几秒就开始收录的，有说等了俩月都没收录的，哎，先放在这里吧，过段时间再来看看。<br><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g57ngknwdyj30xh07dt8z.jpg" alt></p>
-<h4 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h4><h5 id="验证个人网站所有权"><a href="#验证个人网站所有权" class="headerlink" title="验证个人网站所有权"></a>验证个人网站所有权</h5><p>&emsp;&emsp;首先登陆<a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">Google Search Console</a>，在“网址前缀”栏输入你的博客网址，例如我输入的就是<a href="https://www.imcyc.ml">https://www.imcyc.ml</a>。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g57nm3cnj0j30r00kxwfz.jpg" alt></p>
+<h4 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h4><h5 id="验证个人网站所有权"><a href="#验证个人网站所有权" class="headerlink" title="验证个人网站所有权"></a>验证个人网站所有权</h5><p>&emsp;&emsp;首先登陆<a href="https://www.google.com/webmasters/" rel="external nofollow" target="_blank">Google Search Console</a>，在“网址前缀”栏输入你的博客网址，例如我输入的就是<a href="https://www.imcyc.ml">https://www.imcyc.ml</a>。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g57nm3cnj0j30r00kxwfz.jpg" alt></p>
 <p>&emsp;&emsp;接着要验证该网址为你所有，有五种验证方式，如下图所示。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g57np5f7fwj30mq0k2ta3.jpg" alt></p>
 <p>&emsp;&emsp;坑点一来了虽然第一种方式谷歌写着“推荐的验证方法”，但是实测效果并不好，至少我用第一种方法没成功，于是我采用第5种方法，虽然在DNSPOD里添加了相关的解析，但是等了许久依旧是显示验证失败，官方说最迟等72小时DNS解析才生效……我想还是算了吧，于是再试试第二种方法，如下图所示，将双引号中的代码复制下来，待会要用。<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g57nv4jlojj30kk0e2q3u.jpg" alt></p>
 <p>Hexo已经为我们准备好了 google_site_verification 的环境，在主题配置文件_config.yml中找到</p>
@@ -512,7 +512,7 @@
 <hr>
 <p>&emsp;&emsp;更新：收录你的用户名.github.io.sitemap.xml异常地快，大约十分钟便收录成功。<br><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g57pmm25t2j30w60dmab0.jpg" alt></p>
 <h4 id="添加蜘蛛协议和限制爬虫"><a href="#添加蜘蛛协议和限制爬虫" class="headerlink" title="添加蜘蛛协议和限制爬虫"></a>添加蜘蛛协议和限制爬虫</h4><p>&emsp;&emsp;这一段可参考参考文献[4]。</p>
-<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>[1] <a href="http://theme-next.iissnan.com/third-party-services.html#analytics-system" target="_blank" rel="noopener">http://theme-next.iissnan.com/third-party-services.html#analytics-system</a><br>[2] <a href="https://www.jianshu.com/p/ea6776938bd6" target="_blank" rel="noopener">https://www.jianshu.com/p/ea6776938bd6</a><br>[3] <a href="https://zhidao.baidu.com/question/518471805846206605.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/518471805846206605.html</a><br>[4] <a href="http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html" target="_blank" rel="noopener">http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html</a><br>[5] <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg</a></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>[1] <a href="http://theme-next.iissnan.com/third-party-services.html#analytics-system" rel="external nofollow" target="_blank">http://theme-next.iissnan.com/third-party-services.html#analytics-system</a><br>[2] <a href="https://www.jianshu.com/p/ea6776938bd6" rel="external nofollow" target="_blank">https://www.jianshu.com/p/ea6776938bd6</a><br>[3] <a href="https://zhidao.baidu.com/question/518471805846206605.html" rel="external nofollow" target="_blank">https://zhidao.baidu.com/question/518471805846206605.html</a><br>[4] <a href="http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html" rel="external nofollow" target="_blank">http://dugblog.coding.me/Hexo/20180625-Hexo-SEO.html</a><br>[5] <a href="https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg" rel="external nofollow" target="_blank">https://blog.csdn.net/sinat_37781304/article/details/82729029?tdsourcetag=s_pcqq_aiomsg</a></p>
 
       
     </div>
@@ -602,7 +602,7 @@
     <a href="https://www.imcyc.ml/个人博客/20190721-baidu+google+seo.html" title="【Hexo+Next优化之坑】百度收录暨谷歌验证">https://www.imcyc.ml/个人博客/20190721-baidu+google+seo.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -1024,7 +1024,7 @@
                   
                     
                   
-                  <a href="https://github.com/spr-chan" title="GitHub &rarr; https://github.com/spr-chan" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                  <a href="https://github.com/spr-chan" title="GitHub &rarr; https://github.com/spr-chan" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-github"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1033,7 +1033,7 @@
                   
                     
                   
-                  <a href="mailto:im.cyc@qq.com" title="邮箱 &rarr; mailto:im.cyc@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                  <a href="mailto:im.cyc@qq.com" title="邮箱 &rarr; mailto:im.cyc@qq.com" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1042,7 +1042,7 @@
                   
                     
                   
-                  <a href="https://music.163.com/#/user/home?id=90593811" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=90593811" rel="noopener" target="_blank"><i class="fa fa-fw fa-headphones"></i></a>
+                  <a href="https://music.163.com/#/user/home?id=90593811" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=90593811" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-headphones"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1051,7 +1051,7 @@
                   
                     
                   
-                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="noopener" target="_blank"><i class="fa fa-fw fa-contao"></i></a>
+                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-contao"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1060,7 +1060,7 @@
                   
                     
                   
-                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="noopener" target="_blank"><i class="fa fa-fw fa-bold"></i></a>
+                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-bold"></i></a>
                 </span>
               
             </div>
@@ -1077,15 +1077,15 @@
               </div>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="noopener" target="_blank">leek</a>
+                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="external nofollow" target="_blank">leek</a>
                 </span>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="noopener" target="_blank">菜菜</a>
+                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="external nofollow" target="_blank">菜菜</a>
                 </span>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="noopener" target="_blank">Water</a>
+                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="external nofollow" target="_blank">Water</a>
                 </span>
               
             </div>

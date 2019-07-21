@@ -507,26 +507,26 @@
       
 
       
-        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&emsp;&emsp;在色魔张大妈上看到一篇灰常灰常详细的VMware虚拟机装macOS Mojave10.14.x的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" target="_blank" rel="noopener">教程</a>，但是实操中我也遇到了和帖子下面众多网友所遇到的一样的问题，就是在win10平台下使用TransMac制作的 macOS U盘启动盘，VMware无法识别，从而使整个教程进行不下去。</p>
+        <h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><p>&emsp;&emsp;在色魔张大妈上看到一篇灰常灰常详细的VMware虚拟机装macOS Mojave10.14.x的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" rel="external nofollow" target="_blank">教程</a>，但是实操中我也遇到了和帖子下面众多网友所遇到的一样的问题，就是在win10平台下使用TransMac制作的 macOS U盘启动盘，VMware无法识别，从而使整个教程进行不下去。</p>
 <p>&emsp;&emsp;后来经过一番折腾，发现只有在苹果系统下（无论黑苹果还是白苹果）制作的 macOS U盘启动盘，VMware虚拟机才能识别，WTF？我要是事先就有苹果系统的话，我还折腾什么黑苹果？！</p>
-<p>&emsp;&emsp;于是乎就放弃了这位博主的装机思路，转而在网上寻找其它可行的虚拟机装黑苹果的方法。后来我按CSDN博主的<a href="https://blog.csdn.net/weixin_43299649/article/details/82881567" target="_blank" rel="noopener">帖子</a>，成功安装MAC OS X 10.14 ！甚喜！甚喜！（防止原博主分享的安装包失效，贴一下我的百度云下载地址：防吞去了前缀1n0CtZsOdBbJ94At6zvkOQQ，提取码：mym4）。这个教程的好处是不需要制作U盘启动盘就能虚拟机安装黑苹果，遗憾的地方是装不了macOS Mojave 10.14.x。</p>
-<p>&emsp;&emsp;这时突然反应过来，我已经装了个黑苹果，不就满足了“在苹果系统下制作 macOS U盘启动盘”的条件么？于是乎，成功在MAC OS X 10.14黑苹果系统下利用DiskMakerX制作出macOS Mojave10.14.x的U盘启动盘，然后再回到当初的起点：按照什么值得买原创博主的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" target="_blank" rel="noopener">教程</a>，成功在虚拟机上安装macOS Mojave10.14.3的黑苹果系统。</p>
+<p>&emsp;&emsp;于是乎就放弃了这位博主的装机思路，转而在网上寻找其它可行的虚拟机装黑苹果的方法。后来我按CSDN博主的<a href="https://blog.csdn.net/weixin_43299649/article/details/82881567" rel="external nofollow" target="_blank">帖子</a>，成功安装MAC OS X 10.14 ！甚喜！甚喜！（防止原博主分享的安装包失效，贴一下我的百度云下载地址：防吞去了前缀1n0CtZsOdBbJ94At6zvkOQQ，提取码：mym4）。这个教程的好处是不需要制作U盘启动盘就能虚拟机安装黑苹果，遗憾的地方是装不了macOS Mojave 10.14.x。</p>
+<p>&emsp;&emsp;这时突然反应过来，我已经装了个黑苹果，不就满足了“在苹果系统下制作 macOS U盘启动盘”的条件么？于是乎，成功在MAC OS X 10.14黑苹果系统下利用DiskMakerX制作出macOS Mojave10.14.x的U盘启动盘，然后再回到当初的起点：按照什么值得买原创博主的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" rel="external nofollow" target="_blank">教程</a>，成功在虚拟机上安装macOS Mojave10.14.3的黑苹果系统。</p>
 <p>&emsp;&emsp;完结，撒。。。。。。花是不可能滴，接下来就介绍一下本文的主题：如何在macOS系统下使用DiskMakerX制作macOS Mojave10.14.x的U盘启动盘。</p>
 <h5 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h5><ol>
-<li>macOS 10.14.3 Mojave 官方安装镜像    下载地址：<a href="https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88" target="_blank" rel="noopener">https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88</a></li>
+<li>macOS 10.14.3 Mojave 官方安装镜像    下载地址：<a href="https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88" rel="external nofollow" target="_blank">https://www.macxin.com/?s=+macOS+%E6%AD%A3%E5%BC%8F%E7%89%88</a></li>
 <li>DiskMakerX    下载地址：防吞去了前缀1Brv6U42MlNQE_KPpeJUW2w，提取码：svfk</li>
-<li>Unlocker（这个<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" target="_blank" rel="noopener">教程</a>要用到）    下载地址：防吞去了前缀1JnrDszfBd4MZY5brniFwSA ，提取码：yjmi</li>
+<li>Unlocker（这个<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" rel="external nofollow" target="_blank">教程</a>要用到）    下载地址：防吞去了前缀1JnrDszfBd4MZY5brniFwSA ，提取码：yjmi</li>
 <li>准备一个容量&gt;=8G的U盘。</li>
 </ol>
 <h5 id="教程步骤"><a href="#教程步骤" class="headerlink" title="教程步骤"></a>教程步骤</h5><p>&emsp;&emsp;1. 将macOS 10.14.3 Mojave.dmg和DiskMaker_X_803.dmg两个文件下载到电脑上，再用鼠标直接把文件拖动到虚拟机黑苹果的桌面上。</p>
 <p>&emsp;&emsp;2. 首先双击DiskMaker_X_803.dmg安装之。</p>
 <p>&emsp;&emsp;3. 然后双击macOS 10.14.3 Mojave.dmg，会出现一个包含“安装macOS Mojave”的新对话框，将“安装macOS Mojave”直接拖动到桌面。<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4wgtkcpcyj317i0dtjtm.jpg" alt></p>
 <p>&emsp;&emsp;4. 拖动到桌面后，将“安装macOS Mojave”这个文件的中文名改成英文名（这样做的目的是让diskmaker能自动发现）。<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4wgtdy3m4j30f104pglo.jpg" alt></p>
-<p>&emsp;&emsp;5. 将U盘格式化，具体格式化步骤可参见参见这篇<a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">教程</a>。</p>
+<p>&emsp;&emsp;5. 将U盘格式化，具体格式化步骤可参见参见这篇<a href="https://www.iplaysoft.com/macos-usb-install-drive.html" rel="external nofollow" target="_blank">教程</a>。</p>
 <p>&emsp;&emsp;6. 接下来打开安装好的DiskMakerX软件，软件打开后会自动检测到安装程序，如图一路点击蓝色继续。<br><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4wgt3vituj30ot0cu3zj.jpg" alt></p>
 <p>&emsp;&emsp;7. 到选择U盘的这一步一定要谨慎，U盘的名字是格式化U盘时起的名字（这里的Mojave是我的U盘的名字，每个人在操作时将有所不同，不可生搬硬套）。<br><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g4wgstx82lj30dn07faab.jpg" alt></p>
 <p>&emsp;&emsp;8. 接下来一路点击下一步继续，然而这个软件有点坑爹的就是，最后一步点完后，它的对话框就消失了，也看不到正在制作U盘启动盘的进度条，害的我还以为系统死机了。实际情况是软件在后台制作U盘启动盘，耐心等待一段时间，会弹出制作完成的对话框。<br><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g56sog6xqdj30g806w75c.jpg" alt></p>
-<p>&emsp;&emsp;9. 最后，拿着你制作好的U盘启动盘，按照文章开头提到的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" target="_blank" rel="noopener">教程</a>，就可以装好macOS Mojave10.14.3的虚拟机了。</p>
+<p>&emsp;&emsp;9. 最后，拿着你制作好的U盘启动盘，按照文章开头提到的<a href="https://post.smzdm.com/p/ax08lz74/p2/#comments" rel="external nofollow" target="_blank">教程</a>，就可以装好macOS Mojave10.14.3的虚拟机了。</p>
 <p>&emsp;&emsp;PS：macOS Mojave比macOS X要流畅顺滑一些（仅针对我在虚拟机上的使用体验），贴几张图。</p>
 <p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4wgs8yy8nj31hc0txq4t.jpg" alt></p>
 <p><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4wgrr81n6j31hc0tw0u8.jpg" alt></p>
@@ -619,7 +619,7 @@
     <a href="https://www.imcyc.ml/小技巧/20190705-black-mac-usb.html" title="【VMware装黑苹果】DiskMakerX制作macOS Mojave 10.14的U盘启动盘">https://www.imcyc.ml/小技巧/20190705-black-mac-usb.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 
       </div>
@@ -1043,7 +1043,7 @@
                   
                     
                   
-                  <a href="https://github.com/spr-chan" title="GitHub &rarr; https://github.com/spr-chan" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                  <a href="https://github.com/spr-chan" title="GitHub &rarr; https://github.com/spr-chan" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-github"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1052,7 +1052,7 @@
                   
                     
                   
-                  <a href="mailto:im.cyc@qq.com" title="邮箱 &rarr; mailto:im.cyc@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+                  <a href="mailto:im.cyc@qq.com" title="邮箱 &rarr; mailto:im.cyc@qq.com" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1061,7 +1061,7 @@
                   
                     
                   
-                  <a href="https://music.163.com/#/user/home?id=90593811" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=90593811" rel="noopener" target="_blank"><i class="fa fa-fw fa-headphones"></i></a>
+                  <a href="https://music.163.com/#/user/home?id=90593811" title="网易云音乐 &rarr; https://music.163.com/#/user/home?id=90593811" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-headphones"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1070,7 +1070,7 @@
                   
                     
                   
-                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="noopener" target="_blank"><i class="fa fa-fw fa-contao"></i></a>
+                  <a href="https://blog.csdn.net/weixin_43971764" title="CSDN &rarr; https://blog.csdn.net/weixin_43971764" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-contao"></i></a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1079,7 +1079,7 @@
                   
                     
                   
-                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="noopener" target="_blank"><i class="fa fa-fw fa-bold"></i></a>
+                  <a href="https://space.bilibili.com/11140309" title="bilibili &rarr; https://space.bilibili.com/11140309" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-bold"></i></a>
                 </span>
               
             </div>
@@ -1096,15 +1096,15 @@
               </div>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="noopener" target="_blank">leek</a>
+                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="external nofollow" target="_blank">leek</a>
                 </span>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="noopener" target="_blank">菜菜</a>
+                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="external nofollow" target="_blank">菜菜</a>
                 </span>
               
                 <span class="links-of-blogroll-item">
-                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="noopener" target="_blank">Water</a>
+                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="external nofollow" target="_blank">Water</a>
                 </span>
               
             </div>
