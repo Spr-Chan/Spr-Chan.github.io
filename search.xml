@@ -10,13 +10,7 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-        <tag>SEO</tag>
-        <tag>百度</tag>
-        <tag>谷歌</tag>
         <tag>搜索引擎</tag>
-        <tag>sitemap</tag>
-        <tag>站点地图</tag>
-        <tag>验证所有权</tag>
       </tags>
   </entry>
   <entry>
@@ -29,9 +23,7 @@
       <tags>
         <tag>Hexo</tag>
         <tag>Next</tag>
-        <tag>友链</tag>
-        <tag>博客</tag>
-        <tag>页面排版</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
   <entry>
@@ -45,8 +37,6 @@
         <tag>Hexo</tag>
         <tag>Next</tag>
         <tag>个人博客</tag>
-        <tag>版权声明</tag>
-        <tag>许可协议</tag>
       </tags>
   </entry>
   <entry>
@@ -58,10 +48,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>GitHub</tag>
+        <tag>MacOS</tag>
         <tag>Coding</tag>
-        <tag>域名绑定</tag>
-        <tag>Mac</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -72,11 +61,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python爬虫</tag>
-        <tag>评论爬取</tag>
-        <tag>汽车导购网站</tag>
-        <tag>买车选车</tag>
-        <tag>大数据购车</tag>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -89,9 +75,8 @@
       <tags>
         <tag>Hexo</tag>
         <tag>个人博客</tag>
-        <tag>GitHub</tag>
         <tag>Coding</tag>
-        <tag>域名</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -102,12 +87,11 @@
         <category>个人博客</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-        <tag>MacOS</tag>
+        <tag>Hexo</tag>
         <tag>个人博客</tag>
-        <tag>github</tag>
-        <tag>coding</tag>
-        <tag>博客主题</tag>
+        <tag>MacOS</tag>
+        <tag>Github</tag>
+        <tag>Coding</tag>
       </tags>
   </entry>
   <entry>
@@ -118,11 +102,9 @@
         <category>小技巧</category>
       </categories>
       <tags>
+        <tag>MacOS</tag>
         <tag>虚拟机</tag>
-        <tag>VMware</tag>
         <tag>黑苹果</tag>
-        <tag>U盘启动盘</tag>
-        <tag>macOS Mojave</tag>
       </tags>
   </entry>
   <entry>
@@ -134,8 +116,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -147,9 +127,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>注解</tag>
-        <tag>反射</tag>
+        <tag>框架</tag>
       </tags>
   </entry>
   <entry>
@@ -161,10 +139,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>框架基本原理</tag>
-        <tag>反射机制</tag>
         <tag>框架</tag>
-        <tag>配置文件</tag>
       </tags>
   </entry>
   <entry>
@@ -176,10 +151,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>实现类</tag>
-        <tag>匿名内部类</tag>
         <tag>Lambda表达式</tag>
-        <tag>内部类</tag>
       </tags>
   </entry>
   <entry>
@@ -191,7 +163,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>I0流</tag>
       </tags>
   </entry>
   <entry>
@@ -203,10 +174,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>网络爬虫</tag>
-        <tag>动态网页</tag>
-        <tag>京东拍拍验机</tag>
-        <tag>二手iPhone</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
   <entry>
@@ -218,8 +186,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>二路归并</tag>
-        <tag>归并排序</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -232,7 +198,6 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
-        <tag>级数</tag>
       </tags>
   </entry>
   <entry>
@@ -244,8 +209,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>省略模板实参</tag>
-        <tag>模板函数</tag>
       </tags>
   </entry>
   <entry>
@@ -257,9 +220,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>引用</tag>
-        <tag>临时无名对象</tag>
-        <tag>重载运算符函数</tag>
       </tags>
   </entry>
   <entry>
@@ -271,9 +231,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>默认构造函数</tag>
-        <tag>默认复制构造函数</tag>
-        <tag>构造函数个数</tag>
         <tag>C++11新标准</tag>
       </tags>
   </entry>
@@ -286,10 +243,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>默认构造函数</tag>
         <tag>C++11新标准</tag>
-        <tag>未来教育</tag>
-        <tag>真题解析</tag>
       </tags>
   </entry>
   <entry>
@@ -301,10 +255,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>队列</tag>
-        <tag>循环队列</tag>
-        <tag>带链队列</tag>
-        <tag>队满队空</tag>
       </tags>
   </entry>
   <entry>
@@ -316,9 +266,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>常对象</tag>
-        <tag>常成员函数</tag>
-        <tag>常数据成员</tag>
       </tags>
   </entry>
   <entry>
@@ -330,7 +277,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>二级</tag>
         <tag>数组</tag>
         <tag>指针</tag>
       </tags>
@@ -344,10 +290,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>指针</tag>
         <tag>常变量</tag>
-        <tag>指向常量的指针</tag>
-        <tag>指针常量</tag>
-        <tag>初始化</tag>
       </tags>
   </entry>
   <entry>
@@ -357,13 +301,6 @@
       <categories>
         <category>经验总结</category>
       </categories>
-      <tags>
-        <tag>第一范式</tag>
-        <tag>第二范式</tag>
-        <tag>第三范式</tag>
-        <tag>3NF</tag>
-        <tag>2NF</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[【C++】指向动态分配的指针数组的指针]]></title>
@@ -374,8 +311,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>指针数组</tag>
-        <tag>数组指针</tag>
+        <tag>数组</tag>
+        <tag>指针</tag>
       </tags>
   </entry>
   <entry>
@@ -387,10 +324,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>栈</tag>
-        <tag>栈顶</tag>
-        <tag>栈底</tag>
-        <tag>压栈</tag>
       </tags>
   </entry>
   <entry>
@@ -401,11 +334,7 @@
         <category>小技巧</category>
       </categories>
       <tags>
-        <tag>证件照</tag>
         <tag>PS</tag>
-        <tag>背景</tag>
-        <tag>白底</tag>
-        <tag>蓝底</tag>
       </tags>
   </entry>
   <entry>
@@ -417,7 +346,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>函数适配器</tag>
       </tags>
   </entry>
   <entry>
@@ -429,9 +357,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>for循环</tag>
-        <tag>前置++</tag>
-        <tag>后置++</tag>
       </tags>
   </entry>
   <entry>
@@ -443,8 +368,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>动态数组</tag>
-        <tag>类模板</tag>
+        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -456,8 +380,6 @@
       </categories>
       <tags>
         <tag>win10</tag>
-        <tag>睡眠唤醒</tag>
-        <tag>睡眠重启</tag>
       </tags>
   </entry>
   <entry>
@@ -469,9 +391,6 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>继承</tag>
-        <tag>动态绑定</tag>
-        <tag>虚函数</tag>
       </tags>
   </entry>
   <entry>
@@ -483,8 +402,8 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>指针</tag>
         <tag>常变量</tag>
-        <tag>常指针</tag>
       </tags>
   </entry>
   <entry>
@@ -496,10 +415,6 @@
       </categories>
       <tags>
         <tag>win10</tag>
-        <tag>小技巧</tag>
-        <tag>Windows10</tag>
-        <tag>开始菜单</tag>
-        <tag>磁贴</tag>
       </tags>
   </entry>
   <entry>
@@ -510,7 +425,6 @@
         <category>C++</category>
       </categories>
       <tags>
-        <tag>Visual Studio</tag>
         <tag>C++</tag>
       </tags>
   </entry>
@@ -523,7 +437,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>索引迭代</tag>
       </tags>
   </entry>
   <entry>
@@ -535,8 +448,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>list</tag>
-        <tag>set</tag>
       </tags>
   </entry>
   <entry>
