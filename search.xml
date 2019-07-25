@@ -49,8 +49,8 @@
       <tags>
         <tag>Hexo</tag>
         <tag>MacOS</tag>
+        <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -75,8 +75,8 @@
       <tags>
         <tag>Hexo</tag>
         <tag>个人博客</tag>
+        <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -116,6 +116,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>框架</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -128,6 +130,7 @@
       <tags>
         <tag>Java</tag>
         <tag>框架</tag>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>
@@ -140,6 +143,7 @@
       <tags>
         <tag>Java</tag>
         <tag>框架</tag>
+        <tag>反射</tag>
       </tags>
   </entry>
   <entry>
@@ -151,7 +155,8 @@
       </categories>
       <tags>
         <tag>Java</tag>
-        <tag>Lambda表达式</tag>
+        <tag>Lambda</tag>
+        <tag>匿名内部类</tag>
       </tags>
   </entry>
   <entry>
@@ -163,6 +168,7 @@
       </categories>
       <tags>
         <tag>Java</tag>
+        <tag>输入/输出流</tag>
       </tags>
   </entry>
   <entry>
@@ -185,8 +191,8 @@
         <category>数据结构</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>数据结构</tag>
+        <tag>归并排序</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +204,7 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
+        <tag>级数</tag>
       </tags>
   </entry>
   <entry>
@@ -209,6 +216,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>模版</tag>
       </tags>
   </entry>
   <entry>
@@ -231,6 +239,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>构造函数</tag>
       </tags>
   </entry>
   <entry>
@@ -242,6 +251,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>构造函数</tag>
       </tags>
   </entry>
   <entry>
@@ -253,6 +263,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>queue</tag>
       </tags>
   </entry>
   <entry>
@@ -264,6 +275,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>const</tag>
       </tags>
   </entry>
   <entry>
@@ -290,6 +302,7 @@
         <tag>C++</tag>
         <tag>指针</tag>
         <tag>常变量</tag>
+        <tag>常量</tag>
       </tags>
   </entry>
   <entry>
@@ -299,6 +312,9 @@
       <categories>
         <category>经验总结</category>
       </categories>
+      <tags>
+        <tag>范式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【C++】指向动态分配的指针数组的指针]]></title>
@@ -322,6 +338,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>stack</tag>
       </tags>
   </entry>
   <entry>
@@ -344,6 +361,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>谓词</tag>
       </tags>
   </entry>
   <entry>
@@ -366,7 +384,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
-        <tag>数组</tag>
+        <tag>模版</tag>
       </tags>
   </entry>
   <entry>
@@ -424,6 +442,7 @@
       </categories>
       <tags>
         <tag>C++</tag>
+        <tag>复制构造</tag>
       </tags>
   </entry>
   <entry>
@@ -435,6 +454,7 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>列表</tag>
       </tags>
   </entry>
   <entry>
@@ -446,6 +466,8 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>list</tag>
+        <tag>set</tag>
       </tags>
   </entry>
   <entry>
