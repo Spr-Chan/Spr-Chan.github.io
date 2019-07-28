@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.imcyc.cn/Python/20190519-PaiPaiYanJi.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/Java/20190702-shell-note.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/Java/20190703-shell-test.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/Java/20190702-shell-reflect.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190707-hexo-cl-g-d.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190710-coding-github.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190708-github-domain.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/Python/20190709-car-website.html</loc>
+    <lastmod>2019-07-28</lastmod>
+  </url>  <url>
     <loc>https://www.imcyc.cn/C/20190310-unitary-binary-predicate.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
@@ -40,9 +64,6 @@
     <loc>https://www.imcyc.cn/Java/20190619-file-iostream.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/Java/20190703-shell-test.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190721-baidu+google+seo.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
@@ -59,18 +80,6 @@
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/Java/20190624-lambda-expression.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/Java/20190702-shell-note.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/Java/20190702-shell-reflect.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190710-coding-github.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190708-github-domain.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190720-copyright-liense.html</loc>
@@ -97,12 +106,6 @@
     <loc>https://www.imcyc.cn/%E5%B0%8F%E6%8A%80%E5%B7%A7/20190311-identification-photo.html</loc>
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/Python/20190519-PaiPaiYanJi.html</loc>
-    <lastmod>2019-07-22</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/Python/20190709-car-website.html</loc>
-    <lastmod>2019-07-22</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/C/20190329-index-unnamed-object.html</loc>
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
@@ -110,9 +113,6 @@
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190720-friend-links.html</loc>
-    <lastmod>2019-07-22</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190707-hexo-cl-g-d.html</loc>
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/C/20190112-static-const-datamember.html</loc>
