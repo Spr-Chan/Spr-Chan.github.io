@@ -36,8 +36,6 @@
 
 
 
-  <meta name="baidu-site-verification" content="LSuBRDOBG1">
-
 
 
   
@@ -107,7 +105,7 @@
 <meta name="keywords" content="Java,框架,注解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】框架的基本原理中篇：注解优化">
-<meta property="og:url" content="https://www.imcyc.ml/Java/20190702-shell-note.html">
+<meta property="og:url" content="https://www.imcyc.cn/Java/20190702-shell-note.html">
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;在框架的基本原理上篇中，笔者介绍了框架的灵魂：反射机制。使用反射机制，在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法，这就是框架内部的基本原理。本篇将介绍如何使用注解，将上篇中的配置文件省略并简化代码，达到相同的功能。 &amp;emsp;&amp;emsp;首先，我们新建一个Person类，内容与上篇中相同；新建一个注解接口；新建一个测">
 <meta property="og:locale" content="zh-CN">
@@ -124,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.ml/Java/20190702-shell-note">
+  <link rel="canonical" href="https://www.imcyc.cn/Java/20190702-shell-note">
 
 
 
@@ -375,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.ml/Java/20190702-shell-note.html">
+    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/Java/20190702-shell-note.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -510,7 +508,7 @@
       
 
       
-        <p>&emsp;&emsp;在框架的基本原理<a href="https://www.imcyc.ml/Java/20190702-shell-reflect.html">上篇</a>中，笔者介绍了框架的灵魂：反射机制。使用反射机制，在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法，这就是框架内部的基本原理。本篇将介绍如何使用注解，将上篇中的配置文件省略并简化代码，达到相同的功能。</p>
+        <p>&emsp;&emsp;在框架的基本原理<a href="https://www.imcyc.ml/Java/20190702-shell-reflect.html" rel="external nofollow" target="_blank">上篇</a>中，笔者介绍了框架的灵魂：反射机制。使用反射机制，在不改动代码的前提下，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法，这就是框架内部的基本原理。本篇将介绍如何使用注解，将上篇中的配置文件省略并简化代码，达到相同的功能。</p>
 <p>&emsp;&emsp;首先，我们新建一个Person类，内容与上篇中相同；新建一个注解接口；新建一个测试类。<br><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4y8uvpmejj308s045wem.jpg" alt></p>
 <p>&emsp;&emsp;Person类中的代码为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.imcyc.day07.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Person&#123;"</span> +</span><br><span class="line">                <span class="string">"name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"eat......"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -522,7 +520,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.imcyc.day07.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Pro</span>(className = <span class="string">"top.imcyc.day07.annotation.Person"</span>, methodName = <span class="string">"eat"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">reflectTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//解析注解(获取注解的属性值)</span></span><br><span class="line">        <span class="comment">//  1. 获取该类的字节码文件对象</span></span><br><span class="line">        Class&lt;reflectTest&gt; reflectTestClass = reflectTest.class;</span><br><span class="line">        <span class="comment">//  2. 获取顶部的注解的对象</span></span><br><span class="line">        <span class="comment">//      其实就是在内存中生成了一个该注解接囗的子类实现对象，子类重写了className和methodName方法，返回的就是"...Person"和"eat"字符串</span></span><br><span class="line">        Pro an = reflectTestClass.getAnnotation(Pro.class);</span><br><span class="line">        <span class="comment">//最终目的是拿到顶部注解里定义的属性值</span></span><br><span class="line">        String s = an.className();</span><br><span class="line">        String s1 = an.methodName();</span><br><span class="line"></span><br><span class="line">        Class cls = Class.forName(s);<span class="comment">//获取s代表的类的字节码文件对象</span></span><br><span class="line">        Object obj = cls.newInstance();<span class="comment">//获取一个类对象</span></span><br><span class="line">        Method method = cls.getMethod(s1);<span class="comment">//获取该类的方法</span></span><br><span class="line">        method.invoke(obj);<span class="comment">//执行此方法，参数传入要被执行的方法对应的类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;可以看到，测试类顶部注解里的属性值就代替了原来配置文件里的内容，省去了设置配置文件，简化了测试代码，同时保持了程序的扩展性。满足在不改动代码的前提下，只需要改动顶部注解的属性值，就可以创建任意类的对象，可以执行任意方法。</p>
-<p>&emsp;&emsp;<a href="https://www.imcyc.ml/Java/20190703-shell-test.html">下篇</a>入口。</p>
+<p>&emsp;&emsp;<a href="https://www.imcyc.ml/Java/20190703-shell-test.html" rel="external nofollow" target="_blank">下篇</a>入口。</p>
 
       
     </div>
@@ -609,7 +607,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.ml/Java/20190702-shell-note.html" title="【Java】框架的基本原理中篇：注解优化">https://www.imcyc.ml/Java/20190702-shell-note.html</a>
+    <a href="https://www.imcyc.cn/Java/20190702-shell-note.html" title="【Java】框架的基本原理中篇：注解优化">https://www.imcyc.cn/Java/20190702-shell-note.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
