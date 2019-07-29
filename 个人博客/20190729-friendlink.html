@@ -101,21 +101,21 @@
 
 
 
-  <meta name="description" content="题目&amp;emsp;&amp;emsp;该题求级数的复杂度，简单解析如下图。 &amp;emsp;&amp;emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？ 问题详解 &amp;emsp;&amp;emsp;可得S与等比数列求和的复杂度同阶，所以S可以当几何级数处理；而几何级数的复杂度与末项同阶且相等，所以S的复杂度为：&amp;ems">
-<meta name="keywords" content="数据结构,级数">
+  <meta name="description" content="前言&amp;emsp;&amp;emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加标签、分类、关于等等文件夹，具体教程可参考官方帮助文档，网上亦有大量教程，这里就不赘述了。 &amp;emsp;&amp;emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝">
+<meta name="keywords" content="Hexo,Next,友链">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【数据结构】稍复杂的级数题">
-<meta property="og:url" content="https://www.imcyc.cn/数据结构/20190409-JiShu.html">
+<meta property="og:title" content="【Hexo + Next】侧边栏添加自定义文件夹（如友链）">
+<meta property="og:url" content="https://www.imcyc.cn/个人博客/20190729-friendlink.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="题目&amp;emsp;&amp;emsp;该题求级数的复杂度，简单解析如下图。 &amp;emsp;&amp;emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？ 问题详解 &amp;emsp;&amp;emsp;可得S与等比数列求和的复杂度同阶，所以S可以当几何级数处理；而几何级数的复杂度与末项同阶且相等，所以S的复杂度为：&amp;ems">
+<meta property="og:description" content="前言&amp;emsp;&amp;emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加标签、分类、关于等等文件夹，具体教程可参考官方帮助文档，网上亦有大量教程，这里就不赘述了。 &amp;emsp;&amp;emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4yjak122cj30h80ccgmv.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79ly1g4yjah1s5ej30jw0b0t9t.jpg">
-<meta property="og:updated_time" content="2019-07-25T11:51:09.113Z">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g5gsca7llsj308j0gidg0.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/006tNc79gy1g5gsc9zqesj31hc0p0gqf.jpg">
+<meta property="og:updated_time" content="2019-07-29T08:29:00.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【数据结构】稍复杂的级数题">
-<meta name="twitter:description" content="题目&amp;emsp;&amp;emsp;该题求级数的复杂度，简单解析如下图。 &amp;emsp;&amp;emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？ 问题详解 &amp;emsp;&amp;emsp;可得S与等比数列求和的复杂度同阶，所以S可以当几何级数处理；而几何级数的复杂度与末项同阶且相等，所以S的复杂度为：&amp;ems">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g4yjak122cj30h80ccgmv.jpg">
+<meta name="twitter:title" content="【Hexo + Next】侧边栏添加自定义文件夹（如友链）">
+<meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加标签、分类、关于等等文件夹，具体教程可参考官方帮助文档，网上亦有大量教程，这里就不赘述了。 &amp;emsp;&amp;emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g5gsca7llsj308j0gidg0.jpg">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.cn/数据结构/20190409-JiShu">
+  <link rel="canonical" href="https://www.imcyc.cn/个人博客/20190729-friendlink">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>【数据结构】稍复杂的级数题 | Morty写字的地方</title>
+  <title>【Hexo + Next】侧边栏添加自定义文件夹（如友链） | Morty写字的地方</title>
   
 
 
@@ -390,7 +390,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/数据结构/20190409-JiShu.html">
+    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/个人博客/20190729-friendlink.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -407,7 +407,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【数据结构】稍复杂的级数题
+          <h1 class="post-title" itemprop="name headline">【Hexo + Next】侧边栏添加自定义文件夹（如友链）
 
               
             
@@ -433,23 +433,13 @@
                 
               
 
-              <time title="创建时间：2019-04-09 08:08:00" itemprop="dateCreated datePublished" datetime="2019-04-09T08:08:00+08:00">2019-04-09</time>
+              <time title="创建时间：2019-07-29 16:23:20 / 修改时间：16:29:00" itemprop="dateCreated datePublished" datetime="2019-07-29T16:23:20+08:00">2019-07-29</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-25 19:51:09" itemprop="dateModified" datetime="2019-07-25T19:51:09+08:00">2019-07-25</time>
-              </span>
             
           
 
@@ -462,7 +452,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/个人博客/" itemprop="url" rel="index"><span itemprop="name">个人博客</span></a></span>
 
                 
                 
@@ -480,8 +470,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/数据结构/20190409-JiShu.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/数据结构/20190409-JiShu.html" itemprop="commentCount"></span>
+                <a href="/个人博客/20190729-friendlink.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/个人博客/20190729-friendlink.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,7 +479,7 @@
 
           
           
-            <span id="/数据结构/20190409-JiShu.html" class="post-meta-item leancloud_visitors" data-flag-title="【数据结构】稍复杂的级数题">
+            <span id="/个人博客/20190729-friendlink.html" class="post-meta-item leancloud_visitors" data-flag-title="【Hexo + Next】侧边栏添加自定义文件夹（如友链）">
               <span class="post-meta-item-icon">
                 <i class="fa fa-heart"></i>
               </span>
@@ -525,10 +515,28 @@
       
 
       
-        <h5 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h5><p>&emsp;&emsp;该题求级数的复杂度，简单解析如下图。<br><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4yjak122cj30h80ccgmv.jpg" alt></p>
-<p>&emsp;&emsp;为什么0+0+1+2 * 2+3 * 4+4 * 8+…会是一个几何级数呢？ 几何级数不是等倍数增长吗？ 又是如何推导出O(logn*2^logn)呢？</p>
-<h5 id="问题详解"><a href="#问题详解" class="headerlink" title="问题详解"></a>问题详解</h5><p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g4yjah1s5ej30jw0b0t9t.jpg" alt></p>
-<p>&emsp;&emsp;可得S与等比数列求和的复杂度<font color="red">同阶</font>，所以S可以当几何级数处理；而几何级数的复杂度<font color="red">与末项同阶且相等</font>，所以S的复杂度为：<br>&emsp;&emsp;O((logn-1) * 2^logn+1) = O(logn * 2^logn)。</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&emsp;&emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加<strong>标签</strong>、<strong>分类</strong>、<strong>关于</strong>等等文件夹，具体教程可参考<a href="https://theme-next.org/docs/theme-settings/" rel="external nofollow" target="_blank">官方帮助文档</a>，网上亦有大量教程，这里就不赘述了。</p>
+<p>&emsp;&emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝框中的是自定义的。<br><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g5gsca7llsj308j0gidg0.jpg" alt="图1 自定义文件夹示意图"></p>
+<p>不过，无论是官方帮助文档，亦或是网上的教程，鲜有提及如何创建自定义文件夹。</p>
+<p>&emsp;&emsp;通过不断的尝试，笔者终于成功总结出一种解决方法。下面给出在侧边栏新建一个<strong>友链</strong>文件夹的相关教程。</p>
+<h4 id="教程步骤"><a href="#教程步骤" class="headerlink" title="教程步骤"></a>教程步骤</h4><p>&emsp;&emsp;以MacOS为例，打开终端，开启管理员模式，定位到博客文件夹，执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page friendlink</span><br></pre></td></tr></table></figure>
+
+<p>路径<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&amp;emsp;&amp;emsp;打开主题配置文件，找到```Menu Settings```，加入一行代码：```friendlink: /friendlink/ || link```，如下所示：</span><br><span class="line">```java</span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  #search: /search/ || search</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  friendlink: /friendlink/ || link</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;打开<figure class="highlight plain"><figcaption><span>友链```，如下所示：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">```java</span><br><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益 404</span><br><span class="line">  friendlink: 友链</span><br></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;保存文件后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>本地打开博客网站，就能看到侧边栏多了一个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&amp;emsp;&amp;emsp;修改```index.md```的```title```，```title```将显示为网页的标题，然后在文件中写下你想写的内容，格式遵循Markdown，内容将显示在网页当中，我的```index.md```内容为：</span><br><span class="line">```java</span><br><span class="line">---</span><br><span class="line">title: 互换友链</span><br><span class="line">date: 2019-07-28 20:23:11</span><br><span class="line">---</span><br><span class="line">#### 前言</span><br><span class="line">&amp;emsp;&amp;emsp;如果您也有自己的个人博客，并且想要互换友链，**可以先在贵站添加我的站点**：[https://www.imcyc.cn](https://www.imcyc.cn)，站名：Morty。**然后再在下方留言,并注明贵站的类型**，审核之后贵站的信息就会被添加到下方列表中～</span><br><span class="line"></span><br><span class="line">#### 友链列表</span><br><span class="line">&amp;emsp;&amp;emsp;以下排名不分先后，欢迎访问(～￣▽￣)～</span><br><span class="line"></span><br><span class="line">| 站名     | 链接                        | 类型       |</span><br><span class="line">|:--------------:|:---------------:|:--------------:|</span><br><span class="line">| leek    | https://bigleek.ml          | Java后端   |</span><br><span class="line">| 菜菜     | https://www.caiyifan.cn     | 技术       |</span><br><span class="line">| Water   | https://water1127.github.io | 不详       |</span><br><span class="line">| Don Lex | https://donlex.cn           | 不详       |</span><br><span class="line">| 赵俊     | http://www.zhaojun.im       | Java      |</span><br><span class="line">| 千千     | https://www.dreamwings.cn   | 不详       |</span><br></pre></td></tr></table></figure></p>
+<p>保存后执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<p>网页显示效果如图2所示：<br><img src="http://ww3.sinaimg.cn/large/006tNc79gy1g5gsc9zqesj31hc0p0gqf.jpg" alt="图2 友链网页示意图"></p>
+<h4 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h4><p>&emsp;&emsp;无论是主题自带的文件夹还是自定义的文件夹，默认都是开启留言功能的（前提是你配置了留言功能），如要关闭留言，加入<figure class="highlight plain"><figcaption><span>false```即可，如下：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```java</span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-07-15 20:55:57</span><br><span class="line">type: tags</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><p>[1] <a href="https://www.cnblogs.com/codebook/p/10312965.html" rel="external nofollow" target="_blank">https://www.cnblogs.com/codebook/p/10312965.html</a><br>[2] <a href="https://theme-next.org/docs/theme-settings/" rel="external nofollow" target="_blank">https://theme-next.org/docs/theme-settings/</a></p>
+<h4 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h4><p><a href="https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190720-copyright-liense.html">【Next 7.2.0版权声明大改动】仅需一步！开启内置版权声明(跟繁琐的自定义版权声明说拜拜~)</a></p>
+<p><a href="https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190720-friend-links.html">【Hexo + Next】左侧栏友链一行多个显示</a></p>
+<p><a href="https://www.imcyc.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/20190721-baidu+google+seo.html">【Hexo + Next 优化之坑】百度、谷歌收录sitemap站点地图</a></p>
 
       
     </div>
@@ -615,7 +623,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.cn/数据结构/20190409-JiShu.html" title="【数据结构】稍复杂的级数题">https://www.imcyc.cn/数据结构/20190409-JiShu.html</a>
+    <a href="https://www.imcyc.cn/个人博客/20190729-friendlink.html" title="【Hexo + Next】侧边栏添加自定义文件夹（如友链）">https://www.imcyc.cn/个人博客/20190729-friendlink.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -631,9 +639,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
-            <a href="/tags/级数/" rel="tag"><i class="fa fa-tag"></i> 级数</a>
+            <a href="/tags/Next/" rel="tag"><i class="fa fa-tag"></i> Next</a>
+          
+            <a href="/tags/友链/" rel="tag"><i class="fa fa-tag"></i> 友链</a>
           
         </div>
       
@@ -646,8 +656,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/C/20190330-template-parameter.html" rel="next" title="【C++】模板实参中的参数可以省略的情况分析">
-                <i class="fa fa-chevron-left"></i> 【C++】模板实参中的参数可以省略的情况分析
+              <a href="/个人博客/20190721-baidu+google+seo.html" rel="next" title="【Hexo + Next 优化之坑】百度谷歌收录sitemap站点地图">
+                <i class="fa fa-chevron-left"></i> 【Hexo + Next 优化之坑】百度谷歌收录sitemap站点地图
               </a>
             
           </div>
@@ -655,10 +665,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/数据结构/20190422-GuiBingPaiXu.html" rel="prev" title="【数据结构】归并排序之一种基于二路归并的归并排序">
-                【数据结构】归并排序之一种基于二路归并的归并排序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -946,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#题目"><span class="nav-text">题目</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题详解"><span class="nav-text">问题详解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#教程步骤"><span class="nav-text">教程步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PS"><span class="nav-text">PS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文献"><span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐阅读"><span class="nav-text">推荐阅读</span></a></li></ol></div>
             
 
           </div>
