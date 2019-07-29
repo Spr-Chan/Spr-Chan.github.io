@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[【Hexo + Next】侧边栏添加自定义文件夹（如友链）]]></title>
     <url>%2F%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F20190729-friendlink.html</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加标签、分类、关于等等文件夹，具体教程可参考官方帮助文档，网上亦有大量教程，这里就不赘述了。 &emsp;&emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝框中的是自定义的。 不过，无论是官方帮助文档，亦或是网上的教程，鲜有提及如何创建自定义文件夹。 &emsp;&emsp;通过不断的尝试，笔者终于成功总结出一种解决方法。下面给出在侧边栏新建一个友链文件夹的相关教程。 教程步骤&emsp;&emsp;以MacOS为例，打开终端，开启管理员模式，定位到博客文件夹，执行命令 1hexo new page friendlink 路径Users/用户名/博客文件夹/source文件夹里就会出现刚刚新建的文件夹friendlink，打开文件friendlink，会发现里面有一个index.md文件，待会再来修改它。 &emsp;&emsp;打开主题配置文件，找到Menu Settings，加入一行代码：friendlink: /friendlink/ || link，如下所示： 12345678menu: home: / || home tags: /tags/ || tags categories: /categories/ || th #search: /search/ || search archives: /archives/ || archive about: /about/ || user friendlink: /friendlink/ || link &emsp;&emsp;打开Users/用户名/博客文件夹/themes/next/languages文件夹里的zh-CN.yml文件，在其中增加一行代码：friendlink: 友链，如下所示： 1234567891011menu: home: 首页 archives: 归档 categories: 分类 tags: 标签 about: 关于 search: 搜索 schedule: 日程表 sitemap: 站点地图 commonweal: 公益 404 friendlink: 友链 &emsp;&emsp;保存文件后执行 1hexo cl &amp;&amp; hexo g &amp;&amp; hexo s 本地打开博客网站，就能看到侧边栏多了一个友链文件夹，不过这时候点击友链文件夹，里面是一片空白，这时就到了最后一步，修改教程开头提到的index.md文件。 &emsp;&emsp;修改index.md的title，title将显示为网页的标题，然后在文件中写下你想写的内容，格式遵循Markdown，内容将显示在网页当中，我的index.md内容为： 123456789101112131415161718---title: 互换友链date: 2019-07-28 20:23:11---#### 前言&amp;emsp;&amp;emsp;如果您也有自己的个人博客，并且想要互换友链，**可以先在贵站添加我的站点**：[https://www.imcyc.cn](https://www.imcyc.cn)，站名：Morty。**然后再在下方留言,并注明贵站的类型**，审核之后贵站的信息就会被添加到下方列表中～#### 友链列表&amp;emsp;&amp;emsp;以下排名不分先后，欢迎访问(～￣▽￣)～| 站名 | 链接 | 类型 ||:--------------:|:---------------:|:--------------:|| leek | https://bigleek.ml | Java后端 || 菜菜 | https://www.caiyifan.cn | 技术 || Water | https://water1127.github.io | 不详 || Don Lex | https://donlex.cn | 不详 || 赵俊 | http://www.zhaojun.im | Java || 千千 | https://www.dreamwings.cn | 不详 | 保存后执行命令 1hexo cl &amp;&amp; hexo g &amp;&amp; hexo d 网页显示效果如图2所示： PS&emsp;&emsp;无论是主题自带的文件夹还是自定义的文件夹，默认都是开启留言功能的（前提是你配置了留言功能），如要关闭留言，加入comments: false即可，如下： 123456---title: 标签date: 2019-07-15 20:55:57type: tagscomments: false--- 参考文献[1] https://www.cnblogs.com/codebook/p/10312965.html[2] https://theme-next.org/docs/theme-settings/ 推荐阅读【Next 7.2.0版权声明大改动】仅需一步！开启内置版权声明(跟繁琐的自定义版权声明说拜拜~) 【Hexo + Next】左侧栏友链一行多个显示 【Hexo + Next 优化之坑】百度、谷歌收录sitemap站点地图]]></content>
+    <content type="text"><![CDATA[前言&emsp;&emsp;如果你刚刚完成博客的搭建，会发现Next主题的侧边栏默认文件夹很少，不过你可以通过配置主题配置文件_config.yml，增加标签、分类、关于等等文件夹，具体教程可参考官方帮助文档，网上亦有大量教程，这里就不赘述了。 &emsp;&emsp;当你在浏览一些完成度较高的博客时，会发现有的博客的侧边栏会有一些自定义的文件夹，如图1所示，红框中的是Next主题自带的文件夹，蓝框中的是自定义的。 不过，无论是官方帮助文档，亦或是网上的教程，鲜有提及如何创建自定义文件夹。 &emsp;&emsp;通过不断的尝试，笔者终于成功总结出一种解决方法。下面给出在侧边栏新建一个友链文件夹的相关教程。 教程步骤&emsp;&emsp;以MacOS为例，打开终端，开启管理员模式，定位到博客文件夹，执行命令 hexo new page friendlink路径Users/用户名/博客文件夹/source文件夹里就会出现刚刚新建的文件夹friendlink，打开文件friendlink，会发现里面有一个index.md文件，待会再来修改它。 &emsp;&emsp;打开主题配置文件，找到Menu Settings，加入一行代码：friendlink: /friendlink/ || link，如下所示： 12345678menu: home: / || home tags: /tags/ || tags categories: /categories/ || th #search: /search/ || search archives: /archives/ || archive about: /about/ || user friendlink: /friendlink/ || link &emsp;&emsp;打开Users/用户名/博客文件夹/themes/next/languages文件夹里的zh-CN.yml文件，在其中增加一行代码：friendlink: 友链，如下所示： 1234567891011menu: home: 首页 archives: 归档 categories: 分类 tags: 标签 about: 关于 search: 搜索 schedule: 日程表 sitemap: 站点地图 commonweal: 公益 404 friendlink: 友链 &emsp;&emsp;保存文件后执行 hexo cl &amp;&amp; hexo g &amp;&amp; hexo s本地打开博客网站，就能看到侧边栏多了一个友链文件夹，不过这时候点击友链文件夹，里面是一片空白，这时就到了最后一步，修改教程开头提到的index.md文件。 &emsp;&emsp;修改index.md的title，title将显示为网页的标题，然后在文件中写下你想写的内容，格式遵循Markdown，内容将显示在网页当中，我的index.md内容为： 123456789101112131415161718---title: 互换友链date: 2019-07-28 20:23:11---#### 前言&amp;emsp;&amp;emsp;如果您也有自己的个人博客，并且想要互换友链，**可以先在贵站添加我的站点**：[https://www.imcyc.cn](https://www.imcyc.cn)，站名：Morty。**然后再在下方留言,并注明贵站的类型**，审核之后贵站的信息就会被添加到下方列表中～#### 友链列表&amp;emsp;&amp;emsp;以下排名不分先后，欢迎访问(～￣▽￣)～| 站名 | 链接 | 类型 ||:--------------:|:---------------:|:--------------:|| leek | https://bigleek.ml | Java后端 || 菜菜 | https://www.caiyifan.cn | 技术 || Water | https://water1127.github.io | 不详 || Don Lex | https://donlex.cn | 不详 || 赵俊 | http://www.zhaojun.im | Java || 千千 | https://www.dreamwings.cn | 不详 | 保存后执行命令 hexo cl &amp;&amp; hexo g &amp;&amp; hexo d友链页显示效果如图2所示： PS&emsp;&emsp;无论是主题自带的文件夹还是自定义的文件夹，默认都是开启留言功能的（前提是你配置了留言功能），如要关闭留言，加入comments: false即可，如下： 123456---title: 标签date: 2019-07-15 20:55:57type: tagscomments: false--- 参考文献[1] https://www.cnblogs.com/codebook/p/10312965.html[2] https://theme-next.org/docs/theme-settings/ 推荐阅读【Next 7.2.0版权声明大改动】仅需一步！开启内置版权声明(跟繁琐的自定义版权声明说拜拜~) 【Hexo + Next】左侧栏友链一行多个显示 【Hexo + Next 优化之坑】百度、谷歌收录sitemap站点地图]]></content>
       <categories>
         <category>个人博客</category>
       </categories>
@@ -61,9 +61,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>MacOS</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -102,9 +102,9 @@
       <tags>
         <tag>Hexo</tag>
         <tag>个人博客</tag>
+        <tag>MacOS</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
