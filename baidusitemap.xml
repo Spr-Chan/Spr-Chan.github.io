@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.imcyc.cn/20190119-list-element-index.html</loc>
+    <lastmod>2019-08-01</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190324-2D-Array-Pointer.html</loc>
+    <lastmod>2019-08-01</lastmod>
+  </url>  <url>
     <loc>https://www.imcyc.cn/20190708-github-domain.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
@@ -94,9 +100,6 @@
     <loc>https://www.imcyc.cn/20190218-copy-constructor.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/20190119-list-element-index.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/20190118-list-set.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
@@ -113,9 +116,6 @@
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190303-extends-implements.html</loc>
-    <lastmod>2019-07-22</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190324-2D-Array-Pointer.html</loc>
     <lastmod>2019-07-22</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190112-static-const-datamember.html</loc>
