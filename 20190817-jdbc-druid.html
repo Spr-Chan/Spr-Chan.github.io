@@ -101,20 +101,20 @@
 
 
 
-  <meta name="description" content="&amp;emsp;&amp;emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。  &amp;emsp;&amp;emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&amp;lt;=m），栈内有n个元素。 &amp;emsp;&amp;emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&amp;lt;=m+1），栈内有(m-t">
-<meta name="keywords" content="C++,stack">
+  <meta name="description" content="不使用数据库连接池 不使用工具类获取连接（以及注册驱动）: 1234//注册驱动Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//把要注册的驱动加载进内存//获取数据库连接对象Connection con = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/db3&quot;, &quot;root&quot;, &quot;4719&quot;);">
+<meta name="keywords" content="JDBC,MYSQL,Druid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况">
-<meta property="og:url" content="https://www.imcyc.cn/20190317-stack-top-bottom.html">
+<meta property="og:title" content="【JDBC】使用_不使用数据库连接池获取连接对比">
+<meta property="og:url" content="https://www.imcyc.cn/20190817-jdbc-druid.html">
 <meta property="og:site_name" content="Morty写字的地方">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。  &amp;emsp;&amp;emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&amp;lt;=m），栈内有n个元素。 &amp;emsp;&amp;emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&amp;lt;=m+1），栈内有(m-t">
+<meta property="og:description" content="不使用数据库连接池 不使用工具类获取连接（以及注册驱动）: 1234//注册驱动Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//把要注册的驱动加载进内存//获取数据库连接对象Connection con = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/db3&quot;, &quot;root&quot;, &quot;4719&quot;);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g4wf4cvlnsj30jl0spdhb.jpg">
-<meta property="og:updated_time" content="2019-07-29T11:25:58.801Z">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g62wsvz5s4j31a70u0dj6.jpg">
+<meta property="og:updated_time" content="2019-08-15T17:06:08.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。  &amp;emsp;&amp;emsp;通常情况，栈都是从栈底往栈顶压，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&amp;lt;=m），栈内有n个元素。 &amp;emsp;&amp;emsp;当从栈顶往栈底压时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&amp;lt;=m+1），栈内有(m-t">
-<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79gy1g4wf4cvlnsj30jl0spdhb.jpg">
+<meta name="twitter:title" content="【JDBC】使用_不使用数据库连接池获取连接对比">
+<meta name="twitter:description" content="不使用数据库连接池 不使用工具类获取连接（以及注册驱动）: 1234//注册驱动Class.forName(&quot;com.mysql.jdbc.Driver&quot;);//把要注册的驱动加载进内存//获取数据库连接对象Connection con = DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/db3&quot;, &quot;root&quot;, &quot;4719&quot;);">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/006tNc79ly1g62wsvz5s4j31a70u0dj6.jpg">
 
 
 
@@ -122,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.cn/20190317-stack-top-bottom">
+  <link rel="canonical" href="https://www.imcyc.cn/20190817-jdbc-druid">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况 | Morty写字的地方</title>
+  <title>【JDBC】使用_不使用数据库连接池获取连接对比 | Morty写字的地方</title>
   
 
 
@@ -389,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/20190317-stack-top-bottom.html">
+    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/20190817-jdbc-druid.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -406,7 +406,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况
+          <h1 class="post-title" itemprop="name headline">【JDBC】使用_不使用数据库连接池获取连接对比
 
               
             
@@ -432,7 +432,7 @@
                 
               
 
-              <time title="创建时间：2019-03-17 11:20:00" itemprop="dateCreated datePublished" datetime="2019-03-17T11:20:00+08:00">2019-03-17</time>
+              <time title="创建时间：2019-08-17 19:36:01" itemprop="dateCreated datePublished" datetime="2019-08-17T19:36:01+08:00">2019-08-17</time>
             </span>
           
 
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-29 19:25:58" itemprop="dateModified" datetime="2019-07-29T19:25:58+08:00">2019-07-29</time>
+                <time title="修改时间：2019-08-16 01:06:08" itemprop="dateModified" datetime="2019-08-16T01:06:08+08:00">2019-08-16</time>
               </span>
             
           
@@ -461,7 +461,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -479,8 +479,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/20190317-stack-top-bottom.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/20190317-stack-top-bottom.html" itemprop="commentCount"></span>
+                <a href="/20190817-jdbc-druid.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/20190817-jdbc-druid.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -488,7 +488,7 @@
 
           
           
-            <span id="/20190317-stack-top-bottom.html" class="post-meta-item leancloud_visitors" data-flag-title="【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况">
+            <span id="/20190817-jdbc-druid.html" class="post-meta-item leancloud_visitors" data-flag-title="【JDBC】使用_不使用数据库连接池获取连接对比">
               <span class="post-meta-item-icon">
                 <i class="fa fa-heart"></i>
               </span>
@@ -524,10 +524,48 @@
       
 
       
-        <p>&emsp;&emsp;设栈的存储空间为S(1:m)，表示栈内存储m个元素。</p>
-<p><img src="http://ww2.sinaimg.cn/large/006tNc79gy1g4wf4cvlnsj30jl0spdhb.jpg" alt></p>
-<p>&emsp;&emsp;通常情况，栈都是从<font color="red">栈底往栈顶压</font>，初始状态栈顶指针top=0（栈空）。当top=m+1，栈满；当top=n（n&lt;=m），栈内有n个元素。</p>
-<p>&emsp;&emsp;当从<font color="red">栈顶往栈底压</font>时，初始状态栈顶指针top=m+1（栈空）。当top=0，栈满；当top=n（n&lt;=m+1），栈内有(m-top+1)个元素。</p>
+        <h4 id="不使用数据库连接池"><a href="#不使用数据库连接池" class="headerlink" title="不使用数据库连接池"></a>不使用数据库连接池</h4><ol>
+<li><p>不使用工具类获取连接（以及注册驱动）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册驱动</span></span><br><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);<span class="comment">//把要注册的驱动加载进内存</span></span><br><span class="line"><span class="comment">//获取数据库连接对象</span></span><br><span class="line">Connection con = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/db3"</span>, <span class="string">"root"</span>, <span class="string">"4719"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用工具类、配置文件获取连接（以及注册驱动）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con=JDBCUtils.getconnection();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>&emsp;&emsp;&emsp;&emsp;工具类代码（加载配置文件、注册驱动、获取连接部分）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 静态代码块：随着类的加载而加载，只执行一次。用来读取配置文件的信息，并注册驱动</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//创建Properties集合类对象</span></span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">//获取src路径下的文件的方式---&gt;classLoader类加载器</span></span><br><span class="line">        <span class="comment">//classLoader可以加载字节码文件进内存，并且可以获取资源路径</span></span><br><span class="line">        <span class="comment">//通过类JDBCUtils获得JDBCUtils的类加载器，再通过getResource获得配置文件的资源路径（非配置文件存储路径）</span></span><br><span class="line">        String path = JDBCUtils.class.getClassLoader().getResource(<span class="string">"jdbc.properties"</span>).getPath();</span><br><span class="line">        <span class="comment">//加载配置文件</span></span><br><span class="line">        pro.load(<span class="keyword">new</span> FileReader(path));</span><br><span class="line">        <span class="comment">//获取数据，并赋值</span></span><br><span class="line">        url = pro.getProperty(<span class="string">"url"</span>);</span><br><span class="line">        user = pro.getProperty(<span class="string">"user"</span>);</span><br><span class="line">        password = pro.getProperty(<span class="string">"password"</span>);</span><br><span class="line">        driver = pro.getProperty(<span class="string">"driver"</span>);</span><br><span class="line">        <span class="comment">//注册驱动</span></span><br><span class="line">        Class.forName(driver);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取连接</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 连接对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;&emsp;&emsp;配置文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url=jdbc:mysql:<span class="comment">///db3</span></span><br><span class="line">user=root</span><br><span class="line">password=<span class="number">4719</span></span><br><span class="line">driver=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用数据库连接池"><a href="#使用数据库连接池" class="headerlink" title="使用数据库连接池"></a>使用数据库连接池</h4><ol>
+<li><p>不使用工具类获取连接（注册驱动步骤隐藏）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.导入jar包</span></span><br><span class="line"><span class="comment">//2.定义配置文件</span></span><br><span class="line"><span class="comment">//3.加载配置文件</span></span><br><span class="line">Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">InputStream is = DruidDemo01.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>);</span><br><span class="line">pro.load(is);</span><br><span class="line"><span class="comment">//4.获取连接池对象</span></span><br><span class="line">DataSource ds = DruidDataSourceFactory.createDataSource(pro);</span><br><span class="line"><span class="comment">//5.获取连接</span></span><br><span class="line">Connection conn = ds.getConnection();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用工具类、配置文件获取连接（注册驱动步骤隐藏：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn = JDBCUtils.getconnection();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>&emsp;&emsp;&emsp;&emsp;工具类代码（加载配置文件、获取连接部分）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.定义成员变量 DataSource</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> DataSource ds;</span><br><span class="line"></span><br><span class="line"><span class="comment">//静态代码块：加载配置文件，初始化连接池对象</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//1.加载配置文件</span></span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream(<span class="string">"druid.properties"</span>));</span><br><span class="line">        <span class="comment">//2.获取DataSource</span></span><br><span class="line">        ds = DruidDataSourceFactory.createDataSource(pro);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取连接</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ds.getConnection();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;&emsp;&emsp;配置文件：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">driverClassName=com.mysql.jdbc.Driver</span><br><span class="line">url=jdbc:mysql:<span class="comment">//127.0.0.1:3306/db3</span></span><br><span class="line">username=root</span><br><span class="line">password=<span class="number">4719</span></span><br><span class="line"># 初始化连接数量</span><br><span class="line">initialSize=<span class="number">5</span></span><br><span class="line"># 最大连接数</span><br><span class="line">maxActive=<span class="number">10</span></span><br><span class="line">#最大等待时间</span><br><span class="line">maxWait=<span class="number">3000</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="总结对比"><a href="#总结对比" class="headerlink" title="总结对比"></a>总结对比</h4><p>使用数据库连接池的缺点：</p>
+<ol>
+<li>每次都需要向操作系统底层申请连接，用完再释放，效率低下。</li>
+<li>配置文件的数据要手动获取，再用DriverManager.getConnection（）获取连接，代码复杂。</li>
+</ol>
+<p>使用数据库连接池的优点：</p>
+<ol>
+<li>数据池获取连接，节约资源，用户访问高效。</li>
+<li>自动读取配置文件的数据，获取连接，代码简洁。</li>
+</ol>
+<h4 id="画图板整理原件"><a href="#画图板整理原件" class="headerlink" title="画图板整理原件"></a>画图板整理原件</h4><p><img src="http://ww2.sinaimg.cn/large/006tNc79ly1g62wsvz5s4j31a70u0dj6.jpg" alt></p>
+<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190815-jdbc-login.html" rel="external nofollow" target="_blank">【JDBC练习】使用用户名和密码登录</a><br>&emsp;&emsp;<a href="https://imcyc.cn/20190814-jdbc-check-table.html" rel="external nofollow" target="_blank">【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合</a></p>
 
       
     </div>
@@ -614,7 +652,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.cn/20190317-stack-top-bottom.html" title="【C++】一图搞懂“从栈底往栈顶压、从栈顶往栈底压”两种情况">https://www.imcyc.cn/20190317-stack-top-bottom.html</a>
+    <a href="https://www.imcyc.cn/20190817-jdbc-druid.html" title="【JDBC】使用_不使用数据库连接池获取连接对比">https://www.imcyc.cn/20190817-jdbc-druid.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -630,9 +668,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+            <a href="/tags/JDBC/" rel="tag"><i class="fa fa-tag"></i> JDBC</a>
           
-            <a href="/tags/stack/" rel="tag"><i class="fa fa-tag"></i> stack</a>
+            <a href="/tags/MYSQL/" rel="tag"><i class="fa fa-tag"></i> MYSQL</a>
+          
+            <a href="/tags/Druid/" rel="tag"><i class="fa fa-tag"></i> Druid</a>
           
         </div>
       
@@ -645,8 +685,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20190311-identification-photo.html" rel="next" title="PS小技巧 证件照蓝底/红底换白底（非抠图，抠图头发边缘处理效果差）">
-                <i class="fa fa-chevron-left"></i> PS小技巧 证件照蓝底/红底换白底（非抠图，抠图头发边缘处理效果差）
+              <a href="/20190815-jdbc-login.html" rel="next" title="【JDBC练习】使用用户名和密码登录">
+                <i class="fa fa-chevron-left"></i> 【JDBC练习】使用用户名和密码登录
               </a>
             
           </div>
@@ -654,10 +694,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20190317-pointer-array.html" rel="prev" title="【C++】指向动态分配的指针数组的指针">
-                【C++】指向动态分配的指针数组的指针 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -705,8 +741,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -931,6 +976,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#不使用数据库连接池"><span class="nav-text">不使用数据库连接池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用数据库连接池"><span class="nav-text">使用数据库连接池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结对比"><span class="nav-text">总结对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#画图板整理原件"><span class="nav-text">画图板整理原件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关文章推荐"><span class="nav-text">相关文章推荐</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
