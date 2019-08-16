@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.imcyc.cn/friendlink/index.html</loc>
-    
-    <lastmod>2019-08-15T16:23:15.783Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
     
-    <lastmod>2019-08-14T10:55:15.281Z</lastmod>
+    <lastmod>2019-08-16T12:12:19.918Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.imcyc.cn/20190814-jdbc-check-table.html</loc>
     
-    <lastmod>2019-08-14T10:55:10.511Z</lastmod>
+    <lastmod>2019-08-16T12:10:24.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.imcyc.cn/friendlink/index.html</loc>
+    
+    <lastmod>2019-08-15T16:23:15.783Z</lastmod>
     
   </url>
   
