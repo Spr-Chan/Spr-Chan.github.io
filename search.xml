@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Java】超严谨论证：为什么自定义类存储到Set集合中，要重写hashCode方法和equals方法]]></title>
+    <url>%2F20190821-override-hashcode-and-equals.html</url>
+    <content type="text"><![CDATA[前言首先看一下Set集合在存储元素的时候，判断元素是否重复的方法： add方法首先调用元素的hashCode方法获取该元素的哈希值，再判断Set集合中有没有元素的哈希值与之重复。如果没有，就会把新的元素存储到数组中。 如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中；如果equals方法返回false，则认定两个元素内容不同，就会把新元素存储到集合中，放在同一个哈希值下形成链表。 那么如果一个自定义类不重写hashCode方法和equals方法就add到Set集合中，会发生什么情况？ &emsp;&emsp;PS：论证之前需理解“哈希冲突”的概念，可参考我之前写的一篇文章。简单地说就是字符串“重地”和“通话”的哈希值是相同的。 论证&emsp;&emsp;假设有两个不同的自定义类对象p1、p2： 自定义类没有重写hashCode方法：&emsp;&emsp;• p1、p2存储的数据相同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（不合理，Set集合元素不能重复）。&emsp;&emsp;&emsp;&emsp;注：1. 如果自定义类没有重写hashCode方法，无论p1、p2存储的数据相同或不相同（或者是”重地”和”通话”的情况），p1、p2的哈希值都不同。2. Set集合的add方法直接通过调用元素的hashCode方法就已经判断出p1、p2都能存储到集合中，就不再调用对象的equals方法了，所以重不重写equals方法对结果无影响。&emsp;&emsp;• p1、p2存储的数据不同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（合理）。 自定义类重写了hashCode方法，但没有重写equals方法：&emsp;&emsp;• p1、p2存储的数据相同，p1、p2哈希值相同，但是因为p1、p2的“物理”地址值不同，所以p1.equals(p2)返回false，两者任都能存储到Set集合中（不合理）。&emsp;&emsp;&emsp;&emsp;注：1. IDEA默认的重写hashCode方法的返回值是根据类的每一个成员变量的哈希值综合生成的，所以不同对象若存储的数据相同，则哈希值一定相同。2. 没有重写equals方法的话，equals比较的就是真实“物理”地址值 ！3. 不同对象的真实“物理”地址值一定是不同的（一定是存放在内存中的不同地址）。&emsp;&emsp;• p1、p2存储的数据不同，哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（合理）。&emsp;&emsp;&emsp;&emsp;注：极少情况下p1、p2存储的数据不同但哈希值相同（如”重地”和”通话”），这时调用对象的equals方法，因为没有重写equals方法，所以p1.equals(p2)返回false，所以p1、p2任都能存储到Set集合中（合理）。 自定义类重写了hashCode方法和equals方法&emsp;&emsp;• p1、p2存储的数据相同，p1、p2的哈希值相同，p1.equals(p2)返回true，两者都不能存储到Set集合中（合理）。&emsp;&emsp;&emsp;&emsp;注：重写自定义类的equals方法，p1.equals(p2)比较的是对象的内容。&emsp;&emsp;• p1、p2存储的数据不同，p1、p2的哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（合理）。&emsp;&emsp;&emsp;&emsp;注：极少情况下p1、p2存储的数据不同但哈希值相同（如”重地”和”通话”），这时调用对象的equals方法，因为equals方法已重写，所以p1.equals(p2)返回false，两者都能存储到Set集合中（合理）。 &emsp;&emsp;可以看到，第三点在任意情况下的结果都是“合理”，这就是为什么自定义类存储到Set集合中，要重写hashCode方法和equals方法。&emsp;&emsp;&emsp;&emsp;注：1. 不管自定义类有没有重写hashCode方法和equals方法，p1 == p2返回的都是false，因为对象之间的”==”比较的是对象的“物理”地址值，不是哈希值或内容，两个不同对象的物理地址值一定不同（无论对象存储的数据是否相等，或是”重地”和”通话”的情况）。2. 重写hashCode方法和equals方法很简单，IDE中快捷键ALT+Ins-&gt;equals( ) and hashCode( )。 相关文章推荐&emsp;&emsp;【Java】哈希值相同的变量/对象的地址值也相同吗？]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>HashCode</tag>
+        <tag>Set</tag>
+        <tag>equals</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Java】哈希值相同的变量_对象的地址值也相同吗？]]></title>
     <url>%2F20190821-same-hashcode.html</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;“Java中直接打印对象，输出的是对象的地址值（对象的类没有重写toString方法）”，这是初学者在学Java基础语言的时候，大多数教程都是这么介绍的，初学者也会认为这就是对象在内存中存储的位置，如输出的地址值为： 1cn.imcyc.person.Person@11ff03 但是，其实这种说法是有混淆性的，实际上，打印对象输出的“地址值”并不是对象的物理存储地址，@之后的“11ff03”只是这个对象的哈希值的十六进制。 &emsp;&emsp;实际上，Java语言中其实是看不到变量/对象真正的物理地址值的，只能通过hashCode方法查到变量/对象的哈希值，在极少数的情况下，变量/对象的哈希值会重复，也就是“哈希碰撞”、“哈希混淆”现象。如果初学者看到两个不同数据的类型/对象打印出的“包名.类名@十六进制哈希值”是一样的，就会误以为这两个类型/对象的地址值是相同的，这种想法是错误的。 &emsp;&emsp;下面介绍一种“哈希冲突”的情况。 哈希值相同的String类对象1234String a = "重地";String b = "通话";System.out.println(a.hashCode());System.out.println(b.hashCode()); 上面代码的执行结果是： 1211793951179395 字符串类对象a和b的哈希值是相同的，但事实上两者的物理存储地址是不同的。那么如果将“重地”和“通话”作为字符串存储到对象中，对象的哈希值会一样吗？ 哈希值相同的自定义类对象&emsp;&emsp;新建一个Person类，有一个私有字符串数据成员，两个构造函数，如下： 1234567891011public class Person &#123; private String name; public Person() &#123; &#125; public Person(String name) &#123; this.name = name; &#125;&#125; &emsp;&emsp;主程序执行如下代码： 123456Person c = new Person("重地");Person d = new Person("通话");System.out.println(c);System.out.println(c.hashCode());System.out.println(d);System.out.println(d.hashCode()); 执行结果： 1234cn.imcyc.person.Person@75412c2f1967205423cn.imcyc.person.Person@282ba1e42121758 &emsp;&emsp;可以看到，对象c和d的哈希值不同的。 拓展：重写Person类的hashCode方法&emsp;&emsp;重写了hashCode方法的Person类代码为： 123456789101112131415public class Person &#123; private String name; @Override public int hashCode() &#123; return name != null ? name.hashCode() : 0; &#125; public Person() &#123; &#125; public Person(String name) &#123; this.name = name; &#125;&#125; 上面重写的hashCode的方法是IDEA默认生成的，可以看到就是把数据成员name的哈希值拿来当对象的哈希值，再次执行主程序的代码，输出为： 1234cn.imcyc.person.Person@11ff031179395cn.imcyc.person.Person@11ff031179395 可以看到这时的c和d两个对象的哈希值就相同了，但是能说对象c和对象d的地址值相同吗？显然是不能的，对象c和对象d的物理存储地址一定是不同的。]]></content>
+    <content type="text"><![CDATA[前言&emsp;&emsp;“Java中直接打印对象，输出的是对象的地址值（对象的类没有重写toString方法）”，这是初学者在学Java基础语言的时候，大多数教程都是这么介绍的，初学者也会认为这就是对象在内存中存储的位置，如输出的地址值为： 1cn.imcyc.person.Person@11ff03 但是，其实这种说法是有混淆性的，实际上，打印对象输出的“地址值”并不是对象的物理存储地址，@之后的“11ff03”只是这个对象的哈希值的十六进制。 &emsp;&emsp;实际上，Java语言中其实是看不到变量/对象真正的物理地址值的，只能通过hashCode方法查到变量/对象的哈希值，在极少数的情况下，变量/对象的哈希值会重复，也就是“哈希碰撞”、“哈希混淆”现象。如果初学者看到两个不同数据的类型/对象打印出的“包名.类名@十六进制哈希值”是一样的，就会误以为这两个类型/对象的地址值是相同的，这种想法是错误的。 &emsp;&emsp;下面介绍一种“哈希冲突”的情况。 哈希值相同的String类对象1234String a = "重地";String b = "通话";System.out.println(a.hashCode());System.out.println(b.hashCode()); 上面代码的执行结果是： 1211793951179395 字符串类对象a和b的哈希值是相同的，但事实上两者的物理存储地址是不同的。那么如果将“重地”和“通话”作为字符串存储到对象中，对象的哈希值会一样吗？ 哈希值相同的自定义类对象&emsp;&emsp;新建一个Person类，有一个私有字符串数据成员，两个构造函数，如下： 1234567891011public class Person &#123; private String name; public Person() &#123; &#125; public Person(String name) &#123; this.name = name; &#125;&#125; &emsp;&emsp;主程序执行如下代码： 123456Person c = new Person("重地");Person d = new Person("通话");System.out.println(c);System.out.println(c.hashCode());System.out.println(d);System.out.println(d.hashCode()); 执行结果： 1234cn.imcyc.person.Person@75412c2f1967205423cn.imcyc.person.Person@282ba1e42121758 &emsp;&emsp;可以看到，对象c和d的哈希值不同的。 拓展：重写Person类的hashCode方法&emsp;&emsp;重写了hashCode方法的Person类代码为： 123456789101112131415public class Person &#123; private String name; @Override public int hashCode() &#123; return name != null ? name.hashCode() : 0; &#125; public Person() &#123; &#125; public Person(String name) &#123; this.name = name; &#125;&#125; 上面重写的hashCode的方法是IDEA默认生成的，可以看到就是把数据成员name的哈希值拿来当对象的哈希值，再次执行主程序的代码，输出为： 1234cn.imcyc.person.Person@11ff031179395cn.imcyc.person.Person@11ff031179395 可以看到这时的c和d两个对象的哈希值就相同了，但是能说对象c和对象d的地址值相同吗？显然是不能的，对象c和对象d的物理存储地址一定是不同的。 相关文章推荐&emsp;&emsp;【Java】超严谨论证：为什么自定义类存储到Set集合中，要重写hashCode方法和equals方法]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -150,8 +164,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>个人博客</tag>
         <tag>MacOS</tag>
+        <tag>个人博客</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
       </tags>
@@ -526,9 +540,9 @@
         <category>Python</category>
       </categories>
       <tags>
+        <tag>Set</tag>
         <tag>Python</tag>
-        <tag>list</tag>
-        <tag>set</tag>
+        <tag>List</tag>
       </tags>
   </entry>
   <entry>
