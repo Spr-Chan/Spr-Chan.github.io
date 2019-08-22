@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="前言首先看一下Set集合在存储元素的时候，判断元素是否重复的方法：  add方法首先调用元素的hashCode方法获取该元素的哈希值，再判断Set集合中有没有元素的哈希值与之重复。如果没有，就会把新的元素存储到数组中。 如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-22T02:06:25.995Z">
+<meta property="og:updated_time" content="2019-08-22T02:08:05.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法">
 <meta name="twitter:description" content="前言首先看一下Set集合在存储元素的时候，判断元素是否重复的方法：  add方法首先调用元素的hashCode方法获取该元素的哈希值，再判断Set集合中有没有元素的哈希值与之重复。如果没有，就会把新的元素存储到数组中。 如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中">
@@ -445,7 +445,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-22 10:06:25" itemprop="dateModified" datetime="2019-08-22T10:06:25+08:00">2019-08-22</time>
+                <time title="修改时间：2019-08-22 10:08:05" itemprop="dateModified" datetime="2019-08-22T10:08:05+08:00">2019-08-22</time>
               </span>
             
           
@@ -528,7 +528,7 @@
 <li>如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：<br>如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中；<br>如果equals方法返回false，则认定两个元素内容不同，就会把新元素存储到集合中，放在同一个哈希值下形成链表。</li>
 </ol>
 <p>那么如果一个自定义类对象不重写hashCode方法和equals方法就add到Set集合中，会发生什么情况？</p>
-<p>&emsp;&emsp;PS：论证之前需理解“哈希冲突”的概念，可参考我之前写的一篇<a href="https://blog.csdn.net/weixin_43971764/article/details/99987633" rel="external nofollow" target="_blank">文章</a>。简单地说就是字符串“重地”和“通话”的哈希值是相同的。</p>
+<p>&emsp;&emsp;PS：论证之前需理解“哈希冲突”的概念，可参考我之前写的一篇<a href="https://www.imcyc.cn/20190821-same-hashcode.html">文章</a>。简单地说就是字符串“重地”和“通话”的哈希值是相同的。</p>
 <h4 id="论证"><a href="#论证" class="headerlink" title="论证"></a>论证</h4><p>&emsp;&emsp;假设有两个不同的自定义类对象p1、p2：</p>
 <ol>
 <li><p>自定义类没有重写hashCode方法：<br>&emsp;&emsp;• p1、p2存储的数据相同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（<strong>不合理</strong>，Set集合元素不能重复）。<br>&emsp;&emsp;&emsp;&emsp;注：1. 如果自定义类没有重写hashCode方法，无论p1、p2存储的数据相同或不相同（或者是”重地”和”通话”的情况），p1、p2的哈希值都不同。2. Set集合的add方法直接通过调用元素的hashCode方法就已经判断出p1、p2都能存储到集合中，就不再调用对象的equals方法了，所以重不重写equals方法对结果无影响。<br>&emsp;&emsp;• p1、p2存储的数据不同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（<strong>合理</strong>）。</p>
