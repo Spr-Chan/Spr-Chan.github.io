@@ -102,7 +102,7 @@
 
 
   <meta name="description" content="前言首先看一下Set集合在存储元素的时候，判断元素是否重复的方法：  add方法首先调用元素的hashCode方法获取该元素的哈希值，再判断Set集合中有没有元素的哈希值与之重复。如果没有，就会把新的元素存储到数组中。 如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中">
-<meta name="keywords" content="Java,Set,HashCode,equals">
+<meta name="keywords" content="Java,HashCode,Set,equals">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法">
 <meta property="og:url" content="https://www.imcyc.cn/20190821-override-hashcode-and-equals.html">
@@ -644,9 +644,9 @@
           
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
-            <a href="/tags/Set/" rel="tag"><i class="fa fa-tag"></i> Set</a>
-          
             <a href="/tags/HashCode/" rel="tag"><i class="fa fa-tag"></i> HashCode</a>
+          
+            <a href="/tags/Set/" rel="tag"><i class="fa fa-tag"></i> Set</a>
           
             <a href="/tags/equals/" rel="tag"><i class="fa fa-tag"></i> equals</a>
           
