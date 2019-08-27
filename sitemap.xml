@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
+    
+    <lastmod>2019-08-27T11:07:37.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.imcyc.cn/20190817-jdbc-druid.html</loc>
+    
+    <lastmod>2019-08-27T11:05:11.334Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.imcyc.cn/friendlink/index.html</loc>
     
     <lastmod>2019-08-27T10:55:56.780Z</lastmod>
@@ -40,20 +54,6 @@
     <loc>https://www.imcyc.cn/20190310-unitary-binary-predicate.html</loc>
     
     <lastmod>2019-08-21T01:40:50.110Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.imcyc.cn/20190817-jdbc-druid.html</loc>
-    
-    <lastmod>2019-08-15T17:06:08.255Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
-    
-    <lastmod>2019-08-15T17:06:04.383Z</lastmod>
     
   </url>
   

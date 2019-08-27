@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190817-jdbc-druid.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
     <loc>https://www.imcyc.cn/20190821-same-hashcode.html</loc>
     <lastmod>2019-08-22</lastmod>
   </url>  <url>
@@ -12,12 +18,6 @@
   </url>  <url>
     <loc>https://www.imcyc.cn/20190310-unitary-binary-predicate.html</loc>
     <lastmod>2019-08-21</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190817-jdbc-druid.html</loc>
-    <lastmod>2019-08-15</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
-    <lastmod>2019-08-15</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190814-jdbc-check-table.html</loc>
     <lastmod>2019-08-15</lastmod>
