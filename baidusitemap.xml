@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.imcyc.cn/20190519-PaiPaiYanJi.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190619-file-iostream.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190702-shell-reflect.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190702-shell-note.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190703-shell-test.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190705-black-mac-usb.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190708-github-domain.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190709-car-website.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
     <loc>https://www.imcyc.cn/20190710-coding-github.html</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
@@ -55,31 +79,10 @@
     <loc>https://www.imcyc.cn/20190324-2D-Array-Pointer.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/20190708-github-domain.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190519-PaiPaiYanJi.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190709-car-website.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190702-shell-note.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190703-shell-test.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190702-shell-reflect.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/20190311-identification-photo.html</loc>
     <lastmod>2019-07-29</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190624-lambda-expression.html</loc>
-    <lastmod>2019-07-29</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190705-black-mac-usb.html</loc>
     <lastmod>2019-07-29</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190221-chrome-start-menu.html</loc>
@@ -116,9 +119,6 @@
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190330-template-parameter.html</loc>
-    <lastmod>2019-07-25</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190619-file-iostream.html</loc>
     <lastmod>2019-07-25</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190328-all-constructors.html</loc>

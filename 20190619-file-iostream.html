@@ -109,13 +109,13 @@
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;首先我们来对比一下文件字节输入流和字节缓冲输入流的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。 &amp;emsp;&amp;emsp;再来对比文件字节输出流和字节缓冲输出流的write方法，可以看到有所不同：&amp;emsp;&amp;emsp;文件字节输出流的write(byte">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/006tNc79gy1g4yj1s7639j31ch0oln4t.jpg">
-<meta property="og:updated_time" content="2019-07-25T11:55:50.903Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g4yj1s7639j31ch0oln4t.jpg">
+<meta property="og:updated_time" content="2019-08-27T12:32:14.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Java】使用文件字节输入&#x2F;输出流复制文件、使用字节缓冲输入&#x2F;输出流复制文件的区别">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;首先我们来对比一下文件字节输入流和字节缓冲输入流的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。 &amp;emsp;&amp;emsp;再来对比文件字节输出流和字节缓冲输出流的write方法，可以看到有所不同：&amp;emsp;&amp;emsp;文件字节输出流的write(byte">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg">
 
 
 
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-25 19:55:50" itemprop="dateModified" datetime="2019-07-25T19:55:50+08:00">2019-07-25</time>
+                <time title="修改时间：2019-08-27 20:32:14" itemprop="dateModified" datetime="2019-08-27T20:32:14+08:00">2019-08-27</time>
               </span>
             
           
@@ -525,8 +525,8 @@
       
 
       
-        <p>&emsp;&emsp;首先我们来对比一下<strong>文件字节输入流</strong>和<strong>字节缓冲输入流</strong>的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。<br><img src="http://ww1.sinaimg.cn/large/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg" alt></p>
-<p>&emsp;&emsp;再来对比<strong>文件字节输出流</strong>和<strong>字节缓冲输出流</strong>的write方法，可以看到有所不同：<br>&emsp;&emsp;文件字节输出流的write(bytes[ ] b)是将字节数组中的数据直接写入到此文件输出流，<font color="red">不经过缓冲区</font>；字节缓冲输出流会给文件字节输出流<font color="red">增加一个缓冲区</font>，提高文件字节输出流的写入效率，然后通过flush方法，将缓冲区中的数据刷新到文件中。<br><img src="http://ww4.sinaimg.cn/large/006tNc79gy1g4yj1s7639j31ch0oln4t.jpg" alt></p>
+        <p>&emsp;&emsp;首先我们来对比一下<strong>文件字节输入流</strong>和<strong>字节缓冲输入流</strong>的read方法，可以看到两者的read方法的都继承自InputStream类，且read(bytes[ ] b)方法都没有被子类重写，所以代码执行的效率理论上没有区别。<br><img src="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g4yj1z4o8vj31c30o9103.jpg" alt></p>
+<p>&emsp;&emsp;再来对比<strong>文件字节输出流</strong>和<strong>字节缓冲输出流</strong>的write方法，可以看到有所不同：<br>&emsp;&emsp;文件字节输出流的write(bytes[ ] b)是将字节数组中的数据直接写入到此文件输出流，<font color="red">不经过缓冲区</font>；字节缓冲输出流会给文件字节输出流<font color="red">增加一个缓冲区</font>，提高文件字节输出流的写入效率，然后通过flush方法，将缓冲区中的数据刷新到文件中。<br><img src="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g4yj1s7639j31ch0oln4t.jpg" alt></p>
 <p>&emsp;&emsp;综上所述，使用文件字节输入/输出流复制文件、使用字节缓冲输入/输出流复制文件的区别就在于：<br>&emsp;&emsp;两者在输入上都经过缓冲区（缓冲数组）；但是在输出上，文件字节输出流不经过缓冲区，字节缓冲输出流经过缓冲区。所以理论上，使用字节缓冲输入/输出流进行文件复制的效率要<font color="red">高于</font>使用文件字节输入/输出流。</p>
 <h5 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h5><p>&emsp;&emsp;使用文件字节输入/输出流复制一张图片，耗时60毫秒左右。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> s = System.currentTimeMillis();</span><br><span class="line">        FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\1.jpg"</span>);</span><br><span class="line">        FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">"D:\\1.jpg"</span>);</span><br><span class="line">        <span class="comment">//一次读取多个字节，写入多个字节的方式（使用数组缓冲）</span></span><br><span class="line">        <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];<span class="comment">//对于较大的文件，适当调整为1024的整数倍能大幅提高复制效率</span></span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((len = fis.read(bytes)) != -<span class="number">1</span>) &#123;</span><br><span class="line">            fos.write(bytes, <span class="number">0</span>, len);<span class="comment">//len保证写入的是字节数组中的有效字节（当前循环中）</span></span><br><span class="line">        &#125;</span><br><span class="line">        fos.close();</span><br><span class="line">        fis.close();</span><br><span class="line">        <span class="keyword">long</span> e = System.currentTimeMillis();</span><br><span class="line">        System.out.println(e-s);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
