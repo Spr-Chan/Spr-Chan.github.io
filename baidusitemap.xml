@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.imcyc.cn/20190710-coding-github.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190720-copyright-liense.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190720-friend-links.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190721-baidu+google+seo.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190729-friendlink.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
+    <loc>https://www.imcyc.cn/20190814-jdbc-check-table.html</loc>
+    <lastmod>2019-08-27</lastmod>
+  </url>  <url>
     <loc>https://www.imcyc.cn/20190815-jdbc-login.html</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
@@ -19,9 +37,6 @@
     <loc>https://www.imcyc.cn/20190310-unitary-binary-predicate.html</loc>
     <lastmod>2019-08-21</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/20190814-jdbc-check-table.html</loc>
-    <lastmod>2019-08-15</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/20190320-1NF-2NF-3NF.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
@@ -31,16 +46,7 @@
     <loc>https://www.imcyc.cn/20190317-pointer-array.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
-    <loc>https://www.imcyc.cn/20190721-baidu+google+seo.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190720-friend-links.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
     <loc>https://www.imcyc.cn/20190707-hexo-cl-g-d.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190720-copyright-liense.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190119-list-element-index.html</loc>
@@ -65,12 +71,6 @@
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190702-shell-reflect.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190710-coding-github.html</loc>
-    <lastmod>2019-08-01</lastmod>
-  </url>  <url>
-    <loc>https://www.imcyc.cn/20190729-friendlink.html</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
     <loc>https://www.imcyc.cn/20190311-identification-photo.html</loc>
