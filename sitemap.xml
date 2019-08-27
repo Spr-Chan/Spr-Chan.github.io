@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.imcyc.cn/about/index.html</loc>
+    
+    <lastmod>2019-08-27T09:07:23.206Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.imcyc.cn/friendlink/index.html</loc>
     
-    <lastmod>2019-08-27T05:22:08.959Z</lastmod>
+    <lastmod>2019-08-27T08:49:43.130Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>https://www.imcyc.cn/20190310-unitary-binary-predicate.html</loc>
     
     <lastmod>2019-08-21T01:40:50.110Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.imcyc.cn/about/index.html</loc>
-    
-    <lastmod>2019-08-19T09:02:53.680Z</lastmod>
     
   </url>
   
