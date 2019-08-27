@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.imcyc.cn/friendlink/index.html</loc>
+    
+    <lastmod>2019-08-27T13:29:46.339Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.imcyc.cn/20190118-list-set.html</loc>
     
     <lastmod>2019-08-27T13:10:56.765Z</lastmod>
@@ -194,13 +201,6 @@
     <loc>https://www.imcyc.cn/20190817-jdbc-druid.html</loc>
     
     <lastmod>2019-08-27T11:05:11.334Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.imcyc.cn/friendlink/index.html</loc>
-    
-    <lastmod>2019-08-27T10:55:56.780Z</lastmod>
     
   </url>
   
