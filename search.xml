@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[【小技巧】制作电子签名矢量图插入Word当中]]></title>
     <url>%2F20190914-e-signature.html</url>
-    <content type="text"><![CDATA[前言&emsp;&emsp;有时候我们需要制作电子签名并打印，但是往往直接将签名拍照并插入Word中再打印出来的效果很不好，这时就需要将签名转换成矢量图。 准备工具 手机扫描软件，如Scanner[IOS] PhotoShop Adobe lllustrator 教程步骤 首先将写在纸上的签名扫描到手机上，然后发送到电脑，如下图所示。 打开PhotoShop，打开图片，裁剪出合适的范围。 点击：图像-》调整-》阈值，默认值确定即可。 使用橡皮擦工具将多余的色斑去除。 将图片以PNG格式保存到桌面，打开Adobe lllustrator，新建画布a4大小，置入刚刚保存的PNG图片。 置入图片过大选择缩放。 依次选择嵌入和图像描摹，图像描摹选择“高保真图片”。 导出图像，以EMF格式。 在Word中，插入刚刚保存的EMF图片，为防止图片与单元格排版冲突，右键图片点击“大小和位置”，将“表格单元格中的版式”的勾去掉。 最后保存成PDF，效果拔群。 参考文献&emsp;&emsp;[1] 怎样把PS文件转成矢量图&emsp;&emsp;[2]AI字母矢量图制作方法&emsp;&emsp;[3]如何在word中插入矢量图形]]></content>
+    <content type="text"><![CDATA[前言&emsp;&emsp;有时候我们需要制作电子签名并打印，但是往往直接将签名拍照并插入Word中再打印出来的效果很不好，这时就需要将签名转换成矢量图。 准备工具 手机扫描软件，如Scanner[IOS] PhotoShop Adobe lllustrator 教程步骤 首先将写在纸上的签名扫描到手机上，然后发送到电脑，如下图所示。 打开PhotoShop，打开图片，裁剪出合适的范围。 点击：图像-》调整-》阈值，默认值确定即可。 使用橡皮擦工具将多余的色斑去除。 将图片以PNG格式保存到桌面，打开Adobe lllustrator，新建画布a4大小，置入刚刚保存的PNG图片。 置入图片过大选择缩放。 依次选择嵌入和图像描摹，图像描摹选择“高保真图片”。 导出图像，以EMF格式。 在Word中，插入刚刚保存的EMF图片，为防止图片与单元格排版冲突，右键图片点击“大小和位置”，将“表格单元格中的版式”的勾去掉。 最后保存成PDF，效果拔群。 参考文献&emsp;&emsp;[1]怎样把PS文件转成矢量图&emsp;&emsp;[2]AI字母矢量图制作方法&emsp;&emsp;[3]如何在word中插入矢量图形]]></content>
       <categories>
         <category>小技巧</category>
       </categories>
@@ -135,9 +135,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>MacOS</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
+        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -161,9 +161,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>个人博客</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
   <entry>
@@ -175,10 +175,10 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>MacOS</tag>
-        <tag>个人博客</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
+        <tag>MacOS</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
   <entry>
