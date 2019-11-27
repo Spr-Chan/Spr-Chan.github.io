@@ -105,7 +105,7 @@
 <meta name="keywords" content="Java,框架,反射">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】框架的基本原理上篇：反射机制">
-<meta property="og:url" content="https://www.imcyc.cn/20190702-shell-reflect.html">
+<meta property="og:url" content="https://imcyc.cn/20190702-shell-reflect.html">
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="框架：半成品软件。可以在框架的基础上进行软件开发，简化编码；&amp;emsp;&amp;emsp;反射：框架设计的灵魂；将类的各个组成部分封装为其他对象，这就是反射机制。&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;好处：&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;1. 可以在程序运行过程中，操作这些对象；&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2.">
 <meta property="og:locale" content="zh-CN">
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.cn/20190702-shell-reflect">
+  <link rel="canonical" href="https://imcyc.cn/20190702-shell-reflect">
 
 
 
@@ -386,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/20190702-shell-reflect.html">
+    <link itemprop="mainEntityOfPage" href="https://imcyc.cn/20190702-shell-reflect.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -531,7 +531,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> top.imcyc.day07.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">reflectTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//获取class目录下的配置文件的方式：</span></span><br><span class="line">        <span class="comment">//1. 获取类reflectTest的字节码文件对象（通过reflectTest.class方法）</span></span><br><span class="line">        <span class="comment">//2. 获取类reflectTest的字节码文件(对象)对应的类加载器（类加载器：将.class文件中的二进制流加载到内存中）</span></span><br><span class="line">        <span class="comment">//3. 类加载器寻找配置文件</span></span><br><span class="line">        <span class="comment">//      通过类加载器的getResourceAsStream方法，获取到配置文件的字节输入流</span></span><br><span class="line">        <span class="comment">//4. 通过Properties的方法load，读取配置文件的字节输入流，转换为一个Map集合。</span></span><br><span class="line">        InputStream is = reflectTest.class.getClassLoader().getResourceAsStream(<span class="string">"pro.properties"</span>);</span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        pro.load(is);<span class="comment">//配置文件转换为Map集合存储到pro中，例如键值对“key:methodName, value:eat”</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取配置文件中的数据</span></span><br><span class="line">        String className = pro.getProperty(<span class="string">"className"</span>);</span><br><span class="line">        String methodName = pro.getProperty(<span class="string">"methodName"</span>);</span><br><span class="line"></span><br><span class="line">        Class cls = Class.forName(className);<span class="comment">//获取className代表的类的字节码文件对象</span></span><br><span class="line">        Object obj = cls.newInstance();<span class="comment">//获取一个类对象</span></span><br><span class="line">        Method method = cls.getMethod(methodName);<span class="comment">//获取该类的方法eat</span></span><br><span class="line">        method.invoke(obj);<span class="comment">//执行此方法，参数传入要被执行的方法对应的类对象</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;<font color="red">在不改动代码的前提下</font>，只需要改动配置文件中的类名、方法名，就可以创建任意类的对象，可以执行任意方法；这就是<font color="red">框架内部的基本原理</font>！<br>&emsp;&emsp;可以看到使用框架的优点其一：提高程序的可扩展性。</p>
-<p>&emsp;&emsp;<a href="https://imcyc.cn/20190702-shell-note.html" rel="external nofollow" target="_blank">中篇</a>及<a href="https://imcyc.cn/20190703-shell-test.html" rel="external nofollow" target="_blank">下篇</a>入口。</p>
+<p>&emsp;&emsp;<a href="https://imcyc.cn/20190702-shell-note.html">中篇</a>及<a href="https://imcyc.cn/20190703-shell-test.html">下篇</a>入口。</p>
 
       
     </div>
@@ -618,7 +618,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.cn/20190702-shell-reflect.html" title="【Java】框架的基本原理上篇：反射机制">https://www.imcyc.cn/20190702-shell-reflect.html</a>
+    <a href="https://imcyc.cn/20190702-shell-reflect.html" title="【Java】框架的基本原理上篇：反射机制">https://imcyc.cn/20190702-shell-reflect.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>

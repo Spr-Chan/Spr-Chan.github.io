@@ -105,7 +105,7 @@
 <meta name="keywords" content="Java,HashCode,Set,equals">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法">
-<meta property="og:url" content="https://www.imcyc.cn/20190821-override-hashcode-and-equals.html">
+<meta property="og:url" content="https://imcyc.cn/20190821-override-hashcode-and-equals.html">
 <meta property="og:site_name" content="Morty写字的地方">
 <meta property="og:description" content="前言首先看一下Set集合在存储元素的时候，判断元素是否重复的方法：  add方法首先调用元素的hashCode方法获取该元素的哈希值，再判断Set集合中有没有元素的哈希值与之重复。如果没有，就会把新的元素存储到数组中。 如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中">
 <meta property="og:locale" content="zh-CN">
@@ -120,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="https://www.imcyc.cn/20190821-override-hashcode-and-equals">
+  <link rel="canonical" href="https://imcyc.cn/20190821-override-hashcode-and-equals">
 
 
 
@@ -383,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.imcyc.cn/20190821-override-hashcode-and-equals.html">
+    <link itemprop="mainEntityOfPage" href="https://imcyc.cn/20190821-override-hashcode-and-equals.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -524,7 +524,7 @@
 <li>如果有重复的哈希值（哈希冲突），再调用元素的equals方法和Set中已有的哈希值相同的元素进行比较：<br>如果equals方法返回true，认定两个元素相同，就不会把新元素存储到集合中；<br>如果equals方法返回false，则认定两个元素内容不同，就会把新元素存储到集合中，放在同一个哈希值下形成链表。</li>
 </ol>
 <p>那么如果一个自定义类对象不重写hashCode方法和equals方法就add到Set集合中，会发生什么情况？</p>
-<p>&emsp;&emsp;PS：论证之前需理解“哈希冲突”的概念，可参考我之前写的一篇<a href="https://www.imcyc.cn/20190821-same-hashcode.html">文章</a>。简单地说就是字符串“重地”和“通话”的哈希值是相同的。</p>
+<p>&emsp;&emsp;PS：论证之前需理解“哈希冲突”的概念，可参考我之前写的一篇<a href="https://www.imcyc.cn/20190821-same-hashcode.html" rel="external nofollow" target="_blank">文章</a>。简单地说就是字符串“重地”和“通话”的哈希值是相同的。</p>
 <h4 id="论证"><a href="#论证" class="headerlink" title="论证"></a>论证</h4><p>&emsp;&emsp;假设有两个不同的自定义类对象p1、p2：</p>
 <ol>
 <li><p>自定义类没有重写hashCode方法：<br>&emsp;&emsp;• p1、p2存储的数据相同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（<strong>不合理</strong>，Set集合元素不能重复）。<br>&emsp;&emsp;&emsp;&emsp;注：1. 如果自定义类没有重写hashCode方法，无论p1、p2存储的数据相同或不相同（或者是”重地”和”通话”的情况），p1、p2的哈希值都不同。2. Set集合的add方法直接通过调用元素的hashCode方法就已经判断出p1、p2都能存储到集合中，就不再调用对象的equals方法了，所以重不重写equals方法对结果无影响。<br>&emsp;&emsp;• p1、p2存储的数据不同，p1、p2哈希值不同（这时不再调用对象的equals方法），两者都能存储到Set集合中（<strong>合理</strong>）。</p>
@@ -535,7 +535,7 @@
 </li>
 </ol>
 <p>&emsp;&emsp;可以看到，第三点在任意情况下的结果都是“合理”，<em>这就是为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法。</em><br>&emsp;&emsp;&emsp;&emsp;注：1. 不管自定义类有没有重写hashCode方法和equals方法，p1 == p2返回的都是false，因为对象之间的”==”比较的是对象的“物理”地址值，不是哈希值或内容，两个不同对象的物理地址值一定不同（无论对象存储的数据是否相等，或是”重地”和”通话”的情况）。2. 重写hashCode方法和equals方法很简单，IDE中快捷键ALT+Ins-&gt;equals( ) and hashCode( )。</p>
-<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190821-same-hashcode.html" rel="external nofollow" target="_blank">【Java】哈希值相同的变量/对象的地址值也相同吗？</a></p>
+<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190821-same-hashcode.html">【Java】哈希值相同的变量/对象的地址值也相同吗？</a></p>
 
       
     </div>
@@ -622,7 +622,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.imcyc.cn/20190821-override-hashcode-and-equals.html" title="【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法">https://www.imcyc.cn/20190821-override-hashcode-and-equals.html</a>
+    <a href="https://imcyc.cn/20190821-override-hashcode-and-equals.html" title="【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法">https://imcyc.cn/20190821-override-hashcode-and-equals.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
