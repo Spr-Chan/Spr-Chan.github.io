@@ -105,8 +105,8 @@
 <meta name="keywords" content="JDBC,MYSQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合">
-<meta property="og:url" content="https://imcyc.cn/20190814-jdbc-check-table.html">
-<meta property="og:site_name" content="Morty写字的地方">
+<meta property="og:url" content="https://chenyangchun.cn/20190814-jdbc-check-table.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="前言&amp;emsp;&amp;emsp;在MYSQL的db3数据库中存在表emp，通过可视化软件SQLyog可以方便的查看表的数据，如下图所示。那么如何通过JDBC来查看表？ 教程步骤 首先新建一个Emp类，把emp表的列名当成Emp类的私有数据成员，Emp类的代码如下： 123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79ly1g5zcdcuygaj30sg0c5gpn.jpg">
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://imcyc.cn/20190814-jdbc-check-table">
+  <link rel="canonical" href="https://chenyangchun.cn/20190814-jdbc-check-table">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合 | Morty写字的地方</title>
+  <title>【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合 | Chan's Blog</title>
   
 
 
@@ -193,7 +193,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Morty写字的地方</span>
+        <span class="site-title">Chan's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -230,6 +230,22 @@
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
 
   </li>
         
@@ -284,7 +300,7 @@
         
         
           
-          <li class="menu-item menu-item-about">
+          <li class="menu-item menu-item-comments">
 
     
     
@@ -293,23 +309,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-friendlink">
-
-    
-    
-      
-    
-
-    
-
-    <a href="/friendlink/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+    <a href="/comment/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
 
   </li>
 
@@ -386,16 +386,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://imcyc.cn/20190814-jdbc-check-table.html">
+    <link itemprop="mainEntityOfPage" href="https://chenyangchun.cn/20190814-jdbc-check-table.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
-      <meta itemprop="description" content="世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它">
+      <meta itemprop="description" content="如无必要，勿增实体">
       <meta itemprop="image" content="/images/head.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Morty写字的地方">
+      <meta itemprop="name" content="Chan's Blog">
     </span>
 
     
@@ -544,7 +544,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.imcyc.jdbc;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.imcyc.domain.Emp;</span><br><span class="line"><span class="keyword">import</span> cn.imcyc.util.JDBCUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcDemo05</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 创建临时无名对象，测试方法findAll</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        List&lt;Emp&gt; list = <span class="keyword">new</span> JdbcDemo05().findAll();</span><br><span class="line">        <span class="keyword">for</span> (Emp emp : list) &#123;</span><br><span class="line">            System.out.println(emp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//或者</span></span><br><span class="line">        <span class="comment">/*for (int i = 0; i &lt; list.size(); i++) &#123;</span></span><br><span class="line"><span class="comment">            System.out.println(list.get(i));</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 定义一个方法findAll，用来查询emp表的数据并将其封装成对象，再将对象装载为集合，返回之。</span></span><br><span class="line"><span class="comment">     * 使用自己写的JDBC工具类（JDBCUtils），简化代码</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Emp&gt; <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ResultSet res = <span class="keyword">null</span>;</span><br><span class="line">        Statement stat = <span class="keyword">null</span>;</span><br><span class="line">        Connection con = <span class="keyword">null</span>;</span><br><span class="line">        List&lt;Emp&gt; list = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//(注册驱动、获取链接)、定义sql、获取执行sql的对象、执行sql</span></span><br><span class="line">            con = JDBCUtils.getConnection();</span><br><span class="line">            String sql = <span class="string">"select * from emp"</span>;</span><br><span class="line">            stat = con.createStatement();</span><br><span class="line">            res = stat.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//遍历结果集、封装emp表的数据为对象、装载集合</span></span><br><span class="line">            Emp emp = <span class="keyword">null</span>;</span><br><span class="line">            list = <span class="keyword">new</span> ArrayList&lt;Emp&gt;();</span><br><span class="line">            <span class="keyword">while</span> (res.next()) &#123;</span><br><span class="line">                <span class="comment">//获取数据</span></span><br><span class="line">                <span class="keyword">int</span> id = res.getInt(<span class="string">"id"</span>);</span><br><span class="line">                String ename = res.getString(<span class="string">"ename"</span>);</span><br><span class="line">                <span class="keyword">int</span> job_id = res.getInt(<span class="string">"job_id"</span>);</span><br><span class="line">                <span class="keyword">int</span> mgr = res.getInt(<span class="string">"mgr"</span>);</span><br><span class="line">                Date joindate = res.getDate(<span class="string">"joindate"</span>);</span><br><span class="line">                <span class="keyword">double</span> salary = res.getDouble(<span class="string">"salary"</span>);</span><br><span class="line">                <span class="keyword">double</span> bonus = res.getDouble(<span class="string">"bonus"</span>);</span><br><span class="line">                <span class="keyword">int</span> dept_id = res.getInt(<span class="string">"dept_id"</span>);</span><br><span class="line">                <span class="comment">//创建Emp类的对象，并修改对象的数据值</span></span><br><span class="line">                emp = <span class="keyword">new</span> Emp();</span><br><span class="line">                emp.setId(id);</span><br><span class="line">                emp.setEname(ename);</span><br><span class="line">                emp.setJob_id(job_id);</span><br><span class="line">                emp.setMgr(mgr);</span><br><span class="line">                emp.setJoindate(joindate);</span><br><span class="line">                emp.setSalary(salary);</span><br><span class="line">                emp.setBonus(bonus);</span><br><span class="line">                emp.setDept_id(dept_id);</span><br><span class="line">                <span class="comment">//装载集合</span></span><br><span class="line">                list.add(emp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            JDBCUtils.close(res,stat,con);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>可以看到使用工具类之后，代码简化了不少，提高了代码复写的效率；并且将 <code>url</code> <code>user</code> <code>password</code> <code>driver</code> 的信息抽取到配置文件中，日后修改 <code>url</code> <code>user</code> <code>password</code> <code>driver</code> 将更加方便，提高了程序的可扩展性。</p>
-<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190815-jdbc-login.html">【JDBC练习】使用用户名和密码登录</a><br>&emsp;&emsp;<a href="https://imcyc.cn/20190817-jdbc-druid.html">【JDBC】使用_不使用数据库连接池获取连接对比</a></p>
+<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190815-jdbc-login.html" rel="external nofollow" target="_blank">【JDBC练习】使用用户名和密码登录</a><br>&emsp;&emsp;<a href="https://imcyc.cn/20190817-jdbc-druid.html" rel="external nofollow" target="_blank">【JDBC】使用_不使用数据库连接池获取连接对比</a></p>
 
       
     </div>
@@ -631,7 +631,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://imcyc.cn/20190814-jdbc-check-table.html" title="【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合">https://imcyc.cn/20190814-jdbc-check-table.html</a>
+    <a href="https://chenyangchun.cn/20190814-jdbc-check-table.html" title="【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合">https://chenyangchun.cn/20190814-jdbc-check-table.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -739,7 +739,7 @@
               <img class="site-author-image" itemprop="image" src="/images/head.png" alt>
             
               <p class="site-author-name" itemprop="name"></p>
-              <div class="site-description motion-element" itemprop="description">世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它</div>
+              <div class="site-description motion-element" itemprop="description">如无必要，勿增实体</div>
           </div>
 
           
@@ -955,6 +955,34 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友链
+              </div>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="external nofollow" target="_blank">轲神</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="external nofollow" target="_blank">菜菜</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.dreamwings.cn" title="https://www.dreamwings.cn" rel="external nofollow" target="_blank">千千</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="external nofollow" target="_blank">Water</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://huxiaofan.com" title="https://huxiaofan.com" rel="external nofollow" target="_blank">晓帆</a>
+                </span>
+              
+            </div>
           
 
           

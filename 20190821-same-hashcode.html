@@ -105,8 +105,8 @@
 <meta name="keywords" content="Java,HashCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Java】哈希值相同的变量_对象的地址值也相同吗？">
-<meta property="og:url" content="https://imcyc.cn/20190821-same-hashcode.html">
-<meta property="og:site_name" content="Morty写字的地方">
+<meta property="og:url" content="https://chenyangchun.cn/20190821-same-hashcode.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="前言&amp;emsp;&amp;emsp;“Java中直接打印对象，输出的是对象的地址值（对象的类没有重写toString方法）”，这是初学者在学Java基础语言的时候，大多数教程都是这么介绍的，初学者也会认为这就是对象在内存中存储的位置，如输出的地址值为： 1cn.imcyc.person.Person@11ff03  但是，其实这种说法是有混淆性的，实际上，打印对象输出的“地址值”并不是对象的物理存储地址，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-11-27T13:02:57.870Z">
@@ -120,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="https://imcyc.cn/20190821-same-hashcode">
+  <link rel="canonical" href="https://chenyangchun.cn/20190821-same-hashcode">
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>【Java】哈希值相同的变量_对象的地址值也相同吗？ | Morty写字的地方</title>
+  <title>【Java】哈希值相同的变量_对象的地址值也相同吗？ | Chan's Blog</title>
   
 
 
@@ -190,7 +190,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Morty写字的地方</span>
+        <span class="site-title">Chan's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -227,6 +227,22 @@
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
 
   </li>
         
@@ -281,7 +297,7 @@
         
         
           
-          <li class="menu-item menu-item-about">
+          <li class="menu-item menu-item-comments">
 
     
     
@@ -290,23 +306,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-friendlink">
-
-    
-    
-      
-    
-
-    
-
-    <a href="/friendlink/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+    <a href="/comment/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
 
   </li>
 
@@ -383,16 +383,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://imcyc.cn/20190821-same-hashcode.html">
+    <link itemprop="mainEntityOfPage" href="https://chenyangchun.cn/20190821-same-hashcode.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
-      <meta itemprop="description" content="世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它">
+      <meta itemprop="description" content="如无必要，勿增实体">
       <meta itemprop="image" content="/images/head.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Morty写字的地方">
+      <meta itemprop="name" content="Chan's Blog">
     </span>
 
     
@@ -547,7 +547,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cn.imcyc.person.Person@<span class="number">11f</span>f03</span><br><span class="line"><span class="number">1179395</span></span><br><span class="line">cn.imcyc.person.Person@<span class="number">11f</span>f03</span><br><span class="line"><span class="number">1179395</span></span><br></pre></td></tr></table></figure>
 
 <p>可以看到这时的c和d两个对象的哈希值就相同了，但是能说对象c和对象d的地址值相同吗？显然是不能的，对象c和对象d的物理存储地址一定是不同的。</p>
-<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190821-override-hashcode-and-equals.html">【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法</a></p>
+<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190821-override-hashcode-and-equals.html" rel="external nofollow" target="_blank">【Java】超严谨论证：为什么自定义类对象存储到Set集合中，要重写hashCode方法和equals方法</a></p>
 
       
     </div>
@@ -634,7 +634,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://imcyc.cn/20190821-same-hashcode.html" title="【Java】哈希值相同的变量_对象的地址值也相同吗？">https://imcyc.cn/20190821-same-hashcode.html</a>
+    <a href="https://chenyangchun.cn/20190821-same-hashcode.html" title="【Java】哈希值相同的变量_对象的地址值也相同吗？">https://chenyangchun.cn/20190821-same-hashcode.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -742,7 +742,7 @@
               <img class="site-author-image" itemprop="image" src="/images/head.png" alt>
             
               <p class="site-author-name" itemprop="name"></p>
-              <div class="site-description motion-element" itemprop="description">世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它</div>
+              <div class="site-description motion-element" itemprop="description">如无必要，勿增实体</div>
           </div>
 
           
@@ -958,6 +958,34 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友链
+              </div>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="external nofollow" target="_blank">轲神</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="external nofollow" target="_blank">菜菜</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.dreamwings.cn" title="https://www.dreamwings.cn" rel="external nofollow" target="_blank">千千</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="external nofollow" target="_blank">Water</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://huxiaofan.com" title="https://huxiaofan.com" rel="external nofollow" target="_blank">晓帆</a>
+                </span>
+              
+            </div>
           
 
           

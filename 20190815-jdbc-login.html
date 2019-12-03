@@ -105,8 +105,8 @@
 <meta name="keywords" content="JDBC,MYSQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【JDBC练习】使用用户名和密码登录">
-<meta property="og:url" content="https://imcyc.cn/20190815-jdbc-login.html">
-<meta property="og:site_name" content="Morty写字的地方">
+<meta property="og:url" content="https://chenyangchun.cn/20190815-jdbc-login.html">
+<meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="前言需求：&amp;emsp;&amp;emsp;1. 通过键盘录入用户名和密码&amp;emsp;&amp;emsp;2. 判断用户是否登录成功 分析：&amp;emsp;&amp;emsp;使用sql语句：select * from user where username = “ “ and password = “ “，如果这个sql有查询结果，则成功；反之，则失败。 步骤 首先创建数据库表user，添加两个用户名及密码作为已注册用户。1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79gy1g60t4q9hq2j3093023aa3.jpg">
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://imcyc.cn/20190815-jdbc-login">
+  <link rel="canonical" href="https://chenyangchun.cn/20190815-jdbc-login">
 
 
 
@@ -133,7 +133,7 @@
   };
 </script>
 
-  <title>【JDBC练习】使用用户名和密码登录 | Morty写字的地方</title>
+  <title>【JDBC练习】使用用户名和密码登录 | Chan's Blog</title>
   
 
 
@@ -193,7 +193,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Morty写字的地方</span>
+        <span class="site-title">Chan's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -230,6 +230,22 @@
     
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
 
   </li>
         
@@ -284,7 +300,7 @@
         
         
           
-          <li class="menu-item menu-item-about">
+          <li class="menu-item menu-item-comments">
 
     
     
@@ -293,23 +309,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-address-card"></i> <br>关于</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-friendlink">
-
-    
-    
-      
-    
-
-    
-
-    <a href="/friendlink/" rel="section"><i class="menu-item-icon fa fa-fw fa-link"></i> <br>友链</a>
+    <a href="/comment/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
 
   </li>
 
@@ -386,16 +386,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://imcyc.cn/20190815-jdbc-login.html">
+    <link itemprop="mainEntityOfPage" href="https://chenyangchun.cn/20190815-jdbc-login.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
-      <meta itemprop="description" content="世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它">
+      <meta itemprop="description" content="如无必要，勿增实体">
       <meta itemprop="image" content="/images/head.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Morty写字的地方">
+      <meta itemprop="name" content="Chan's Blog">
     </span>
 
     
@@ -555,7 +555,7 @@
 <li>给 ？赋值：<br>方法：setXxx(参数1, 参数2)<br>参数1：？的位置编号从1开始<br>参数2：？的值</li>
 </ol>
 <p>&emsp;&emsp;后期都会使用PreparedStatement来完成<strong>增删改查</strong>的所有操作，因为：1. 可以防止SQL注入；2. 效率更高。</p>
-<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190814-jdbc-check-table.html">【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合</a><br>&emsp;&emsp;<a href="https://imcyc.cn/20190817-jdbc-druid.html">【JDBC】使用_不使用数据库连接池获取连接对比</a></p>
+<h4 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h4><p>&emsp;&emsp;<a href="https://imcyc.cn/20190814-jdbc-check-table.html" rel="external nofollow" target="_blank">【JDBC练习】查看表的方法——表的数据封装成对象并装载成集合</a><br>&emsp;&emsp;<a href="https://imcyc.cn/20190817-jdbc-druid.html" rel="external nofollow" target="_blank">【JDBC】使用_不使用数据库连接池获取连接对比</a></p>
 
       
     </div>
@@ -642,7 +642,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://imcyc.cn/20190815-jdbc-login.html" title="【JDBC练习】使用用户名和密码登录">https://imcyc.cn/20190815-jdbc-login.html</a>
+    <a href="https://chenyangchun.cn/20190815-jdbc-login.html" title="【JDBC练习】使用用户名和密码登录">https://chenyangchun.cn/20190815-jdbc-login.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -750,7 +750,7 @@
               <img class="site-author-image" itemprop="image" src="/images/head.png" alt>
             
               <p class="site-author-name" itemprop="name"></p>
-              <div class="site-description motion-element" itemprop="description">世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它</div>
+              <div class="site-description motion-element" itemprop="description">如无必要，勿增实体</div>
           </div>
 
           
@@ -966,6 +966,34 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友链
+              </div>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://bigleek.ml" title="https://bigleek.ml" rel="external nofollow" target="_blank">轲神</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.caiyifan.cn" title="https://www.caiyifan.cn" rel="external nofollow" target="_blank">菜菜</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://www.dreamwings.cn" title="https://www.dreamwings.cn" rel="external nofollow" target="_blank">千千</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://water1127.github.io" title="https://water1127.github.io" rel="external nofollow" target="_blank">Water</a>
+                </span>
+              
+                <span class="links-of-blogroll-item">
+                  <a href="https://huxiaofan.com" title="https://huxiaofan.com" rel="external nofollow" target="_blank">晓帆</a>
+                </span>
+              
+            </div>
           
 
           
