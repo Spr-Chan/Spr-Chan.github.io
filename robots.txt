@@ -9,4 +9,4 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /lib/
 
-Sitemap: https://www.imcyc.cn/sitemap.xml
+Sitemap: https://chenyangchun.cn/sitemap.xml
