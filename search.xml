@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[【虚拟机装黑苹果(第二弹)】Win10/macOS环境下制作黑苹果安装U盘（能被Vmware虚拟机识别）]]></title>
     <url>%2F20200521-vmware-blackmacos-second.html</url>
-    <content type="text"><![CDATA[1 为什么要制作黑苹果安装U盘？&emsp;&emsp;很多网友都知道如何在Vmware虚拟机里安装黑苹果，例如这篇教程，全程无需黑苹果安装U盘。实际上这种方法只适用于安装格式为.iso或.cdr的macOS镜像，而网上分享的macOS镜像多为.dmg格式，其中有官方原版的，还有封装了启动器（with clover）非官方版的，如下图所示。想要把.dmg格式的macOS镜像安装到虚拟机，就需要用到U盘引导安装，这就是为什么要制作黑苹果安装U盘的原因。&emsp;&emsp;不过有一种例外情况，版本低于10.12且格式为.dmg的macOS镜像，可直接使用UltraISO将.dmg格式的镜像转换为.iso格式，再使用上面提到的教程中的方法安装即可（.dmg转.iso教程可参考此篇）。 2 Win10环境制作黑苹果安装U盘&emsp;&emsp;smzdm里有一篇著名的虚拟机装黑苹果教程，这篇文章讲的很好，但是有一个Bug，文中提到在Win10环境下使用TransMac制作黑苹果安装U盘，但是很多网友反应Vmware虚拟机引导安装U盘失败，显示蓝屏，如下图所示。我参考这篇教程，使用TransMac将官方原版的.dmg镜像烧录到U盘，再用Vmware虚拟机引导，也发生了同样的问题。于是使用DiskGenius查看，发现U盘的启动分区（ESP(0)）里没有任何分区或文件（如下图所示），这就是Vmware虚拟机引导U盘失败的原因。&emsp;&emsp;之后我尝试使用TransMac把封装了Clover的.dmg镜像烧录到U盘，这次Vmware虚拟机引导成功，进入Clover启动选择页面，但是之后安装程序异常，不得不退出。用DiskGenius查看，发现这次U盘有EFI启动分区，尝试把EFI分区清空（注意是清空整个EFI分区！不是EFI文件夹），然后再用虚拟机引导U盘，成功安装。&emsp;&emsp;PS. 可用balenaEtcher代替TransMac，两款软件大同小异。 3 macOS环境制作黑苹果安装U盘&emsp;&emsp;可参考我的另一篇博客：【虚拟机装黑苹果(第一弹)】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（win10系统下）。需要注意的是，这篇教程只尝试了原版的.dmg镜像，后来我尝试使用DiskMakerX将封装了clover的镜像烧录到U盘，程序出错。 4 总结&emsp;&emsp;通过2、3节，可以总结出两点： 凡是官方原版的.dmg镜像，需要在macOS环境下使用DiskMakerX软件将镜像烧录到U盘。 凡是封装了启动器（如clover）的非官方.dmg镜像，需要在Win10环境下使用balenaEtcher或TransMac将镜像烧录到U盘。参考文献[1] Windows下VMware Workstations Pro15.1.0安装macOS Mojave10.14.5虚拟机 by hestyle[2] ultraiso软碟通dmg转iso图文教程 by 微wx笑[3] 【虚拟机装黑苹果(第一弹)】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（win10系统下） by Spr Chan]]></content>
+    <content type="text"><![CDATA[1 为什么要制作黑苹果安装U盘？&emsp;&emsp;很多网友都知道如何在Vmware虚拟机里安装黑苹果，例如这篇教程，全程无需黑苹果安装U盘。实际上这种方法只适用于安装格式为.iso或.cdr的macOS镜像，而网上分享的macOS镜像多为.dmg格式，其中有官方原版的，还有封装了启动器（with Clover）非官方版的，如下图所示。想要把.dmg格式的macOS镜像安装到虚拟机，就需要用到U盘引导安装，这就是为什么要制作黑苹果安装U盘的原因。&emsp;&emsp;不过有一种例外情况，版本低于10.12且格式为.dmg的macOS镜像，可直接使用UltraISO将.dmg格式的镜像转换为.iso格式，再使用上面提到的教程中的方法安装即可（.dmg转.iso教程可参考此篇）。 2 Win10环境制作黑苹果安装U盘&emsp;&emsp;smzdm里有一篇著名的虚拟机装黑苹果教程，这篇文章讲的很好，但是有一个Bug，文中提到在Win10环境下使用TransMac制作黑苹果安装U盘，但是很多网友反应Vmware虚拟机引导安装U盘失败，显示蓝屏，如下图所示。我参考这篇教程，使用TransMac将官方原版的.dmg镜像烧录到U盘，再用Vmware虚拟机引导，也发生了同样的问题。于是使用DiskGenius查看，发现U盘的启动分区（ESP(0)）里没有任何分区或文件（如下图所示），这就是Vmware虚拟机引导U盘失败的原因。&emsp;&emsp;之后我尝试使用TransMac把封装了Clover的.dmg镜像烧录到U盘，这次Vmware虚拟机引导成功，进入Clover启动选择页面，但是之后安装程序异常，不得不退出。用DiskGenius查看，发现这次U盘有EFI启动分区，尝试把EFI分区清空（注意是清空整个EFI分区！不是EFI文件夹），然后再用虚拟机引导U盘，成功安装。&emsp;&emsp;PS. 可用balenaEtcher代替TransMac，两款软件大同小异。 3 macOS环境制作黑苹果安装U盘&emsp;&emsp;可参考我的另一篇博客：【虚拟机装黑苹果(第一弹)】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（win10系统下）。需要注意的是，这篇教程只尝试了原版的.dmg镜像，后来我尝试使用DiskMakerX将封装了Clover的镜像烧录到U盘，程序出错。 4 总结&emsp;&emsp;通过2、3节，可以总结出两点： 凡是官方原版的.dmg镜像，需要在macOS环境下使用DiskMakerX软件将镜像烧录到U盘。 凡是封装了启动器（如Clover）的非官方.dmg镜像，需要在Win10环境下使用balenaEtcher或TransMac将镜像烧录到U盘。参考文献[1] Windows下VMware Workstations Pro15.1.0安装macOS Mojave10.14.5虚拟机 by hestyle[2] ultraiso软碟通dmg转iso图文教程 by 微wx笑[3] 【虚拟机装黑苹果(第一弹)】DiskMakerX制作macOS Mojave 10.14.x的U盘启动盘（win10系统下） by Spr Chan]]></content>
       <categories>
         <category>黑苹果</category>
       </categories>
@@ -161,9 +161,9 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+        <tag>MacOS</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
@@ -202,9 +202,9 @@
       <tags>
         <tag>Hexo</tag>
         <tag>个人博客</tag>
+        <tag>MacOS</tag>
         <tag>Github</tag>
         <tag>Coding</tag>
-        <tag>MacOS</tag>
       </tags>
   </entry>
   <entry>
