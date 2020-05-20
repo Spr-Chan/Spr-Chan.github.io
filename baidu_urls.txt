@@ -1,3 +1,4 @@
+https://chenyangchun.cn/20200521-vmware-blackmacos-second.html
 https://chenyangchun.cn/20200509-win10+macos.html
 https://chenyangchun.cn/20190914-e-signature.html
 https://chenyangchun.cn/20190821-override-hashcode-and-equals.html
@@ -13,7 +14,7 @@ https://chenyangchun.cn/20190710-coding-github.html
 https://chenyangchun.cn/20190709-car-website.html
 https://chenyangchun.cn/20190708-github-domain.html
 https://chenyangchun.cn/20190707-hexo-cl-g-d.html
-https://chenyangchun.cn/20190705-black-mac-usb.html
+https://chenyangchun.cn/20190705-vmware-blackmacos-first.html
 https://chenyangchun.cn/20190703-shell-test.html
 https://chenyangchun.cn/20190702-shell-note.html
 https://chenyangchun.cn/20190702-shell-reflect.html

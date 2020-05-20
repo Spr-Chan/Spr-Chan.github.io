@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chenyangchun.cn/20200509-win10+macos.html</loc>
-    <lastmod>2020-05-17</lastmod>
+    <lastmod>2020-05-20</lastmod>
+  </url>  <url>
+    <loc>https://chenyangchun.cn/20200521-vmware-blackmacos-second.html</loc>
+    <lastmod>2020-05-20</lastmod>
+  </url>  <url>
+    <loc>https://chenyangchun.cn/20190705-vmware-blackmacos-first.html</loc>
+    <lastmod>2020-05-20</lastmod>
   </url>  <url>
     <loc>https://chenyangchun.cn/20190519-PaiPaiYanJi.html</loc>
     <lastmod>2019-12-19</lastmod>
@@ -95,9 +101,6 @@
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
     <loc>https://chenyangchun.cn/20190619-file-iostream.html</loc>
-    <lastmod>2019-08-27</lastmod>
-  </url>  <url>
-    <loc>https://chenyangchun.cn/20190705-black-mac-usb.html</loc>
     <lastmod>2019-08-27</lastmod>
   </url>  <url>
     <loc>https://chenyangchun.cn/20190310-unitary-binary-predicate.html</loc>
