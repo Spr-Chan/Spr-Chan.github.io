@@ -111,12 +111,12 @@
 <meta property="og:site_name" content="Chan&#39;s Blog">
 <meta property="og:description" content="前言&amp;emsp;&amp;emsp;归并排序适用于向量和列表通用；使用的是分而治之的策略；&amp;emsp;&amp;emsp;归：递归。首先将列表一分为二，并不断递归一分为二；&amp;emsp;&amp;emsp;并：合并，将当前的两个子序列（已有序）合并的算法； 下面是通用的归并排序的模板代码： &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;template &amp;lt; typename T &amp;gt;&amp;emsp;&amp;emsp;&amp;e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79ly1g4yj6nu6uxj30y70gogq9.jpg">
-<meta property="og:updated_time" content="2019-08-27T12:46:52.654Z">
+<meta property="og:image" content="https://chenyangchun.cn/20190422-GuiBingPaiXu/%E5%9B%BE01.jpg">
+<meta property="og:updated_time" content="2020-05-23T18:39:21.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【数据结构】归并排序之一种基于二路归并的归并排序">
 <meta name="twitter:description" content="前言&amp;emsp;&amp;emsp;归并排序适用于向量和列表通用；使用的是分而治之的策略；&amp;emsp;&amp;emsp;归：递归。首先将列表一分为二，并不断递归一分为二；&amp;emsp;&amp;emsp;并：合并，将当前的两个子序列（已有序）合并的算法； 下面是通用的归并排序的模板代码： &amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;template &amp;lt; typename T &amp;gt;&amp;emsp;&amp;emsp;&amp;e">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79ly1g4yj6nu6uxj30y70gogq9.jpg">
+<meta name="twitter:image" content="https://chenyangchun.cn/20190422-GuiBingPaiXu/%E5%9B%BE01.jpg">
 
 
 
@@ -463,7 +463,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-27 20:46:52" itemprop="dateModified" datetime="2019-08-27T20:46:52+08:00">2019-08-27</time>
+                <time title="修改时间：2020-05-24 02:39:21" itemprop="dateModified" datetime="2020-05-24T02:39:21+08:00">2020-05-24</time>
               </span>
             
           
@@ -544,7 +544,7 @@
 <p>下面是通用的归并排序的模板代码：</p>
 <p>&emsp;&emsp;&emsp;&emsp;template &lt; typename T &gt;<br>&emsp;&emsp;&emsp;&emsp;void Vector<t> :: mergeSort(Rank lo, Rank hi) {<br>&emsp;&emsp;&emsp;&emsp;if（hi - lo&lt;2）return；//一直递归到子序列是单元素，单元素区间自然有序，否则…<br>&emsp;&emsp;&emsp;&emsp;int mi =（lo + hi）&gt;&gt;1；//以中点mi为界<br>&emsp;&emsp;&emsp;&emsp;mergeSort(lo, mi)；//对前子序列递归调用本函数mergeSort，对前半段排序<br>&emsp;&emsp;&emsp;&emsp;mergeSort(mi, hi)；//对后子序列递归调用本函数mergeSort，对后半段排序<br>&emsp;&emsp;&emsp;&emsp;merge(lo, mi, hi)；//归并，将当前的两个子序列（已有序）合并的算法</t></p>
 <p>&emsp;&emsp;由上述代码可知，二路归并排序的计算成本T(n) = 2*T(n/2) + O(n)；其中O(n)为函数merge的计算成本；</p>
-<p>merge(lo, mi, hi)的基本实现：<br><img src="https://raw.githubusercontent.com/Spr-Chan/BlogPic/master/img/006tNc79ly1g4yj6nu6uxj30y70gogq9.jpg" alt></p>
+<p>merge(lo, mi, hi)的基本实现：<br><img src="/20190422-GuiBingPaiXu/%E5%9B%BE01.jpg" alt="图01"></p>
 <p>merge( )的运行时间主要消耗于for循环，共有两个控制变量j和k</p>
 <p>&emsp;&emsp;初始：j=0，k=0<br>&emsp;&emsp;最终：j=lb，k=lc<br>&emsp;&emsp;亦即：j+k = lb+lc = hi-lo = n</p>
 <p>&emsp;&emsp;所以for循环共迭代n次，即merge( )总体迭代不过O(n)次，故二路归并排序的计算成本T(n) = 2 * T(n/2) + O(n)成立。通过计算，二路归并算法复杂度为O(n * logn)。计算思路：T(n)到T(1)共有logn层，每层包含一个复杂度为n的算法（merge( )），所以总的时间复杂度为O(n*logn)。</p>
