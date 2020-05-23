@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chenyangchun.cn/20190814-jdbc-check-table.html</loc>
+    
+    <lastmod>2020-05-23T17:51:04.970Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://chenyangchun.cn/20190815-jdbc-login.html</loc>
+    
+    <lastmod>2020-05-23T17:47:34.453Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://chenyangchun.cn/20190817-jdbc-druid.html</loc>
     
     <lastmod>2020-05-23T17:43:06.868Z</lastmod>
@@ -131,20 +145,6 @@
     <loc>https://chenyangchun.cn/20190702-shell-note.html</loc>
     
     <lastmod>2019-12-03T03:05:42.894Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chenyangchun.cn/20190814-jdbc-check-table.html</loc>
-    
-    <lastmod>2019-12-03T03:05:34.978Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://chenyangchun.cn/20190815-jdbc-login.html</loc>
-    
-    <lastmod>2019-12-03T03:05:30.336Z</lastmod>
     
   </url>
   
